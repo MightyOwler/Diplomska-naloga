@@ -1,0 +1,38 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[slovene]{babel}
+\usepackage{amsfonts,amssymb,amsmath, amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+
+\newcommand{\bigslant}[2]{{\raisebox{.2em}{$#1$}\left/\raisebox{-.2em}{$#2$}\right.}}
+
+\def\qed{$\hfill\Box$}   % konec dokaza
+\def\qedm{\qquad\Box}   % konec dokaza v matematičnem načinu
+
+\newcounter{theoremcounter}[section] % 
+\renewcommand{\thetheoremcounter}{\thesection.\arabic{theoremcounter}}
+
+\newtheorem{izrek}[theoremcounter]{Izrek}
+\newtheorem{trditev}[theoremcounter]{Trditev}
+\newtheorem{posledica}[theoremcounter]{Posledica}
+\newtheorem{lema}[theoremcounter]{Lema}
+\newtheorem{opomba}[theoremcounter]{Opomba}
+\newtheorem{definicija}[theoremcounter]{Definicija}
+\newtheorem{primer}[theoremcounter]{Primer}
+
+
+\title{Osnutek diplomske naloge}
+\author{Jaša Knap}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+
+
+\end{document}
