@@ -26,13 +26,64 @@
 
 
 \title{Osnutek diplomske naloge}
-\author{Jaša Knap}
+\author{Jaša Knap\\[1mm]{\small Mentor: Urban Jezernik}}
 \date{\today}
 
 \begin{document}
 
 \maketitle
 
+\section{Motivacija}
 
+Zakon v grupi $G$ je abstrakten produkt elementov $x$, $y$ ter njunih inverzov $x^{-1}$, $y^{-1}$, ki ima lastnost, da za vsako zamenjavo $x$ in $y$ s konkretnima
+elementoma $g, h \in G$ dobimo rezultat $1$ v $G$. Zakonu $1$ pravimo trivialen zakon, v kontekstu naloge nas ne bo zanimal. Najosnovnejši primer zakona se pojavi pri Abelovih grupah, kjer za poljubna elementa $x,y \in  G$ velja $xy = yx$, kar je ekvivalentno
+zahtevi \begin{equation*}
+xyx^{-1}y^{-1} = [x,y] = 1.
+\end{equation*}  
+Grupa $G$ je torej Abelova natanko tedaj, ko je štiričrkovna beseda $xyx^{-1}y^{-1}$ v njej zakon. 
+Nadvse pomembno je vprašanje, ali vsaka grupa premore zakone. Odgovor nanj je v splošnem negativen, recimo grupa $\operatorname{Sym}(\mathbb{N})$ nima nobenega (netrivialnega) zakona.
+Očitna posledica Lagrangeevega elementa pa je, da vsaka končna grupa premore zakon, saj veja \begin{equation*}
+x^{\lvert G \rvert } = 1.
+\end{equation*}  
+Če za $G$ vzamemo na primer grupo $\operatorname{Sym}(n)$, bo torej $x^{n!}$ zakon, ki pa je razmeroma dolg. Precej krajši je recimo zakon $x^{\text{lcm}(1, \ldots, n)}$, ki je prav tako posledica Lagrangeevega izreka. Na tej točki se naravno pojavi nekaj vprašanj:
+kako dolgi so najkrajši zakoni za določeno grupo oziroma družino grup? Ali lahko ocenimo asimtotsko rast dolžine najkrajših zakonov za družine grup, recimo za družino $\operatorname{Sym}(n)$? Prav ti vprašanji bosta bistvo diplomske naloge, v kateri bom predstavil dosedanje rezultate ter različne pristope, ki so jih uporabili raziskovalci.
+
+\section{Osnove}
+
+Najprej bom definiral osnovne pojme, kot so beseda, dolžina besede, izginjajoča množica itd. Poleg tega bom predstavil in dokazal dve osnovni lemi, brez katerih zakonov praktično ne moremo razumeti. Prva izmed njih je komutatorska lema:
+\begin{lema}[Komutatorska lema]
+    Naj bodo $\omega_1, \omega_2, \ldots, \omega_m$ dvočrkovne besede ter $Z(G, \omega_1), \ldots, Z(G, \omega_m)$. Potem obstaja beseda $\omega$ dolžine \begin{equation*}
+    l(\omega) \le  8m\left(\sum_{i=1}^{m} l\left(\omega_i\right) + m\right),
+    \end{equation*}  
+    za katero velja \begin{equation*}
+    Z(G, \omega) \supseteq Z(G, \omega_1) \cup  Z(G, \omega_2) \cup \ldots \cup Z(G, \omega_m).
+    \end{equation*}  
+    \end{lema}Ta lema je izredno pomembna, saj nam omogoča, da iz že znanih besed ustvarimo novo besedo, katere izginjajoča množica je večja od od vsake posamezne izginjajoče množice. Trivialna posledica je recimo dejstvo, da iz $G = A \cup B$ in imamo
+besedi $\omega_1, \omega_2$, za kateri velja $A \subseteq Z(G, \omega_1)$, $B \subseteq Z(G, \omega_2)$, potem obstaja beseda $\omega$, katere dolžina je \begin{equation*}
+l(\omega) \le  16 (l(\omega_1) + l(\omega_2) + 2),
+\end{equation*}  
+ki je zakon v grupi $G$.
+Nekoliko bolj povezana s strukturo grup pa je razširitvena lema.  \begin{lema}[Razširitvena lema]
+    Naj bo $G$ grupa in $N \triangleleft G$ njena edinka. Naj bo $\omega_N$ zakon za $N$ in
+    $\omega_{G/N}$ zakon za kvocientno grupo $G/N$. Potem obstaja zakon $\omega$ za grupo $G$, katerega dolžina je \begin{equation*}
+    l(\omega) \le  l(\omega_N)l(\omega_{G/N}).
+    \end{equation*}  
+    \end{lema}
+Njena moč je še posebej izrazita, kadar ima edinka $N$ lepe lastnosti. Če je $N$ na primer Abelova, v njej gotovo obstaja zakon dolžine $4$, torej se zgornja neenakost prevede na $l(\omega) \le 4 l(\omega_{G/N})$. Direktna posledica je dejstvo, da
+nas zares zanimajo le grupe z netrivialnim centrom, saj v primeru netrivialnosti centra lahko uporabimo zgornjo oceno. Hkrati postaja razvidno, da bodo pomembno vlogo pri problemu igrale nilpotentne in rešljive grupe.
+
+\section{Končne grupe}
+Preučevanje zakonov v končnih grupah je lažje kot v neskončnih, v katerih na primer že sam obstoj zakonov ni zagotovljen. Predstavil bom dosedanje rezultate o zgornjih mejah asimptotske rasti nilpotentnih, rešljivih in enostavnih grupah. Poleg tega bosta pomembni tudi poglavji o
+projektivnih posebnih linearnih grupah $\operatorname{PSL}_2(q)$ in o simetričnih grupah $\operatorname{Sym}(n)$, saj imata ti družino mnoge posebne lastnosti.
+
+\subsection{Nilpotentne grupe}
+\subsection{Rešljive grupe}
+\subsection{Grupe $\operatorname{PSL}_2(q)$ in $\operatorname{PSL}_n(q)$}
+\subsection{Simetrične grupe $\text{Sym}(n)$}
+
+\section{Neskončne grupe in skoraj zakoni}
+Na koncu bom predstavil še ključne ugotovitve v neskončnih grupah. Tam je smiselno uvesti tudi pojem skoraj zakonov, torej besed, ki uničijo skoraj vse pare elementov v grupi, vendar pa niso nujno zakoni. 
+
+\section{Viri in literatura}
 
 \end{document}
