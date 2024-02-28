@@ -42,16 +42,11 @@ elementoma $g, h \in G$ dobimo rezultat $1 \in G$.
 
 \begin{opomba}
 Definicijo $n$-črkovnih zakonov dobimo tako, da v zgornji definiciji elementa $x$, $y$ (in njuna inverza) nadomestimo z elementi $x_1, x_2, \ldots, x_n$ (in njihovimi inverzi),
-ki jih zamenjujemo z elementi $g_1, g_2, \ldots, g_{n} \in G$.
+ki jih zamenjujemo s konkretnimi elementi $g_1, g_2, \ldots, g_{n} \in G$.
 \end{opomba}
-
-\begin{opomba}s
-Zakonu $1$ pravimo trivialen zakon. V kontekstu raziskovanja zakonov ni posebej zanimiv.
-\end{opomba}
-
 
 \noindent
-Najosnovnejši primer netrivialnega zakona se pojavi pri Abelovih grupah, kjer za poljubna elementa $x,y \in  G$ velja $xy = yx$, kar je ekvivalentno
+Zakonu $1$ pravimo trivialen zakon, v kontekstu raziskovanja zakonov ni posebej zanimiv. Najosnovnejši primer netrivialnega zakona se pojavi pri Abelovih grupah, kjer za poljubna elementa $x,y \in  G$ velja $xy = yx$, kar je ekvivalentno
 zahtevi \begin{equation*}
 xyx^{-1}y^{-1} = [x,y] = 1.
 \end{equation*}
@@ -62,10 +57,10 @@ Grupa $G$ je torej Abelova natanko tedaj, ko je štiričrkovna beseda $xyx^{-1}y
 
 \noindent
 Nadvse pomembno je vprašanje, ali vsaka grupa premore netrivialen zakon. Odgovor nanj je v splošnem negativen, protiprimer je recimo grupa $\operatorname{Sym}(\mathbb{N})$.
-Očitna posledica Lagrangeevega elementa pa je, da vsaka končna grupa premore netrivialen zakon, saj veja \begin{equation*}
+Očitna posledica Lagrangeevega izreka pa je, da vsaka končna grupa premore netrivialen zakon, saj veja \begin{equation*}
 x^{\lvert G \rvert } = 1.
 \end{equation*}  
-Če za $G$ vzamemo na primer grupo $\operatorname{Sym}(n)$, bo torej $x^{n!}$ zakon, ki pa je razmeroma dolg. Precej krajši zakon za isto grupo je $x^{\text{lcm}(1, \ldots, n)}$, ki je prav tako posledica Lagrangeevega izreka. 
+Če za $G$ vzamemo grupo $\operatorname{Sym}(n)$, bo $x^{n!}$ zakon, ki pa je razmeroma dolg. Precej krajši zakon za isto grupo je $x^{\text{lcm}(1, \ldots, n)}$, ki je prav tako posledica Lagrangeevega izreka. 
 
 \noindent
 Na tej točki se naravno pojavi nekaj vprašanj:
@@ -93,12 +88,9 @@ Očitno je beseda $\omega$ zakon za $G$ natanko tedaj, ko velja $Z(G, \omega) = 
     Z(G, \omega) \supseteq Z(G, \omega_1) \cup  Z(G, \omega_2) \cup \ldots \cup Z(G, \omega_m).
     \end{equation*}  
     \end{lema}
-    
+
 \noindent    
-Ta lema je izredno pomembna, saj nam omogoča, da iz že znanih besed ustvarimo novo besedo, katere izginjajoča množica je večja od vsake posamezne izginjajoče množice. Naj bo na primer $G = A \cup B$ in naj za netrivialni besedi $\omega_1, \omega_2$ velja $A \subseteq Z(G, \omega_1)$, $B \subseteq Z(G, \omega_2)$. Potem obstaja netrivialna beseda $\omega$, katere dolžina je \begin{equation*}
-l(\omega) \le  16 (l(\omega_1) + l(\omega_2) + 2),
-\end{equation*}  
-ki je zakon v grupi $G$.
+Ta lema je izredno pomembna, saj nam omogoča, da iz že znanih besed ustvarimo novo besedo, katere izginjajoča množica je večja od vsake posamezne izginjajoče množice.  
 Nekoliko bolj povezana s strukturo grup pa je razširitvena lema.  \begin{lema}[Razširitvena lema]
     Naj bo $G$ grupa in $N \triangleleft G$ njena edinka. Naj bo $\omega_N$ netrvialen zakon za $N$ in
     $\omega_{G/N}$ netrvialen zakon za kvocientno grupo $G/N$. Potem obstaja netrvialen zakon $\omega$ za grupo $G$, katerega dolžina je \begin{equation*}
@@ -108,7 +100,7 @@ Nekoliko bolj povezana s strukturo grup pa je razširitvena lema.  \begin{lema}[
 
 \noindent
 Moč te leme je še posebej izrazita, kadar ima edinka $N$ lepe lastnosti. Če je $N$ na primer Abelova, v njej gotovo obstaja zakon dolžine $4$, torej se zgornja neenakost prevede na $l(\omega) \le 4 l(\omega_{G/N})$. Direktna posledica je dejstvo, da
-nas zares zanimajo le grupe s trivialnim centrom, saj v primeru netrivialnosti centra lahko uporabimo zgornjo oceno. Hkrati postaja razvidno, da bodo pomembno vlogo pri problemu igrale nilpotentne in rešljive grupe.
+nas zares zanimajo le grupe s trivialnim centrom, saj v primeru netrivialnosti centra lahko uporabimo zgornjo oceno. Še več, ker je v splošnem $\operatorname{Inn}(G) \cong \quot{G}{Z(G)}$, se lahko sklicujemo na lastnosti notranjih avtomorfizmov grup. Hkrati postaja razvidno, da bodo pomembno vlogo pri problemu igrale nilpotentne in rešljive grupe.
 
 \section{Končne grupe}
 Preučevanje zakonov v končnih grupah je lažje kot v neskončnih, v katerih na primer že sam obstoj zakonov ni zagotovljen. Predstavil bom dosedanje rezultate o zgornjih mejah asimptotske rasti nilpotentnih, rešljivih in enostavnih grupah. Poleg tega bosta pomembni tudi poglavji o
@@ -144,11 +136,11 @@ l(\omega) \le (C + o(1)) \log(n)^{\nu}.
 Pri tem je $C \approx 8,395$, $\nu \approx 1,441$, $o(1)$ pa funkcija odvisna od $n$, za katero velja $\lim_{n \to \infty} o(1) = 0$. 
 \end{izrek}
 \noindent
-Prvi korak pri dokazu tega izreka je konstrukcija zaporedja besed $\left\{ c_i \right\}_{i = 1}^{\infty}$, za katerega velja, da je člen $c_k$ zakon za
+Prvi korak pri dokazu tega izreka je konstrukcija zaporedja besed $\left\{ c_i \right\}_{i = 1}^{\infty}$, za katerega je člen $c_k$ zakon za
 vse grupe z redom nilpotentnosti $k$ ali manj. Dolžino besede $l(c_k)$ določimo prek rekurzivne zveze. Osnovno oceno dobimo tako, da red nilpotentnosti ocenimo z močjo grupe, nato pa to oceno izboljšamo z upoštevanjem lastnosti spodnje centralne
 vrste proste grupe $\mathbb{F}_2$.
 \noindent
-V delu~\cite{Schneider_2016} je predstavljen tudi rezultat za rešljive grupe, katerega dokaz pa je precej zahtevnejši od dokaza za nilpotentne grupe.
+V delu~\cite{Schneider_2016} je predstavljen tudi rezultat za rešljive grupe, katerega dokaz je precej zahtevnejši od dokaza za nilpotentne grupe.
 \begin{izrek}
     Obstaja dvočrkovna beseda $\omega$, ki je netrivialen zakon za vse rešljive grupe moči manjše ali enake $n$, za katero velja ocena \begin{equation*}
     l(\omega) \le (D + o(1)) \log(n)^{\lambda}. 
@@ -159,19 +151,21 @@ V delu~\cite{Schneider_2016} je predstavljen tudi rezultat za rešljive grupe, k
 \subsection{Grupe $\operatorname{PSL}_2(q)$ in $\operatorname{PSL}_n(q)$}
 
 Glavno vprašanje pri raziskovanju zakonov se glasi: Kako lahko ocenimo asimptotsko rast dolžine kratkih netrivialnih zakonov za družino vseh grup moči $n$ ali manj?
-Eden izmed glavnih pristopov je, da problem s pomočjo razširitvene leme prevedemo na problema rešljivih in polenostavnih grup, problem polenostavnih pa na probleme ensotavnih grup.
-Prek klasifikacije končnih enostavnih grup vemo, da obstaja 18 družin ter 26 sporadičnih končnih enostavnih grup. Pri asimptotski rasti dolžin kratkih netrivialnih zakonov so slednje praktično zanemarljive, saj lahko
-najdemo besedo, ki bo netrivialen zakon za vse sporadične grupe, in jo s pomočjo komutatorske leme priključimo zakonom za družine enostavnih grup. Po drugi strani se izkaže, da lahko najdemo dobre ocene za 17 izmed 18-ih družin.
+Eden izmed glavnih pristopov je, da problem s pomočjo razširitvene leme prevedemo na problema rešljivih in polenostavnih grup, problem polenostavnih pa na probleme enostavnih grup.
+Prek klasifikacije končnih enostavnih grup vemo, da obstaja 18 družin ter 26 sporadičnih končnih enostavnih grup. Pri asimptotski rasti dolžin kratkih netrivialnih zakonov so slednje zaradi komutatorske leme praktično zanemarljive. Po drugi strani se izkaže, da lahko najdemo dobre ocene za 17 izmed 18-ih družin.
 Edina izjema je družina $\operatorname{PSL}_2(q)$, ki zahteva posebno obravnavo.
 
 \noindent
 Nekatere novejše ugotovitve na tem področju se nahajajo v članku~\cite{Bradford_Jakob_Schneider_Thom_2023}.
 \begin{definicija}
-Naj bo $n \in \mathbb{N}$ in $q \in \mathbb{N}$ praštevilska potenca, torej $q = p^{k}$. Potem definiramo 
+Naj bo $n \in \mathbb{N}$ in $q \in \mathbb{N}$ praštevilska potenca, torej $q = p^{k}$. Potem definiramo \begin{equation*}
+    \operatorname{PSL}_n(q) = \quot{\operatorname{SL}_n(q)}{Z(\operatorname{SL}_n(q))}.
+ \end{equation*}   
+V primeru $n = 2$ dobimo
 \begin{equation*}
-            \operatorname{PSL}_n(q) = \begin{cases}
-                \quot{\operatorname{SL}_n(q)}{\left\{ I \right\}} ; & p = 2,  \\
-                \quot{\operatorname{SL}_n(q)}{\left\{ I, -I \right\} }; & p \neq 2.
+            \operatorname{PSL}_2(q) = \begin{cases}
+                \operatorname{SL}_2(q); & p = 2,  \\
+                \quot{\operatorname{SL}_2(q)}{\left\{ I, -I \right\} }; & p \neq 2.
             \end{cases}
          \end{equation*}   
 \end{definicija}
@@ -184,11 +178,14 @@ Naj bo $p$ praštevilo. Potem ima vsak netrivialen zakon za grupo $\operatorname
 Ideja dokaza je, da elemente grupe $\operatorname{PSL}_2(p)$ predstavimo z matrikami, nato pa opazujemo produkte matrik strižnih transformacij. Če matrične elemente takšnega produkta obravnavamo kot polinome in jih ustrezno evalviramo (kar ustreza vstavljanju različnih parov elementov iz grupe v besedo), produkt ni skalarna matrika. Direktna posledica te leme je recimo dejstvo, da grupa $\text{Sym}(\mathbb{N})$ nima
 netrivialnih zakonov, saj vsebuje vse $\operatorname{PSL}_2(p)$ kot podgrupe.
 
+
+\noindent
+V tem poglavju bom predstavil nekaj možnih izboljšav dela~\cite{Schneider_2016}, ki sem jih našel med branjem.
 \subsection{Simetrične grupe}
 Za razumevanje zakonov v grupah je ključno razumevanje zakonov v simetričnih grupah, med drugim zato, ker lahko vsako grupo obravnavamo kot podgrupo simetrične grupe. Pri tem se izkaže, da je iskanje zakonov tesno povezano z naključnimi sprehodi po ustreznih Cayleyjevih grafih grup.
 Ta pristop je podrobno opisan v člankih~\cite{Amir_Blachar_Gerasimova_Kozma_2023} in~\cite{Kozma_Thom_2016}, njegova posebnost pa je nekonstruktivnost. Z drugimi besedami, mogoče je pokazati
 obstoj kratkih netrivialnih zakonov v grupah brez njihove konkretne konstrukcije. Tak pristop trenutno ne ponuja zgolj najboljših rezultatov za simetrične grupe, temveč tudi za enostavne, kar direktno vpliva
-na ocene dolžine netrivialnih zakonov v splošnih grupah. Zgled uspešnosti se nahaja tudi v osrednjem izreku članka~\cite{Kozma_Thom_2016}.
+na ocene dolžine netrivialnih zakonov v splošnih grupah. Zgled uspešnosti se odraža v osrednjem izreku članka~\cite{Kozma_Thom_2016}.
 \begin{izrek}
 Naj $\alpha(n)$ označuje dolžino najkrajšega netrivialnega zakona za grupo $\operatorname{Sym}(n)$. Obstaja konstanta $C > 0$, da velja \begin{equation*}
 \alpha(n) \le  \exp \left( C \log(n)^{4} \log(\log(n)) \right).
