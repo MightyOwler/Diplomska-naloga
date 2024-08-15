@@ -1,0 +1,43 @@
+\section{Uvod}
+
+Abstraktni produkt elementov $a_1, \ldots , a_k$ ter njihovih inverzov $a_1^{-1}, \ldots , a_k^{-1}$, je \emph{$k$-črkovni zakon v grupi $G$}, če ima lastnost, da za vsako zamenjavo $a_1, \ldots, a_k$ s konkretnimi
+elementi $g_1, \ldots, g_k \in G$ dobimo rezultat $1_G\in G$. Zakonu $1$ pravimo \emph{trivialni zakon}, ki v kontekstu raziskovanja zakonov ni posebej zanimiv.
+
+Najosnovnejši primer netrivialnega dvočrkovnega zakona se pojavi pri Abelovih grupah. Grupa $G$ je namreč Abelova natanko tedaj, ko za vsaka elementa $g, h \in  G$ velja $gh = hg$, kar je ekvivalentno
+zahtevi \begin{equation*}
+ghg^{-1}h^{-1} = [g,h] = 1_G.
+\end{equation*}
+Grupa $G$ je torej Abelova natanko tedaj, ko je štiričrkovna beseda $aba^{-1}b^{-1}$ v njej zakon. 
+
+Nadvse pomembno je vprašanje, ali vsaka grupa premore netrivialni zakon. Odgovor nanj je v splošnem negativen, kar bomo videli v nadaljevanju kot posledico trditve \ref{trd_dolzina_zakonov_za_psl2p}. 
+Očitna posledica Lagrangeevega izreka pa je, da vsaka končna grupa $G$ premore
+netrivialni zakon $a^{\lvert G \rvert }$, saj za vsak element $g \in G$ velja  
+\begin{equation*}
+g^{\lvert G \rvert } = 1_G.
+\end{equation*}  
+
+To dejstvo si natančneje oglejmo na primeru simetrične grupe $S_n$. Zanjo po Lagrangeevem izreku velja enočrkovni zakon $a^{n !}$, katerega dolžina znaša $n!$, kar je po Stirlingovi formuli približno
+\begin{equation*}
+n! \sim \sqrt{2 \pi n} \left( \frac{n}{e} \right)^{n}.
+\end{equation*}  
+Asimptotsko gledano je to zelo dolg zakon, veliko krajši je na primer že zakon oblike $a^{\exp(S_n)}$, kjer smo označili $\exp(S_n) = \text{lcm}(1, \ldots, n)$, za katerega s pomočjo osnovnega izreka o praštevilih \ref{lem_gostota_prastevil} dobimo asimptotsko oceno \begin{equation*}
+\text{lcm}(1, \ldots ,n) \sim e^{n}.
+\end{equation*}  
+Trenutno najboljša ocena za dolžine kratkih zakonov izhaja iz članka \cite{Kozma_Thom_2016}, ki bo predstavljena v razdelku \ref{sec_simetricne_grupe}.
+
+Na tej točki se naravno pojavi nekaj vprašanj: kako dolgi so najkrajši netrivialni zakoni za določeno grupo oziroma družino grup? Ali lahko ocenimo
+asimtotsko rast dolžine najkrajših netrivialnih zakonov za družine grup, recimo za družino $\text{Sym}(n)$? Kaj pa za vse grupe moči $n$ ali manj? 
+Katere družine grup se še posebej naravno pojavljajo pri takšnem raziskovanju?
+Prav ta vprašanja bodo bistvo diplomske naloge, v kateri bom predstavil dosedanje
+rezultate ter različne pristope, ki so jih ubrali raziskovalci. Na koncu bom predstavil,
+kako lahko z uporabo računalnika dobimo vpogled v delež zakonov med besedami.
+
+Zgodovinsko gledano so zgornja vprašanja razmeroma sodobna. Obravnavanje lastnosti zakonov namreč v nekem smislu sega že do Abela in Galoisa, 
+saj lahko tako Abelove kot rešljive grupe zelo naravno karakteriziramo s pomočjo zakonov. Zakoni so pomembni tudi za obravnavo klasičnih Bursidovih problemov,
+ki matematikom burijo domišljijo že od začetka 20.~stoletja. Ti problemi sprašujejo po končnosti specifičnih kvocientov prostih grup, kar bo nekoliko podrobneje razloženo v
+razdelku \ref{sec_racunalnisko_iskanje}. 
+
+% Zakone lahko recimo uporabljamo za prezentacijo grup, morda najbolj znani primer predstavljajo diedrske grupe \begin{equation*}
+%     D_{2n} = \langle r, Z  \vert  r^{n} = Z^{2} = 1, (rZ)^2 = 1 \rangle.  
+%     \end{equation*}  
+%     Diedrska grupa je enolično določena s tremi enočrkovnimi zakoni, ki jim morata ustrezati generatorja $r$ in $Z$ ($a^{n}$ in $a^{2}$) oziroma njun produkt $rZ$ ($a^{2}$).

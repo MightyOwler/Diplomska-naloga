@@ -1,0 +1,141 @@
+\section{Iskanje zakonov z računalnikom}
+\label{sec_racunalnisko_iskanje}
+
+Na roke preverjati, ali je beseda zakon, je zoprno. Veliko lažje je z uporabo raznih lastnosti grupe -- še posebej redov -- preveriti, da beseda ni zakon. 
+Zato je zelo naravno pomisliti na uporabo računalnika. % TODO tole bolje poveži 
+Programi se nahajajo v repozitoriju (TODO daj pravo povezavo, lepo uredi).
+
+\subsection{Iskanje zakonov v grupah $\operatorname{PSL}_2(p)$} %
+
+Najprimitivnejši način iskanja zakonov v dani grupi $G$ je kar po definiciji: Poiščemo vse besede grupe $F_2 = \langle a,b \rangle$ določene dolžine, nato pa jih izvrednotimo na vseh možnih parih.
+Za začetek me je zanimalo, koliko zakonov dolžine 17 ali manj premorejo grupe $\operatorname{PSL}_2(p)$. Za višje dolžine je bilo potrebno generirati nepraktično veliko besed. Pri tem se zavedamo, da grupe $\operatorname{PSL}_2(p)$ ne morejo imeti zakonov krajših od $p$-črk po trditvi \ref{trd_dolzina_zakonov_za_psl2p}.
+Program sem spisal v jeziku C++, ki je v splošnem veliko hitrejši od GAP-a, opisuje ga spodnja psevdokoda.
+
+\begin{verbatim}
+    # generiranje besed in parov elementov
+
+    za k = 1, ... , 17:
+        - generiaj vse okrajšane besede dolžine k
+        - shrani jih v datoteko
+    
+    za p = 2, 3, 5, 7, 11, 13, 17:
+        - predstavi elemente grupe PSL_2(p) kot 2x2 matrike
+        - generiraj vse pare elementov
+        - pare shrani v datoteko
+
+    # preverjanje zakonov
+    
+    za p = 2, 3, 5, 7, 11, 13, 17:
+        za k = p, ... , 17:
+            - preberi pare grupe PSL_2(p) in besede dolžine k 
+            iz generiranih datotek
+            - na vsaki besedi evalviraj vse pare
+            - če je rezultat vseh evalvacij besede identična matrika,
+            je ta beseda zakon
+\end{verbatim}
+
+Hitro se je izkazalo, da je tak pristop zelo neučinkovit. Problem je namreč v tem, da število besed dolžine $k$ narašča eksponentno. Če brez škode za splošnost fiksiramo prvo črko, je to število enako $3^{k - 1}$,
+saj lahko v vsakem koraku dodamo natanko 3 črke, da ne pride do krajšanja. Tudi če bi obravnavali tako imenovane \emph{komutatorske besede}, ki vsebujejo enako število črk kot njihovih inverzov (število črk $a$ je enako številu črk $a^{-1}$, podobno za $b$),
+število dvočrkovnih besed, ki bi jih morali pregledati, mnogo prehitro narašča, da bi lahko pokazali karkoli smiselnega.
+
+V splošnem se sicer da oceniti, z najmanj kolikšno verjetnostjo je naključna beseda $w \in F_2$ zakon v grupi $G$.
+Oceniti moramo indeks grupe zakonov $K(G, 2)$ v grupi $F_2$. S pomočjo razmisleka pod dokazom leme \ref{lem_koncni_indeks_koncnega_preseka} v primeru $k  = 2$ dobimo oceno
+\begin{equation*}
+    \left[ F_2 : K(G, 2) \right] \le {\lvert G \rvert}^{{\lvert G \rvert}^2},
+    \end{equation*}  
+kar vsekakor ni ravno spodbudno. Pa vendar se v praksi izkaže, da ti indeksi dejansko so razmeroma visoki. Članek \cite{Cocke_2020} nam ponuja konkretne vrednosti naslednjih indeksov.
+\begin{align*}
+    \left[ F_2 : K(D_{10}, 2) \right] &= 2^2 \cdot 5^{5} = 12500, \\
+    \left[ F_2 : K(S_3, 2) \right] &= 2^2 \cdot 3^{5} = 972, \\
+    \left[ F_2 : K(A_4, 2) \right] &= 2^{10} \cdot  3^{2} = 9216, \\
+    \left[ F_2 : K(A_5, 2) \right] &= 2^{48} \cdot  3^{24} \cdot 5^{24} \approx 4.73 \cdot 10^{42}.   % 4738381338321616896000000000000000000000000.
+\end{align*}
+
+V splošnem ni veliko grup, za katere bi poznali točne vrednosti teh kvocientov \cite[str.~1]{Cocke_2020}. Rezultatov za grupe $\operatorname{PSL}_2(q)$ nisem našel.
+
+\subsection{Iskanje generatorjev zakonov za nilpotentne grupe}
+
+Kot smo videli v prejšnjem poglavju, moramo do problema pristopiti bolj zvito. Delež zakonov med vsemi dvočrkovnimi besedami nam določa kvocient \begin{equation*}
+\bigslant{F_2}{\bigcap_{\varphi \in \operatorname{Hom}(F_2, G)}}.  
+\end{equation*}  
+Vemo že, da je grupa $F_2^{\exp(G)} = \left\{ w^{\exp(G)}  \middle|\, w \in F_2 \right\}$ edinka v $F_2$. (TODO tega v resnici nisem nikjer pokazal, je treba).
+Zato lahko po tretjem izreku o izomorfizmu zapišemo 
+\begin{equation*}
+    \bigslant{F_2}{\bigcap_{\varphi \in \operatorname{Hom}(F_2, G)}} \cong \dfrac{\bigslant{F_2}{F_2^{\exp(G)}}}{\bigslant{ \left( \bigcap\limits_{\varphi \in \operatorname{Hom}({F_2} / {F_2^{\exp(G)}}, G)} \ker \varphi \right) }{F_2^{\exp(G)}}}.
+\end{equation*}  
+  
+S tem smo problem poenostavili, saj nam za izračun zakonov ni več treba računati jeder vseh homomorfizmov $F_2 \to G$, temveč le še $F_2 / F_2^{\exp(G)} \to G$.
+Če je grupa $G$ nilpotentna razreda $d$, uporabimo podoben razmislek. 
+ (TODO to bo treba dokazati pri nilpotentnih grupah) 
+Ker je poljubni člen spodnje centralne vrste edinka v $F_2$, je tudi grupa $\gamma_{d+ 1}(F_2)$.
+Produkt edink je edinka, zato je tudi $F_2^{\exp(G)} \gamma_{d+ 1}(F_2)$ edinka v $F_2$, in lahko tvorimo kvocient 
+\begin{equation*}
+    \bigslant{F_2}{\bigcap_{\varphi \in \operatorname{Hom}(F_2, G)}} \cong \dfrac{\bigslant{F_2}{F_2^{\exp(G)}\gamma_{d+1}(F_2)}}{ \bigslant{ \left( \bigcap\limits_{\varphi \in \operatorname{Hom}({F_2} / {F_2^{\exp(G)}\gamma_{d+1}(F_2)}, G)} \ker \varphi \right) }{F_2^{\exp(G)}\gamma_{d+1}(F_2)}}.
+\end{equation*}
+
+S tem pa smo problem (za nilpotentne grupe) že močno poenostavili, saj vsebuje GAP paket za delo z nilpotentnimi grupami \texttt{nq}, s pomočjo katerega lahko zgornji kvocient izračunamo in obravnavamo kot grupo.
+Na tak način sem izračunal indekse za vse nilpotentne grupe do vključno moči 64. Program je dostopen na repozitoriju (TODO tukaj prilepi ), opisuje ga naslednja psevdokoda. 
+
+\begin{verbatim}
+    vse nilpotentne grupe želenih moči shranimo v seznam 
+    za vsako grupo G iz seznama:
+        izračunamo vrednosti exp(G) in d
+        kvocient := (zgornji izraz z ustreznimi vrednostmi)
+        zakoni := presek homomorfizmov kvocient -> G
+        poračunamo strukturo in velikost kvocienta kvocient/zakoni
+    izračunane rezultate shranimo v datoteko
+\end{verbatim}
+
+Ta pristop do problema je mnogo boljši, saj je ne le bolj povezan s strukturo grup, temveč tudi omogoča boljši vpogled v razumevanje zakonov.
+Z njegovo pomočjo je namreč lažje opaziti in posledično dokazati naslednje lastnosti zakonov. Začnimo s preprostimi.
+
+\begin{trditev}
+\label{trd_lastnosti_zakonov_ciklicne}
+ Za vsako ciklično grupo $C_n$ je \begin{equation*}
+ F_2 / K(C_n, 2) \cong C_n \times C_n
+ \end{equation*}  
+ in posledično sledi \begin{equation*}
+\left[ F_2 : K(C_n, 2) \right] = n^2.
+ \end{equation*}  
+Z drugimi besedami, delež zakonov v cikličnih grupah med vsemi besedami je $1 / n^2$.
+\end{trditev}
+\begin{dokaz}
+Naj bo $F_2 = \langle a, b \rangle$.
+Najti moramo epimorfizem $F_2 \to C_n \times C_n$ z jedrom $K(C_n ,2)$. Na tej točki se spomnimo preprostega sklepa, da velja $K(C_n, 2) = K(C_n \times C_n, 2)$. Naj bo $\xi \in C_n$ generator ciklične grupe. Definirajmo preslikavo $\varphi: F_2 \to C_n \times C_n$,
+inducirano s slikama elementov $a \mapsto (\xi, 1_{C_n})$ in $b \mapsto (1_{C_n}, \xi)$.
+Ta preslikava je očitno surjektivna, preveriti moramo še, da je $\ker \varphi = K(C_n, 2)$. Najprej preverimo inkluzijo $\ker \varphi \subseteq K(C_n, 2)$.
+Naj bo $w  \in \ker \varphi \subseteq  F_2$ okrajšana beseda oblike $w = a^{r_1} b^{s_1} \ldots a^{r_{k}} b^{s_k}$ za neka cela števila $r_1, s_1, \ldots , r_k , s_k$. To pomeni, da je \begin{equation*}
+\varphi(w) = \varphi(a^{r_1}) \varphi(b^{s_1}) \ldots \varphi(a^{r_k}) \varphi(b^{s_k}) = \left( \xi^{r_1 + \ldots + r_k}, \xi^{s_1 + \ldots + s_k} \right) = \left( 1_{C_n} , 1_{C_n} \right).
+\end{equation*}  
+Z drugimi besedami, vsoti $r_1 + \ldots + r_k$ in $s_1 + \ldots + s_k$ morata biti deljivi z $n$. Zato imamo za poljubna elementa $g, h \in C_n$ \begin{equation*}
+w(g, h) =  g^{r_1 + \ldots + r_k} h^{s_1 + \ldots + s_k}) = 1_{C_n},
+\end{equation*}
+torej je $w$ zakon v $C_n$. Dokažimo še $\ker \varphi \supseteq K(C_n, 2)$. Naj bo $w \in K(C_n, 2)$ okrajšana beseda oblike $w = a^{r_1} b^{s_1} \ldots a^{r_{k}} b^{s_k}$ za neka cela števila $r_1, s_1, \ldots , r_k , s_k$.
+Potem velja \begin{equation*}
+    \varphi(w) = \varphi(a)^{r_1} \varphi(b)^{s_1} \ldots \varphi(a)^{r_k} \varphi(b)^{s_k} = w(\varphi(a), \varphi(b)) = (1_{C_n} , 1_{C_n}).
+    \end{equation*}
+    Zadnja enakost sledi iz dejstva, da je $w$ zakon v grupi $C_n$ in posledično v $C_n \times C_n$.
+\end{dokaz}
+\begin{posledica}
+\label{psl_lastnosti_zakonov_elementarno_abelove}
+Naj bo grupa $G$ elementarno Abelova, torej $G = \prod_{i = 1}^{n} C_{p^{k_{i}}}$. Potem velja $F_2 / K(G, 2) \cong C_{p^{k}} \times C_{p^{k}}$, kjer je $k = \max_{i = 1 , \ldots , n} k_i$.
+\end{posledica}
+\begin{dokaz}
+ Beseda $w \in F_2$ je zakon v $C_{p^{k}}$ natanko tedaj, ko je zakon v vsakem faktorju produkta $\prod_{i = 1}^{n} C_{p^{k_{i}}}$. Implikacija v levo je zato očitna, implikacija v desno pa tudi,
+saj za vsak $i = 1 , \ldots , n$ velja $C_{p^{k_{i}}} \le C_{p^{k}}$, zakoni pa se prenašajo na podgrupe.
+\end{dokaz}
+
+\begin{posledica}
+\label{psl_lastnosti_zakonov_splosni_produkti_ciklicnih}
+Naj bo grupa $G$ poljubni končni produkt cikličnih grup. Natančneje, naj bo $G = \prod_{i = 1}^{n} \prod_{j = 1}^{n_i} C_{p_{i}^{k_{i,j}}}^{m_j}$, kjer so za vsak $i = 1, \ldots, n$ $p_i$ paroma različna praštevila, števila $n_i, m_{i} \ge 1$, in vsak $j = 1, \ldots , n_i$ števila $k_{i, j} \ge 1$ paroma različna. % TODO to se ne sliši prav
+Naj bodo $k_i = \max_{j = 1, \ldots, n_i}$. Potem velja $F_2 / K(G, 2) \cong C_{l} \times C_{l}$, kjer je $l = p_1^{k_1} \cdots  p_n^{k_n}$.
+\end{posledica}
+\begin{dokaz}
+V luči prejšnje posledice je beseda $w \in F_2$ zakon v grupi $C_l$ natanko tedaj, ko je zakon v grupi $\prod_{i = 1}^{n} C_{p^{k_i}}$, ki je po klasifikaciji končnih Abelovih grup izomorfna $C_l$.
+\end{dokaz}
+
+% TODO skušaj sklepati še kaj več
+
+TODO % file:///C:/Users/jasak/Downloads/IJGT_2024%20Autumn_Vol%2013_Issue%203_Pages%20307-318%20(1).pdf
+NAPIŠI POVEZAVO Z AMIT'S CONJECTURE
+
