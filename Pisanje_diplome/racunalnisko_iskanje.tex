@@ -69,15 +69,16 @@ Pravzaprav smo prišli do klasičnega Burnsidovega problema, ki sprašuje po kon
 Po rezultatu Lysenoka leta 1996 recimo velja, da je grupa $B(2, n)$ neskončna za $n \ge 8000$ (\cite[str.~2]{Vaughan-Lee_1999}). 
 Da lahko vseeno nadaljujemo s podobnim razmislekom, predpostavimo, da je grupa $G$ nilpotentna razreda $d$. 
 
-Ker je poljubni člen spodnje centralne vrste edinka v $F_2$, je tudi grupa $\gamma_{d+ 1}(F_2)$.
+Ker je poljubni člen spodnje centralne vrste edinka v $F_2$, je edinka tudi grupa $\gamma_{d+ 1}(F_2)$.
 Produkt edink je edinka, zato je tudi $F_2^{\exp(G)} \gamma_{d+ 1}(F_2)$ edinka v $F_2$, in lahko tvorimo kvocient 
 \begin{equation*}
     \bigslant{F_2}{\bigcap_{\varphi \in \operatorname{Hom}(F_2, G)}} \cong \dfrac{\bigslant{F_2}{F_2^{\exp(G)}\gamma_{d+1}(F_2)}}{ \bigslant{ \left( \bigcap\limits_{\varphi \in \operatorname{Hom}({F_2} / {F_2^{\exp(G)}\gamma_{d+1}(F_2)}, G)} \ker \varphi \right) }{F_2^{\exp(G)}\gamma_{d+1}(F_2)}}.
 \end{equation*}
 
-S tem smo problem v primeru nilpotentnih grup poenostavili, saj nam za izračun zakonov ni več treba računati jeder vseh homomorfizmov $F_2 \to G$, temveč le še $F_2 / F_2^{\exp(G)} \to G$.
-Hkrati pa računalniška konstrukcija tega kvocienta ni zahtevna, saj vsebuje GAP paket za delo z nilpotentnimi grupami \texttt{nq} (\cite{nq2.5.11}), s pomočjo katerega lahko zgornji kvocient izračunamo in obravnavamo kot grupo.
-Tako sem izračunal indekse za vse nilpotentne grupe do vključno moči 64, za višje vrednosti je bila časovna zahtevnost prevelika. Program je dostopen na repozitoriju \url{https://github.com/MightyOwler/Diplomska-naloga}, opisuje ga naslednja psevdokoda. 
+S tem smo problem v primeru nilpotentnih grup poenostavili, saj nam za izračun zakonov ni več treba računati jeder vseh homomorfizmov $F_2 \to G$, temveč le še $F_2 / F_2^{\exp(G)}\gamma_{d+1}(F_2) \to G$.
+Računalniška konstrukcija tega kvocienta ni posebej zahtevna, saj GAP vsebuje paket za delo z nilpotentnimi grupami \texttt{nq} (\cite{nq2.5.11}), s pomočjo katerega ga lahko izračunamo in obravnavamo kot grupo.
+Na tak način sem izračunal indekse za vse nilpotentne grupe do vključno moči 64, za višje vrednosti je bila časovna zahtevnost prevelika. Program in rezultati so objavljeni na repozitoriju \url{https://github.com/MightyOwler/Diplomska-naloga}.
+Program opisuje naslednja psevdokoda. 
 
 \begin{verbatim}
     vse nilpotentne grupe želenih moči shranimo v seznam 
@@ -88,10 +89,8 @@ Tako sem izračunal indekse za vse nilpotentne grupe do vključno moči 64, za v
         poračunamo strukturo in velikost kvocienta kvocient/zakoni
     izračunane rezultate shranimo v datoteko
 \end{verbatim}
-
 Ta pristop do problema je mnogo boljši od pristopa v razdelku \ref{sec_grupe_psl2q}, saj je ne le bolj povezan s strukturo grup, temveč tudi omogoča boljši vpogled v splošno razumevanje zakonov.
 Z njegovo pomočjo je namreč lažje opaziti in posledično dokazati naslednje lastnosti zakonov. Začnimo s preprostimi.
-
 \begin{trditev}
 \label{trd_lastnosti_zakonov_ciklicne}
  Za vsako ciklično grupo $C_n$ je \begin{equation*}
@@ -100,18 +99,18 @@ Z njegovo pomočjo je namreč lažje opaziti in posledično dokazati naslednje l
  in posledično sledi \begin{equation*}
 \left[ F_2 : K(C_n, 2) \right] = n^2.
  \end{equation*}  
-Z drugimi besedami, delež zakonov v cikličnih grupah med vsemi besedami je $1 / n^2$.
+Z drugimi besedami, delež zakonov med vsemi besedami v cikličnih grupah je $1 / n^2$.
 \end{trditev}
 \begin{dokaz}
 Naj bo $F_2 = \langle a, b \rangle$.
-Najti moramo epimorfizem $F_2 \to C_n \times C_n$ z jedrom $K(C_n ,2)$. Na tej točki se spomnimo preprostega sklepa, da velja $K(C_n, 2) = K(C_n \times C_n, 2)$. Naj bo $\xi \in C_n$ generator ciklične grupe. Definirajmo preslikavo $\varphi: F_2 \to C_n \times C_n$,
+Najti moramo epimorfizem $F_2 \to C_n \times C_n$ z jedrom $K(C_n ,2)$. Na tej točki se spomnimo preprostega sklepa, da velja $K(C_n, 2) = K(C_n \times C_n, 2)$. Naj bo $\xi \in C_n$ generator te ciklične grupe. Definirajmo preslikavo $\varphi: F_2 \to C_n \times C_n$,
 inducirano s slikama elementov $a \mapsto (\xi, 1_{C_n})$ in $b \mapsto (1_{C_n}, \xi)$.
 Ta preslikava je očitno surjektivna, preveriti moramo še, da je $\ker \varphi = K(C_n, 2)$. Najprej preverimo inkluzijo $\ker \varphi \subseteq K(C_n, 2)$.
 Naj bo $w  \in \ker \varphi \subseteq  F_2$ okrajšana beseda oblike $w = a^{r_1} b^{s_1} \ldots a^{r_{k}} b^{s_k}$ za neka cela števila $r_1, s_1, \ldots , r_k , s_k$. To pomeni, da je \begin{equation*}
 \varphi(w) = \varphi(a^{r_1}) \varphi(b^{s_1}) \ldots \varphi(a^{r_k}) \varphi(b^{s_k}) = \left( \xi^{r_1 + \ldots + r_k}, \xi^{s_1 + \ldots + s_k} \right) = \left( 1_{C_n} , 1_{C_n} \right).
 \end{equation*}  
 Z drugimi besedami, vsoti $r_1 + \ldots + r_k$ in $s_1 + \ldots + s_k$ morata biti deljivi z $n$. Zato imamo za poljubna elementa $g, h \in C_n$ \begin{equation*}
-w(g, h) =  g^{r_1 + \ldots + r_k} h^{s_1 + \ldots + s_k}) = 1_{C_n},
+w(g, h) =  g^{r_1 + \ldots + r_k} h^{s_1 + \ldots + s_k} = 1_{C_n},
 \end{equation*}
 torej je $w$ zakon v $C_n$. Dokažimo še $\ker \varphi \supseteq K(C_n, 2)$. Naj bo $w \in K(C_n, 2)$ okrajšana beseda oblike $w = a^{r_1} b^{s_1} \ldots a^{r_{k}} b^{s_k}$ za neka cela števila $r_1, s_1, \ldots , r_k , s_k$.
 Potem velja \begin{equation*}
@@ -132,17 +131,22 @@ saj za vsak $i = 1 , \ldots , n$ velja $C_{p^{k_{i}}} \le C_{p^{k}}$, zakoni pa 
 \label{psl_lastnosti_zakonov_splosni_produkti_ciklicnih}
 Naj bo končna grupa $G$ Abelova. Natančneje, naj bo v skladu s klasifikacijo končnih Abelovih grup oblike $G = \prod_{i = 1}^{n} \prod_{j = 1}^{n_i} C_{p_{i}^{k_{i,j}}}^{m_j}$, kjer so za vsak $i = 1, \ldots, n$ $p_i$ paroma različna praštevila, števila $n_i, m_{i} \ge 1$, in vsak $j = 1, \ldots , n_i$ števila $k_{i, j} \ge 1$ paroma različna. % TODO to se ne sliši prav
 Naj bodo $k_i = \max_{j = 1, \ldots, n_i}$. Potem velja $F_2 / K(G, 2) \cong C_{e} \times C_{e}$, kjer je $e = p_1^{k_1} \cdots  p_n^{k_n}  = \exp(G)$.
+Od tod sledi, da delež zakonov v Abelovih grupah znaša natanko $1 / \exp(G)^2$.
 \end{posledica}
 \begin{dokaz}
 V luči prejšnje posledice je beseda $w \in F_2$ zakon v grupi $C_e$ natanko tedaj, ko je zakon v grupi $\prod_{i = 1}^{n} C_{p^{k_i}}$, ki je po klasifikaciji končnih Abelovih grup izomorfna $C_e$.
 \end{dokaz}
-Od tod sledi, da delež zakonov v Abelovih grupah znaša natanko $1 / \exp(G)^2$. Intuitivno je to še lažje videti z naslednjim neformalnim razmislekom.
+Intuitivno je to še lažje videti z naslednjim neformalnim razmislekom.
 Naj bo podana beseda $w \in F_2 = \langle a, b \rangle$. Če hočemo preveriti, ali je zakon v Abelovi grupi $G$, se lahko pretvarjamo, da črke med seboj komutirajo. Tako $w$ prevedemo na besedo oblike $w' = a^r b^s$,
 kjer $r$ in $s$ predstavljata vsoto eksponentov črk $a$ oziroma $b$ v besedi $w$. Beseda $a^r$ je zakon v grupi $G$ natanko tedaj, ko je $\exp(G)$ delitelj števila $r$. Torej je verjetnost, da bo $w$ zakon po črki $a$ enaka $1 / \exp(G)$. %(projekcija $Z(G, w')$ na prvo komponento mora biti enaka $G$)
 Ker enako velja za $b$ in sta evalvaciji $a$ in $b$ medsebojno neodvisni, je skupna verjetnost enaka $1 / \exp(G)^2$.
 
+% Zanimiva je tudi povezava s tako imenovano Amit–Ashurstino domnevo \cite{Camina_Cocke_Thillaisundaram_2023}. Ta trdi, da je verjetnost, da poljubna   
+
 % TODO skušaj sklepati še kaj več
 
-TODO % file:///C:/Users/jasak/Downloads/IJGT_2024%20Autumn_Vol%2013_Issue%203_Pages%20307-318%20(1).pdf
-NAPIŠI POVEZAVO Z AMIT'S CONJECTURE
+
+
+% TODO % file:///C:/Users/jasak/Downloads/IJGT_2024%20Autumn_Vol%2013_Issue%203_Pages%20307-318%20(1).pdf
+% NAPIŠI POVEZAVO Z AMIT'S CONJECTURE
 

@@ -30,7 +30,7 @@ da velja $\tilde{\varphi} \circ \iota = \varphi$. Z drugimi besedami, spodnji di
 \begin{dokaz}
 Dokaz trditve je vzet iz \cite[str.~4]{Pogacnik_2024}.
 Naj bosta $F$ in $F'$ prosti grupi nad množico $S$. Označimo z $i$ in $j$ inkluziji $i : S \to F$ in $j : F'$, ki jima po definiciji \ref{def_prosta_grupa} pripadata. Po univerzalni lastnosti prostih grup lahko inkluziji
-razširimo do homomorfizmov $\varphi_i : F' \to F$ in $\varphi_j : F \to F'$. (TODO vstavi komutativni diagram)
+razširimo do homomorfizmov $\varphi_i : F' \to F$ in $\varphi_j : F \to F'$. % (TODO vstavi komutativni diagram)
 Kompozitum $\varphi_i \circ \varphi_j : F \to F$ je na množici $S$ identiteta. Ker sta tako $\varphi_i \circ \varphi_j$ kot $\text{id}_F$ razširitvi inkluzije $i$,
 mora po enoličnosti razširitev veljati $\varphi_i \circ \varphi_j = \text{id}_F$. Simetrično pokažemo še $\varphi_j \circ \varphi_i  = \text{id}_{F'}$, torej sta grupi $F$ in $F'$ izomorfni.
 \end{dokaz}
@@ -143,7 +143,7 @@ Preden si ogledamo dva primera, dokažimo nasledjo preprosto, a pomembno trditev
 \end{dokaz}
 
 \begin{primer}
-Na spodnjih slikah imamo Cayleyjev graf grupe diedrske grupe $D_{10} = \langle r, Z \rangle$ za različni generatorski množici.
+Na spodnjih slikah imamo Cayleyjev graf grupe diedrske grupe $D_{10} = \langle r, Z \rangle$ za generirajočo množico $\{ r, r^4 ,Z \}$.
 % TODO nariši desno od tega še graf s 5 generatorji, morda raje Cayleyjev graf proste grupe F2, saj nastopa naslednji trditvi
 \begin{center}
     \begin{tikzpicture}[rotate=90, scale=1.5]
@@ -225,7 +225,7 @@ in \begin{equation*}
 
 \subsection{Teorija naključnih sprehodov}
 
-Za obravnavo zakonov v simetričnih grupah bomo potrebovali naključne sprehode, natančneje lene naključne sprehode (TODO poglej, če se res tako imenuje).
+Za obravnavo zakonov v simetričnih grupah bomo potrebovali naključne sprehode, natančneje lene naključne sprehode % (TODO poglej, če se res tako imenuje).
 Naj bo $G$ grupa, generirana s simetrično podmnožico $S \subseteq G$. Tekom tega razdelka naj bo $\Gamma = \operatorname{Cay}(G, S)$, ki je po prejšnjem premisleku 
 
 
@@ -266,7 +266,7 @@ Ker vemo, da so vse lastne vrednosti realne, jih lahko po razvrstimo po velikost
 \begin{equation*}
 1 \ge \lambda_1(G, S) \ge \lambda_2(G, S) \ge \ldots \ge \lambda_{\lvert G \rvert }(G, S).  
 \end{equation*}  
-Izkaže se, da je glede na izbiro grupe $G$ in njene generirajoče množice $S$ lastna vrednost $\lambda_1(G, S) = 1 > \lambda_2(G, S)$. (TODO, posledica tega, da je $\Gamma$ povezan + konvergence zaporedja)
+Izkaže se, da je glede na izbiro grupe $G$ in njene generirajoče množice $S$ lastna vrednost $\lambda_1(G, S) = 1 > \lambda_2(G, S)$. To je posledica tega, da je $\Gamma$ povezan graf in konvergence. %  (TODO, posledica tega, da je $\Gamma$ povezan + konvergence zaporedja)
 Razliko $1 - \lambda_2(G, 2)$ imenujemo \emph{spektralna razlika} grafa $\Gamma$. 
 
 \begin{definicija}
@@ -285,17 +285,18 @@ Za ocenjevanje dolžin zakonov v grafih je bistvena sledeča zveza med diametrom
  \end{equation*}  
 \end{trditev}
 \begin{dokaz}
-% TODO najdi referenco za dokaz te leme, oz si poglej vir, na katerega se sliče Thom
+Dokaz najdemo v \cite{Diaconis_1993} kot posledico 1.  % TODO najdi referenco za dokaz te leme, oz si poglej vir, na katerega se sliče Thom
 \end{dokaz}
 
 Od tod sledi pomembna posledica \begin{posledica}
 \label{psl_posledica_zveze_diameter}
-Naj bo vektor $u = \frac{1}{\lvert G \rvert} I$ in naj bo $e_1$ bazni vektor enote $1_G$ (TODO tole bolje razloži). Potem velja ocena \begin{equation*}
+% (TODO tole bolje razloži)
+Naj bo vektor $u = \frac{1}{\lvert G \rvert} I$ in naj bo $e_1$ bazni vektor enote $1_G$. Potem velja ocena \begin{equation*}
 \lvert M^{n} e_1 - u \rvert \le \lambda_1(G, S)^{n} \le \left( 1 - \frac{1}{2 \lvert S \rvert \operatorname{diam}(G, S)^2 } \right)^{n}. 
 \end{equation*}    
 \end{posledica}
 \begin{dokaz}
-Desna neenakost je direktna posledica trditve \ref{trd_zveza_med_diametrom_grafa_in_spektralno_razliko}. (TODO zakaj leva stran enačbe ... to bi se moralo dati intuitivno dokazati )
+Desna neenakost je direktna posledica trditve \ref{trd_zveza_med_diametrom_grafa_in_spektralno_razliko}. % (TODO zakaj leva stran enačbe ... to bi se moralo dati intuitivno dokazati )
 \end{dokaz}
 
 Za konec potrebujemo še zadnjo lemo. 
@@ -307,7 +308,7 @@ n \ge 2 \lvert S \rvert \operatorname{diam}(G, S)^2 \log(2 \lvert G \rvert ),
     velja $\mathbb{P}(w_n \in E) \ge \alpha / 2$.
 \end{lema}  
 \begin{dokaz}
-TODO, to je Cauchy--Schwarz
+To je posledica Cauchy--Schwarzevega izreka. % TODO, to je Cauchy--Schwarz
 \end{dokaz}
 
 % TODO tukaj poveži besedilo z intuitivno razloago

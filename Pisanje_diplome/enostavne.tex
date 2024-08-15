@@ -20,7 +20,74 @@ Vidimo torej, da nas pri asimptotski obravnavi zakonov sporadične grupe prav ni
 lotimo z metodo maksimalnega reda elementa, ki je razložena v \ref{prm_komutatorska_redi_elementov}. Pri tem je najbolj problematična družina grup $\operatorname{PSL}_2(q)$,
 katere članice imajo razmeroma visoke rede elementov glede na njihove velikosti. Ta družina grup si zaradi svojih posebnih lasnosti zasluži svoj razdelek v tem poglavju.
 
- Morda presenetljivo pa se izkaže, da so simetrične grupe pomembne za obravnavo enostavnih. Ta zveza bo podrobneje razložena na koncu poglavja. 
+ Morda presenetljivo pa se izkaže, da so simetrične grupe pomembne za obravnavo enostavnih. Ker je celotni dokaz tega dejstva nekoliko predolg, bomo nekatere bolj tehnične korake izpustili.
+ Začnimo z uporabo našega znanja o rešljivih grupah.
+
+\begin{definicija}
+\label{def_resljiv_radikal}
+Naj bo $G$ končna grupa. Največjo rešljivo edinko $G$ imenujemo \emph{rešljivi radikal grupe $G$} in ga označimo z $S(G)$. Če je $S(G)$ trivialna grupa, rečemo, da je $G$ \emph{polenostavna grupa}.
+\end{definicija}
+\begin{lema}
+\label{lem_dobra_definiranost_resljivega_radikala}
+Rešljivi radikal je dobro definiran v končnih grupah.
+\end{lema}
+\begin{dokaz}
+    Naj bosta $M$ in $N$ rešljivi edinki končne grupe $G$. Po četrti točke trditve \ref{trd_lastnosti_resljivih_grup} je tudi $MN$ rešljiva edinka (produkt edink je vedno edinka, manj očitna je rešljivost). Ker je grupa $G$ končna, ima kočno mnogo edink,
+    s primerjanjem vseh parov v končnem številu korakov najdemo največjo. 
+\end{dokaz}
+
+\begin{lema}
+\label{lem_kvoocient_resljivega_radikala_je_polenostaven}
+Naj bo $G$ končna grupa. Potem je kvocient $G / S(G)$ polenostavna grupa. 
+\end{lema}
+\begin{dokaz}
+    Dokaz poteka s protislovjem. Recimo, da $G / S(G)$ ni polenostavna grupa in ima netrivialno rešljivo edinko $N$. Po korespondenčnem izreku je $N = N' / S(G)$ za neko edinko $N' \triangleleft G$.
+    Ker sta tako $N' / S(G)$ kot $S(G)$ rešljivi grupi, po tretji točki trditve \ref{trd_lastnosti_resljivih_grup} sledi, da je $N'$ rešljiva in hkrati strogo večja od $S(G)$, kar je protislovno z definicijo rešljivega radikala.
+\end{dokaz}
+Naj bo $G$ poljubna končna grupa. S tvorjenjem kratkega eksaktnega zaporedja \begin{equation*}
+\mathbf{1} \to S(G) \to G \to  G / S(G) \to  \mathbf{1}
+\end{equation*}  
+in uporabo razširitvene leme \ref{lem_razsiritvena_lema} vidimo, da za netrivialna zakona $w_{S(G)}$ in $w_{G / S(G)}$ v grupah $S(G)$ oziroma $G / S(G)$ obstaja netrivialni zakon $w_G$ v grupi $G$, dolžine \begin{equation*}
+l(w_G) \le  l(w_{S(G)}) l (w_{G / S(G)}).
+\end{equation*}  
+V lemi \ref{lem_kvoocient_resljivega_radikala_je_polenostaven} smo dokazali, da je grupa $G / S(G)$ polenostavna. Bistvo polenostavnih objektov je, da jih lahko zapišemo kot produkte enostavnih.
+To dejstvo bi seveda morali natančno formulirati in dokazati, vendar bi korektna obravnava zavzela prevelik delež naloge, zato jo izpustimo.
+Če povzamemo bistvo, problem v polenostavnih grupah s pomočjo razširitvene leme \ref{lem_razsiritvena_lema} razčlenimo na problema v \begin{itemize}
+    \item simetričnih grupah,
+    \item grupah avtomorfizmov enostavnih nekomutativnih grup.
+\end{itemize}
+Prvim bomo namenili svoj razdelek, slednjih pa se lahko presenetljivo elegantno lotimo s pomočjo Schreierjeve domneve, ki jo bomo formulirali.
+
+% Podrobnešja razprava se nahaja v \cite[28--31]{Schneider_2016}.  
+\begin{definicija}
+\label{def_grupa_zunanjih_avtomorfizmov}
+Naj bo $G$ grupa in $\operatorname{Aut}(G)$ njena grupa avtomorfizmov. Ker je grupa notranjih avtomorfizmov $\operatorname{Inn}(G) = \left\{ x \mapsto g x g^{-1}  \middle|\,  g \in G  \right\}$ njena edinka,
+lahko definiramo kvocient $\operatorname{Out}(G) :=  \operatorname{Aut}(G)  /  \operatorname{Inn}(G)$, ki mu rečemo \emph{grupa zunanjih avtomorfizmov grupe $G$}. 
+\end{definicija}
+
+\begin{izrek}[Schreierjeva domneva]
+\label{izr_Schreierjeva_domneva}
+ Naj bo $G$ končna enostavna grupa, ki ni Abelova. Potem je grupa $\operatorname{Out}(G)$ rešljiva razreda največ $3$.
+\end{izrek}
+Schreierjevo domnevo so potrdili z uporabo klasifikacije končnih enostavnih grup. Vprašanje, ali obstaja bolj elementaren dokaz, ostaja odprto \cite[str.~133]{Dixon_Mortimer_1996}.  
+Glede na to, da se iskanje zakonov v enostavnih grupah močno naslanja na to klasifikacijo, bomo domnevo brez zadržkov uporabili. Naj bo $H$ poljubna nekomutativna enostavna grupa. 
+S tvorjenjem kratkega eksaktnega zaporedja \begin{equation*}
+    \mathbf{1} \to \operatorname{Inn}(H)  \to \operatorname{Aut}(H)  \to  \operatorname{Out}(H)  \to  \mathbf{1}
+\end{equation*}  
+in uporabo razširitvene leme \ref{lem_razsiritvena_lema} vidimo, da za netrivialna zakona $w_{\operatorname{Inn}(H) }$ in $w_{\operatorname{Out}(H) }$ v grupah $\operatorname{Inn}(H) $ oziroma $\operatorname{Out}(H) $ obstaja netrivialni zakon $w_{\operatorname{Aut}(H) }$ v grupi $\operatorname{Aut}(H) $, dolžine \begin{equation*}
+    l(w_{\operatorname{Aut}(H) }) \le  l(w_{\operatorname{Inn}(H) }) l (w_{ \operatorname{Out}(H) }).
+    \end{equation*}    
+Ker za splošno grupo $G$ velja $ G / Z(G) \cong \operatorname{Inn}(G)$, za enostavno nekomutativno grupo $H$ velja $H \cong \operatorname{Inn}(H)$. Dalje, po Schreierjevi domnevi \ref{izr_Schreierjeva_domneva} in lemi \ref{lem_vrednost_cn} obstaja zakon dolžine $c_3 = 50$, ki je zakon za vse rešljive grupe razreda $3$ ali manj.
+Tako zgornjo enačbo prevedemo na \begin{equation*}
+    l(w_{\operatorname{Aut}(H) }) \le  50 l(w_H).
+\end{equation*}
+Recimo, da nam uspe najti besedo $w(n) \in F_2$ dolžine $l(w(n)) \le h(n)$, ki je zakon v vseh enostavnih grupah moči $n$ ali manj.  
+Ker nam razširitvena lema \ref{lem_razsiritvena_lema} za vsako enostavno nekomutativno grupo $H$ vrne isto besedo, obstaja beseda $w_{\text{Aut}}(n) \in F_2$, ki je zakon v vseh grupah avtomorfizmov enostavnih nekomutativnih grup,
+katerega dolžina je največ \begin{equation*}
+    l(w_{\text{Aut}}(n)) \le 50 l(w(n)).
+\end{equation*}   
+S tem smo dokazali, da se problem v splošni grupi prevede na problema v enostavnih in simetričnih grupah.
+
 
 \subsection{Simetrične grupe}\label{sec_simetricne_grupe}
 
@@ -219,8 +286,8 @@ Tekom tega poglavja bo $p$ vedno označevalo praštevilo, $q$ pa praštevilsko p
 
     \begin{izrek}[Bradford--Thom]
     \label{izr_bradford_thom}
-    Za vsako naravno število $n \in \mathbb{N}$ obstaja beseda $w \in F_2$ dolžine \begin{equation*}
-        O( n^{2 / 3} {\log(n)}^3),
+    Za vsako naravno število $n \in \mathbb{N}$ obstaja konstanta $C > 0$ in beseda $w \in F_2$ dolžine \begin{equation*}
+        C n^{2 / 3} {\log(n)}^3,
         \end{equation*}  
         ki je zakon v vsaki grupi $\operatorname{PSL}_2(q)$, moči $n$ ali manj.
     \end{izrek}
@@ -239,68 +306,4 @@ Tekom tega poglavja bo $p$ vedno označevalo praštevilo, $q$ pa praštevilsko p
     %     \item ... 
     %     \end{enumerate}
 
-\subsection{Povezava s problemom v splošni grupi}
-
-Za reševanje problema kratkih zakonov v splošni grupi bomo uporabili naše znanje o rešljivih grupah z uvedbo rešljivega radikala.
-
-\begin{definicija}
-\label{def_resljiv_radikal}
-Naj bo $G$ končna grupa. Največjo rešljivo edinko $G$ imenujemo \emph{rešljivi radikal grupe $G$} in ga označimo z $S(G)$. Če je $S(G)$ trivialna grupa, rečemo, da je $G$ \emph{polenostavna grupa}.
-\end{definicija}
-\begin{lema}
-\label{lem_dobra_definiranost_resljivega_radikala}
-Rešljivi radikal je dobro definiran v končnih grupah.
-\end{lema}
-\begin{dokaz}
-    Naj bosta $M$ in $N$ rešljivi edinki končne grupe $G$. Po četrti točke trditve \ref{trd_lastnosti_resljivih_grup} je tudi $MN$ rešljiva edinka (produkt edink je vedno edinka, manj očitna je rešljivost). Ker je grupa $G$ končna, ima kočno mnogo edink,
-    s primerjanjem vseh parov v končnem številu korakov najdemo največjo. 
-\end{dokaz}
-
-\begin{lema}
-\label{lem_kvoocient_resljivega_radikala_je_polenostaven}
-Naj bo $G$ končna grupa. Potem je kvocient $G / S(G)$ polenostavna grupa. 
-\end{lema}
-\begin{dokaz}
-    Dokaz poteka s protislovjem. Recimo, da $G / S(G)$ ni polenostavna grupa in ima netrivialno rešljivo edinko $N$. Po korespondenčnem izreku je $N = N' / S(G)$ za neko edinko $N' \triangleleft G$.
-    Ker sta tako $N' / S(G)$ kot $S(G)$ rešljivi grupi, po tretji točki trditve \ref{trd_lastnosti_resljivih_grup} sledi, da je $N'$ rešljiva in hkrati strogo večja od $S(G)$, kar je protislovno z definicijo rešljivega radikala.
-\end{dokaz}
-
-Naj bo $G$ poljubna končna grupa. S tvorjenjem kratkega eksaktnega zaporedja \begin{equation*}
-\mathbf{1} \to S(G) \to G \to  G / S(G) \to  \mathbf{1}
-\end{equation*}  
-in uporabo razširitvene leme \ref{lem_razsiritvena_lema} vidimo, da za netrivialna zakona $w_{S(G)}$ in $w_{G / S(G)}$ v grupah $S(G)$ oziroma $G / S(G)$ obstaja netrivialni zakon $w_G$ v grupi $G$, dolžine \begin{equation*}
-l(w_G) \le  l(w_{S(G)}) l (w_{G / S(G)}).
-\end{equation*}  
-
-
-V lemi \ref{lem_kvoocient_resljivega_radikala_je_polenostaven} smo dokazali, da je grupa $G / S(G)$ polenostavna. Bistvo polenostavnih objektov je, da jih lahko zapišemo kot produkte enostavnih.
-To dejstvo bi seveda morali natančno formulirati in dokazati, vendar bi korektna obravnava zavzela prevelik delež naloge, zato jo izpustimo.
-Če povzamemo bistvo, problem o polenostavnih grupah s pomočjo razširitvene leme \ref{lem_razsiritvena_lema} razčlenimo na problem o simetričnih grupah in grupah avtomorfizmov enostavnih grup. Slednjih se lahko presenetljivo elegantno lotimo s pomočjo Schreierjeve domneve, ki jo bomo formulirali.
-Podrobnešja razprava se nahaja v \cite[28--31]{Schneider_2016}.  
-
-\begin{definicija}
-\label{def_grupa_zunanjih_avtomorfizmov}
-Naj bo $G$ grupa in $\operatorname{Aut}(G)$ njena grupa avtomorfizmov. Ker je grupa notranjih avtomorfizmov $\operatorname{Inn}(G) = \left\{ x \mapsto g x g^{-1}  \middle|\,  g \in G  \right\}$ njena edinka,
-lahko definiramo kvocient $\operatorname{Out}(G) :=  \operatorname{Aut}(G)  /  \operatorname{Inn}(G)$, ki mu rečemo \emph{grupa zunanjih avtomorfizmov grupe $G$}. 
-\end{definicija}
-
-\begin{izrek}[Schreierjeva domneva]
-\label{izr_Schreierjeva_domneva}
- Naj bo $G$ končna enostavna grupa, ki ni Abelova. Potem je grupa $\operatorname{Out}(G)$ rešljiva razreda največ $3$.
-\end{izrek}
-
-Schreierjevo domnevo so potrdili z uporabo klasifikacije končnih enostavnih grup. Vprašanje, ali obstaja bolj elementaren dokaz, ostaja odprto \cite[str.~133]{Dixon_Mortimer_1996}.  
-Glede na to, da se iskanje zakonov v enostavnih grupah močno naslanja na to klasifikacijo, bomo domnevo brez zadržkov uporabili. Naj bo $H$ poljubna nekomutativna enostavna grupa. 
-S tvorjenjem kratkega eksaktnega zaporedja \begin{equation*}
-    \mathbf{1} \to \operatorname{Inn}(H)  \to \operatorname{Aut}(H)  \to  \operatorname{Out}(H)  \to  \mathbf{1}
-\end{equation*}  
-in uporabo razširitvene leme \ref{lem_razsiritvena_lema} vidimo, da za netrivialna zakona $w_{\operatorname{Inn}(H) }$ in $w_{\operatorname{Out}(H) }$ v grupah $\operatorname{Inn}(H) $ oziroma $\operatorname{Out}(H) $ obstaja netrivialni zakon $w_{\operatorname{Aut}(H) }$ v grupi $\operatorname{Aut}(H) $, dolžine \begin{equation*}
-    l(w_{\operatorname{Aut}(H) }) \le  l(w_{\operatorname{Inn}(H) }) l (w_{ \operatorname{Out}(H) }).
-    \end{equation*}    
-Ker je $H$ enostavna, velja $H \cong \operatorname{Inn}(H)$. Za splošno grupo $G$ namreč velja $ G / Z(G) \cong \operatorname{Inn}(G)$, v primeru enostavnosti (nekomutativne) grupe pa je center seveda trivialen. Dalje, po Schreierjevi domnevi \ref{izr_Schreierjeva_domneva} in lemi \ref{lem_vrednost_cn} obstaja zakon dolžine $c_3 = 50$, ki je zakon za vse rešljive grupe razreda $3$ ali manj.
-Tako zgornjo enačbo prevedemo na \begin{equation*}
-    l(w_{\operatorname{Aut}(H) }) \le  50 l(w_H).
-\end{equation*}  
-
-
-Ko vse to združimo, dobimo (TODO napiši po komponentah kaj dobiš. V resnici čisto preoblikuj in ustrezno utemelji, zakaj ne moreš lepo povedati).
+\
