@@ -6,7 +6,7 @@ Zato je zelo naravno pomisliti na uporabo računalnika.
 V tem poglavju sta opisana dva različna pristopa za iskanje  oziroma razumevanje zakonov v končnih grupah. 
 Programa se nahajata v repozitoriju diplomske naloge \url{https://github.com/MightyOwler/Diplomska-naloga/} v mapi \texttt{Program\_za\_racunsko\_iskanje\_zakonov}.
 
-\subsection{Iskanje zakonov v grupah $\operatorname{PSL}_2(p)$} %
+\subsection{Iskanje zakonov v grupah $\operatorname{PSL}_2(p)$}\label{sec_iskanje_psl2p}
 
 Najprimitivnejši način iskanja zakonov v dani grupi $G$ je kar po definiciji: Poiščemo vse besede grupe $F_2 = \langle a,b \rangle$ določene dolžine, nato pa jih izvrednotimo na vseh možnih parih.
 Za začetek me je zanimalo, koliko zakonov dolžine 17 ali manj premorejo grupe $\operatorname{PSL}_2(p)$. Za višje dolžine je bilo potrebno generirati nepraktično veliko besed. Pri tem se zavedamo, da grupe $\operatorname{PSL}_2(p)$ ne morejo imeti zakonov krajših od $p$-črk po trditvi \ref{trd_dolzina_zakonov_za_psl2p}.
@@ -59,23 +59,25 @@ V splošnem ni veliko grup, za katere bi poznali točne vrednosti teh kvocientov
 Kot smo videli v prejšnjem poglavju, moramo do problema pristopiti bolj zvito. Delež zakonov med vsemi dvočrkovnimi besedami nam določa kvocient \begin{equation*}
 \bigslant{F_2}{\bigcap_{\varphi \in \operatorname{Hom}(F_2, G)}}.  
 \end{equation*}  
-Vemo že, da je grupa $F_2^{\exp(G)} = \left\{ w^{\exp(G)}  \middle|\, w \in F_2 \right\}$ edinka v $F_2$. (TODO tega v resnici nisem nikjer pokazal, je treba).
-Zato lahko po tretjem izreku o izomorfizmu zapišemo 
+Ni težko videti, da je grupa $F_2^{\exp(G)} = \left\{ w^{\exp(G)}  \middle|\, w \in F_2 \right\}$ edinka v $F_2$. Za poljubni besedi $w \in F_2, u \in  F_2$ in celo število $n$ namreč velja $(w^n)^u = (w^u)^n$.
+Po tretjem izreku o izomorfizmu bi bilo zelo mamljivo zapisati 
 \begin{equation*}
     \bigslant{F_2}{\bigcap_{\varphi \in \operatorname{Hom}(F_2, G)}} \cong \dfrac{\bigslant{F_2}{F_2^{\exp(G)}}}{\bigslant{ \left( \bigcap\limits_{\varphi \in \operatorname{Hom}({F_2} / {F_2^{\exp(G)}}, G)} \ker \varphi \right) }{F_2^{\exp(G)}}}.
 \end{equation*}  
-  
-S tem smo problem poenostavili, saj nam za izračun zakonov ni več treba računati jeder vseh homomorfizmov $F_2 \to G$, temveč le še $F_2 / F_2^{\exp(G)} \to G$.
-Če je grupa $G$ nilpotentna razreda $d$, uporabimo podoben razmislek. 
- (TODO to bo treba dokazati pri nilpotentnih grupah) 
+Tu se pojavi nezanemarljiv problem: V splošnem nam nič ne zagotavlja končnosti kvocienta $B(2, \exp(G)) := F_2 / {F_2}^{\exp(G)}$. 
+Pravzaprav smo prišli do klasičnega Burnsidovega problema, ki sprašuje po končnosti kvocientov oblike $B(m, n) := F_m / F_m^n$.
+Po rezultatu Lysenoka leta 1996 recimo velja, da je grupa $B(2, n)$ neskončna za $n \ge 8000$ (\cite[str.~2]{Vaughan-Lee_1999}). 
+Da lahko vseeno nadaljujemo s podobnim razmislekom, predpostavimo, da je grupa $G$ nilpotentna razreda $d$. 
+
 Ker je poljubni člen spodnje centralne vrste edinka v $F_2$, je tudi grupa $\gamma_{d+ 1}(F_2)$.
 Produkt edink je edinka, zato je tudi $F_2^{\exp(G)} \gamma_{d+ 1}(F_2)$ edinka v $F_2$, in lahko tvorimo kvocient 
 \begin{equation*}
     \bigslant{F_2}{\bigcap_{\varphi \in \operatorname{Hom}(F_2, G)}} \cong \dfrac{\bigslant{F_2}{F_2^{\exp(G)}\gamma_{d+1}(F_2)}}{ \bigslant{ \left( \bigcap\limits_{\varphi \in \operatorname{Hom}({F_2} / {F_2^{\exp(G)}\gamma_{d+1}(F_2)}, G)} \ker \varphi \right) }{F_2^{\exp(G)}\gamma_{d+1}(F_2)}}.
 \end{equation*}
 
-S tem pa smo problem (za nilpotentne grupe) že močno poenostavili, saj vsebuje GAP paket za delo z nilpotentnimi grupami \texttt{nq}, s pomočjo katerega lahko zgornji kvocient izračunamo in obravnavamo kot grupo.
-Na tak način sem izračunal indekse za vse nilpotentne grupe do vključno moči 64. Program je dostopen na repozitoriju (TODO tukaj prilepi ), opisuje ga naslednja psevdokoda. 
+S tem smo problem v primeru nilpotentnih grup poenostavili, saj nam za izračun zakonov ni več treba računati jeder vseh homomorfizmov $F_2 \to G$, temveč le še $F_2 / F_2^{\exp(G)} \to G$.
+Hkrati pa računalniška konstrukcija tega kvocienta ni zahtevna, saj vsebuje GAP paket za delo z nilpotentnimi grupami \texttt{nq} (\cite{nq2.5.11}), s pomočjo katerega lahko zgornji kvocient izračunamo in obravnavamo kot grupo.
+Tako sem izračunal indekse za vse nilpotentne grupe do vključno moči 64, za višje vrednosti je bila časovna zahtevnost prevelika. Program je dostopen na repozitoriju \url{https://github.com/MightyOwler/Diplomska-naloga}, opisuje ga naslednja psevdokoda. 
 
 \begin{verbatim}
     vse nilpotentne grupe želenih moči shranimo v seznam 
@@ -87,7 +89,7 @@ Na tak način sem izračunal indekse za vse nilpotentne grupe do vključno moči
     izračunane rezultate shranimo v datoteko
 \end{verbatim}
 
-Ta pristop do problema je mnogo boljši, saj je ne le bolj povezan s strukturo grup, temveč tudi omogoča boljši vpogled v razumevanje zakonov.
+Ta pristop do problema je mnogo boljši od pristopa v razdelku \ref{sec_grupe_psl2q}, saj je ne le bolj povezan s strukturo grup, temveč tudi omogoča boljši vpogled v splošno razumevanje zakonov.
 Z njegovo pomočjo je namreč lažje opaziti in posledično dokazati naslednje lastnosti zakonov. Začnimo s preprostimi.
 
 \begin{trditev}
@@ -128,12 +130,16 @@ saj za vsak $i = 1 , \ldots , n$ velja $C_{p^{k_{i}}} \le C_{p^{k}}$, zakoni pa 
 
 \begin{posledica}
 \label{psl_lastnosti_zakonov_splosni_produkti_ciklicnih}
-Naj bo grupa $G$ poljubni končni produkt cikličnih grup. Natančneje, naj bo $G = \prod_{i = 1}^{n} \prod_{j = 1}^{n_i} C_{p_{i}^{k_{i,j}}}^{m_j}$, kjer so za vsak $i = 1, \ldots, n$ $p_i$ paroma različna praštevila, števila $n_i, m_{i} \ge 1$, in vsak $j = 1, \ldots , n_i$ števila $k_{i, j} \ge 1$ paroma različna. % TODO to se ne sliši prav
-Naj bodo $k_i = \max_{j = 1, \ldots, n_i}$. Potem velja $F_2 / K(G, 2) \cong C_{l} \times C_{l}$, kjer je $l = p_1^{k_1} \cdots  p_n^{k_n}$.
+Naj bo končna grupa $G$ Abelova. Natančneje, naj bo v skladu s klasifikacijo končnih Abelovih grup oblike $G = \prod_{i = 1}^{n} \prod_{j = 1}^{n_i} C_{p_{i}^{k_{i,j}}}^{m_j}$, kjer so za vsak $i = 1, \ldots, n$ $p_i$ paroma različna praštevila, števila $n_i, m_{i} \ge 1$, in vsak $j = 1, \ldots , n_i$ števila $k_{i, j} \ge 1$ paroma različna. % TODO to se ne sliši prav
+Naj bodo $k_i = \max_{j = 1, \ldots, n_i}$. Potem velja $F_2 / K(G, 2) \cong C_{e} \times C_{e}$, kjer je $e = p_1^{k_1} \cdots  p_n^{k_n}  = \exp(G)$.
 \end{posledica}
 \begin{dokaz}
-V luči prejšnje posledice je beseda $w \in F_2$ zakon v grupi $C_l$ natanko tedaj, ko je zakon v grupi $\prod_{i = 1}^{n} C_{p^{k_i}}$, ki je po klasifikaciji končnih Abelovih grup izomorfna $C_l$.
+V luči prejšnje posledice je beseda $w \in F_2$ zakon v grupi $C_e$ natanko tedaj, ko je zakon v grupi $\prod_{i = 1}^{n} C_{p^{k_i}}$, ki je po klasifikaciji končnih Abelovih grup izomorfna $C_e$.
 \end{dokaz}
+Od tod sledi, da delež zakonov v Abelovih grupah znaša natanko $1 / \exp(G)^2$. Intuitivno je to še lažje videti z naslednjim neformalnim razmislekom.
+Naj bo podana beseda $w \in F_2 = \langle a, b \rangle$. Če hočemo preveriti, ali je zakon v Abelovi grupi $G$, se lahko pretvarjamo, da črke med seboj komutirajo. Tako $w$ prevedemo na besedo oblike $w' = a^r b^s$,
+kjer $r$ in $s$ predstavljata vsoto eksponentov črk $a$ oziroma $b$ v besedi $w$. Beseda $a^r$ je zakon v grupi $G$ natanko tedaj, ko je $\exp(G)$ delitelj števila $r$. Torej je verjetnost, da bo $w$ zakon po črki $a$ enaka $1 / \exp(G)$. %(projekcija $Z(G, w')$ na prvo komponento mora biti enaka $G$)
+Ker enako velja za $b$ in sta evalvaciji $a$ in $b$ medsebojno neodvisni, je skupna verjetnost enaka $1 / \exp(G)^2$.
 
 % TODO skušaj sklepati še kaj več
 
