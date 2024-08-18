@@ -46,13 +46,38 @@ Celo družino primerov nilpotentnih grup nam podaja naslednja ugotovitev.
 Trditev \ref{trd_p_grupe_so_nilpotentne} nam sporoča, da so vse diedrske grupe oblike $D_{2 \cdot 2^{k}}$ nilpotentne. Izkaže se, da so to tudi vse. % (TODO tukaj moraš končati razmislek z dokazom https://math.stackexchange.com/questions/834966/is-the-dihedral-group-d-n-nilpotent-solvable). 
 \end{primer}
 
-V resnici lahko o strukturi končnih nilpotentnih grup povemo nekoliko več. Brez dokaza privzemimo naslednjo trditev. % TODO tole seveda izbriši 
+V resnici lahko o strukturi končnih nilpotentnih grup povemo nekoliko več, so namreč direktni produkti svojih $p$-podgrup Sylowa. Pred dokazom trditve \ref{trd_nilpotentne_so_produkti_sylowih} navedimo naslednjo definicijo.
+
+\begin{definicija}\label{def_normalizator}
+    Naj bo $G$ grupa in $H$ njena podgrupa. Potem podgrupi \begin{equation*}
+        N_G(H) := \{ g h g^{-1}  \vert  g \in G, h \in H \}
+    \end{equation*}
+    rečemo \emph{normalizator} podgrupe $H$ v grupi $G$. % V primeru, da je $N_G(H) = H$, je $H$ edinka v $G$ in pravimo, da $G$ \emph{normalizira} podgrupo $H$.
+\end{definicija}
+
 \begin{trditev}\label{trd_nilpotentne_so_produkti_sylowih}
     Končne nilpotentne grupe so direktni produkt svojih $p$-podgrup Sylowa.
 \end{trditev}
-% \begin{dokaz}
-%     TODO, treba je dokazati, da je vsaka $p$-podgrupa Sylowa edinka, dokaz iz wikipedije: % https://en.wikipedia.org/wiki/Nilpotent_group#Properties
-% \end{dokaz}
+\begin{dokaz}
+    Dokaz je povzet po \cite{wikipedia2024nilpotent}.
+    Naj bo $G$ nilpotentna grupa. Najprej pokažimo, da iz $H \lneq G$ sledi $H \propernormalsubgroup N_G(H)$. To storimo z indukcijo po moči grupe $G$.
+    Če je $G$ Abelova, izjava očitno drži. Sicer je grupa $G$ nilpotentna razreda $1$ ali več, kar pomeni, da njen center ni trivialen; če je razred nilpotentnosti grupe $G$ na primer $d \ge 0$, velja \begin{equation*}
+        \gamma_{d + 1} = [\gamma_d, G]  = 1 \Longrightarrow  \{ 1_G \} \neq \gamma_d \le Z(G) \Longrightarrow Z(G) \neq \{ 1_G \}.
+    \end{equation*} 
+     Zato obravnavamo dva primera. Če center $Z(G)$ ni vsebovan $H$, velja $H \propernormalsubgroup N_G(H) Z(G)$ zaradi računa \begin{equation*}
+        h^{h_Z g_Z} = h_Z g_Z h g_Z^{-1} h_Z^{-1} = h_Z h h_Z^{-1} \in H \, \, \, \text{ za vse } h, h_Z \in H, g_Z \in G.
+    \end{equation*}
+    Predpostavimo torej, da je $Z(G) \le H$. Potem po korespondenčnem izreku sledi, da je $H / Z(G)$ podgrupa nilpotentne grupe $G / Z(G)$.
+    Ker center $Z(G)$ ni trivialen, uporabimo indukcijsko predpostavko na kvocientu $G / Z(G)$ in dobimo njeno podgrupo $K / Z(G)$, v kateri je $H/ Z(G)$ prava edinka.
+    Ustrezno grupo za $H$ dobimo kot prasliko kanonične projekcije $\pi : G \to G / Z(G)$, uporabljeno na grupi $ K / Z(G)$.
+    
+    S pomočjo tega sklepa dokažimo, so $p$-podgrupe Sylowa v nilpotentni grupi $G$ ednike. Naj bodo $p_1, \ldots , p_s$ različna praštevila, ki delijo $\lvert G \rvert$ in naj bo $P_i$ poljubna $p_i$-podgrupa Sylowa grupe $G$ za vsak $1 \le i \le s$.
+    Naj bo brez škode za splošnost $P := P_1$ in naj bo $N := N_G(P)$. Ker je $P$ edinka Sylowa v $N$, je v njej karakteristična. Od tod sledi, da je $P$ edinka tudi v $N_G(N)$, saj je zaradi $N \triangleleft N_G(N)$ konjugiranje z elementom iz $N_G(N)$
+    avtomorfizem grupe $N$. Od tod sledi $N_G(N) \le N$ oziroma $N = N_G(N)$. Po ugotovitvi iz prejšnjega odstavka dobimo $N = G$, kar pomeni, da so $p$-podgrupe Sylowa nilpotentnih grup edinke.
+    
+    Od tod z indukcijo po moči grupe pokažemo, da lahko $G$ zapišemo kot direktni produkt svojih $p$-podgrup Sylowa. Pri tem se moramo zgolj
+    sklicati na dejstvo, da za različni praštevili $p$ in $q$ velja $P_p \cap P_q = \{ 1_G \}$.
+\end{dokaz}
 
 \begin{posledica}\label{psl_ocena_razreda_nilpotentnosti}
     Nilpotentna grupa $G$ moči $n$ ali manj je razreda nilpotentnosti največ $\lfloor \log_2(n) \rfloor - 1$.

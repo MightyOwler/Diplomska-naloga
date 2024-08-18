@@ -85,7 +85,9 @@
 
 \usepackage{tikz-cd}
 \usepackage{cancel}
-\usepackage{listings}
+
+% \usepackage{quiver}
+% \usepackage{listings}
 
 % deklarirajte vse matematične operatorje, da jih bo LaTeX pravilno stavil
 % \DeclareMathOperator{\...}{...}
@@ -95,6 +97,8 @@
 \numberwithin{equation}{section}  % števec za enačbe zgleda kot (2.7) in se resetira v vsakem razdelku
 \newenvironment{skica}[1][Skica dokaza]{\begin{proof}[#1]}{\end{proof}}
 
+\newcommand{\propernormalsubgroup}{%
+  \mathrel{\ooalign{$\lneq$\cr\raise.22ex\hbox{$\lhd$}\cr}}}
 % vstavite svoje definicije ...
 % \newcommand{\...}{...}
 
