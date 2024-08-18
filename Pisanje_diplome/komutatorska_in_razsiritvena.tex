@@ -47,7 +47,10 @@ Naj bosta $w_1, w_2 \in F_2 = \langle a, b \rangle$ besedi. Potem velja natanko 
 \end{enumerate}
 \end{lema}
 \begin{dokaz}
-    Dokaz opustimo.  % TODO
+    Po Nielsen--Schreierjevem izreku \ref{izr_nielsen_schreier} vemo, da je $F:= \langle w_1 , w_2 \rangle \le F_2$ prosta grupa. Preslikava $\varphi : F_2 = \langle a, b \rangle \to F$,
+    inducirana s preslikavama $a \mapsto w_1$, $b \mapsto w_2$, je očitno epimorfizem. Od tod po trditvi \ref{trd_enolicnost_prostih_grup} sledi, da je $F$ generirana z enim ali dvema elementoma.
+    V prvem primeru je $F = \langle c \rangle$ za neko besedo $c \in F_2$, od koder sledi $w_1= c^{k_1}$ in $w_2 = c^{k_2}$ za neki celi števili $k_1$ in $k_2$. V tem primeru besedi $w_1$ in $w_2$ očitno komutirata.
+    V drugem primeru je $F$ po trditvi \ref{trd_enolicnost_prostih_grup} izomorfna prosti grupi $F_2$.
 \end{dokaz}
 
 Osnovna ideja komutatorske leme je pravzaprav preprosta. Recimo, da imamo besedi $w_1, w_2 \in F_2 \setminus \left\{ 1_{F_2}\right\}  = \langle a,b \rangle$, ki jima pripadata izginjajoči množici $Z(G, w_1)$ ter $Z(G, w_2)$.

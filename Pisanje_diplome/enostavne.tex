@@ -11,7 +11,7 @@ lahko problem iskanja kratkih zakonov v neki konkretni grupi prevedemo na proble
 
 Ker je klasifikacija končnih enostavnih grup zaključena, lahko marsikaj povemo o njihovi strukturi. Po tej klasifikaciji denimo obstaja 18 družin enostavnih grup ter 26 sporadičnih grup, ki ne spadajo v nobeno izmed prej omenjenih družin.
 Za asimptotsko analizo dolžin zakonov nas sporadične grupe prav nič ne motijo. Ker so končne vse od njih premorejo netrivialne zakone, ki jih povežemo s komutatorsko lemo \ref{lem_komutatorska_lema_splosna} v besedo $w_{\text{spor}}$,
-ki je zakon v vseh sporadičnih grupah. Recimo, da nam s funkcijo $f(n)$ uspe omejiti dolžino besede $w_{\text{druž}}(n)$, ki je zakon v vseh grupah moči $n$ ali manj, ki pripadajo eni izmed 18-ih družin končnih enostavih grup.
+ki je zakon v vseh sporadičnih grupah. Recimo, da nam s funkcijo $f(n)$ uspe omejiti dolžino besede $w_{\text{druž}}(n)$, ki je zakon v vseh grupah moči $n$ ali manj, ki pripadajo eni izmed 18-ih družin končnih enostavih nekomutativnih grup.
 Potem s pomočjo komutatorske leme \ref{lem_komutatorska_lema} dobimo besedo $w$, ki je zakon v vseh enostavnih grupah velikosti $n$ ali manj, katere dolžina je 
 \begin{equation*}
     l(w) \le 2 \cdot 2 (2 + l(w_{\text{spor}}) + l(w_{\text{druž}}) )  \le 4f(n) + o(1).
@@ -204,7 +204,7 @@ Tekom tega poglavja bo $p$ vedno označevalo praštevilo, $q$ pa praštevilsko p
     \subsubsection{Konstrukcija zakonov v grupah $PSL_2(q)$}
 
     Osnovna konstrukcija zakonov v grupah $\operatorname{PSL}_2(q)$ poteka prek obravnave redov elementov in uporabe komutatorske leme v slogu primera \ref{prm_komutatorska_redi_elementov}.
-    Dokaz je prirejen po \cite[str.~36--37]{Schneider_2016} in % TODO dodaj https://urbanjezernik.github.io/teorija-upodobitev/
+    Dokaz je prirejen po \cite[str.~36--37]{Schneider_2016} in \cite{Jezernik_2023}.
     \begin{lema}
     \label{lem_redi_elementov_v_psl2q}
     Red poljubnega element $A \in  \operatorname{PSL}_2(q)$ deli vsaj eno izmed števil $p$, $q-1$ ali $q + 1$. 

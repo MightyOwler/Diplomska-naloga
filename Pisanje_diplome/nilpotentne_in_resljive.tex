@@ -43,10 +43,17 @@ Celo družino primerov nilpotentnih grup nam podaja naslednja ugotovitev.
 \end{dokaz}
 
 \begin{primer}
-Trditev \ref{trd_p_grupe_so_nilpotentne} nam sporoča, da so vse diedrske grupe oblike $D_{2 \cdot 2^{k}}$ nilpotentne. Izkaže se, da so to tudi vse. % (TODO tukaj moraš končati razmislek z dokazom https://math.stackexchange.com/questions/834966/is-the-dihedral-group-d-n-nilpotent-solvable). 
-\end{primer}
+    Trditev \ref{trd_p_grupe_so_nilpotentne} nam sporoča, da so vse diedrske grupe oblike $D_{2 \cdot 2^{k}}$ nilpotentne. Izkaže se, da so to tudi edine. V nadaljevanju bomo namreč dokazali trditev \ref{trd_nilpotentne_so_produkti_sylowih}, ki pravi, da so nilpotentne grupe
+    produkti svojih $p$-grup Sylowa. Ni težko premisliti, da je \begin{equation*}
+        Z(D_{2m}) = \begin{cases}
+            \{ 1_{D_{2m}} \}  ; \text{ če je $m$ liho}, \\
+            \{ 1_{D_{2m}}, r^{m / 2} \} ;  \text{ če je $m$ sodo}.
+        \end{cases}
+    \end{equation*}
+    Od tod sledi, da morajo biti nilpotentne diedrske grupe nujno oblike $D_{2 \cdot 2^{k}}$, saj bi jih sicer lahko razpisali kot produkt $p$-podgrup Sylowa, ki ima več elementov v jedru.
+    \end{primer}
 
-V resnici lahko o strukturi končnih nilpotentnih grup povemo nekoliko več, so namreč direktni produkti svojih $p$-podgrup Sylowa. Pred dokazom trditve \ref{trd_nilpotentne_so_produkti_sylowih} navedimo naslednjo definicijo.
+Pred dokazom napovedane trditve \ref{trd_nilpotentne_so_produkti_sylowih} navedimo naslednjo definicijo.
 
 \begin{definicija}\label{def_normalizator}
     Naj bo $G$ grupa in $H$ njena podgrupa. Potem podgrupi \begin{equation*}
