@@ -23,7 +23,7 @@ Grupa $G$ je \emph{nilpotentna}, če se \emph{spodnja centralna vrsta} $(\gamma_
 izteče s trivialno grupo. Najmanjšemu številu $d$, za katero je $\gamma_{d + 1} = \{ 1_G \}$, rečemo \emph{razred nilpotentnosti grupe $G$}.    
 \end{definicija}
 
-Na kratko razmislimo, da je vsak člen spodnje centralne vrste $\gamma_k(G)$ edinka v grupi $G$. Osnovna ideja je, da lahko konjugiranje prenesemo v notranjost komutatorja: Za poljubne elemente $g, h, k \in G$ velja zveza \begin{equation*}
+Na kratko razmislimo, da je vsak člen spodnje centralne vrste $\gamma_k(G)$ edinka v grupi $G$. Osnovna ideja premisleka je dejstvo, da lahko konjugiranje prenesemo v notranjost komutatorja: Za poljubne elemente $g, h, k \in G$ velja zveza \begin{equation*}
     [g, h]^k = kghg^{-1}h^{-1}k^{-1} = kgk^{-1}khk^{-1}kg^{-1}k^{-1}kh^{-1}k^{-1} = [kgk^{-1}, khk^{-1}] = [g^k , h^k].
 \end{equation*}
 Elementi grupe $\gamma_1(G)  = [G , G]$ so po definiciji oblike $\prod_{i = 1}^n [g_i, h_i]$ za neke elemente $g_i, h_i \in G$, zato za vsak element $k \in G$ velja \begin{equation*}
@@ -71,7 +71,7 @@ Pred dokazom napovedane trditve \ref{trd_nilpotentne_so_produkti_sylowih} navedi
     Če je $G$ Abelova, izjava očitno drži. Sicer je grupa $G$ nilpotentna razreda $1$ ali več, kar pomeni, da njen center ni trivialen; če je razred nilpotentnosti grupe $G$ na primer $d \ge 0$, velja \begin{equation*}
         \gamma_{d + 1} = [\gamma_d, G]  = 1 \Longrightarrow  \{ 1_G \} \neq \gamma_d \le Z(G) \Longrightarrow Z(G) \neq \{ 1_G \}.
     \end{equation*} 
-     Zato obravnavamo dva primera. Če center $Z(G)$ ni vsebovan $H$, velja $H \propernormalsubgroup N_G(H) Z(G)$ zaradi računa \begin{equation*}
+     Zato obravnavamo dva primera. Če center $Z(G)$ ni vsebovan $H$, velja \\ $H \propernormalsubgroup N_G(H) Z(G)$ zaradi računa \begin{equation*}
         h^{h_Z g_Z} = h_Z g_Z h g_Z^{-1} h_Z^{-1} = h_Z h h_Z^{-1} \in H \, \, \, \text{ za vse } h, h_Z \in H, g_Z \in G.
     \end{equation*}
     Predpostavimo torej, da je $Z(G) \le H$. Potem po korespondenčnem izreku sledi, da je $H / Z(G)$ podgrupa nilpotentne grupe $G / Z(G)$.
@@ -159,11 +159,11 @@ Pred dokazom napovedane trditve \ref{trd_nilpotentne_so_produkti_sylowih} navedi
 \subsection{Konstrukcija kratkih zakonov v nilpotentnih in rešljivih grupah}
 
 Konstrukcija kratkih zakonov v nilpotentnih grupah je opisana v članku \cite{Elkasapy_Thom_2013} in z razlagami dopolnjena v magistrskem delu \cite{Schneider_2016}.
-Glavna ideja je poiskati kratke netrivialne predstavnike izpeljane vrste proste grupe $F_2 = \langle a, b \rangle $. Najprej definiramo zaporedji $(a_n)_n$ in $(b_n)_n$ v $F_2$ s predpisoma
+Glavna ideja je poiskati kratke netrivialne predstavnike izpeljane vrste proste grupe $F_2 = \langle a, b \rangle $. Najprej definirajmo zaporedji $(a_n)_n$ in $(b_n)_n$ v $F_2$ s predpisoma
 \begin{equation*}
 a_0 := a, \, a_{n + 1} := [b_n^{-1}, a_{n}] \text{ in } b_0 := b, \, b_{n + 1} := [a_{n}, b_{n}]. 
 \end{equation*}  
-Besede, ki jih bomo konstruirali s tema zaporedjema, morajo biti netrivialne, zato potrebujemo naslednjo lemo (lema 3.1 v viru \cite{Kozma_Thom_2016} oziroma lema 8 v \cite{Schneider_2016}).
+Besede, ki jih bomo konstruirali s tema zaporedjema, morajo biti netrivialne. Zato potrebujemo naslednjo lemo (lema 3.1 v viru \cite{Kozma_Thom_2016} oziroma lema 8 v \cite{Schneider_2016}).
 \begin{lema}
 \label{lem_ni_krajsanj_produkti_ab}
 Za vsako nenegativno celo število $n$ so besede $a_{n} a_{n}$, $a_{n}^{-1} a_{n}^{-1}$, $b_{n} b_{n}$, $b_{n}^{-1} b_{n}^{-1}$, $a_{n}^{-1} b_{n}$, $b_{n}^{-1} a_{n}$, $a_{n} b_{n}^{-1}$, $b_{n} a_{n}^{-1}$, $a_{n}^{-1} b_{n}^{-1}$ in $b_{n} a_{n}$ okrajšane.   
@@ -220,7 +220,7 @@ od koder z indukcijo dobimo $l(b_n) \le 4^{n}$. Mimogrede -- s tem razmislekom s
 \end{dokaz}
 
 Zaradi leme \ref{lem_ocena_dolzine_clenov_zaporedij_ab} lahko dobro definiramo zaporedje naravnih števil $c_n := l(a_n) = l(b_n)$, ki nam podaja dolžine netrivialnih besed v grupi $F_2^{(n)}$.
- Pred izračunom splošnega člena uvedimo naslednjo notacijo. Funkcija $f : \mathbb{N} \cup \{ 0 \} \to \mathbb{R}$ je \emph{razreda $o(1)$}, če je $\lim_{n \to \infty} f / n  = 0$. To so torej funkcije, ki asimptotsko gledano
+ Pred izračunom splošnega člena uvedimo naslednjo notacijo. Funkcija $f : \mathbb{N} \cup \{ 0 \} \to \mathbb{R}$ pripada \emph{razredu $o(1)$}, če je $\lim_{n \to \infty} f(n) / n  = 0$. To so torej funkcije, ki asimptotsko gledano
  zelo malo vplivajo na oceno. 
 \begin{lema}
 \label{lem_vrednost_cn}
@@ -329,7 +329,7 @@ V nadaljevanju članka \cite[str.~5--9]{Elkasapy_Thom_2013} avtorja eksponent $\
 Avtorja razmislek zaključita z ugotovitvijo, da je namesto eksponenta $\kappa = \log_2( \iota)$ ustrezen $\lambda := \log_{1 + \sqrt{2}}(\iota)$.
 
 Da dobimo primerljiv rezultat za rešljive grupe, se moramo precej bolj potruditi. Postopek je opisan v \cite[str.~3--4]{Thom_2015} oziroma podrobneje v \cite[str.~19--25]{Schneider_2016}. Sklicuje se na lastnosti grup avtomorfizmov nilpotentnih grup, ki jih vložimo
-v primerne splošne linearne grupe. Slednjim znamo natančno omejiti razrede rešljivosti, saj so predmet klasične obravnave v teoriji grup. Ker je jedro te vložitve nilpotentno, se lahko zaradi razširitvene leme \ref{lem_razsiritvena_lema} skličemo na rezultat o dolžinah zakonov v nilpotentnih grupah \cite{trd_koncna_ugotovitev_nilpotentne_v_nalogi}, kar nam zagotovi naslednji izrek (formulacija iz \cite[str.~25]{Schneider_2016}).  
+v primerne splošne linearne grupe. Slednjim znamo natančno omejiti razrede rešljivosti, saj so predmet klasične obravnave v teoriji grup. Ker je jedro te vložitve nilpotentno, se lahko zaradi razširitvene leme \ref{lem_razsiritvena_lema} skličemo na rezultat o dolžinah zakonov v nilpotentnih grupah \ref{trd_koncna_ugotovitev_nilpotentne_v_nalogi}, kar nam zagotovi naslednji izrek, ki ga najdemo v obliki trditve 4 v \cite[str.~25]{Schneider_2016}.  
 
 \begin{izrek}
 \label{izr_glavni_izrek_resljive}

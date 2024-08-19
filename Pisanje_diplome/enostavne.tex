@@ -6,8 +6,8 @@
 
 % TODO razmisli, kako je z Abelovimi enostavnimi grupami
 
-Začnimo z razmislekom o pomembnosti enostavnih grup pri iskanju kratkih zakonov v splošnih grupah. Glavno idejo smo pravzaprav že videli v opombi pod razširitveno lemo \ref{lem_razsiritvena_lema}, kjer smo ugotovili, da
-lahko problem iskanja kratkih zakonov v neki konkretni grupi prevedemo na problem o njeni edinki in kvocientu po tej edinki. Ta razčlenjevanje se ustavi pri enostavnih grupah, ki nimajo pravih, netrivialnih edink.
+Začnimo z razmislekom o pomembnosti enostavnih grup pri iskanju kratkih zakonov v splošnih grupah. Glavno idejo smo pravzaprav že videli pod primerom \ref{prm_razsiritvena}, kjer smo ugotovili, da
+lahko problem iskanja kratkih zakonov v neki konkretni grupi prevedemo na problem o njeni edinki in kvocientu po tej edinki. Ta razčlenjevanje se ustavi pri enostavnih grupah, ki po definicji nimajo pravih, netrivialnih edink.
 
 Ker je klasifikacija končnih enostavnih grup zaključena, lahko marsikaj povemo o njihovi strukturi. Po tej klasifikaciji denimo obstaja 18 družin enostavnih grup ter 26 sporadičnih grup, ki ne spadajo v nobeno izmed prej omenjenih družin.
 Za asimptotsko analizo dolžin zakonov nas sporadične grupe prav nič ne motijo. Ker so končne vse od njih premorejo netrivialne zakone, ki jih povežemo s komutatorsko lemo \ref{lem_komutatorska_lema_splosna} v besedo $w_{\text{spor}}$,
@@ -260,7 +260,7 @@ Tekom tega poglavja bo $p$ vedno označevalo praštevilo, $q$ pa praštevilsko p
         H_m := \left\{ A \in \operatorname{PSL}_2(q)  \middle|\,  A^{m} = I \right\}
     \end{equation*}  
        za števila $m \in \left\{ p, q-1 , q+1\right\}$.
-    Po razmisleku iz prejšnje leme te podmnožice tvorijo pokritje $G$. Z uporabo komutatorske leme \ref{lem_komutaroska_lema_nova}, je zakon v grupi $G$ beseda oblike \begin{align*}
+    Po razmisleku iz prejšnje leme te podmnožice tvorijo pokritje $G$. V luči primera \ref{prm_komutatorska_redi_elementov} je zakon v grupi $G$ beseda oblike \begin{align*}
         w &= [[b a^{p} b^{-1}, a^{q-1}], a^{q + 1}]  \\
          &= b a^{p} b^{-1} a^{q-1} b a^{-p} b^{-1} \cancel{ a^{1 - q}} a^{q + 1} \cancel{a^{q -1}} b a^{p} b^{-1} a^{1 - q} b a^{-p} b^{-1} a^{- q - 1} \\ 
          &= b a^{p} b^{-1} a^{q-1} b a^{-p} b^{-1}  a^{q + 1}  b a^{p} b^{-1} a^{1 - q} b a^{-p} b^{-1} a^{- q - 1} 
@@ -280,7 +280,7 @@ Tekom tega poglavja bo $p$ vedno označevalo praštevilo, $q$ pa praštevilsko p
     \end{lema}
     \begin{dokaz}
     Grupa $\operatorname{GL}_2(q)$ ima $(q^2  -1)(q^2 - q)$ elementov. Če hočemo, da je matrika $A \in M_2(\mathbb{F}_q)$ obrnljiva, imamo namreč za prvi stolpec $q^2 -1$ izbir, za drugega pa $q^2 - q$.
-    Od tod sledi, da ima $\operatorname{SL}_2(q)$ $(q^2  -1)q$ elementov, saj je $\lvert \mathbb{F}_q^{*} \rvert = q-1$. V primeru $p \neq 2$, nam kvocient po centru odbije še polovico elementov.   
+    Od tod sledi, da ima $\operatorname{SL}_2(q)$ natanko $(q^2  -1)q$ elementov, saj je $\lvert \mathbb{F}_q^{*} \rvert = q-1$. V primeru $p \neq 2$, nam kvocient po centru odbije še polovico elementov.   
     \end{dokaz}
     
     \begin{lema}
@@ -294,7 +294,7 @@ Tekom tega poglavja bo $p$ vedno označevalo praštevilo, $q$ pa praštevilsko p
     Ker je dokaz netrivialen, ga bomo opustili, Riemann ga je v prej omenjenem članku dokazal z uporabo kompleksne analize. 
     Nekoliko več o tej lemi piše v članku \cite{Kozma_Thom_2016}.            
    
-    Zdaj se lahko lotimo konstrukcije netrivialnega zakona za vse grupe oblike $\operatorname{PSL}_2(q)$, moči manjše ali enake številu $n \in \mathbb{N}$. Z uporabo lem \ref{lem_velikost_grupe_psl2q} in \ref{lem_gostota_prastevil}
+    Zdaj se lahko lotimo konstrukcije netrivialnega zakona za grupe oblike $\operatorname{PSL}_2(q)$, moči manjše ali enake naravnemu številu $n$. Z uporabo lem \ref{lem_velikost_grupe_psl2q} in \ref{lem_gostota_prastevil}
     vemo, da moramo moramo konstruirati zakone za vse grupe $\operatorname{PSL}_2(q)$, za katere je $q \le \sqrt[3]{(1 + o(1)) 2n}$. Od tod dobimo besedo $w \in F_2$ dolžine \begin{equation*}
     l(w) \le 8 \left( \frac{3 \sqrt[3]{(1 + o(1)) 2n}}{\log((1 + o(1)) 2n))}  \right)^2 \cdot 8 \sqrt[3]{(1 + o(1)) 2n} \le 1152 (1 + o(1)) \frac{n}{\log(n)^2},
     \end{equation*}  
