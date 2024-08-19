@@ -1,7 +1,7 @@
 \section{Uvod}
 
 Abstraktni produkt elementov $a_1, \ldots , a_k$ ter njihovih inverzov $a_1^{-1}, \ldots , a_k^{-1}$, je \emph{$k$-črkovni zakon v grupi $G$}, če ima lastnost, da za vsako zamenjavo $a_1, \ldots, a_k$ s konkretnimi
-elementi $g_1, \ldots, g_k \in G$ dobimo rezultat $1_G\in G$. Zakonu $1$ pravimo \emph{trivialni zakon}, ki v kontekstu raziskovanja zakonov ni posebej zanimiv.
+elementi $g_1, \ldots, g_k \in G$, dobimo rezultat $1_G\in G$. Zakonu $1$ pravimo \emph{trivialni zakon}, ki v kontekstu raziskovanja zakonov ni posebej zanimiv.
 
 Najosnovnejši primer netrivialnega dvočrkovnega zakona se pojavi pri Abelovih grupah. Grupa $G$ je namreč Abelova natanko tedaj, ko za vsaka elementa $g, h \in  G$ velja $gh = hg$, kar je ekvivalentno
 zahtevi \begin{equation*}
@@ -20,19 +20,19 @@ To dejstvo si natančneje oglejmo na primeru simetrične grupe $S_n$. Zanjo po L
 \begin{equation*}
 n! \sim \sqrt{2 \pi n} \left( \frac{n}{e} \right)^{n}.
 \end{equation*}  
-Asimptotsko gledano je to zelo dolg zakon, veliko krajši je na primer že zakon oblike $a^{\exp(S_n)}$, kjer smo označili $\exp(S_n) = \text{lcm}(1, \ldots, n)$, za katerega s pomočjo osnovnega izreka o praštevilih \ref{lem_gostota_prastevil} dobimo asimptotsko oceno \begin{equation*}
+Asimptotsko gledano je to zelo dolg zakon, veliko krajši je na primer že zakon oblike $a^{\exp(S_n)}$, kjer smo označili $\exp(S_n) = \text{lcm}(1, \ldots, n)$. Zanj s pomočjo osnovnega izreka o praštevilih \ref{lem_gostota_prastevil} dobimo asimptotsko oceno \begin{equation*}
 \text{lcm}(1, \ldots ,n) \sim e^{n}.
 \end{equation*}  
-Trenutno najboljša ocena za dolžine kratkih zakonov izhaja iz članka \cite{Kozma_Thom_2016}, ki bo predstavljena v razdelku \ref{sec_simetricne_grupe}.
+Trenutno najboljša ocena za dolžine kratkih zakonov v simetričnih grupah izhaja iz članka \cite{Kozma_Thom_2016} in bo predstavljena v razdelku \ref{sec_simetricne_grupe}.
 
 Na tej točki se naravno pojavi nekaj vprašanj: kako dolgi so najkrajši netrivialni zakoni za določeno grupo oziroma družino grup? Ali lahko ocenimo
 asimtotsko rast dolžine najkrajših netrivialnih zakonov v družinah grup, recimo za družino $\text{Sym}(n)$? Kaj pa za vse grupe moči $n$ ali manj? 
 Katere družine grup se še posebej naravno pojavljajo pri takšnem raziskovanju?
 Prav ta vprašanja bodo bistvo diplomske naloge, v kateri bom predstavil dosedanje
 rezultate ter različne pristope, ki so jih ubrali raziskovalci. Na koncu bom predstavil,
-kako lahko z uporabo računalnika dobimo vpogled v delež zakonov med besedami.
+kako lahko z uporabo računalnika dobimo vpogled v delež zakonov med vsemi besedami.
 
-Zgodovinsko gledano so zgornja vprašanja razmeroma sodobna. Obravnavanje lastnosti zakonov namreč v nekem smislu sega že do Abela in Galoisa, 
+Zgodovinsko gledano so vprašanja v povezavi z asimptotskimi lastnostmi zakonov razmeroma sodobna. V splošnem pa obravnavanje lastnosti zakonov v nekem smislu sega že do Abela in Galoisa, 
 saj lahko tako Abelove kot rešljive grupe zelo naravno karakteriziramo s pomočjo zakonov. Zakoni so pomembni tudi za obravnavo klasičnih Bursidovih problemov,
 ki matematikom burijo domišljijo že od začetka 20.~stoletja. Ti problemi sprašujejo po končnosti specifičnih kvocientov prostih grup, kar bo nekoliko podrobneje razloženo v
 razdelku \ref{sec_racunalnisko_iskanje}. 
