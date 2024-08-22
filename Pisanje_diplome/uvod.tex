@@ -1,7 +1,7 @@
 \section{Uvod}
-
-Abstraktni produkt elementov $a_1, \ldots , a_k$ ter njihovih inverzov $a_1^{-1}, \ldots , a_k^{-1}$, je \emph{$k$-črkovni zakon v grupi $G$}, če ima lastnost, da za vsako zamenjavo $a_1, \ldots, a_k$ s konkretnimi
-elementi $g_1, \ldots, g_k \in G$, dobimo rezultat $1_G\in G$. Zakonu $1$ pravimo \emph{trivialni zakon}, ki v kontekstu raziskovanja zakonov ni posebej zanimiv.
+Začnimo z inuitivno definicijo zakona v grupi, ki jo bomo v nadaljevanju natančneje formulirali s pomočjo prostih grup.
+Abstraktni produkt elementov $a_1, \ldots , a_k$ ter njihovih inverzov $a_1^{-1}, \ldots , a_k^{-1}$ je \emph{$k$-črkovni zakon v grupi $G$}, če ima lastnost, da za vsako zamenjavo $a_1, \ldots, a_k$ s konkretnimi
+elementi $g_1, \ldots, g_k \in G$ dobimo rezultat $1_G\in G$. Zakonu $1$ pravimo \emph{trivialni zakon}, ki v kontekstu raziskovanja zakonov ni posebej zanimiv.
 
 Najosnovnejši primer netrivialnega dvočrkovnega zakona se pojavi pri Abelovih grupah. Grupa $G$ je namreč Abelova natanko tedaj, ko za vsaka elementa $g, h \in  G$ velja $gh = hg$, kar je ekvivalentno
 zahtevi \begin{equation*}
@@ -16,11 +16,14 @@ netrivialni zakon $a^{\lvert G \rvert }$, saj za vsak element $g \in G$ velja
 g^{\lvert G \rvert } = 1_G.
 \end{equation*}  
 
-To dejstvo si natančneje oglejmo na primeru simetrične grupe $S_n$. Zanjo po Lagrangeevem izreku velja enočrkovni zakon $a^{n !}$, katerega dolžina znaša $n!$, kar je po Stirlingovi formuli približno
+To dejstvo si natančneje oglejmo na primeru simetrične grupe $\text{Sym}(n)$. Zanjo po Lagrangeevem izreku velja enočrkovni zakon $a^{n !}$, katerega dolžina znaša $n!$, kar je po Stirlingovi formuli približno
 \begin{equation*}
 n! \sim \sqrt{2 \pi n} \left( \frac{n}{e} \right)^{n}.
 \end{equation*}  
-Asimptotsko gledano je to zelo dolg zakon, veliko krajši je na primer že zakon oblike $a^{\exp(S_n)}$, kjer smo označili $\exp(S_n) = \text{lcm}(1, \ldots, n)$. Zanj s pomočjo osnovnega izreka o praštevilih \ref{lem_gostota_prastevil} dobimo asimptotsko oceno \begin{equation*}
+Asimptotsko gledano je to zelo dolg zakon, veliko krajši je na primer že zakon oblike $a^{\exp(\text{Sym}(n))}$, kjer smo označili $\exp(\text{Sym}(n)) = \text{lcm}(1, \ldots, n)$. Zanj s pomočjo praštevilskega izreka \ref{lem_gostota_prastevil} 
+% TODO tule moraš popraviti to referenco!! 
+% TODO dokaži oceno !!
+dobimo asimptotsko oceno \begin{equation*}
 \text{lcm}(1, \ldots ,n) \sim e^{n}.
 \end{equation*}  
 Trenutno najboljša ocena za dolžine kratkih zakonov v simetričnih grupah izhaja iz članka \cite{Kozma_Thom_2016} in bo predstavljena v razdelku \ref{sec_simetricne_grupe}.

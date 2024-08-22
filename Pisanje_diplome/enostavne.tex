@@ -103,7 +103,7 @@ Osnovna ocena članka \cite{Kozma_Thom_2016} dolžin kratkih zakonov v simetrič
 ki jo je dokazal Edmund Landau leta 1903 v knjigi \cite{Landau_1903}.
 
 \begin{trditev}[Landau] \label{trd_landau}
-    Z $g(n)$ označimo maksimalni red elementa v simetrični grupi $S_n$. Obstaja konstanta $C > 0$, da za vsa naravna števila $n$ velja \begin{equation*}
+    Z $g(n)$ označimo maksimalni red elementa v simetrični grupi $\text{Sym}(n)$. Obstaja konstanta $C > 0$, da za vsa naravna števila $n$ velja \begin{equation*}
         g(n) \le \exp(C (n \log n)^{1 / 2}).
     \end{equation*}
 \end{trditev}
@@ -111,7 +111,7 @@ Landau je izrek dokazal z uporabo osnovnega izreka o praštevilih. Eno izmed nje
 Od tod po enakem postopku kot v primeru \ref{prm_komutatorska_redi_elementov} z uporabo komutatorske leme na besedah $a, a^2, \ldots, a^{g(n)}$ na elementih proste grupe $F_2 = \langle a, b \rangle$ dobimo asimptotsko gledano enako oceno \begin{equation*}
     \alpha(n)  \le \exp(C (n \log n)^{1 / 2}),
 \end{equation*}  
-kjer smo z $\alpha(n)$ označili dolžino najkrajšega netrivialnega zakona v grupi $S_n$.
+kjer smo z $\alpha(n)$ označili dolžino najkrajšega netrivialnega zakona v grupi $\text{Sym}(n)$.
 
 Avtorja članka \cite{Kozma_Thom_2016} sta rezultat močno izboljšala.
 \begin{izrek}[Kozma--Thom]\label{izr_kozma_thom_glavni}
@@ -121,8 +121,8 @@ Avtorja članka \cite{Kozma_Thom_2016} sta rezultat močno izboljšala.
 \end{izrek}
 To sta storila z uporabo zahtevnih izrekov, ki močno temeljita na klasifikaciji končnih enostavnih grup, zato ju v nalogi ne bomo dokazovali. To sta:
 \begin{itemize}
-    \item Liebeckove izrek (\cite{Liebeck_1984}) o strukturi podgrup grupe $S_n$, ki opredeli vrste podrgup v odvisnosti od načina delovanja na $S_n$. Najpomembnejši rezultat izreka je ugotovitev, da je vsaka podgrupa $\Gamma \subseteq  S_n$, ki ne sodi med prve štiri vrste, omejena z $\lvert \Gamma \rvert \le \exp((1 + o(1)) \log(n)^2)$. 
-    \item Helfgott--Seressov izrek (\cite{Helfgott_Seress_2013}), ki poda asimptotsko oceno na diametre Cayleyjevih grafov grupe $S_n$. V nalogi smo ga formulirali v razdelku o naključnih sprehodih kot izrek \ref{izr_Helfgott_Seress}.
+    \item Liebeckove izrek (\cite{Liebeck_1984}) o strukturi podgrup grupe $\text{Sym}(n)$, ki opredeli vrste podrgup v odvisnosti od načina delovanja na $\text{Sym}(n)$. Najpomembnejši rezultat izreka je ugotovitev, da je vsaka podgrupa $\Gamma \subseteq  \text{Sym}(n)$, ki ne sodi med prve štiri vrste, omejena z $\lvert \Gamma \rvert \le \exp((1 + o(1)) \log(n)^2)$. 
+    \item Helfgott--Seressov izrek (\cite{Helfgott_Seress_2013}), ki poda asimptotsko oceno na diametre Cayleyjevih grafov grupe $\text{Sym}(n)$. V nalogi smo ga formulirali v razdelku o naključnih sprehodih kot izrek \ref{izr_Helfgott_Seress}.
 \end{itemize} 
 
 Dokaz ocene \ref{eq_kozma_thom} v grobem poteka v dveh delih. Za potrebe naše naloge se čimbolj osredotočimo na prvega; ta nam namreč ponuja nov vpogled v razumevanje zakonov,
@@ -154,7 +154,7 @@ ki generirajo grupo $S_k$ ali $A_k$ (to je prva vrsta podgrup po Liebeckovem izr
     ki je zakon v vseh grupah moči $n$ ali manj.
 \end{posledica}
 \begin{dokaz}
-    Poljubno grupo $G$ moči $n$ ali manj lahko vložimo v simetrično grupo $S_n$, ki je moči $n!$. Po Stirlingovi formuli imamo zvezo \begin{equation*}
+    Poljubno grupo $G$ moči $n$ ali manj lahko vložimo v simetrično grupo $\text{Sym}(n)$, ki je moči $n!$. Po Stirlingovi formuli imamo zvezo \begin{equation*}
        % \log(n!) = \log \left( (1+ o(1)) \sqrt{2 \pi n} \left( \frac{n}{e} \right)^n \right \le (1 + o(1)) n \log(n). 
        \log(n!) = \log \left( (1+ o(1)) \sqrt{2 \pi n} \left( \frac{n}{e} \right)^n   \right) \le (1 + o(1)) n \log(n).
     \end{equation*}

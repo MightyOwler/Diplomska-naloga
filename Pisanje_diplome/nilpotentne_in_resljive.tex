@@ -4,7 +4,7 @@
 
 Intuitivno gledano so nilpotntne in rešljive grupe tiste, ki so po svoji strukturi še najbolj podobne Abelovim. Da jih lahko vpeljemo, moramo najprej uvesti nekaj pojmov.
 \begin{definicija}\label{def_komutator_grup}
-    Naj bo $G$ grupa in $H, K \le G$ njeni podgrupi. Potem definiramo \emph{komutator podgrup $H$ in $K$} kot podgrupo \begin{equation*}
+    Naj bo $G$ grupa in $H, K \le G$ njeni podgrupi. Potem definiramo \emph{komutatorsko podgrupo $H$ in $K$} kot podgrupo \begin{equation*}
         [H, K]  = \langle [h, k] | h \in H, k \in K \rangle.
     \end{equation*}
 \end{definicija}
@@ -20,16 +20,16 @@ Rečemo, da se \emph{zaporedje $(H_k)_{k \ge 1}$ izteče z grupo $K$}, če obsta
 Grupa $G$ je \emph{nilpotentna}, če se \emph{spodnja centralna vrsta} $(\gamma_k(G))_{k \ge 1}$, podana rekurzivno z \begin{equation*}
 \gamma_1(G) := G \text{ in } \gamma_{k +1}(G) := [\gamma_k(G), G],
 \end{equation*}  
-izteče s trivialno grupo. Najmanjšemu številu $d$, za katero je $\gamma_{d + 1} = \{ 1_G \}$, rečemo \emph{razred nilpotentnosti grupe $G$}.    
+izteče s trivialno grupo. Najmanjšemu številu $d$, za katerega je $\gamma_{d + 1} = \{ 1_G \}$, rečemo \emph{razred nilpotentnosti grupe $G$}.    
 \end{definicija}
 
-Na kratko razmislimo, da je vsak člen spodnje centralne vrste $\gamma_k(G)$ edinka v grupi $G$. Osnovna ideja premisleka je dejstvo, da lahko konjugiranje prenesemo v notranjost komutatorja: Za poljubne elemente $g, h, k \in G$ velja zveza \begin{equation*}
+Na kratko razmislimo, da je vsak člen spodnje centralne vrste $\gamma_k(G)$ edinka v grupi $G$. Osnovna ideja premisleka je dejstvo, da lahko konjugiranje prenesemo v notranjost komutatorja: za poljubne elemente $g, h, k \in G$ velja zveza \begin{equation*}
     [g, h]^k = kghg^{-1}h^{-1}k^{-1} = kgk^{-1}khk^{-1}kg^{-1}k^{-1}kh^{-1}k^{-1} = [kgk^{-1}, khk^{-1}] = [g^k , h^k].
 \end{equation*}
-Elementi grupe $\gamma_1(G)  = [G , G]$ so po definiciji oblike $\prod_{i = 1}^n [g_i, h_i]$ za neke elemente $g_i, h_i \in G$, zato za vsak element $k \in G$ velja \begin{equation*}
+Elementi grupe $\gamma_2(G)  = [G , G]$ so po definiciji oblike $\prod_{i = 1}^n [g_i, h_i]$ za neke elemente $g_i, h_i \in G$, zato za vsak element $k \in G$ velja \begin{equation*}
     \left( \prod_{i = 1}^n [g_i, h_i]\right)^k = \prod_{i = 1}^n [g_i^k, h_i^k]. 
 \end{equation*}
-S tem smo dokazali, da je $\gamma_1(G)$ edinka v $G$, z indukcijo pokažemo enako za vse nadaljnje člene. S tem smo hkrati utemeljili tudi, da za vsako število $k \ge 0$ velja $\gamma_{k+1}(G) \triangleleft \gamma_k(G)$.
+S tem smo dokazali, da je $\gamma_2(G)$ edinka v $G$, z indukcijo pokažemo enako za vse nadaljnje člene. S tem smo hkrati utemeljili tudi, da za vsako število $k \ge 1$ velja $\gamma_{k+1}(G) \trianglelefteq \gamma_k(G)$.
 
 Celo družino primerov nilpotentnih grup nam podaja naslednja ugotovitev.
 \begin{trditev}
@@ -38,7 +38,7 @@ Celo družino primerov nilpotentnih grup nam podaja naslednja ugotovitev.
 \end{trditev}
 \begin{dokaz}
     Naj bo $\lvert G \rvert = p^k$. Dokaz poteka z indukcijo po $k$. Za $k = 1$ je grupa Abelova in zato očitno nilpotentna. Za $k \ge 2$ uporabimo posledico razredne formule, da imajo $p$-grupe netrivialni center.
-    Če je $Z(G) = G$ je grupa Abelova. Sicer sta po indukcijski predpostavki grupi $Z(G)$ in $G / Z(G)$ nilpotentni. Nilpotentnost kvocienta implicira obstoj najmanjšega števila $m$, za katero velja $\gamma_m(G) \subseteq Z(G)$.
+    Če je $Z(G) = G$, je grupa Abelova. Sicer sta po indukcijski predpostavki grupi $Z(G)$ in $G / Z(G)$ nilpotentni. Nilpotentnost kvocienta implicira obstoj najmanjšega števila $m$, za katero velja $\gamma_m(G) \subseteq Z(G)$.
     Od tod direktno sledi, da je $\gamma_{m + 1}(G) = \{ 1_G \}$.
 \end{dokaz}
 
@@ -68,17 +68,17 @@ Pred dokazom napovedane trditve \ref{trd_nilpotentne_so_produkti_sylowih} navedi
 \begin{dokaz}
     Dokaz je povzet po \cite{wikipedia2024nilpotent}.
     Naj bo $G$ nilpotentna grupa. Najprej pokažimo, da iz $H \lneq G$ sledi $H \propernormalsubgroup N_G(H)$. To storimo z indukcijo po moči grupe $G$.
-    Če je $G$ Abelova, izjava očitno drži. Sicer je grupa $G$ nilpotentna razreda $1$ ali več, kar pomeni, da njen center ni trivialen; če je razred nilpotentnosti grupe $G$ na primer $d \ge 0$, velja \begin{equation*}
+    Če je $G$ Abelova, izjava očitno drži. Sicer je grupa $G$ nilpotentna razreda $2$ ali več, kar pomeni, da njen center ni trivialen; če je število $d \ge 1$ razred nilpotentnosti grupe $G$, velja \begin{equation*}
         \gamma_{d + 1} = [\gamma_d, G]  = 1 \Longrightarrow  \{ 1_G \} \neq \gamma_d \le Z(G) \Longrightarrow Z(G) \neq \{ 1_G \}.
     \end{equation*} 
-     Zato obravnavamo dva primera. Če center $Z(G)$ ni vsebovan $H$, velja \\ $H \propernormalsubgroup N_G(H) Z(G)$ zaradi računa \begin{equation*}
+     Zato obravnavamo dva primera. Če center $Z(G)$ ni vsebovan $H$, velja \\ $H \propernormalsubgroup H Z(G)$ zaradi računa \begin{equation*}
         h^{h_Z g_Z} = h_Z g_Z h g_Z^{-1} h_Z^{-1} = h_Z h h_Z^{-1} \in H \, \, \, \text{ za vse } h, h_Z \in H, g_Z \in G.
     \end{equation*}
     Predpostavimo torej, da je $Z(G) \le H$. Potem po korespondenčnem izreku sledi, da je $H / Z(G)$ podgrupa nilpotentne grupe $G / Z(G)$.
     Ker center $Z(G)$ ni trivialen, uporabimo indukcijsko predpostavko na kvocientu $G / Z(G)$ in dobimo njeno podgrupo $K / Z(G)$, v kateri je $H/ Z(G)$ prava edinka.
     Ustrezno grupo za $H$ dobimo kot prasliko kanonične projekcije $\pi : G \to G / Z(G)$, uporabljeno na grupi $ K / Z(G)$.
     
-    S pomočjo tega sklepa dokažimo, so $p$-podgrupe Sylowa v nilpotentni grupi $G$ ednike. Naj bodo $p_1, \ldots , p_s$ različna praštevila, ki delijo $\lvert G \rvert$ in naj bo $P_i$ poljubna $p_i$-podgrupa Sylowa grupe $G$ za vsak $1 \le i \le s$.
+    S pomočjo tega sklepa dokažimo, so $p$-podgrupe Sylowa v nilpotentni grupi $G$ edinke. Naj bodo $p_1, \ldots , p_s$ različna praštevila, ki delijo $\lvert G \rvert$, in naj bo $P_i$ poljubna $p_i$-podgrupa Sylowa grupe $G$ za vsak $1 \le i \le s$.
     Naj bo brez škode za splošnost $P := P_1$ in naj bo $N := N_G(P)$. Ker je $P$ edinka Sylowa v $N$, je v njej karakteristična. Od tod sledi, da je $P$ edinka tudi v $N_G(N)$, saj je zaradi $N \triangleleft N_G(N)$ konjugiranje z elementom iz $N_G(N)$
     avtomorfizem grupe $N$. Od tod sledi $N_G(N) \le N$ oziroma $N = N_G(N)$. Po ugotovitvi iz prejšnjega odstavka dobimo $N = G$, kar pomeni, da so $p$-podgrupe Sylowa nilpotentnih grup edinke.
     
@@ -87,19 +87,21 @@ Pred dokazom napovedane trditve \ref{trd_nilpotentne_so_produkti_sylowih} navedi
 \end{dokaz}
 
 \begin{posledica}\label{psl_ocena_razreda_nilpotentnosti}
-    Nilpotentna grupa $G$ moči $n$ ali manj je razreda nilpotentnosti največ $\lfloor \log_2(n) \rfloor - 1$.
+    Nilpotentna grupa $G$ moči $n$ ali manj je razreda nilpotentnosti največ $\lfloor \log_2(n) \rfloor$.
 \end{posledica}
 \begin{dokaz}
-    Naj bo $G$ nilpotentna grupa moči $n$ ali manj. Po trditvi \ref{trd_nilpotentne_so_produkti_sylowih} je v skrajnem primeru enaka svoji 2-podgrupi Sylowa, katere moč je največ $2^{\log_2(n)}$ oziroma $2^{\lfloor \log_2(n) \rfloor}$, ker  mora biti moč celo število.
-    To nam v luči dokaza trditve \ref{trd_p_grupe_so_nilpotentne} sporoča, da je razred nilpotentnosti grupe $G$ največ $\lfloor \log_2(G) \rfloor - 1$ (tu člen $-1$ prihaja iz definicije razreda nilpotentnosti, glej \ref{def_nilpotentna_grupa}).  
+    Naj bo $G$ nilpotentna grupa moči $n$ ali manj in naj bo $d$ njen razred nilpotentnosti. Naj bodo števila $p_1, \ldots, p_n$ vsi različni praštevilski delitelji $\lvert G \rvert$. Po trditvi \ref{trd_nilpotentne_so_produkti_sylowih} je $G$ produkt svojih $p   $-podgrup Sylowa, torej $G = \prod_{i  = 1}^{n} P_{p_i}$.
+    Po dokazu trditve \ref{trd_p_grupe_so_nilpotentne} je podgrupa $P_{p_i}$ nilpotentna razreda največ $\log_{p_i} \lvert P_{p_i} \rvert$. Od tod sledi \begin{equation*}
+    d \le \max_{i = 1, \ldots, n} \log_{p_i} \lvert P_{p_i} \rvert \le \left\lfloor \max_{i = 1, \ldots, n} \log_{2} \lvert P_{p_i} \rvert \right\rfloor \le \left\lfloor \log_2 \lvert G \rvert  \right\rfloor \le \left\lfloor \log_2(n)  \right\rfloor. 
+    \end{equation*}
 \end{dokaz}
-\begin{definicija}
 
+\begin{definicija}
     \label{def_resljiva_grupa}
     Grupa $G$ je \emph{rešljiva}, če se \emph{izpeljana vrsta} $(G^{(k)})_{k \ge 0}$, podana rekurzivno z \begin{equation*}
         G^{(0)} := G \text{ in } G^{(k + 1)} := [G^{(k)}, G^{(k)}],
         \end{equation*}  
-        izteče s trivialno grupo. Najmanjšemu številu $d$, za katero je $G^{(d)} = \{ 1_G \}$, rečemo \emph{razred rešljivosti grupe $G$}.    
+        izteče s trivialno grupo. Najmanjšemu številu $d$, za katerega je $G^{(d)} = \{ 1_G \}$, rečemo \emph{razred rešljivosti grupe $G$}.    
     \end{definicija}
 
     Analogno kot pri nilpotentnih grupah sklepamo, da izpeljana vrsta $(G^{(k)})_{k \ge 0}$ tvori verigo edink, ki so vse hkrati tudi edinke v $G$.
