@@ -1,0 +1,5 @@
+Word: xxx, Number of successful evaluations: 99/132 (75%)
+Word: xxy, Number of successful evaluations: 3/132 (2.27273%)
+Word: xyX, Number of successful evaluations: 11/132 (8.33333%)
+Word: xyx, Number of successful evaluations: 3/132 (2.27273%)
+Word: xyy, Number of successful evaluations: 3/132 (2.27273%)
