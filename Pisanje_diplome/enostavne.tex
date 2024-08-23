@@ -7,17 +7,17 @@
 % TODO razmisli, kako je z Abelovimi enostavnimi grupami
 
 Začnimo z razmislekom o pomembnosti enostavnih grup pri iskanju kratkih zakonov v splošnih grupah. Glavno idejo smo pravzaprav že videli pod primerom \ref{prm_razsiritvena}, kjer smo ugotovili, da
-lahko problem iskanja kratkih zakonov v neki konkretni grupi prevedemo na problem o njeni edinki in kvocientu po tej edinki. Ta razčlenjevanje se ustavi pri enostavnih grupah, ki po definicji nimajo pravih, netrivialnih edink.
+lahko problem iskanja kratkih zakonov v neki konkretni grupi prevedemo na problem o njeni edinki in kvocientu po tej edinki. Ta razčlenjevanje se ustavi pri enostavnih grupah, ki po definiciji nimajo pravih, netrivialnih edink.
 
-Ker je klasifikacija končnih enostavnih grup zaključena, lahko marsikaj povemo o njihovi strukturi. Po tej klasifikaciji denimo obstaja 18 družin enostavnih grup ter 26 sporadičnih grup, ki ne spadajo v nobeno izmed prej omenjenih družin.
+Ker je klasifikacija končnih enostavnih grup zaključena, lahko marsikaj povemo o njihovi strukturi. Po tej klasifikaciji obstaja 18 družin enostavnih grup ter 26 sporadičnih grup, ki ne spadajo v nobeno izmed prej omenjenih družin.
 Za asimptotsko analizo dolžin zakonov nas sporadične grupe prav nič ne motijo. Ker so končne vse od njih premorejo netrivialne zakone, ki jih povežemo s komutatorsko lemo \ref{lem_komutatorska_lema_splosna} v besedo $w_{\text{spor}}$,
 ki je zakon v vseh sporadičnih grupah. Recimo, da nam s funkcijo $f(n)$ uspe omejiti dolžino besede $w_{\text{druž}}(n)$, ki je zakon v vseh grupah moči $n$ ali manj, ki pripadajo eni izmed 18-ih družin končnih enostavih nekomutativnih grup.
 Potem s pomočjo komutatorske leme \ref{lem_komutatorska_lema} dobimo besedo $w$, ki je zakon v vseh enostavnih grupah velikosti $n$ ali manj, katere dolžina je 
 \begin{equation*}
-    l(w) \le 2 \cdot 2 (2 + l(w_{\text{spor}}) + l(w_{\text{druž}}) )  \le 4f(n) + o(1).
+    l(w) \le 2 \cdot 2 (2 + l(w_{\text{spor}}) + l(w_{\text{druž}}) )  \le 4f(n) + O(1).
 \end{equation*}
 Vidimo torej, da nas pri asimptotski obravnavi zakonov sporadične grupe prav nič ne ovirajo. Omenimo še to, da iskanja kratkih zakonov v družinah končnih enostavnih grup
-lotimo z metodo maksimalnega reda elementa, ki je razložena v \ref{prm_komutatorska_redi_elementov}. Pri tem je najbolj problematična družina grup $\operatorname{PSL}_2(q)$,
+lotimo z metodo maksimalnega reda elementa, ki je razložena v primeru \ref{prm_komutatorska_redi_elementov}. Pri tem je najbolj problematična družina grup $\operatorname{PSL}_2(q)$,
 katere članice imajo razmeroma visoke rede elementov glede na njihove velikosti. Ta družina grup si zaradi svojih posebnih lasnosti zasluži svoj razdelek v tem poglavju.
 
  Morda presenetljivo se izkaže, da lahko problem iskanja kratkih zakonov v splošni grupi prevedemo na problem iskanja kratkih zakonov v simetričnih in enostavnih grupah. 
@@ -91,65 +91,116 @@ katere članice imajo razmeroma visoke rede elementov glede na njihove velikosti
 
 \subsection{Simetrične grupe}\label{sec_simetricne_grupe}
 
-% opis članka o Thom - Kozma, napišeš v čem se razlikuje postopek z naključnimi sprehodi
-% opišeš in kometiraš Liebeckov izrek
-% če boš napisal konkretno Liebeckov izrek, je treba definirati venčni produkt 
-% (morda malo zoprno, ampak ne bi smelo biti prehudo) 
+V razdelku bomo najprej dokazali oceno dolžine kratkih zakonov v simetričnih grupah z uporabo praštevilskega izreka, nato pa predstavili glavni izrek članka \cite{Kozma_Thom_2016}, ki podaja še boljšo oceno.
 
-Obravnava simetričnih grup je najnatančneje opisana v članku \cite{Kozma_Thom_2016}, kjer avtorja dokažeta obstoj kratkih zakonov v simetričnih grupah s pomočjo naključnih sprehodov.
-Ker je celoten dokaz glavnega rezultata preveč specifičen za okvir te diplomske naloge, bom predstavil le del, ki je bralcu te naloge vsebinsko nov, tematsko drugačen od dosedanjih konstrukcij s komutatorsko in razširitveno lemo.
+% TODO v poglavju o praštevilskem izreku predstavi ekvivalenco praštevilskega izreka in funkcij Čebiševa
 
-Osnovna ocena članka \cite{Kozma_Thom_2016} dolžin kratkih zakonov v simetričnih grupah izhaja iz zgornje meje maksimalnega reda elementov v simetrični grupi,
-ki jo je dokazal Edmund Landau leta 1903 v knjigi \cite{Landau_1903}.
-
-\begin{trditev}[Landau] \label{trd_landau}
-    Z $g(n)$ označimo maksimalni red elementa v simetrični grupi $\text{Sym}(n)$. Obstaja konstanta $C > 0$, da za vsa naravna števila $n$ velja \begin{equation*}
-        g(n) \le \exp(C (n \log n)^{1 / 2}).
-    \end{equation*}
-\end{trditev}
-Landau je izrek dokazal z uporabo osnovnega izreka o praštevilih. Eno izmed njegovih oblik bomo spoznali v obliki izreka \ref{lem_gostota_prastevil} v naslednjem razdelku.  
-Od tod po enakem postopku kot v primeru \ref{prm_komutatorska_redi_elementov} z uporabo komutatorske leme na besedah $a, a^2, \ldots, a^{g(n)}$ na elementih proste grupe $F_2 = \langle a, b \rangle$ dobimo asimptotsko gledano enako oceno \begin{equation*}
-    \alpha(n)  \le \exp(C (n \log n)^{1 / 2}),
+\begin{lema}
+\label{lem_lcm_exp_n}
+Velja ocena \begin{equation*}
+\operatorname{lcm}(1, \ldots, n) \sim \exp(n).
 \end{equation*}  
-kjer smo z $\alpha(n)$ označili dolžino najkrajšega netrivialnega zakona v grupi $\text{Sym}(n)$.
+\end{lema}
+\begin{dokaz}
+Po definicji najmanjšega skupnega večkratnika velja \begin{equation*}
+\text{lcm}(1, \ldots, n) = \prod_{p^{k} \le n, \, p^{k + 1} > n,\,   p \in \mathbb{P}, \, k \ge 1 } p^{k}.
+\end{equation*}  
+Z logaritmiranjem te enačbe in uporabo Čebiševih funkcij (TODO dodaj sklic na definicijo) dobimo oceni \begin{equation*}
+\theta(n) = \sum_{p \le n, \,   p \in \mathbb{P}} \log(p) \le \log(\operatorname{lcm}(1, \ldots ,n)) \le  \sum_{p^{k} \le n, \, p \in \mathbb{P}, \, k \ge 1 } \log(p^{k}) = \psi(n).
+\end{equation*}  
+Po izreku (TODO tukaj daš izrek Čebiševa) in izreku o sendviču sledi \begin{equation*}
+\lim_{n \to \infty} \frac{\log(\operatorname{lcm}(1, \ldots, n))}{n} = 1.
+\end{equation*}  
+  Od tod sledi želena ocena \begin{equation*}
+    \operatorname{lcm}(1, \ldots, n) \sim \exp(n).
+\end{equation*} 
+\end{dokaz}
+
+S pomočjo te leme lahko ocenimo dolžine kratkih zakonov v simetričnih grupah.
+
+\begin{posledica}
+\label{psl_zakon_v_splosni_grupi_prastevilski}
+Naj bo $n \ge 1$ naravno število. Potem obstaja beseda $w \in F_2 = \langle  a, b \rangle$ dolžine \begin{equation*}
+    l(w) = \exp\left((1+ o(1)) \sqrt{2 \pi n} \left( \frac{n}{e} \right)^n\right),
+\end{equation*}
+ki je zakon v vseh grupah moči $n$ ali manj. 
+\end{posledica}
+\begin{dokaz}
+Poljubno grupo $G$ moči $n$ ali manj lahko vložimo v simetrično grupo $\text{Sym}(n)$, ki je moči $n!$. Po Strilingovi formuli velja \begin{equation*}
+    n! =  (1+ o(1)) \sqrt{2 \pi n} \left( \frac{n}{e} \right)^n.
+\end{equation*}  
+V uvodnem razdelku smo ugotovili, da je $a^{\exp(\operatorname{Sym}(n))} = a^{\operatorname{lcm}(1, \ldots, n)}$ zakon v simetrični grupi $\text{Sym}(n)$.
+Zato po lemi \ref{lem_lcm_exp_n} obstaja netrivialna beseda $w = a^{\operatorname{lcm}(1, \ldots, n)} \in F_2$ dolžine
+\begin{equation*}
+l(w) = \exp\left((1+ o(1)) \sqrt{2 \pi n} \left( \frac{n}{e} \right)^n\right),
+\end{equation*}  
+  ki je zakon v vseh grupah moči $n$ ali manj. 
+\end{dokaz}
+
+
+% Osnovna ocena članka \cite{Kozma_Thom_2016} dolžin kratkih zakonov v simetričnih grupah izhaja iz zgornje meje maksimalnega reda elementov v simetrični grupi,
+% ki jo je dokazal Edmund Landau leta 1903 v knjigi \cite{Landau_1903}.
+
+% \begin{trditev}[Landau] \label{trd_landau}
+%     Z $g(n)$ označimo maksimalni red elementa v simetrični grupi $\text{Sym}(n)$. Obstaja konstanta $C > 0$, da za vsa naravna števila $n$ velja \begin{equation*}
+%         g(n) \le \exp(C (n \log n)^{1 / 2}).
+%     \end{equation*}
+% \end{trditev}
+% Landau je izrek dokazal z uporabo praštevilskega izreka \ref{lem_gostota_prastevil}. Eno izmed njegovih oblik bomo spoznali v obliki izreka \ref{lem_gostota_prastevil} v naslednjem razdelku.  
+% Od tod po enakem postopku kot v primeru \ref{prm_komutatorska_redi_elementov} z uporabo komutatorske leme na besedah $a, a^2, \ldots, a^{g(n)}$ na elementih proste grupe $F_2 = \langle a, b \rangle$ dobimo asimptotsko gledano enako oceno \begin{equation*}
+%     \alpha(n)  \le \exp(C (n \log n)^{1 / 2}),
+% \end{equation*}  
+% kjer smo z $\alpha(n)$ označili dolžino najkrajšega netrivialnega zakona v grupi $\text{Sym}(n)$.
 
 Avtorja članka \cite{Kozma_Thom_2016} sta rezultat močno izboljšala.
 \begin{izrek}[Kozma--Thom]\label{izr_kozma_thom_glavni}
-    \begin{equation}\label{eq_kozma_thom}
-        \alpha(n)  \le \exp(C \log(n)^4 \log (\log n))
-    \end{equation}
-\end{izrek}
-To sta storila z uporabo zahtevnih izrekov, ki močno temeljita na klasifikaciji končnih enostavnih grup, zato ju v nalogi ne bomo dokazovali. To sta:
-\begin{itemize}
-    \item Liebeckove izrek (\cite{Liebeck_1984}) o strukturi podgrup grupe $\text{Sym}(n)$, ki opredeli vrste podrgup v odvisnosti od načina delovanja na $\text{Sym}(n)$. Najpomembnejši rezultat izreka je ugotovitev, da je vsaka podgrupa $\Gamma \subseteq  \text{Sym}(n)$, ki ne sodi med prve štiri vrste, omejena z $\lvert \Gamma \rvert \le \exp((1 + o(1)) \log(n)^2)$. 
-    \item Helfgott--Seressov izrek (\cite{Helfgott_Seress_2013}), ki poda asimptotsko oceno na diametre Cayleyjevih grafov grupe $\text{Sym}(n)$. V nalogi smo ga formulirali v razdelku o naključnih sprehodih kot izrek \ref{izr_Helfgott_Seress}.
-\end{itemize} 
-
-Dokaz ocene \ref{eq_kozma_thom} v grobem poteka v dveh delih. Za potrebe naše naloge se čimbolj osredotočimo na prvega; ta nam namreč ponuja nov vpogled v razumevanje zakonov,
-saj izkoristi moč naključnih sprehodov. Čeprav je tudi drugi del izreka zelo pomemben, je konceptualno dosti bolj podoben konstrukcijam, ki smo jih že spoznali, njegovo bistvo je spretna uporaba komutatorske leme.
- Začnimo tako, da za vsako naravno število $k \le n$ razdelimo pare $(\sigma, \tau) \in S_k^2$ na tiste,
-ki generirajo grupo $S_k$ ali $A_k$ (to je prva vrsta podgrup po Liebeckovem izreku), in tiste, ki generirajo preostale vrste podgrup.
-\begin{enumerate}
-    \item Najprej za vsako naravno število $k \le n$ z zapisom $P(k)$ označimo množico $k$-ciklov grupe $S_k$. Helfgott-Seressov izrek nam zagotovi obstoj množice $W \subseteq F_2$, velikosti $\lvert W \rvert \le 8n^2 \log n$, da za vsak $w \in W$ velja \begin{equation}\label{eq_helfgot_ocena}
-        l(w) \le \exp(C \log(n)^{4} \log(\log(n))).
-    \end{equation}  
-    Še več, za vse $k \le n$ in vse pare $(\sigma, \tau) \in S_k^2$, ki generirajo $S_k$,
-    obstaja beseda $w \in W$, tako da je $w(\sigma, \tau) \in P(k)$. Ker beseda $1_{F_2}$ ni $k$-cikel (za $k \ge 2$, primer $k = 1$ pripada trivialni podgrupi in nas ne zanima), je beseda $w$ netrivialna. Nato definiramo množico \begin{equation*}
-    W' := \left\{ w^{k}  \middle|\,  w \in W , \, 1 \le  k \le  n \right\}, 
-    \end{equation*}  
-    ki ne vsebuje enote $1_{F_2}$, ker je grupa $F_2$ torzijsko prosta (glej posledico \ref{trd_prosta_grupa_je_torzijsko_prosta}). S pomočjo ocene moči $W$ sklepamo $\lvert W' \rvert \le 8 n^3 \log n$.
-    Ker za vsak $k \le n$ in za vsak $(\sigma, \tau) \in S_k^2$ obstaja beseda $w \in W'$, da je $w(\sigma, \tau) = 1_{F_2}$, po komutatorski lemi \ref{psl_komutatorska_lema_prakticna} in oceni \ref{eq_helfgot_ocena} obstaja netrivialna beseda $v \in F_2$, dolžine
+    Naj bo $n \ge 1$ naravno število. Potem obstajata število $C > 0$ in beseda $w \in F_2$ dolžine 
     \begin{equation*}
-    l(v) \le \exp(C \log(n)^{4} \log(\log(n))).
-    \end{equation*}  
-    \item V drugem primeru z obravnavanjem podgrup po Liebeckovem izreku konstruiramo netrvialno besedo $\tilde{v} \in F_2$, ki trivializira vse pare $(\sigma, \tau) \in S_k^2$, ki ne generirajo
-    grupe $S_k$ (veljati mora $\tilde{v}(\sigma, \tau) = 1_{F_2}$ za vse pare s to lastnostjo). Na primer, v prvo vrsto spadajo podgrupe oblike $S_k$ ali $A_k$, ki spadajo pod prejšnjo točko dokaza, mejo za meto vrsto pa nam direktno podaja Liebeckov izrek. Vrste dva do štiri je treba obravnavati
-    vsako posebej. Na koncu zakone v posameznih vrstah grup povežemo s komutatorsko lemo.    
-\end{enumerate}
+        l(w)  \le \exp(O(1) \log(n)^4 \log (\log n)),
+    \end{equation*}
+    ki je zakon v simetrični grupi $\operatorname{Sym}(n)$. 
+\end{izrek}
+% To sta storila z uporabo zahtevnih izrekov, ki močno temeljita na klasifikaciji končnih enostavnih grup, zato ju v nalogi ne bomo dokazovali. To sta:
+% \begin{itemize}
+%     \item Liebeckov izrek (\cite{Liebeck_1984}) o strukturi podgrup grupe $\text{Sym}(n)$, ki opredeli vrste podgrup v odvisnosti od načina delovanja na $\text{Sym}(n)$. % Najpomembnejši rezultat izreka je ugotovitev, da je vsaka podgrupa $\Gamma \subseteq  \text{Sym}(n)$, ki ne sodi med prve štiri vrste, omejena z $\lvert \Gamma \rvert \le \exp((1 + o(1)) \log(n)^2)$. 
+%     \item Helfgott--Seressov izrek (\cite{Helfgott_Seress_2013}), ki poda asimptotsko oceno na diametre Cayleyjevih grafov grupe $\text{Sym}(n)$. V nalogi smo ga formulirali v razdelku o naključnih sprehodih kot izrek \ref{izr_Helfgott_Seress}.
+% \end{itemize} 
+
+Dokaz tega izreka preveč specifičen za potrebe te naloge, saj se močno sklicuje na posledice klasifikacije končnih enostavnih grup. Zato zgolj predstavimo glavno idejo. 
+
+Za vsako število $k \le n$ sta avtorja najprej razdelila pare $(\sigma, \tau) \in \text{Sym}(k)^2$ na tiste,
+ki generirajo grupo $\text{Sym}(k)$, in tiste, ki generirajo preostale vrste podgrup. S $P(k)$ sta označila množico $k$-ciklov v grupi $\text{Sym}(k)$. Z opazovanjem naključnih sprehodov po Cayleyjevem grafu $\operatorname{Cay}(\operatorname{Sym}(k), \left\{ \sigma^{\pm 1}, \tau^{\pm 1} \right\} )$ sta avtorja sklepala, da obstaja kratka netrivialna beseda $w_{k, (\sigma, \tau)} \in F_2$, za katero velja
+$w_{k, (\sigma, \tau)}(\sigma, \tau) \in P(k)$. Od tod seveda sledi $w_{k, (\sigma, \tau)}(\sigma, \tau)^k = 1_{F_2}$. Nato sta avtorja s pomočjo komutatorske leme \ref{lem_komutatorska_lema_splosna} vse besede $w_{k, (\sigma, \tau)}$ združila v netrivialno besedo $w_1 \in F_2$, ki je zakon v podmnožici parov elementov $\operatorname{Sym}(k)^2$,
+ki generirajo grupo $\operatorname{Sym}(k)$.
+
+Za vse pare $(\sigma, \tau) \in \text{Sym}(k)^2$, ki ne generirajo grupe $\operatorname{Sym}(k)$. Nato sta z uporabo komutatorske leme konstruirala netrivialno besedo $w_2 \in F_2$, ki je zakon v vseh možnih oblikah podgrupe $\langle \sigma, \tau \rangle \subsetneq \text{Sym}(k)$.
+Na koncu sta z uporabo komutatorske leme povezala besedi $w_1$ in $w_2$ v besedo $w$, ki izniči tako pare, ki generirajo $\text{Sym}(n)$, kot tiste, ki generirajo pravo podgrupo. Zato je beseda $w$ zakon v grupi $\text{Sym}(n)$.  
+
+% Dokaz ocene \ref{izr_kozma_thom_glavni} v grobem poteka v dveh delih. Za potrebe naše naloge se čimbolj osredotočimo na prvega; ta nam namreč ponuja nov vpogled v razumevanje zakonov,
+% saj izkoristi moč naključnih sprehodov. Čeprav je tudi drugi del izreka zelo pomemben, je konceptualno dosti bolj podoben konstrukcijam, ki smo jih že spoznali, njegovo bistvo je spretna uporaba komutatorske leme.
+%  Začnimo tako, da za vsako naravno število $k \le n$ razdelimo pare $(\sigma, \tau) \in \text{Sym}(k)^2$ na tiste,
+% ki generirajo grupo $\text{Sym}(k)$ ali $\text{Alt}(k)$ (to je prva vrsta podgrup po Liebeckovem izreku), in tiste, ki generirajo preostale vrste podgrup.
+% \begin{enumerate}
+%     \item Najprej za vsako naravno število $k \le n$ z zapisom $P(k)$ označimo množico $k$-ciklov grupe $\text{Sym}(k)$. Helfgott-Seressov izrek nam zagotovi obstoj množice $W \subseteq F_2$, velikosti $\lvert W \rvert \le 8n^2 \log n$, da za vsak $w \in W$ velja \begin{equation}\label{eq_helfgot_ocena}
+%         l(w) \le \exp(C \log(n)^{4} \log(\log(n))).
+%     \end{equation}  
+%     Še več, za vse $k \le n$ in vse pare $(\sigma, \tau) \in \text{Sym}(k)^2$, ki generirajo $\text{Sym}(k)$,
+%     obstaja beseda $w \in W$, tako da je $w(\sigma, \tau) \in P(k)$. Ker beseda $1_{F_2}$ ni $k$-cikel (za $k \ge 2$, primer $k = 1$ pripada trivialni podgrupi in nas ne zanima), je beseda $w$ netrivialna. Nato definiramo množico \begin{equation*}
+%     W' := \left\{ w^{k}  \middle|\,  w \in W , \, 1 \le  k \le  n \right\}, 
+%     \end{equation*}  
+%     ki ne vsebuje enote $1_{F_2}$, ker je grupa $F_2$ torzijsko prosta (glej posledico \ref{trd_prosta_grupa_je_torzijsko_prosta}). S pomočjo ocene moči $W$ sklepamo $\lvert W' \rvert \le 8 n^3 \log n$.
+%     Ker za vsak $k \le n$ in za vsak $(\sigma, \tau) \in \text{Sym}(k)^2$ obstaja beseda $w \in W'$, da je $w(\sigma, \tau) = 1_{F_2}$, po komutatorski lemi \ref{psl_komutatorska_lema_prakticna} in oceni \ref{eq_helfgot_ocena} obstaja netrivialna beseda $v \in F_2$, dolžine
+%     \begin{equation*}
+%     l(v) \le \exp(C \log(n)^{4} \log(\log(n))).
+%     \end{equation*}  
+%     \item V drugem primeru z obravnavanjem podgrup po Liebeckovem izreku konstruiramo netrvialno besedo $\tilde{v} \in F_2$, ki trivializira vse pare $(\sigma, \tau) \in \text{Sym}(k)^2$, ki ne generirajo
+%     grupe $\text{Sym}(k)$ (veljati mora $\tilde{v}(\sigma, \tau) = 1_{F_2}$ za vse pare s to lastnostjo). Na primer, v prvo vrsto spadajo podgrupe oblike $\text{Sym}(k)$ ali $\text{Alt}(k)$, ki spadajo pod prejšnjo točko dokaza, mejo za meto vrsto pa nam direktno podaja Liebeckov izrek. Vrste dva do štiri je treba obravnavati
+%     vsako posebej. Na koncu zakone v posameznih vrstah grup povežemo s komutatorsko lemo.    
+% \end{enumerate}
 
 \begin{posledica}\label{psl_zakon_v_splosni_grupi}
-    Naj bo $n \ge 1$ naravno število. Potem obstaja število $C > 0$ in beseda $w \in F_2$ dolžine \begin{equation*}
-        l(w) \le \exp{\left( (C + o(1)) n^4 \log(n)^4 \log(n \log(n)) \right)},
+    Naj bo $n \ge 1$ naravno število. Potem obstaja beseda $w \in F_2$ dolžine \begin{equation*}
+        l(w) \le \exp{\left( O(1) n^4 \log(n)^4 \log(n \log(n)) \right)},
     \end{equation*}
     ki je zakon v vseh grupah moči $n$ ali manj.
 \end{posledica}
@@ -159,9 +210,9 @@ ki generirajo grupo $S_k$ ali $A_k$ (to je prva vrsta podgrup po Liebeckovem izr
        \log(n!) = \log \left( (1+ o(1)) \sqrt{2 \pi n} \left( \frac{n}{e} \right)^n   \right) \le (1 + o(1)) n \log(n).
     \end{equation*}
     Od tod z uporabo prejšnejga izreka dobimo besedo $w \in F_2$, ki je zakon v grupi $G$, dolžine \begin{align*}
-        l(w) &\le  \exp{\left(C \log(n!)^4 \log(\log(n!))\right)}, \\
-            &\le \exp{\left(C ((1 + o(1)) n \log(n))^4 \log((1 + o(1)) n \log(n))\right)}, \\
-            &\le \exp{\left( (C + o(1)) n^4 \log(n)^4 \log(n \log(n)) \right)}.
+        l(w) &\le  \exp{\left(O(1) \log(n!)^4 \log(\log(n!))\right)}, \\
+            &\le \exp{\left(O(1) ((1 + o(1)) n \log(n))^4 \log((1 + o(1)) n \log(n))\right)}, \\
+            &\le \exp{\left( O(1) n^4 \log(n)^4 \log(n \log(n)) \right)}.
     \end{align*}\end{dokaz}
 
 % Avtorja sta razdelek končala z mislijo (\cite[str.~82]{Kozma_Gady_2016}), da po Babaijevi domnevi sledi po praktično enakem dokazu ocena \begin{equation*}
@@ -183,7 +234,7 @@ ki generirajo grupo $S_k$ ali $A_k$ (to je prva vrsta podgrup po Liebeckovem izr
 % na ocene dolžine netrivialnih zakonov v splošnih grupah. Zgled uspešnosti se odraža v osrednjem izreku članka~\cite{Kozma_Thom_2016}.
 
 
-\subsection{Grupe $PSL_2(q)$}\label{sec_grupe_psl2q}
+\subsection{Grupe $\operatorname{PSL}_{2}(q)$}\label{sec_grupe_psl2q}
 
 Tekom tega poglavja bo $p$ vedno označevalo praštevilo, $q$ pa praštevilsko potenco oblike $q = p^{k}$ za neko naravno število $k \ge $1. Začnimo z definicijo družine grup $\operatorname{PSL}_n(q)$.
 
@@ -207,9 +258,162 @@ Tekom tega poglavja bo $p$ vedno označevalo praštevilo, $q$ pa praštevilsko p
     saj se zakoni prenašajo na podgrupe in kvociente.
     \end{trditev}
     \begin{dokaz}
-        Ker je trditev prikazana kot zanimivost, bomo dokaz izpustili. Bralec ga lahko najde v \cite{Schneider_2016}. Glavna ideja je pokazati, da lahko z matrikami, ki predsatvljajo strižne transformacije,
-        v primeru prekratkih besed vedno dobimo matriko, ki ni identiteta. % TODO tole vseeno pokaži
-        \end{dokaz}
+        Dokaz je prirejen po \cite[str.~38--39]{Schneider_2016}. Glavna ideja je pokazati, da lahko z vstavljanjem matrik strižnih transformacij iz kolobarja $M_2(\mathbb{F}_p)$
+        v primeru prekratkih besed vedno dobimo matriko, ki ni skalarna. Tekom dokaza naj 0 označuje enoto za seštevanje, 1 pa enoto za množenje v polju $(\mathbb{F}_p, +, \cdot)$.
+        Naj bo $w \in F_2 = \langle  a, b \rangle$ beseda dolžine $l(w) < p$. 
+         Na enak način kot v dokazu razširitvene leme \ref{lem_razsiritvena_lema} ločimo dva primera.
+         
+         V prvem je beseda $w$ konjugiranka besede $a^{n}$ ali $b^{n}$ za neko število $n < p$. Zato lahko brez škode za splošnost predpostavimo, da je $w = a^{n}$.
+         Če definiramo matriko \begin{equation*}
+         A := \begin{bmatrix}
+            1 & 0\\
+            1 & 1 \\
+         \end{bmatrix},
+         \end{equation*}  
+            dobimo \begin{equation*}
+            w(A, I) = A^{n} =  \begin{bmatrix}
+                1 & 0\\
+                n & 1\\
+             \end{bmatrix} \neq \lambda I.
+            \end{equation*}  
+        
+        V drugem primeru je beseda $w$ brez škode za splošnost konjugiranka besede $w = a^{r_1}b^{s_1} \cdots a^{r_k}b^{s_k}$ za neka neničelna cela števila $r_i$ ter $s_i$. Pri tem mora veljati $l(w) = \sum_{i = 1}^{k} \lvert r_i \rvert + \lvert s_i \rvert < p$.
+        Nato definiramo matriki \begin{equation*}
+            B := \begin{bmatrix}
+                1 & 0\\
+                x & 1\\
+             \end{bmatrix} \text{ in } C := \begin{bmatrix}
+                1 & x \\
+                0 & 1\\
+             \end{bmatrix}.
+        \end{equation*}  
+        Z indukcijo po številu $k$ pokažimo, da za besedo $w$ velja \begin{equation*}
+        w(B, C) = \begin{bmatrix}
+            f_{11} & f_{12} \\
+            f_{21} & f_{22} + r_1s_1 \cdots r_k s_k x^{2k} \\
+        \end{bmatrix},
+        \end{equation*}  
+        kjer so polinomi $f_{12}, f_{21}, f_{22}  \in \mathbb{F}_p[x]$ stopnje največ $2k - 1$, polinom $f_{11} \in \mathbb{F}_p[x]$ pa stopnje največ $2k - 2$.
+    %     Za $k = 1$ imamo \begin{equation*} w(B, C) = 
+    %         \begin{bmatrix}
+    %             1 & 0 \\
+    %             x & 1 \\
+    %             \end{bmatrix}^{s_1} \begin{bmatrix}
+    %                 1 & x \\
+    %                 0 & 1 \\
+    %                 \end{bmatrix}^{r_1} = \begin{bmatrix}
+    %                     1 & r_1 x \\
+    %                     s_1 x & r_1 s_1 x^2 \\
+    %                     \end{bmatrix},
+    %     \end{equation*}  
+    %     torej trditev velja za $k = 1$. Za $k \ge 2$ izvedemo indukcijski korak na besedi $w = a^{r_0} b^{s_0} a^{r_1} b^{s_1} \cdots  a^{r_k} b^{s_k}$. 
+    %     Tako dobimo
+    %     \small
+    %     \begin{align*}
+    %         w(B, C) &=  \begin{bmatrix}
+    %             1 & 0 \\
+    %             x & 1 \\
+    %             \end{bmatrix}^{s_0}
+    %             \begin{bmatrix}
+    %             1 & x \\
+    %             0 & 1 \\
+    %             \end{bmatrix}^{r_0}
+    %              \begin{bmatrix}
+    %             f_{11} & f_{12} \\
+    %             f_{21} & f_{22} + s_1 r_1 \cdots s_k r_k x^{2k} \\
+    %             \end{bmatrix} \\ 
+    %              &=  \begin{bmatrix}
+    %             1 & r_0 x \\
+    %             s_0 x & 1 + s_0 r_0 x^2 \\
+    %             \end{bmatrix} 
+    %             \begin{bmatrix}
+    %             f_{11} & f_{12} \\
+    %             f_{21} & f_{22} + s_1 r_1 \cdots s_k r_k x^{2k} \\
+    %             \end{bmatrix} \\
+    %             &=  \begin{bmatrix}
+    %             f_{11} + r_0 x f_{21} & f_{12} + r_0 x (f_{22} + s_1 r_1 \cdots s_k r_k x^{2k}) \\
+    %             s_0 x f_{11} + (1 + s_0 r_0 x^2) f_{21} & s_0 x f_{12} + (1 + s_0 r_0 x^2)(f_{22} + s_1 r_1 \cdots s_k r_k x^{2k}) \\
+    %             \end{bmatrix}.
+    %     \end{align*}
+    %     \normalsize
+    % Po indukcijski predpostavki je $f_{11}$ stopnje največ $2k - 2$, $f_{12}, f_{21}$ ter $f_{22}$ pa največ $2k - 1$.
+    
+    % Razlika diagonalnih elementov $d := -f_{11} + f_{22} + s_1 r_1 \cdots s_k r_k x^{2k}$ je polinom stopnje $1 \le \text{deg}(d) \le p$. Desna neenakost sledi iz dejstva
+    % $\sum_{i = 1}^{k} \lvert r_i \rvert + \lvert s_i \rvert < p$. Preostane nam le še dokazati, da lahko najdemo takšen element $u \in \mathbb{F}_p$, da bo $d(x) \neq 0$, torej matrika $w(B, C)$ ne more biti skalarna.
+    % Če bi za vse elemente $u \in \mathbb{F}_p$ veljalo $d(u) = 0$, bi lahko zapisali 
+    % \begin{equation*}
+    %     d(x) = \alpha \prod_{u \in  \mathbb{F}_p} (x - u), \,\,\, \alpha \in \mathbb{F}_p^{*},
+    % \end{equation*}  
+    % saj vemo, da $d$ ni ničelni polinom. Zaradi pogoja $\text{deg} (d) < p$ ima lahko polinom $d$ največ $p - 1$ različnih ničel, zato nas zgornji zapis vodi do protislovja.
+    % To pomeni, da obstaja element $x \in \mathbb{F}_p$, za katerega beseda $w(B, C)$ ni skalarna matrika in posledično $w$ ni zakon v grupi $\operatorname{PSL}_2(p)$. 
+
+    Za $k = 1$ imamo 
+\begin{equation*} 
+w(B, C) = 
+\begin{bmatrix}
+    1 & 0 \\
+    x & 1 \\
+\end{bmatrix}^{r_1} 
+\begin{bmatrix}
+    1 & x \\
+    0 & 1 \\
+\end{bmatrix}^{s_1} 
+= \begin{bmatrix}
+    1 & s_1 x \\
+    r_1 x & r_1 s_1 x^2 \\
+\end{bmatrix},
+\end{equation*}  
+kar nam podaja bazo indukcije. Za $k \ge 2$ izvedemo indukcijski korak na besedi $w = a^{s_0} b^{r_0} a^{s_1} b^{r_1} \cdots a^{s_k} b^{r_k}$. 
+Tako dobimo
+\small
+\begin{align*}
+    w(B, C) &=  \begin{bmatrix}
+        1 & 0 \\
+        x & 1 \\
+    \end{bmatrix}^{r_0}
+    \begin{bmatrix}
+        1 & x \\
+        0 & 1 \\
+    \end{bmatrix}^{s_0}
+    \begin{bmatrix}
+        f_{11} & f_{12} \\
+        f_{21} & f_{22} + r_1 s_1 \cdots r_k s_k x^{2k} \\
+    \end{bmatrix} \\ 
+    &=  \begin{bmatrix}
+        1 & s_0 x \\
+        r_0 x & 1 + r_0 s_0 x^2 \\
+    \end{bmatrix} 
+    \begin{bmatrix}
+        f_{11} & f_{12} \\
+        f_{21} & f_{22} + r_1 s_1 \cdots r_k s_k x^{2k} \\
+    \end{bmatrix} \\
+    &=  \begin{bmatrix}
+        f_{11} + s_0 x f_{21} & f_{12} + s_0 x (f_{22} + r_1 s_1 \cdots r_k s_k x^{2k}) \\
+        r_0 x f_{11} + (1 + r_0 s_0 x^2) f_{21} & r_0 x f_{12} + (1 + r_0 s_0 x^2)(f_{22} + r_1 s_1 \cdots r_k s_k x^{2k}) \\
+    \end{bmatrix}.
+\end{align*}
+\normalsize
+Po indukcijski predpostavki je $f_{11}$ stopnje največ $2k - 2$, $f_{12}, f_{21}$ ter $f_{22}$ pa največ $2k - 1$.
+
+Razlika diagonalnih elementov $d := -f_{11} + f_{22} + r_1 s_1 \cdots r_k s_k x^{2k}$ je polinom stopnje $1 \le \text{deg}(d) \le p$. Desna neenakost sledi iz dejstva
+$\sum_{i = 1}^{k} \lvert r_i \rvert + \lvert s_i \rvert < p$. Preostane nam le še dokazati, da lahko najdemo takšen element $u \in \mathbb{F}_p$, da bo $d(x) \neq 0$, torej matrika $w(B, C)$ ne more biti skalarna.
+Če bi za vse elemente $u \in \mathbb{F}_p$ veljalo $d(u) = 0$, bi lahko zapisali 
+\begin{equation*}
+    d(x) = \alpha \prod_{u \in  \mathbb{F}_p} (x - u), \,\,\, \alpha \in \mathbb{F}_p^{*},
+\end{equation*}  
+ker vemo, da $d$ ni ničelni polinom. Zaradi pogoja $\text{deg} (d) < p$ ima lahko polinom $d$ največ $p - 1$ različnih ničel, zato nas zgornji zapis vodi do protislovja.
+To pomeni, da obstaja element $x \in \mathbb{F}_p$, za katerega beseda $w(B, C)$ ni skalarna matrika in posledično $w$ ne more biti zakon v grupi $\operatorname{PSL}_2(p)$. 
+
+
+        % Trdimo, da so $\mathbb{F}_p[x]$ stopnje $p$ ali manj so v bijektivni korespondenci s preslikavami $\mathbb{F}_p \to  \mathbb{F}_p$. Definirajmo preslikavo $\Phi: (\mathbb{F}_p)_{p}[x] \to \mathbb{F}_p^{\mathbb{F}_p}$ s predpisom \begin{equation*}
+        % \Phi(f) := (x \to f(x)).
+        % \end{equation*}  
+        % Definirajmo še preslikavo $\Psi : \mathbb{F}_p^{\mathbb{F}_p} \to (\mathbb{F}_p)_{p}[x]$, ki preslikavi $\varphi$ priredi Lagrangeev interpolacijski polinom z vodilnim koeficientom 1, ki poteka skozi točke $(a, \varphi(a))$ za vse $a \in \mathbb{F}_p$.
+        % Natančneje, velja \begin{equation*}
+        % \Psi(\varphi) := \sum_{j = 1}^{p} \prod_{0 \le m \le }^{\infty}  
+        % \end{equation*}  
+           
+    \end{dokaz}
 
     Direktna posledica te leme je recimo dejstvo, da grupa $\text{Sym}(\mathbb{N})$ nima netrivialnih zakonov, saj vsebuje vse $\operatorname{PSL}_2(p)$ kot podgrupe.
     Še bolj očiten primer grupe, ki nima dvočrkovnih zakonov, je sicer kar prosta grupa $F_2 = \langle x , y \rangle$. Če bi bila netrivialna beseda $w \in F_2 = \langle a , b \rangle$ zakon v njej,
@@ -220,7 +424,7 @@ Tekom tega poglavja bo $p$ vedno označevalo praštevilo, $q$ pa praštevilsko p
 
     \subsubsection{Konstrukcija zakonov v grupah $PSL_2(q)$}
 
-    Osnovna konstrukcija zakonov v grupah $\operatorname{PSL}_2(q)$ poteka prek obravnave redov elementov in uporabe komutatorske leme v slogu primera \ref{prm_komutatorska_redi_elementov}.
+    Konstrukcija kratkih zakonov v grupah $\operatorname{PSL}_2(q)$ poteka prek obravnave redov elementov, praštevilskega izreka in uporabe komutatorske leme v slogu primera \ref{prm_komutatorska_redi_elementov}.
     Dokaz je prirejen po \cite[str.~36--37]{Schneider_2016} in \cite{Jezernik_2023}.
     \begin{lema}
     \label{lem_redi_elementov_v_psl2q}
@@ -235,17 +439,17 @@ Tekom tega poglavja bo $p$ vedno označevalo praštevilo, $q$ pa praštevilsko p
             0 & \beta \\
         \end{bmatrix},
         \end{equation*}  
-          kjer sta $\alpha, \beta \in  \mathbb{F}_q^{*}$ (0 ne moreta biti, ker je matrika $A$ obrnljiva). Ker je $(\mathbb{F}_q^{*}, \cdot)$ grupa moči $q-1$, velja $\alpha^{q-1} = \beta^{q -1} = 1$ in od tod $J_A^{q-1} = I$ oziroma $A^{q-1} = I$.
+          kjer sta $\alpha, \beta \in  \mathbb{F}_q^{*}$ (0 ne moreta biti, ker je matrika $A$ obrnljiva). Ker je $(\mathbb{F}_q^{*}, \cdot)$ grupa moči $q-1$, velja $\alpha^{q-1} = \beta^{q -1} = 1_{\mathbb{F}_q}$ in od tod $J_A^{q-1} = I$ oziroma $A^{q-1} = I$.
           \item Če je $\chi_A(X)$ razcepen v $\mathbb{F}_q[X]$, vendar matrika $A$ ni diagonalizabilna, mora biti njena Jordanova forma oblike \begin{equation*}
           J_A =  \begin{bmatrix}
-            1 & \alpha\\
-            0 & 1\\
+            1_{\mathbb{F}_q} & \alpha\\
+            0 & 1_{\mathbb{F}_q}\\
           \end{bmatrix} = I + N.
           \end{equation*}  
-        Diagonalna elementa morata namreč oba biti enaka $1$ po razmisleku v definiciji \ref{def_pslnq_in_psl2q}. Ker velja $J_A^{p} = (I + N)^{p} = I^{p} + N^{p} = I$, red matrike $A$ deli $p$.  
+        Diagonalna elementa morata namreč oba biti enaka $1_{\mathbb{F}_q}$ po razmisleku v definiciji \ref{def_pslnq_in_psl2q}. Ker velja $J_A^{p} = (I + N)^{p} = I^{p} + N^{p} = I$, red matrike $A$ deli $p$.  
     \item Če $\chi_A(X)$ ni razcepen v $\mathbb{F}_q[X]$, je razpecen v  $\mathbb{F}_{q^2}[X] = \mathbb{F}_q[X] / (\chi_A(X))$. Naj bo $\alpha \in \mathbb{F}_{q^2}$ neka ničla $\chi_A(X)$. Pokazati moramo, da je potem tudi $\alpha^q$ njegova ničla.
     Naj bo $\chi_A(X) = X^2 + bX + c$ za neka $b ,c \in \mathbb{F}_q^{*}$. Potem iz enačbe $\alpha^2 + b \alpha + c  = 0$ sledi \begin{equation*}
-    0 = (\alpha^{q} + b \alpha + c)^q =  \alpha^{2q} + b^{q} \alpha^{q} + c^{q} =_\text{točka 1} \alpha^{2q} + b \alpha^{q} + c.    
+    0 = (\alpha^{q} + b \alpha + c)^q =  \alpha^{2q} + b^{q} \alpha^{q} + c^{q} \stackrel{\text{1.~točka}}{=} \alpha^{2q} + b \alpha^{q} + c.    
     \end{equation*}  
     Tako lahko matriko $A$ diagonaliziramo v kolobarju $M_2(\mathbb{F}_{q^2})$ v obliki \begin{equation*}
     J_A = \begin{bmatrix}
@@ -253,7 +457,7 @@ Tekom tega poglavja bo $p$ vedno označevalo praštevilo, $q$ pa praštevilsko p
         0 & \alpha^{q}\\
     \end{bmatrix}.
     \end{equation*}  
-    Ker velja $\det A = \det J_A  = \alpha \alpha^{q} = 1$, red $A$ deli število $q-1$.
+    Ker velja $\det A = \det J_A  = \alpha \alpha^{q} = 1$, red $A$ deli število $q + 1$.
     \end{enumerate}   
 \end{dokaz}
     Za konkretno grupo $G = \operatorname{PSL}_2(q)$ definirajmo podmnožice \begin{equation*}
@@ -309,16 +513,16 @@ Tekom tega poglavja bo $p$ vedno označevalo praštevilo, $q$ pa praštevilsko p
         ki je zakon v vsaki grupi $\operatorname{PSL}_2(q)$, moči $n$ ali manj.
     \end{izrek}
     Dokaz tega izreka je glavni rezultat članka \cite{Bradford_Thom_2017}. Ker je nekoliko preveč specifičen za okvir te naloge, ga opuščamo.
-    Poteka podobno kot dokaz enačbe \ref{eq_kozma_thom}, le da moramo uporabiti ustrezen ekvivalent Helfgott-Seressovega in Liebeckovega izreka. 
+    Poteka podobno kot dokaz enačbe \ref{izr_kozma_thom_glavni}, le da moramo uporabiti ustrezen ekvivalent Helfgott-Seressovega in Liebeckovega izreka. 
 
     % \subsubsection{Iskanje zakonov v grupah $PSL_2(q)$ z naključnimi sprehodi}
     
-    % Celoten dokaz avotrjev članka \cite{Bradford_Thom_2017}, je nekoliko preveč specifičen za okvir te naloge, zato bom opisal le glavno idejo, ki je zelo podobna dokazu enačbe \ref{eq_kozma_thom} pri simetričnih grupah.  
+    % Celoten dokaz avotrjev članka \cite{Bradford_Thom_2017}, je nekoliko preveč specifičen za okvir te naloge, zato bom opisal le glavno idejo, ki je zelo podobna dokazu enačbe \ref{izr_kozma_thom_glavni} pri simetričnih grupah.  
     % \begin{enumerate}
     %     \item Helfgott--Seressov izrek \ref{izr_Helfgott_Seress} nam je zagotovil dobre ocene za čase mešanja lenih naključnih sprehodov po Cayleyjevih grafih simetričnih grup. Njegovo vlogo pri tem dokazu nadomesti Breuillard--Gamburdov izrek (trditev 2.5 v \cite[str.~8]{Bradford_Thom_2017}), ki nam sporoča, da 
     %     obstaja konstanta $\delta > 0$, da za vsako naravno število $n \ge 2$ obstaja razmeroma malo (kvečjem $\sqrt{n}$) praštevil $p$ majših od $n$, za katera bi imel leni naključni sprehod po grupi $\operatorname{PSL}_2(p)$ spektralno razliko manjšo od $\delta$. Intuitivno to pomeni, da bomo lahko ocenili hitrost konvergence lenih spehodov po grupah $\operatorname{PSL}_2(q)$. 
     %     \item Ekvivalent Liebeckovega izreka o strukturi grup nam zagotavlja Dicksonov izrek (trditev 3.10 \cite[str.~8]{Bradford_Thom_2017}).
-    %     \item Vlogo podgrupe $k$-ciklov v simetrični grupi $S_k$, ki smo jo označili smo z $P(k)$, nadomestita Borelovi pogrupi $\operatorname{PSL}_2(q)$, torej podgrupa zgornjetrikotnih in podgrupa spodnjetrikotnih matrik.
+    %     \item Vlogo podgrupe $k$-ciklov v simetrični grupi $\text{Sym}(k)$, ki smo jo označili smo z $P(k)$, nadomestita Borelovi pogrupi $\operatorname{PSL}_2(q)$, torej podgrupa zgornjetrikotnih in podgrupa spodnjetrikotnih matrik.
     %     \item Namesto da obravnavamo lene naključne sprehode vsakega zase, jih obravnavamo v parih. S pomočjo Breuillard--Gamburdovega izreka in Dicksonovega izreka navzgor omejimo število potrebnih parov sprehodov, da dobimo par z želenimi lastnostmi.
     %     \item ... 
     %     \end{enumerate}
