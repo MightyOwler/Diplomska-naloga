@@ -383,7 +383,130 @@ in \begin{equation*}
 
 \subsection{Praštevilski izrek}
 
-V razdelku bomo spoznali praštevilski izrek ter dokazali nekaj njegovih posledic.
+V razdelku bomo spoznali praštevilski izrek ter dokazali nekaj njegovih posledic, ki bodo igrale pomembno vlogo v razdelku \ref{sec_grupe_psl2q}. Pred formulacijo moramo uvesti nekaj definicij.
+
+\begin{definicija}
+\label{def_o1_O1}
+Naj bosta $f, g : \mathbb{N} \to  \mathbb{R}$ funkciji. Pravimo, da je funkcija $f$ \emph{razreda $o(g)$}, če velja $\lim_{n \to \infty} f(n) / g(n) = 0$.
+Poleg tega rečemo, da je \emph{razreda $O(g)$}, če obstaja takšna konstanta $C > 0$, da za vsa dovolj velika števila $n$ velja $f(n) \le C g(n)$.
+V tem kontekstu bomo razumeli, da je $f \in o(1)$, če velja $\lim_{n \to \infty} f(n) = 0$ in $f \in O(1)$, če obstaja konstanta $C >0$, da je $f(n) < C$ za vsa dovolj velika števila $n$.
+\end{definicija}
+
+\begin{definicija}
+\label{def_asimptotska_ekvivalenca}
+Naj bosta $f, g : \mathbb{N} \to  \mathbb{R}$ funkciji, pri čemer naj $g$ nima ničel od nekega števila dalje. Pravimo, da sta $f$ in $g$ \emph{asimptotsko ekvivalenti}, če velja \begin{equation*}
+\lim_{n \to \infty} \frac{f(n)}{g(n)} = 1.
+\end{equation*}
+V tem primeru označimo $f \sim g$.
+\end{definicija}
+\begin{opomba}
+Če sta funkciji $f$ in $g$ asimptotsko ekvivalentni, velja zveza $f(n) = (1 + o(1)) g(n)$.
+\end{opomba}
+\begin{dokaz}
+Obstaja neko naravno število $N_1$ z lastnostjo, da za vsak $n \ge N_1$ velja $g(n) \neq 0$. Zato lahko za $n \ge N_1$ zapišemo \begin{equation*}
+\frac{f(n)}{g(n)} = 1 + h(n).
+\end{equation*}  
+Po definicji asimptotske ekvivalence sledi, da je $\lim_{n \to \infty} h(n) = 0$, torej je $h \in o(1)$.  
+\end{dokaz}
+
+\begin{definicija}
+\label{def_pi_tau}
+Definirajmo funkciji $\pi, \tau : \mathbb{R} \to  \mathbb{N} \cup \left\{ 0\right\}$, ki preštejeta število praštevil oziroma praštevilskih potenc do vključno nekega števila: \begin{equation*}
+\pi(x) :=  \sum_{p \le x, \, p \in \mathbb{P}} 1 \text{ in } \tau(x) :=  \sum_{p^{k} \le x, \, k \ge 1 \,   p \in \mathbb{P}} 1.
+\end{equation*}  
+\end{definicija}
+
+\begin{izrek}[Praštevilski izrek]
+\label{izr_prastevilski_izrek}
+ Za funkcijo $\pi$ iz definicije \ref{def_pi_tau} velja asimptotska ekvivalenca \begin{equation*}
+ \pi(x) \sim \frac{x}{\log x}.
+ \end{equation*}  
+\end{izrek}
+
+Zgodovina praštevilskega izreka sega v konec 18.~stoletja, ko je petnajstletni Gauss na podlagi empričnih vrednosti domneval, da mora veljati
+zveza $\pi(x) \sim x / \log x$ \cite[str.~1]{mit_lecture_notes_2021}. Tekom svojega življenja mu domneve ni uspelo dokazati, dočakal pa je preboj, ki ga je leta
+1851 izvedel Čebišov \cite[str.~4--5]{Granville_1993}.
+
+\begin{definicija}[Funkciji Čebišova]
+\label{def_cebisevi_funkciji}
+Funkcijama $\theta, \psi : \mathbb{R} \to \mathbb{R}$ s predpisoma \begin{equation*}
+\theta(x) := \sum_{p \le x, \,   p \in \mathbb{P}} \log(p) \text{ in } \psi(x) := \sum_{p^{k} \le x, \,  k \ge  1 , \,   p \in \mathbb{P}}
+\end{equation*}  
+rečemo \emph{funkciji Čebišova}.
+\end{definicija}
+
+\begin{izrek}[Čebišov]
+\label{izr_cebisov}
+  Velja \begin{equation*}
+  \pi(x) \sim \frac{x}{\log x} \iff \theta(x) \sim x.
+  \end{equation*} 
+\end{izrek}
+\begin{dokaz}
+Dokaz najdemo v \cite[str.~4]{mit_lecture_notes_2021}. Očitno velja zveza \begin{equation*}
+  0 \le  \theta(x) = \sum_{p \le x, \,   p \in \mathbb{P}} \log(p) \le  \pi(x) \log x
+\end{equation*}  
+oziroma \begin{equation*}
+  \frac{\theta(x)}{x} \le  \frac{\pi(x) \log x}{x}. 
+  \end{equation*} 
+  Za vsako število $\varepsilon \in  (0,1)$ imamo \begin{align*}
+    \vartheta(x) \geq \sum_{x^{1-\varepsilon} < p \leq x, \, p \in \mathbb{P}} \log p &\geq (1-\varepsilon)(\log x)\left(\pi(x) - \pi(x^{1-\varepsilon})\right) \\
+     &\geq (1-\varepsilon)(\log x)(\pi(x) - x^{1-\varepsilon}).
+  \end{align*}
+  Od tod sledi \begin{equation*}
+    \pi(x) \leq \left(\frac{1}{1-\varepsilon}\right)\frac{\vartheta(x)}{\log x} + x^{1-\varepsilon}.
+  \end{equation*}  
+  Tako imamo za vsako število $\varepsilon \in  (0,1)$ oceno \begin{equation*}
+    \frac{\vartheta(x)}{x} \leq \frac{\pi(x)\log x}{x} \leq \left(\frac{1}{1-\varepsilon}\right)\frac{\vartheta(x)}{x} + \frac{\log x}{x^{\varepsilon}}.
+  \end{equation*}  
+  Ker člen $\log x / x^{\varepsilon}$ konvergira proti 0 ko pošljemo $x \to \infty$, sta po izreku o sendviču kvocienta $\theta(x) / x$ in $\pi(x) \log x / x$ poljubno blizu za dovolj velike $x$.
+  Če eden izmed njiju konvergira proti $1$, mora tudi drugi.
+\end{dokaz}
+Poleg zgornjega izreka je Čebišev leta 1851 dokazal (\cite[str.~4--5]{Granville_1993}), da limita $\pi(x) \log x / x$ -- če le obstaja -- mora biti enaka 1. Naslednji preboj je uspel Riemannu v svojem znamenitem članku \cite{Riemann_1859} leta 1859, v katerem je povezal porazdeltev praštevil s funkcijo zeta in formuliral prvo obliko hipoteze, ki dandanes nosi njegovo ime.
+Leta 1896 sta praštevilski izrek naposled neodvisno dokazala Hadamard in De la Vallée Poussin z upoštevanjem Riemannovih ugotovitev. 
+
+Idejo dokaza praštevilskega izreka \ref{izr_prastevilski_izrek}, ki jo bomo predstavili v nalogi, je podal Newman leta 1980. Najdemo jo v viru \cite[str.~9]{mit_lecture_notes_2021}. % TODO kje je referenca ... 
+\begin{skica}
+Najprej moramo pokazati, da za nepadajočo funkcijo $f : \mathbb{R}_{\ge  1} \to \mathbb{R}$
+velja sklep \begin{equation*}
+\int_{1}^{\infty} \frac{f(t) - 1}{t^2} \, dt \text{ konvergira } \implies f(x) \sim x. 
+\end{equation*}  
+  Nato uvedemo funkcijo $H(t) = \theta(e^{t} )e^{-t} - 1$, ki je kosoma zvezna, omejena. Z uporabo lastnosti holomorfnih funkcij ugotovimo, da integral \begin{equation*}
+  \int_{0}^{\infty} H(t)   \, dt = \int_{0}^{\infty} (\theta(e^{t} )e^{-t} - 1)  \, dt  \stackrel{t \mapsto \log x}{=} \int_{1}^{\infty}  \frac{\theta(x) -x }{x^2} \, dx 
+  \end{equation*}  
+   konvergira. Od tod po začetnem sklepu sledi, da je $\theta(x) \sim x$, kar je po izreku Čebišova \ref{izr_cebisov} ekvivalentno praštevilskemu izreku $\pi(x) \sim x / \log x$.  
+\end{skica}
+
+
+% \begin{lema}
+%   \label{lem_gostota_prastevil}
+%   Naj bo preslikava $\tau : \mathbb{R} \to \mathbb{N} \cup \left\{ 0\right\}$, ki prešteje število praštevilskih potenc, podana s predpisom \begin{equation*}
+%   \tau(x) = \sum_{p^{k} \le x, \, k \in \mathbb{N}} 1.
+%   \end{equation*}  
+%    Potem velja $\tau(x) = (1 + o(1)) \frac{n}{\log(n)}$.     
+%   \end{lema}
+
+Za konec dokažimo še oceno, ki smo jo napovedali v uvodu. Ponovno jo bomo uporabili v razdelku \ref{sec_simetricne_grupe}.
+\begin{lema}
+  \label{lem_lcm_exp_n}
+  Velja ocena \begin{equation*}
+  \operatorname{lcm}(1, \ldots, n) \sim \exp(n).
+  \end{equation*}  
+  \end{lema}
+  \begin{dokaz}
+  Po definicji najmanjšega skupnega večkratnika velja \begin{equation*}
+  \text{lcm}(1, \ldots, n) = \prod_{p^{k} \le n, \, p^{k + 1} > n,\,   p \in \mathbb{P}, \, k \ge 1 } p^{k}.
+  \end{equation*}  
+  Z logaritmiranjem te enačbe in uporabo funkcij Čebišova \ref{def_cebisevi_funkciji} dobimo oceni \begin{equation*}
+  \theta(n) = \sum_{p \le n, \,   p \in \mathbb{P}} \log(p) \le \log(\operatorname{lcm}(1, \ldots ,n)) \le  \sum_{p^{k} \le n, \, p \in \mathbb{P}, \, k \ge 1 } \log(p^{k}) = \psi(n).
+  \end{equation*}  
+  Po izreku (TODO tukaj daš izrek Čebiševa) in izreku o sendviču sledi \begin{equation*}
+  \lim_{n \to \infty} \frac{\log(\operatorname{lcm}(1, \ldots, n))}{n} = 1.
+  \end{equation*}  
+    Od tod sledi želena ocena \begin{equation*}
+      \operatorname{lcm}(1, \ldots, n) \sim \exp(n).
+  \end{equation*} 
+  \end{dokaz}
+
 
 % TOLE popolnoma izbriši
 

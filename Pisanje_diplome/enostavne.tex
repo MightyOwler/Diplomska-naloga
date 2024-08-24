@@ -93,30 +93,7 @@ katere članice imajo razmeroma visoke rede elementov glede na njihove velikosti
 
 V razdelku bomo najprej dokazali oceno dolžine kratkih zakonov v simetričnih grupah z uporabo praštevilskega izreka, nato pa predstavili glavni izrek članka \cite{Kozma_Thom_2016}, ki podaja še boljšo oceno.
 
-% TODO v poglavju o praštevilskem izreku predstavi ekvivalenco praštevilskega izreka in funkcij Čebiševa
-
-\begin{lema}
-\label{lem_lcm_exp_n}
-Velja ocena \begin{equation*}
-\operatorname{lcm}(1, \ldots, n) \sim \exp(n).
-\end{equation*}  
-\end{lema}
-\begin{dokaz}
-Po definicji najmanjšega skupnega večkratnika velja \begin{equation*}
-\text{lcm}(1, \ldots, n) = \prod_{p^{k} \le n, \, p^{k + 1} > n,\,   p \in \mathbb{P}, \, k \ge 1 } p^{k}.
-\end{equation*}  
-Z logaritmiranjem te enačbe in uporabo Čebiševih funkcij (TODO dodaj sklic na definicijo) dobimo oceni \begin{equation*}
-\theta(n) = \sum_{p \le n, \,   p \in \mathbb{P}} \log(p) \le \log(\operatorname{lcm}(1, \ldots ,n)) \le  \sum_{p^{k} \le n, \, p \in \mathbb{P}, \, k \ge 1 } \log(p^{k}) = \psi(n).
-\end{equation*}  
-Po izreku (TODO tukaj daš izrek Čebiševa) in izreku o sendviču sledi \begin{equation*}
-\lim_{n \to \infty} \frac{\log(\operatorname{lcm}(1, \ldots, n))}{n} = 1.
-\end{equation*}  
-  Od tod sledi želena ocena \begin{equation*}
-    \operatorname{lcm}(1, \ldots, n) \sim \exp(n).
-\end{equation*} 
-\end{dokaz}
-
-S pomočjo te leme lahko ocenimo dolžine kratkih zakonov v simetričnih grupah.
+S pomočjo leme \ref{lem_lcm_exp_n} lahko ocenimo dolžine kratkih zakonov v simetričnih grupah.
 
 \begin{posledica}
 \label{psl_zakon_v_splosni_grupi_prastevilski}
@@ -487,17 +464,6 @@ To pomeni, da obstaja element $x \in \mathbb{F}_p$, za katerega beseda $w(B, C)$
     Od tod sledi, da ima $\operatorname{SL}_2(q)$ natanko $(q^2  -1)q$ elementov, saj je $\lvert \mathbb{F}_q^{*} \rvert = q-1$. V primeru $p \neq 2$, nam kvocient po centru odbije še polovico elementov.   
     \end{dokaz}
     
-    \begin{lema}
-    \label{lem_gostota_prastevil}
-    Naj bo preslikava $\tau : \mathbb{R} \to \mathbb{N} \cup \left\{ 0\right\}$, ki prešteje število praštevilskih potenc, podana s predpisom \begin{equation*}
-    \tau(x) = \sum_{p^{k} \le x, \, k \in \mathbb{N}} 1.
-    \end{equation*}  
-     Potem velja $\tau(x) = (1 + o(1)) \frac{n}{\log(n)}$.     
-    \end{lema}
-    Ta lema je ena izmed oblik osnovnega izreka o praštevilih. Leta     1851 je Čebišev dokazal (\cite[str.~4--5]{Granville_1993}), da limita $\frac{\tau(x)}{x / \log(x)}$ -- če le obstaja -- mora biti 1. To podvig je uspel Riemannu v svojem znamenitem članku \cite{Riemann_1859} leta 1859, v katerem je povezal porazdeltev praštevil s funkcijo zeta in formuliral prvo obliko hipoteze, ki dandanes nosi njegovo ime.
-    Ker je dokaz netrivialen, ga bomo opustili, Riemann ga je v prej omenjenem članku dokazal z uporabo kompleksne analize. 
-    Nekoliko več o tej lemi piše v članku \cite{Kozma_Thom_2016}.            
-   
     Zdaj se lahko lotimo konstrukcije netrivialnega zakona za grupe oblike $\operatorname{PSL}_2(q)$, moči manjše ali enake naravnemu številu $n$. Z uporabo lem \ref{lem_velikost_grupe_psl2q} in \ref{lem_gostota_prastevil}
     vemo, da moramo moramo konstruirati zakone za vse grupe $\operatorname{PSL}_2(q)$, za katere je $q \le \sqrt[3]{(1 + o(1)) 2n}$. Od tod dobimo besedo $w \in F_2$ dolžine \begin{equation*}
     l(w) \le 8 \left( \frac{3 \sqrt[3]{(1 + o(1)) 2n}}{\log((1 + o(1)) 2n))}  \right)^2 \cdot 8 \sqrt[3]{(1 + o(1)) 2n} \le 1152 (1 + o(1)) \frac{n}{\log(n)^2},
