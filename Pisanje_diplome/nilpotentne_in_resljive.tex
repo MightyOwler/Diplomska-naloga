@@ -286,8 +286,25 @@ Direktna posledica te leme je naslednja ugotovitev za rešljive grupe.
 \end{dokaz}
 
 Ta ugotovitev je asimptotsko gledano veliko boljši rezultat od trditve \ref{trd_ocitna_meja_za_kratke_zakone_resljive_grupe}.
-Zdaj moramo pridobljeno znanje le še prevesti na nilpotentne grupe. Pri tem bomo uporabili naslednje razmeroma znano dejstvo o členih
-spodnje centralne vrste. 
+Zdaj moramo pridobljeno znanje le še prevesti na nilpotentne grupe. Pred tem moramo dokazati, da za vsako celo število $n \ge 0$ velja $G^{(n)} \subseteq \gamma_{2^{n}}(G)$. Ideja za dokaz te trditve je povzeta po \cite{Schneider_2016}.
+
+\begin{lema}
+\label{lem_tri_podgrupe}
+Naj bo $G$ grupa, $A, B, C \trianglelefteq G$ njene edinke in $D \le G$ njena podgrupa. Če velja \begin{equation*}
+[[A, B], C] \subseteq  D \text{ in } [[B, C], A] \subseteq D,
+\end{equation*}  
+velja tudi \begin{equation*}
+[[C, A], B].
+\end{equation*}  
+Elementi komutatorske podgrupe $[[A, B], C]$ so oblike $\prod_{i = 1}^{n} [[a_i, b_i], c_i]$ za neke elemente $a_i \in A, b_{i} \in  B, c_{i} \in  C$. Z računom lahko preverimo, da poljubne elemente $g, h, k \in G$ velja Hall-Wittova enakost \begin{equation*}
+[[g^{-1}, h], k] = \left(  \left(  [[k^{-1}, g], h]^{k^{-1}} [[h^{-1} , k] , g]^{h^{-1}} \right)^{g} \right)^{-1}.
+\end{equation*}  
+  To pomeni, da lahko zapišemo \begin{equation*}
+    \prod_{i = 1}^{n} [[a_i, b_i], c_i]  = \prod_{i = 1}^{n} \left(  \left(  \underbrace{[[c_i^{-1}, a_i], b_i]^{c_i^{-1}}}_{\in [[C, A], B]}  \underbrace{[[b_i^{-1} , c_i] , a_i]^{b_i^{-1}}}_{\in [[B, C], A]}  \right)^{a_i} \right)^{-1}.
+    \end{equation*}
+    Od tod po predpostavkah sledi, da je $[[A, B] , C] \subseteq  [[C, A] , B] [[B, C] , A]  \subseteq D$. 
+\end{lema}
+
 
 \begin{lema}
 \label{lem_povezava_med_spodnjo_in_izpeljano_vrsto}
@@ -296,15 +313,34 @@ Za vsako število $n \ge 0$ velja inkluzija
 G^{(n)} \subseteq \gamma_{2^{n}}(G).
 \end{equation*}    
 \end{lema}
-% \begin{dokaz}
-% Dokaz poteka z indukcijo po $n$. Za $n = 0$ po definiciji velja $G^(0) \subseteq \gamma_{1}(G)$. Za $n \ge 1$ velja
-% \begin{equation*}
-% G^{(n)} = [G^{(n - 1)}, G^{(n - 1)}] \subseteq [\gamma_{2^{n - 1}}, \gamma_{2^{n - 1}}] \subseteq [[\gamma_{2^{n - 1}}, G]] = \gamma_{}
-% \end{equation*}  
-  
-% \end{dokaz}
+\begin{dokaz}
+Dokaz poteka z indukcijo po $n$. Za $n = 0$ po definiciji velja $G^{(0)} \subseteq \gamma_{1}(G)$. Za $n \ge 1$ velja
+\begin{equation*}
+G^{(n)} = [G^{(n - 1)}, G^{(n - 1)}] \subseteq [\gamma_{2^{n - 1}}(G), \gamma_{2^{n - 1}}(G)].
+\end{equation*}  
+Če bi uspeli dokazati, da za poljubni števili $i, j \ge 1$ velja \begin{equation*}
+[\gamma_i(G), \gamma_j(G)] \subseteq \gamma_{i + j}(G),  
+\end{equation*}  
+bi dokazali lemo. Zato bomo izvedli indukcijo po številu $j$. V primeru $j = 1$ imamo \begin{equation*}
+    [\gamma_i(G), \gamma_1(G)] = [\gamma_i(G), G] = \gamma_{i + 1}(G).
+\end{equation*}  
+  Predpostavimo, da je $j > 1$. 
+    Po indukcijski predpostavki veljata sklepa \begin{equation*}
+    [[\gamma_{j -1}(G), \gamma_i(G)], G] \stackrel{\text{i.~p.}}{\subseteq} [\gamma_{i + j -1}(G), G] = \gamma_{i + j}(G)
+    \end{equation*}  
+    in \begin{equation*}
+    [[\gamma_i(G), G], \gamma_{j -1}(G)]  = [\gamma_{i + 1}(G), \gamma_{j - 1}(G)] \stackrel{\text{i.~p.}}{\subseteq} \gamma_{i + j}(G).
+    \end{equation*}  
+    Zato po lemi \ref{lem_tri_podgrupe} velja \begin{equation*}
+        [\gamma_i(G), \gamma_j(G)] = [\gamma_j(G), \gamma_i(G)] = [[G, \gamma_{j- 1}(G)], \gamma_{i}(G)] \stackrel{\ref{lem_tri_podgrupe}}{\subseteq}  \gamma_{i + j}(G).  
+    \end{equation*}  
+    Od tod sledi želena vsebovanost \begin{equation*}
+        G^{(n)} = [G^{(n - 1)}, G^{(n - 1)}] \subseteq [\gamma_{2^{n - 1}}(G), \gamma_{2^{n - 1}}(G)] \subseteq \gamma_{2^n}(G).
+        \end{equation*}
+    
+\end{dokaz}
 
-% TODO
+
 
 Naslednja trditev je kombinacija posledice 4 in leme 11 iz naloge \cite[str.~16--17]{Schneider_2016}.
 

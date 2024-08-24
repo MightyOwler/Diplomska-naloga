@@ -209,7 +209,7 @@ Na koncu sta z uporabo komutatorske leme povezala besedi $w_1$ in $w_2$ v besedo
        % \log(n!) = \log \left( (1+ o(1)) \sqrt{2 \pi n} \left( \frac{n}{e} \right)^n \right \le (1 + o(1)) n \log(n). 
        \log(n!) = \log \left( (1+ o(1)) \sqrt{2 \pi n} \left( \frac{n}{e} \right)^n   \right) \le (1 + o(1)) n \log(n).
     \end{equation*}
-    Od tod z uporabo prejšnejga izreka dobimo besedo $w \in F_2$, ki je zakon v grupi $G$, dolžine \begin{align*}
+    Od tod z uporabo prejšnjega izreka dobimo besedo $w \in F_2$, ki je zakon v grupi $G$, dolžine \begin{align*}
         l(w) &\le  \exp{\left(O(1) \log(n!)^4 \log(\log(n!))\right)}, \\
             &\le \exp{\left(O(1) ((1 + o(1)) n \log(n))^4 \log((1 + o(1)) n \log(n))\right)}, \\
             &\le \exp{\left( O(1) n^4 \log(n)^4 \log(n \log(n)) \right)}.
@@ -502,18 +502,20 @@ To pomeni, da obstaja element $x \in \mathbb{F}_p$, za katerega beseda $w(B, C)$
     vemo, da moramo moramo konstruirati zakone za vse grupe $\operatorname{PSL}_2(q)$, za katere je $q \le \sqrt[3]{(1 + o(1)) 2n}$. Od tod dobimo besedo $w \in F_2$ dolžine \begin{equation*}
     l(w) \le 8 \left( \frac{3 \sqrt[3]{(1 + o(1)) 2n}}{\log((1 + o(1)) 2n))}  \right)^2 \cdot 8 \sqrt[3]{(1 + o(1)) 2n} \le 1152 (1 + o(1)) \frac{n}{\log(n)^2},
     \end{equation*}  
-    ki je zakon v vseh grupah $\operatorname{PSL}_2(q)$, moči $n$ ali manj. Ta rezultat ni najboljši in je predstavljal oviro, kot je bilo omenjeno v tretjem odstavku članka \cite[str.~6]{Bradford_Thom_2017}.
-    Izognemo se ji lahko z uporabo naključnih sprehodov, ki prinaša naslednji rezultat.
+    ki je zakon v vseh grupah $\operatorname{PSL}_2(q)$ moči $n$ ali manj. 
+    
+    % Ta rezultat ni najboljši in je predstavljal oviro, kot je bilo omenjeno v tretjem odstavku članka \cite[str.~6]{Bradford_Thom_2017}.
+    % Izognemo se ji lahko z uporabo naključnih sprehodov, ki prinaša naslednji rezultat.
 
-    \begin{izrek}[Bradford--Thom]
-    \label{izr_bradford_thom}
-    Za vsako naravno število $n \in \mathbb{N}$ obstaja konstanta $C > 0$ in beseda $w \in F_2$ dolžine \begin{equation*}
-        C n^{2 / 3} {\log(n)}^3,
-        \end{equation*}  
-        ki je zakon v vsaki grupi $\operatorname{PSL}_2(q)$, moči $n$ ali manj.
-    \end{izrek}
-    Dokaz tega izreka je glavni rezultat članka \cite{Bradford_Thom_2017}. Ker je nekoliko preveč specifičen za okvir te naloge, ga opuščamo.
-    Poteka podobno kot dokaz enačbe \ref{izr_kozma_thom_glavni}, le da moramo uporabiti ustrezen ekvivalent Helfgott-Seressovega in Liebeckovega izreka. 
+    % \begin{izrek}[Bradford--Thom]
+    % \label{izr_bradford_thom}
+    % Za vsako naravno število $n \in \mathbb{N}$ obstaja konstanta $C > 0$ in beseda $w \in F_2$ dolžine \begin{equation*}
+    %     C n^{2 / 3} {\log(n)}^3,
+    %     \end{equation*}  
+    %     ki je zakon v vsaki grupi $\operatorname{PSL}_2(q)$, moči $n$ ali manj.
+    % \end{izrek}
+    % Dokaz tega izreka je glavni rezultat članka \cite{Bradford_Thom_2017}. Ker je nekoliko preveč specifičen za okvir te naloge, ga opuščamo.
+    % Poteka podobno kot dokaz enačbe \ref{izr_kozma_thom_glavni}, le da moramo uporabiti ustrezen ekvivalent Helfgott-Seressovega in Liebeckovega izreka. 
 
     % \subsubsection{Iskanje zakonov v grupah $PSL_2(q)$ z naključnimi sprehodi}
     

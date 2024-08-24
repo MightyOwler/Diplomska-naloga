@@ -31,6 +31,21 @@ da velja $\tilde{\varphi} \circ \iota = \varphi$. Z drugimi besedami, spodnji di
   \end{tikzpicture} \]
 \end{definicija}
 
+\begin{opomba}\label{opm_standardna_inkluzija}
+Preslikava $\iota$ v definiciji proste grupe je injektivna. Rečemo ji \emph{standardna inkluzija}.
+\end{opomba}
+\begin{dokaz}
+Naj bo $F$ prosta grupa nad neprazno množico $S$. Če je $\lvert S \rvert = 1$, ni kaj dokazovati. Zato predpostavimo, da ima $S$ vsaj dva različna elementa.
+
+Denimo, da $\iota$ ni injektivna. Potem obstajata različna elementa $s_1, s_2 \in S$, za katera velja $\iota(s_1) = \iota(s_2)$. Opazujemo preslikavo $\varphi: S \to C_2 = \left\{ 1, q\right\}$ s predpisom
+$\varphi(s_1) = q$ in $\varphi(s) = 1$ za vse $s \in  S \setminus \left\{  s_1 \right\}$. Ker je $F$ prosta, obstaja enolično določen homomorfizem $\tilde{\varphi} : F \to C_2$, da velja $\tilde{\varphi} \circ \iota = \varphi$.
+Zapišemo \begin{equation*}
+\tilde{\varphi}(\iota(s_1)) = \varphi(s_1) = q \neq 1 = \varphi(s_2) = \tilde{\varphi}(\iota(s_2)).
+\end{equation*}  
+Ker je $\tilde{\varphi}$ preslikava, bi moralo veljati $\iota(s_1) \neq \iota(s_2)$, s čimer smo prišli do protislovja.
+\end{dokaz}
+
+
 \begin{trditev}
 \label{trd_enolicnost_prostih_grup}
  Naj bo $S$ neprazna množica. Potem do izomorfizma natančno obstaja največ ena prosta grupa nad množico $S$.
