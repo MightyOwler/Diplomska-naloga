@@ -35,6 +35,7 @@ da velja $\tilde{\varphi} \circ \iota = \varphi$. Z drugimi besedami, spodnji di
 Preslikava $\iota$ v definiciji proste grupe je injektivna. Rečemo ji \emph{standardna inkluzija}.
 \end{opomba}
 \begin{dokaz}
+  Dokaz je povzet po odgovoru \cite{math_stack_4689399_standardna_inkluzija}.
 Naj bo $F$ prosta grupa nad neprazno množico $S$. Če je $\lvert S \rvert = 1$, ni kaj dokazovati. Zato predpostavimo, da ima $S$ vsaj dva različna elementa.
 
 Denimo, da $\iota$ ni injektivna. Potem obstajata različna elementa $s_1, s_2 \in S$, za katera velja $\iota(s_1) = \iota(s_2)$. Opazujemo preslikavo $\varphi: S \to C_2 = \left\{ 1, q\right\}$ s predpisom
@@ -43,6 +44,26 @@ Zapišemo \begin{equation*}
 \tilde{\varphi}(\iota(s_1)) = \varphi(s_1) = q \neq 1 = \varphi(s_2) = \tilde{\varphi}(\iota(s_2)).
 \end{equation*}  
 Ker je $\tilde{\varphi}$ preslikava, bi moralo veljati $\iota(s_1) \neq \iota(s_2)$, s čimer smo prišli do protislovja.
+\end{dokaz}
+V nadaljevanju bomo potrebovali naslednjo preprosto lemo.
+\begin{lema}
+\label{lem_moc_homomorfizmov_proste_grupe}
+Naj bo $G$ končna grupa in $F$ prosta grupa nad $k$-množico $S$ za $k \ge 1$. Potem velja \begin{equation*}
+\lvert \operatorname{Hom}(F, G) \rvert = \lvert G \rvert^{k}.  
+\end{equation*}  
+\end{lema}
+\begin{dokaz}
+  Najprej dokažimo $\lvert \operatorname{Hom}(F, G) \rvert \ge \lvert G \rvert^{k}$.
+Po definiciji proste grupe nam vsaka preslikava $\varphi: S \to  G$ inducira enolično določen homomorfizem $\tilde{\varphi} \in \operatorname{Hom}(F, G)$, da velja $\tilde{\varphi} \circ  \iota = \varphi$.
+To pomeni, da različni preslikavi $\varphi_1, \varphi_2 : S \to  G$ inducirata različna homomorfizma $\tilde{\varphi}_1 , \tilde{\varphi}_2 \in \operatorname{Hom}(F, G)$, saj bi v nasprotnem primeru imeli \begin{equation*}
+\varphi_1 = \tilde{\varphi}_1 \circ  \iota = \tilde{\varphi}_2 \circ  \iota = \varphi_2.
+\end{equation*}  
+Ker je različnih preslikav $\varphi : S \to G$ natanko $\lvert G \rvert^{k}$, smo dokazali $\lvert \operatorname{Hom}(F, G) \rvert \ge \lvert G \rvert^{k}$.
+
+Neenakost $\lvert \operatorname{Hom}(F, G) \rvert \le \lvert G \rvert^{k}$ dokažemo z razmislekom, da različna homomorfizma iz $\operatorname{Hom}(F, G)$ lahko induciramo z različnima preslikavama $S \to G$.
+Naj bo $\psi' \in \operatorname{Hom}(F, G)$. Ker je po opombi \ref{opm_standardna_inkluzija} standardna inkluzija injektivna, vsebuje prosta grupa $F$ vsaj $k$ različnih elementov, ki jih označimo s $s_1' = \iota(s_1), \ldots, s_k' = \iota(s_k)$.
+Če definiramo preslikavo $\psi : S \to G$ s predpisom $\psi(s_i) := \psi'(s_i') = \psi'(\iota(s_i))$, vidimo, da velja $\psi' = \tilde{\psi}$. S tem smo dokazali želeno neenakost, saj različna homomorfzima $\psi_1', \psi_2' \in  \operatorname{Hom}(F, S)$ zaradi enoličnosti po univerzalni lastnosti ne moreta biti
+inducirana z isto preslikavo $\psi : S \to  G$.
 \end{dokaz}
 
 
@@ -120,16 +141,27 @@ Pri konstrukciji zakonov stalno uporabljamo naslednjo na videz očitno trditev, 
     Proste grupe so \emph{torzijsko proste}. Z drugimi besedami, vsi elementi razen enote so neskončnega reda. 
 \end{trditev}
 \begin{dokaz}
-  Dokaz je povzet po \cite[str.~4--5]{Pogacnik_2024}. 
-  Naj bo $F(S)$ prosta grupa nad neprazno množico $S$. Recimo, da obstaja beseda $w \in F(S)$ končnega reda oblike $w = a_1 a_2 \ldots a_n$ za paroma neinverzne elemente $a_1, \ldots , a_n \in S \cup S^{-1}$. Naj bo $j : S \to (\mathbb{Z}, +)$ preslikava, ki vse elemente $a_i$ slika v pozitivna števila. Po univerzalni lastnosti prostih grup jo lahko razširimo do homomorfizma $\varphi_j \in \operatorname{Hom}(F(S), \mathbb{Z})$. 
-    Ker je $\varphi_j$ homomorfizem, bo $\varphi(w) = \sum_{i = 1}^{n} \varphi(a_i) > 0$. To je prosislovno, saj bi moral red elementa $\varphi(w)$ deliti red besede $w$.
-    Grupa $(\mathbb{Z}, +)$ je torzijsko prosta, zato je element $\varphi_j(w)$ v njej neskončnega reda.
+Dokaz je povzet po odgovoru \cite{math_stack_2207776_torsion_free}.
+Naj bo $w$ netrivialna okrajšana beseda dolžine $l = l(w)$ iz proste grupe $F(S)$. Trdimo, da jo lahko neko celo število $0 \le r \le l$ zapišemo v obliki \begin{equation*}
+w = s_1 \cdots  s_r s_{r + 1} \cdots s_{l -r} s_{r}^{-1} \cdots s_1^{-1} = \beta \alpha \beta^{-1}, 
+\end{equation*}  
+kjer zahtevamo $s_{r + 1} \neq s_{l - r}^{-1}$. Naj bo okrajšana beseda oblike \begin{equation*}
+w = a_1 \cdots  a_l.
+\end{equation*}  
+Če imamo $a_1 \neq a_l^{-1}$ vzamemo $r = 0$ in zaključimo. Sicer v primeru $a_2 \neq a_{l - 2}^{-1}$ vzamemo $r = 1$ in tako dalje. Ker je beseda $w$ nerivialna, velja $l > 0$,
+zato moramo po končnem številu korakov dobiti ustrezno šteivlo $r$, saj dosežemo sredino besede $w$ tako z leve kot z desne strani. Če je $l$ sodo število, do tega ne more priti, saj bi dobili besedo oblike
+$w = \beta \beta^{-1}$, ki ni okrajšana. Če je $l$ liho število pa bi dobili besedo oblike $w = \beta a_{(l + 1) / 2}  \beta^{-1}$, torej lahko vzamemo $r = (l + 1) / 2$.
+
+Za poljubno naravno število $n$ torej velja \begin{equation*}
+w^{n} = \beta \alpha^{n} \beta^{-1}.
+\end{equation*}  
+  Po konstrukciji besed $\alpha$ in $\beta$ ne more priti do krajšanja na stičiščih $\beta \alpha$, $\alpha \alpha$ ali $\alpha \beta^{-1}$, zato je $w^{n}$ okrajšana beseda.
+  S tem smo dokazali, da ima vsak netrivialni element v prosti grupi neskončni red.
 \end{dokaz}
-% TODO https://math.stackexchange.com/questions/2207776/free-groups-are-torsion-free
-% citiraj ta odgovor
+
 % TODO zakaj obstajajo končne grupe ... 
 
-Brez dokaza bomo privzeli Nielsen--Schreierjev izrek, ki je klasični rezultat v teoriji prosti grup. Potrebovali ga bomo za dokaz komutatorske leme,
+Brez dokaza bomo privzeli Nielsen--Schreierjev izrek, ki je klasični rezultat v teoriji prostih grup. Potrebovali ga bomo za dokaz komutatorske leme,
 še bolj izrazito pa pri obravnavi zakonov z računalnikom v razdelku \ref{sec_racunalnisko_iskanje}. 
 
 \begin{izrek}[Nielsen--Schreier]
