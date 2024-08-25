@@ -239,7 +239,7 @@ kjer je $\iota := (3 + \sqrt{17} ) / 2 = 3{,}5615528 \ldots $ in $C_1 = 1/ 2 + 5
          &= l(b_{n} ^{-1} a_{n} b_{n} \underbrace{a_{n} ^{-1} a_{n}}_{\text{se pokrajša}}  b_{n} a_{n} ^{-1} b_{n} ^{-1}) + l([a_{n}, b_{n} ^{-1}]) + l([b_{n}, a_{n}]) \\
          &= \underbrace{l(b_{n} ^{-1} a_{n} b_{n})}_{l(a_{n + 1}) - l(a_{n}^{-1}) = c_{n+1} - c_{n}}  + \underbrace{l(b_{n}) + l(a_{n} ^{-1}) + l(b_{n} ^{-1})}_{3 c_{n}}  + \underbrace{l([a_{n} , b_{n}^{-1}])}_{l(a_{n + 1}) = c_{n+1}}  + \underbrace{l([b_{n}, a_{n}])}_{l(b_{n+1}) = c_{n+1}}. 
     \end{align*}
-    To nam za $n \ge 0 \cup  \left\{ 0 \right\}$ podaja želeno zvezo $c_{n+2} = 3 c_{n+1} + 2c_{n}$ skupaj z začetnima vrednostima $c_0 = 1$ in $c_1 = 4$. Temu rekurzivno podanemu zaporedju pripada matrična enačba, ki jo poenostavimo z diagonalizacijo kvadratne matrike, spodaj označene z $A$ \begin{equation*}
+    To nam za $n \ge 0$ podaja želeno zvezo $c_{n+2} = 3 c_{n+1} + 2c_{n}$ skupaj z začetnima vrednostima $c_0 = 1$ in $c_1 = 4$. Temu rekurzivno podanemu zaporedju pripada matrična enačba, ki jo poenostavimo z diagonalizacijo kvadratne matrike, spodaj označene z $A$ \begin{equation*}
     \begin{bmatrix}
         c_{n+ 1}\\
         c_{n} 
@@ -285,7 +285,7 @@ Direktna posledica te leme je naslednja ugotovitev za rešljive grupe.
 \end{dokaz}
 
 Ta ugotovitev je asimptotsko gledano veliko boljši rezultat od trditve \ref{trd_ocitna_meja_za_kratke_zakone_resljive_grupe}.
-Zdaj moramo pridobljeno znanje le še prevesti na nilpotentne grupe. Pred tem moramo dokazati, da za vsako celo število $n \ge 0$ velja $G^{(n)} \subseteq \gamma_{2^{n}}(G)$. Ideja za dokaz te trditve je povzeta po \cite{Schneider_2016}.
+Zdaj moramo pridobljeno znanje le še prevesti na nilpotentne grupe. Pred tem moramo dokazati, da za vsako celo število $n \ge 0$ velja $G^{(n)} \subseteq \gamma_{2^{n}}(G)$. Ideji za dokaza se nahajata v \cite[str.~17--18]{Schneider_2016}.
 
 \begin{lema}
 \label{lem_tri_podgrupe}
@@ -339,10 +339,7 @@ bi dokazali lemo. Zato bomo izvedli indukcijo po številu $j$. V primeru $j = 1$
     
 \end{dokaz}
 
-
-
 Naslednja trditev je kombinacija posledice 4 in leme 11 iz naloge \cite[str.~16--17]{Schneider_2016}.
-
 \begin{trditev}
 \label{trd_koncna_ugotovitev_nilpotentne_v_nalogi}
  Obstaja netrivialna beseda $w \in F_2$, ki je zakon v vseh nilpotentnih grupah $G$ moči največ $n$, dolžine \begin{equation*}

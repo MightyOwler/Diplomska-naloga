@@ -83,12 +83,20 @@
 \usepackage{tikz-cd}
 \usepackage{cancel}
 \usepackage{stackrel}
+\usepackage{algorithm}
+\usepackage{algorithmix}
 
 % \usepackage{quiver}
 % \usepackage{listings}
 
 % deklarirajte vse matematične operatorje, da jih bo LaTeX pravilno stavil
 % \DeclareMathOperator{\...}{...}
+
+\algnewcommand\algorithmicto{\textbf{to}}
+\algnewcommand\algorithmicin{\textbf{in}}
+\algnewcommand\algorithmicforeach{\textbf{for each}}
+\algrenewtext{For}[3]{\algorithmicfor\ #1 $\gets$ #2\ \algorithmicto\ #3\ \algorithmicdo}
+\algdef{S}[FOR]{ForEach}[2]{\algorithmicforeach\ #1\ \algorithmicin\ #2\ \algorithmicdo}
 
 \newcommand{\bigslant}[2]{{\raisebox{.2em}{$#1$}\left/\raisebox{-.2em}{$#2$}\right.}}
 

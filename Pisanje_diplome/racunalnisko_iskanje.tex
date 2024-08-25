@@ -12,28 +12,40 @@ Najprimitivnejši način iskanja zakonov v dani grupi $G$ je kar po definiciji: 
 Za začetek me je zanimalo, koliko zakonov dolžine 17 ali manj premorejo grupe $\operatorname{PSL}_2(p)$. Za višje dolžine je bilo potrebno generirati nepraktično veliko besed. Pri tem se zavedamo, da grupe $\operatorname{PSL}_2(p)$ ne morejo imeti zakonov dolžine $p$ ali manj po trditvi \ref{trd_dolzina_zakonov_za_psl2p}.
 Program sem spisal v jeziku C++, ki je v splošnem veliko hitrejši od GAP-a, opisuje ga spodnja psevdokoda.
 
-\begin{verbatim}
-    # generiranje besed in parov elementov
+\begin{algorithm}[ht]
+    \caption{Generiranje besed in parov elementov ter preverjanje zakonov v \( \operatorname{PSL}_2(p) \)}
+    \label{alg_preverjanje_zakonov}
+    \raggedright
+    \textbf{Vhod:} Brez vhodnih parametrov. \\
+    \textbf{Izhod:} Seznam besed, ki so zakoni v \( \operatorname{PSL}_2(p) \) za določena praštevila \( p \).
+  
+    \begin{algorithmic}[1]
+      \comment{Generiranje besed in parov elementov}
+      \For{$k$}{1}{17}
+        \State Generiraj vse okrajšane besede dolžine $k$
+        \State Shranite jih v datoteko
+      \EndFor
+      
+      \ForEach{$p$}{$2, 3, 5, 7, 11, 13, 17$}
+        \State Predstavi elemente grupe \( \operatorname{PSL}_2(p) \) kot $2 \times 2$ matrike
+        \State Generiraj vse pare elementov
+        \State Pare shrani v datoteko
+      \EndFor
+  
+      \comment{Preverjanje zakonov}
+      \ForEach{$p$}{$\{2, 3, 5, 7, 11, 13, 17\}$}
+        \For{$k$}{$p$}{$17$}
+          \State Preberi pare grupe \( \operatorname{PSL}_2(p) \) in besede dolžine $k$ iz generiranih datotek
+          \State Na vsaki besedi evalviraj vse pare
+          \If{je rezultat vseh evalvacij besede identična matrika}
+            \State Ta beseda je zakon
+          \EndIf
+        \EndFor
+      \EndFor
+  
+    \end{algorithmic}
+  \end{algorithm}
 
-    za k = 1, ... , 17:
-        - generiaj vse okrajšane besede dolžine k
-        - shrani jih v datoteko
-    
-    za p = 2, 3, 5, 7, 11, 13, 17:
-        - predstavi elemente grupe PSL_2(p) kot 2x2 matrike
-        - generiraj vse pare elementov
-        - pare shrani v datoteko
-
-    # preverjanje zakonov
-    
-    za p = 2, 3, 5, 7, 11, 13, 17:
-        za k = p, ... , 17:
-            - preberi pare grupe PSL_2(p) in besede dolžine k 
-            iz generiranih datotek
-            - na vsaki besedi evalviraj vse pare
-            - če je rezultat vseh evalvacij besede identična matrika,
-            je ta beseda zakon
-\end{verbatim}
 
 Hitro se je izkazalo, da je tak pristop zelo neučinkovit. Problem je namreč v tem, da število besed dolžine $k$ narašča eksponentno. Če brez škode za splošnost fiksiramo prvo črko, je to število enako $3^{k - 1}$,
 saj lahko v vsakem koraku dodamo natanko 3 črke, da ne pride do krajšanja. Tudi če bi obravnavali zgolj tako imenovane \emph{komutatorske besede}, ki vsebujejo enako število črk kot njihovih inverzov (število črk $a$ je enako številu črk $a^{-1}$, podobno za $b$),
@@ -110,15 +122,25 @@ Računalniška konstrukcija tega kvocienta ni posebej zahtevna, saj GAP vsebuje 
 Na tak način sem izračunal indekse za vse nilpotentne grupe do vključno moči 64, za višje vrednosti je bila časovna zahtevnost prevelika. Program in rezultati so objavljeni na repozitoriju \url{https://github.com/MightyOwler/Diplomska-naloga}.
 Program opisuje naslednja psevdokoda. 
 
-\begin{verbatim}
-    vse nilpotentne grupe želenih moči shranimo v seznam 
-    za vsako grupo G iz seznama:
-        izračunamo vrednosti exp(G) in d
-        kvocient := (zgornji izraz z ustreznimi vrednostmi)
-        zakoni := presek jeder homomorfizmov: kvocient -> G
-        poračunamo strukturo in velikost kvocienta kvocient/zakoni
-    izračunane rezultate shranimo v datoteko
-\end{verbatim}
+% \begin{algorithm}[ht]
+%     \caption{Izračun vrednosti in struktur za nilpotentne grupe}
+%     \label{alg_nilpotentne_grupe}
+%     \raggedright
+%     \textbf{Vhod:} Seznam nilpotentnih grup želenih moči. \\
+%     \textbf{Izhod:} Rezultati izračunanih struktur in velikosti kvocientov.
+  
+%     \begin{algorithmic}[1]
+%       \State Vse nilpotentne grupe želenih moči shranimo v seznam.
+%       \ForEach{$G$}{seznam}
+%         \State Izračunamo vrednosti $\exp(G)$ in $d$
+%         \State kvocient $\gets$ (zgornji izraz z ustreznimi vrednostmi)
+%         \State zakoni $\gets$ presek jeder homomorfizmov: kvocient $\to G$
+%         \State Poračunamo strukturo in velikost kvocienta $\text{kvocient}/\text{zakoni}$
+%       \EndFor
+%       \State Izračunane rezultate shranimo v datoteko.
+%     \end{algorithmic}
+%   \end{algorithm}
+
 Ta pristop do problema je mnogo boljši od pristopa v razdelku \ref{sec_grupe_psl2q}, saj je ne le bolj povezan s strukturo grup, temveč tudi omogoča boljši vpogled v splošno razumevanje zakonov.
 Z njegovo pomočjo je namreč lažje opaziti in posledično dokazati naslednje lastnosti zakonov. Začnimo s preprostimi.
 \begin{trditev}
