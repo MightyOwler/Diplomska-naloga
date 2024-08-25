@@ -219,7 +219,7 @@ Naj bo $G$ končna grupa in $k$ naravno število. Potem je grupa zakonov $K(G, k
   Za vsak homomorfizem $\varphi \in \operatorname{Hom}(F_k, G)$ po prvem izreku o izomorfizmu velja \begin{equation*}
     \lvert F_k / \ker \varphi \rvert = \lvert \operatorname{im} \varphi \rvert \le \lvert G \rvert, 
 \end{equation*}
-po drugi strani pa velja $\lvert \operatorname{Hom}(F_k, G) \rvert = \lvert G \rvert^k$. Ti dejstvi z uporabo \ref{lem_koncni_indeks_koncnega_preseka} povežemo v želeno oceno.     % TODO dodaj to referenco, jo potrebuješ!!
+po drugi strani pa po lemi \ref{lem_moc_homomorfizmov_proste_grupe} velja $\lvert \operatorname{Hom}(F_k, G) \rvert = \lvert G \rvert^k$. Ti dejstvi z uporabo \ref{lem_koncni_indeks_koncnega_preseka} povežemo v želeno oceno.
 \end{dokaz}
 To dejstvo bo še posebej pomembno pri iskanju zakonov z računalnikom.
 
@@ -464,13 +464,13 @@ oziroma \begin{equation*}
 Poleg zgornjega izreka je Čebišev leta 1851 dokazal (\cite[str.~4--5]{Granville_1993}), da limita $\pi(x) \log x / x$ -- če le obstaja -- mora biti enaka 1. Naslednji preboj je uspel Riemannu v svojem znamenitem članku \cite{Riemann_1859} leta 1859, v katerem je povezal porazdeltev praštevil s funkcijo zeta in formuliral prvo obliko hipoteze, ki dandanes nosi njegovo ime.
 Leta 1896 sta praštevilski izrek naposled neodvisno dokazala Hadamard in De la Vallée Poussin z upoštevanjem Riemannovih ugotovitev. 
 
-Idejo dokaza praštevilskega izreka \ref{izr_prastevilski_izrek}, ki jo bomo predstavili v nalogi, je podal Newman leta 1980. Najdemo jo v viru \cite[str.~9]{mit_lecture_notes_2021}. % TODO kje je referenca ... 
+Idejo dokaza praštevilskega izreka \ref{izr_prastevilski_izrek}, ki jo bomo predstavili v nalogi, je podal Newman leta 1980. Najdemo jo v viru \cite[str.~9]{mit_lecture_notes_2021}. 
 \begin{skica}
 Najprej moramo pokazati, da za nepadajočo funkcijo $f : \mathbb{R}_{\ge  1} \to \mathbb{R}$
 velja sklep \begin{equation*}
 \int_{1}^{\infty} \frac{f(t) - 1}{t^2} \, dt \text{ konvergira } \implies f(x) \sim x. 
 \end{equation*}  
-  Nato uvedemo funkcijo $H(t) = \theta(e^{t} )e^{-t} - 1$, ki je kosoma zvezna, omejena. Z uporabo lastnosti holomorfnih funkcij ugotovimo, da integral \begin{equation*}
+  Nato uvedemo funkcijo $H(t) = \theta(e^{t} )e^{-t} - 1$, ki je kosoma zvezna in omejena. Z uporabo lastnosti holomorfnih funkcij ugotovimo, da integral \begin{equation*}
   \int_{0}^{\infty} H(t)   \, dt = \int_{0}^{\infty} (\theta(e^{t} )e^{-t} - 1)  \, dt  \stackrel{t \mapsto \log x}{=} \int_{1}^{\infty}  \frac{\theta(x) -x }{x^2} \, dx 
   \end{equation*}  
    konvergira. Od tod po začetnem sklepu sledi, da je $\theta(x) \sim x$, kar je po izreku Čebišova \ref{izr_cebisov} ekvivalentno praštevilskemu izreku $\pi(x) \sim x / \log x$.  
@@ -499,7 +499,7 @@ Za konec dokažimo še oceno, ki smo jo napovedali v uvodu. Ponovno jo bomo upor
   Z logaritmiranjem te enačbe in uporabo funkcij Čebišova \ref{def_cebisevi_funkciji} dobimo oceni \begin{equation*}
   \theta(n) = \sum_{p \le n, \,   p \in \mathbb{P}} \log(p) \le \log(\operatorname{lcm}(1, \ldots ,n)) \le  \sum_{p^{k} \le n, \, p \in \mathbb{P}, \, k \ge 1 } \log(p^{k}) = \psi(n).
   \end{equation*}  
-  Po izreku (TODO tukaj daš izrek Čebiševa) in izreku o sendviču sledi \begin{equation*}
+  Po izreku Čebišova \ref{izr_cebisov} in izreku o sendviču sledi \begin{equation*}
   \lim_{n \to \infty} \frac{\log(\operatorname{lcm}(1, \ldots, n))}{n} = 1.
   \end{equation*}  
     Od tod sledi želena ocena \begin{equation*}
@@ -507,8 +507,6 @@ Za konec dokažimo še oceno, ki smo jo napovedali v uvodu. Ponovno jo bomo upor
   \end{equation*} 
   \end{dokaz}
 
-
-% TOLE popolnoma izbriši
 
 % \subsection{Teorija naključnih sprehodov}
 
