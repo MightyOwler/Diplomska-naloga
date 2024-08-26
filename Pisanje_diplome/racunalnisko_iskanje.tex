@@ -12,39 +12,39 @@ Najprimitivnejši način iskanja zakonov v dani grupi $G$ je kar po definiciji: 
 Za začetek me je zanimalo, koliko zakonov dolžine 17 ali manj premorejo grupe $\operatorname{PSL}_2(p)$. Za višje dolžine je bilo potrebno generirati nepraktično veliko besed. Pri tem se zavedamo, da grupe $\operatorname{PSL}_2(p)$ ne morejo imeti zakonov dolžine $p$ ali manj po trditvi \ref{trd_dolzina_zakonov_za_psl2p}.
 Program sem spisal v jeziku C++, ki je v splošnem veliko hitrejši od GAP-a, opisuje ga spodnja psevdokoda.
 
-\begin{algorithm}[ht]
-    \caption{Generiranje besed in parov elementov ter preverjanje zakonov v \( \operatorname{PSL}_2(p) \)}
-    \label{alg_preverjanje_zakonov}
-    \raggedright
-    \textbf{Vhod:} Brez vhodnih parametrov. \\
-    \textbf{Izhod:} Seznam besed, ki so zakoni v \( \operatorname{PSL}_2(p) \) za določena praštevila \( p \).
+% \begin{algorithm}[ht]
+%     \caption{Generiranje besed in parov elementov ter preverjanje zakonov v \( \operatorname{PSL}_2(p) \)}
+%     \label{alg_preverjanje_zakonov}
+%     \raggedright
+%     \textbf{Vhod:} Brez vhodnih parametrov. \\
+%     \textbf{Izhod:} Seznam besed, ki so zakoni v \( \operatorname{PSL}_2(p) \) za določena praštevila \( p \).
   
-    \begin{algorithmic}[1]
-      \comment{Generiranje besed in parov elementov}
-      \For{$k$}{1}{17}
-        \State Generiraj vse okrajšane besede dolžine $k$
-        \State Shranite jih v datoteko
-      \EndFor
+%     \begin{algorithmic}[1]
+%       \comment{Generiranje besed in parov elementov}
+%       \For{$k$}{1}{17}
+%         \State Generiraj vse okrajšane besede dolžine $k$
+%         \State Shranite jih v datoteko
+%       \EndFor
       
-      \ForEach{$p$}{$2, 3, 5, 7, 11, 13, 17$}
-        \State Predstavi elemente grupe \( \operatorname{PSL}_2(p) \) kot $2 \times 2$ matrike
-        \State Generiraj vse pare elementov
-        \State Pare shrani v datoteko
-      \EndFor
+%       \ForEach{$p$}{$2, 3, 5, 7, 11, 13, 17$}
+%         \State Predstavi elemente grupe \( \operatorname{PSL}_2(p) \) kot $2 \times 2$ matrike
+%         \State Generiraj vse pare elementov
+%         \State Pare shrani v datoteko
+%       \EndFor
   
-      \comment{Preverjanje zakonov}
-      \ForEach{$p$}{$\{2, 3, 5, 7, 11, 13, 17\}$}
-        \For{$k$}{$p$}{$17$}
-          \State Preberi pare grupe \( \operatorname{PSL}_2(p) \) in besede dolžine $k$ iz generiranih datotek
-          \State Na vsaki besedi evalviraj vse pare
-          \If{je rezultat vseh evalvacij besede identična matrika}
-            \State Ta beseda je zakon
-          \EndIf
-        \EndFor
-      \EndFor
+%       \comment{Preverjanje zakonov}
+%       \ForEach{$p$}{$\{2, 3, 5, 7, 11, 13, 17\}$}
+%         \For{$k$}{$p$}{$17$}
+%           \State Preberi pare grupe \( \operatorname{PSL}_2(p) \) in besede dolžine $k$ iz generiranih datotek
+%           \State Na vsaki besedi evalviraj vse pare
+%           \If{je rezultat vseh evalvacij besede identična matrika}
+%             \State Ta beseda je zakon
+%           \EndIf
+%         \EndFor
+%       \EndFor
   
-    \end{algorithmic}
-  \end{algorithm}
+%     \end{algorithmic}
+%   \end{algorithm}
 
 
 Hitro se je izkazalo, da je tak pristop zelo neučinkovit. Problem je namreč v tem, da število besed dolžine $k$ narašča eksponentno. Če brez škode za splošnost fiksiramo prvo črko, je to število enako $3^{k - 1}$,
