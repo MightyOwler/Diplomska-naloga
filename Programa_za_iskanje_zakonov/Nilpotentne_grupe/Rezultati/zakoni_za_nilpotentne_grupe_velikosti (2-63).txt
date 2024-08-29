@@ -1,0 +1,1432 @@
+Struktura nilpotentne grupe G: << C2 >> 
+Grupa G je moči 2 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C2 x C2 >>>
+Indeks podgrupe zakoni v nq: 4
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C3 >> 
+Grupa G je moči 3 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C3 x C3 >>>
+Indeks podgrupe zakoni v nq: 9
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C4 >> 
+Grupa G je moči 4 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C4 x C4 >>>
+Indeks podgrupe zakoni v nq: 16
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C2 x C2 >> 
+Grupa G je moči 4 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C2 x C2 >>>
+Indeks podgrupe zakoni v nq: 4
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C5 >> 
+Grupa G je moči 5 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C5 x C5 >>>
+Indeks podgrupe zakoni v nq: 25
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C6 >> 
+Grupa G je moči 6 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C6 x C6 >>>
+Indeks podgrupe zakoni v nq: 36
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C7 >> 
+Grupa G je moči 7 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C7 x C7 >>>
+Indeks podgrupe zakoni v nq: 49
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C8 >> 
+Grupa G je moči 8 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C8 x C8 >>>
+Indeks podgrupe zakoni v nq: 64
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C4 x C2 >> 
+Grupa G je moči 8 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C4 x C4 >>>
+Indeks podgrupe zakoni v nq: 16
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << D8 >> 
+Grupa G je moči 8 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< (C4 x C2) : C4 >>>
+Indeks podgrupe zakoni v nq: 32
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << Q8 >> 
+Grupa G je moči 8 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< (C4 x C2) : C4 >>>
+Indeks podgrupe zakoni v nq: 32
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << C2 x C2 x C2 >> 
+Grupa G je moči 8 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C2 x C2 >>>
+Indeks podgrupe zakoni v nq: 4
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C9 >> 
+Grupa G je moči 9 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C9 x C9 >>>
+Indeks podgrupe zakoni v nq: 81
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C3 x C3 >> 
+Grupa G je moči 9 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C3 x C3 >>>
+Indeks podgrupe zakoni v nq: 9
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C10 >> 
+Grupa G je moči 10 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C10 x C10 >>>
+Indeks podgrupe zakoni v nq: 100
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C11 >> 
+Grupa G je moči 11 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C11 x C11 >>>
+Indeks podgrupe zakoni v nq: 121
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C12 >> 
+Grupa G je moči 12 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C12 x C12 >>>
+Indeks podgrupe zakoni v nq: 144
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C6 x C2 >> 
+Grupa G je moči 12 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C6 x C6 >>>
+Indeks podgrupe zakoni v nq: 36
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C13 >> 
+Grupa G je moči 13 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C13 x C13 >>>
+Indeks podgrupe zakoni v nq: 169
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C14 >> 
+Grupa G je moči 14 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C14 x C14 >>>
+Indeks podgrupe zakoni v nq: 196
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C15 >> 
+Grupa G je moči 15 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C15 x C15 >>>
+Indeks podgrupe zakoni v nq: 225
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C16 >> 
+Grupa G je moči 16 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C16 x C16 >>>
+Indeks podgrupe zakoni v nq: 256
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C4 x C4 >> 
+Grupa G je moči 16 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C4 x C4 >>>
+Indeks podgrupe zakoni v nq: 16
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << (C4 x C2) : C2 >> 
+Grupa G je moči 16 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< (C4 x C2) : C4 >>>
+Indeks podgrupe zakoni v nq: 32
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << C4 : C4 >> 
+Grupa G je moči 16 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< (C4 x C2) : C4 >>>
+Indeks podgrupe zakoni v nq: 32
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << C8 x C2 >> 
+Grupa G je moči 16 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C8 x C8 >>>
+Indeks podgrupe zakoni v nq: 64
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C8 : C2 >> 
+Grupa G je moči 16 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1 ] )
+Struktura kvocienta nq/zakoni: <<< (C8 x C2) : C8 >>>
+Indeks podgrupe zakoni v nq: 128
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << D16 >> 
+Grupa G je moči 16 in razreda nilpotentnosti 3
+nq = F_2 / (F_2^exp gama_4(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1, g2 ] )
+Struktura kvocienta nq/zakoni: <<< (C2 x ((C4 x C2) : C8)) : C8 >>>
+Indeks podgrupe zakoni v nq: 1024
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3, g4, g5 ]
+
+Struktura nilpotentne grupe G: << QD16 >> 
+Grupa G je moči 16 in razreda nilpotentnosti 3
+nq = F_2 / (F_2^exp gama_4(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1, g2 ] )
+Struktura kvocienta nq/zakoni: <<< (C2 x ((C4 x C2) : C8)) : C8 >>>
+Indeks podgrupe zakoni v nq: 1024
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3, g4, g5 ]
+
+Struktura nilpotentne grupe G: << Q16 >> 
+Grupa G je moči 16 in razreda nilpotentnosti 3
+nq = F_2 / (F_2^exp gama_4(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1, g2 ] )
+Struktura kvocienta nq/zakoni: <<< (C2 x ((C4 x C2) : C8)) : C8 >>>
+Indeks podgrupe zakoni v nq: 1024
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3, g4, g5 ]
+
+Struktura nilpotentne grupe G: << C4 x C2 x C2 >> 
+Grupa G je moči 16 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C4 x C4 >>>
+Indeks podgrupe zakoni v nq: 16
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C2 x D8 >> 
+Grupa G je moči 16 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< (C4 x C2) : C4 >>>
+Indeks podgrupe zakoni v nq: 32
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << C2 x Q8 >> 
+Grupa G je moči 16 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< (C4 x C2) : C4 >>>
+Indeks podgrupe zakoni v nq: 32
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << (C4 x C2) : C2 >> 
+Grupa G je moči 16 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< (C4 x C2) : C4 >>>
+Indeks podgrupe zakoni v nq: 32
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << C2 x C2 x C2 x C2 >> 
+Grupa G je moči 16 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C2 x C2 >>>
+Indeks podgrupe zakoni v nq: 4
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C17 >> 
+Grupa G je moči 17 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C17 x C17 >>>
+Indeks podgrupe zakoni v nq: 289
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C18 >> 
+Grupa G je moči 18 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C18 x C18 >>>
+Indeks podgrupe zakoni v nq: 324
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C6 x C3 >> 
+Grupa G je moči 18 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C6 x C6 >>>
+Indeks podgrupe zakoni v nq: 36
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C19 >> 
+Grupa G je moči 19 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C19 x C19 >>>
+Indeks podgrupe zakoni v nq: 361
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C20 >> 
+Grupa G je moči 20 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C20 x C20 >>>
+Indeks podgrupe zakoni v nq: 400
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C10 x C2 >> 
+Grupa G je moči 20 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C10 x C10 >>>
+Indeks podgrupe zakoni v nq: 100
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C21 >> 
+Grupa G je moči 21 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C21 x C21 >>>
+Indeks podgrupe zakoni v nq: 441
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C22 >> 
+Grupa G je moči 22 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C22 x C22 >>>
+Indeks podgrupe zakoni v nq: 484
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C23 >> 
+Grupa G je moči 23 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C23 x C23 >>>
+Indeks podgrupe zakoni v nq: 529
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C24 >> 
+Grupa G je moči 24 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C24 x C24 >>>
+Indeks podgrupe zakoni v nq: 576
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C12 x C2 >> 
+Grupa G je moči 24 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C12 x C12 >>>
+Indeks podgrupe zakoni v nq: 144
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C3 x D8 >> 
+Grupa G je moči 24 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1 ] )
+Struktura kvocienta nq/zakoni: <<< C3 x C3 x ((C4 x C2) : C4) >>>
+Indeks podgrupe zakoni v nq: 288
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << C3 x Q8 >> 
+Grupa G je moči 24 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1 ] )
+Struktura kvocienta nq/zakoni: <<< C3 x C3 x ((C4 x C2) : C4) >>>
+Indeks podgrupe zakoni v nq: 288
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << C6 x C2 x C2 >> 
+Grupa G je moči 24 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C6 x C6 >>>
+Indeks podgrupe zakoni v nq: 36
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C25 >> 
+Grupa G je moči 25 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C25 x C25 >>>
+Indeks podgrupe zakoni v nq: 625
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C5 x C5 >> 
+Grupa G je moči 25 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C5 x C5 >>>
+Indeks podgrupe zakoni v nq: 25
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C26 >> 
+Grupa G je moči 26 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C26 x C26 >>>
+Indeks podgrupe zakoni v nq: 676
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C27 >> 
+Grupa G je moči 27 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C27 x C27 >>>
+Indeks podgrupe zakoni v nq: 729
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C9 x C3 >> 
+Grupa G je moči 27 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C9 x C9 >>>
+Indeks podgrupe zakoni v nq: 81
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << (C3 x C3) : C3 >> 
+Grupa G je moči 27 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< (C3 x C3) : C3 >>>
+Indeks podgrupe zakoni v nq: 27
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << C9 : C3 >> 
+Grupa G je moči 27 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1 ] )
+Struktura kvocienta nq/zakoni: <<< (C9 x C3) : C9 >>>
+Indeks podgrupe zakoni v nq: 243
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << C3 x C3 x C3 >> 
+Grupa G je moči 27 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C3 x C3 >>>
+Indeks podgrupe zakoni v nq: 9
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C28 >> 
+Grupa G je moči 28 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C28 x C28 >>>
+Indeks podgrupe zakoni v nq: 784
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C14 x C2 >> 
+Grupa G je moči 28 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C14 x C14 >>>
+Indeks podgrupe zakoni v nq: 196
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C29 >> 
+Grupa G je moči 29 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C29 x C29 >>>
+Indeks podgrupe zakoni v nq: 841
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C30 >> 
+Grupa G je moči 30 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C30 x C30 >>>
+Indeks podgrupe zakoni v nq: 900
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C31 >> 
+Grupa G je moči 31 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C31 x C31 >>>
+Indeks podgrupe zakoni v nq: 961
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C32 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C32 x C32 >>>
+Indeks podgrupe zakoni v nq: 1024
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << (C4 x C2) : C4 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< (C4 x C2) : C4 >>>
+Indeks podgrupe zakoni v nq: 32
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << C8 x C4 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C8 x C8 >>>
+Indeks podgrupe zakoni v nq: 64
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C8 : C4 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1 ] )
+Struktura kvocienta nq/zakoni: <<< (C8 x C2) : C8 >>>
+Indeks podgrupe zakoni v nq: 128
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << (C8 x C2) : C2 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1 ] )
+Struktura kvocienta nq/zakoni: <<< (C8 x C2) : C8 >>>
+Indeks podgrupe zakoni v nq: 128
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << (C2 x C2 x C2) : C4 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 3
+nq = F_2 / (F_2^exp gama_4(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< (C2 x ((C4 x C2) : C2)) : C4 >>>
+Indeks podgrupe zakoni v nq: 128
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3, g4, g5 ]
+
+Struktura nilpotentne grupe G: << (C8 : C2) : C2 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 3
+nq = F_2 / (F_2^exp gama_4(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1, g2, g3 ] )
+Struktura kvocienta nq/zakoni: <<< (C2 x ((C8 x C2) : C2)) : C8 >>>
+Indeks podgrupe zakoni v nq: 512
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3, g4, g5 ]
+
+Struktura nilpotentne grupe G: << C2 . ((C4 x C2) : C2) = (C2 x C2) . (C4 x C2) >> 
+Grupa G je moči 32 in razreda nilpotentnosti 3
+nq = F_2 / (F_2^exp gama_4(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1, g2, g3 ] )
+Struktura kvocienta nq/zakoni: <<< (C2 x ((C8 x C2) : C2)) : C8 >>>
+Indeks podgrupe zakoni v nq: 512
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3, g4, g5 ]
+
+Struktura nilpotentne grupe G: << (C8 x C2) : C2 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 3
+nq = F_2 / (F_2^exp gama_4(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1, g2 ] )
+Struktura kvocienta nq/zakoni: <<< (C2 x ((C4 x C2) : C8)) : C8 >>>
+Indeks podgrupe zakoni v nq: 1024
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3, g4, g5 ]
+
+Struktura nilpotentne grupe G: << Q8 : C4 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 3
+nq = F_2 / (F_2^exp gama_4(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1, g2 ] )
+Struktura kvocienta nq/zakoni: <<< (C2 x ((C4 x C2) : C8)) : C8 >>>
+Indeks podgrupe zakoni v nq: 1024
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3, g4, g5 ]
+
+Struktura nilpotentne grupe G: << (C4 x C4) : C2 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 3
+nq = F_2 / (F_2^exp gama_4(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1, g2 ] )
+Struktura kvocienta nq/zakoni: <<< (C2 x ((C4 x C2) : C8)) : C8 >>>
+Indeks podgrupe zakoni v nq: 1024
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3, g4, g5 ]
+
+Struktura nilpotentne grupe G: << C4 : C8 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1 ] )
+Struktura kvocienta nq/zakoni: <<< (C8 x C2) : C8 >>>
+Indeks podgrupe zakoni v nq: 128
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << C8 : C4 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 3
+nq = F_2 / (F_2^exp gama_4(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1, g2 ] )
+Struktura kvocienta nq/zakoni: <<< (C2 x ((C4 x C2) : C8)) : C8 >>>
+Indeks podgrupe zakoni v nq: 1024
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3, g4, g5 ]
+
+Struktura nilpotentne grupe G: << C8 : C4 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 3
+nq = F_2 / (F_2^exp gama_4(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1, g2 ] )
+Struktura kvocienta nq/zakoni: <<< (C2 x ((C4 x C2) : C8)) : C8 >>>
+Indeks podgrupe zakoni v nq: 1024
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3, g4, g5 ]
+
+Struktura nilpotentne grupe G: << C4 . D8 = C4 . (C4 x C2) >> 
+Grupa G je moči 32 in razreda nilpotentnosti 3
+nq = F_2 / (F_2^exp gama_4(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1, g2 ] )
+Struktura kvocienta nq/zakoni: <<< (C2 x ((C4 x C2) : C8)) : C8 >>>
+Indeks podgrupe zakoni v nq: 1024
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3, g4, g5 ]
+
+Struktura nilpotentne grupe G: << C16 x C2 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C16 x C16 >>>
+Indeks podgrupe zakoni v nq: 256
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C16 : C2 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1, g2 ] )
+Struktura kvocienta nq/zakoni: <<< (C16 x C2) : C16 >>>
+Indeks podgrupe zakoni v nq: 512
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << D32 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 4
+nq = F_2 / (F_2^exp gama_5(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11 ] )
+Struktura kvocienta nq/zakoni: <<< ((C8 x C4 x C4) : C16) : C16 >>>
+Indeks podgrupe zakoni v nq: 32768
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3, g4, g5, g6, g7, g8 ]
+
+Struktura nilpotentne grupe G: << QD32 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 4
+nq = F_2 / (F_2^exp gama_5(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11 ] )
+Struktura kvocienta nq/zakoni: <<< ((C8 x C4 x C4) : C16) : C16 >>>
+Indeks podgrupe zakoni v nq: 32768
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3, g4, g5, g6, g7, g8 ]
+
+Struktura nilpotentne grupe G: << Q32 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 4
+nq = F_2 / (F_2^exp gama_5(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11 ] )
+Struktura kvocienta nq/zakoni: <<< ((C8 x C4 x C4) : C16) : C16 >>>
+Indeks podgrupe zakoni v nq: 32768
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3, g4, g5, g6, g7, g8 ]
+
+Struktura nilpotentne grupe G: << C4 x C4 x C2 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C4 x C4 >>>
+Indeks podgrupe zakoni v nq: 16
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C2 x ((C4 x C2) : C2) >> 
+Grupa G je moči 32 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< (C4 x C2) : C4 >>>
+Indeks podgrupe zakoni v nq: 32
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << C2 x (C4 : C4) >> 
+Grupa G je moči 32 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< (C4 x C2) : C4 >>>
+Indeks podgrupe zakoni v nq: 32
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << (C4 x C4) : C2 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< (C4 x C2) : C4 >>>
+Indeks podgrupe zakoni v nq: 32
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << C4 x D8 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< (C4 x C2) : C4 >>>
+Indeks podgrupe zakoni v nq: 32
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << C4 x Q8 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< (C4 x C2) : C4 >>>
+Indeks podgrupe zakoni v nq: 32
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << (C2 x C2 x C2 x C2) : C2 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< (C4 x C2) : C4 >>>
+Indeks podgrupe zakoni v nq: 32
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << (C4 x C2 x C2) : C2 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< (C4 x C2) : C4 >>>
+Indeks podgrupe zakoni v nq: 32
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << (C2 x Q8) : C2 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< (C4 x C2) : C4 >>>
+Indeks podgrupe zakoni v nq: 32
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << (C4 x C2 x C2) : C2 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< (C4 x C2) : C4 >>>
+Indeks podgrupe zakoni v nq: 32
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << (C4 x C4) : C2 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< (C4 x C2) : C4 >>>
+Indeks podgrupe zakoni v nq: 32
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << (C2 x C2) . (C2 x C2 x C2) >> 
+Grupa G je moči 32 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< (C4 x C2) : C4 >>>
+Indeks podgrupe zakoni v nq: 32
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << (C4 x C4) : C2 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< (C4 x C2) : C4 >>>
+Indeks podgrupe zakoni v nq: 32
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << (C4 x C4) : C2 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< (C4 x C2) : C4 >>>
+Indeks podgrupe zakoni v nq: 32
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << C4 : Q8 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< (C4 x C2) : C4 >>>
+Indeks podgrupe zakoni v nq: 32
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << C8 x C2 x C2 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C8 x C8 >>>
+Indeks podgrupe zakoni v nq: 64
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C2 x (C8 : C2) >> 
+Grupa G je moči 32 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1 ] )
+Struktura kvocienta nq/zakoni: <<< (C8 x C2) : C8 >>>
+Indeks podgrupe zakoni v nq: 128
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << (C8 x C2) : C2 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1 ] )
+Struktura kvocienta nq/zakoni: <<< (C8 x C2) : C8 >>>
+Indeks podgrupe zakoni v nq: 128
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << C2 x D16 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 3
+nq = F_2 / (F_2^exp gama_4(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1, g2 ] )
+Struktura kvocienta nq/zakoni: <<< (C2 x ((C4 x C2) : C8)) : C8 >>>
+Indeks podgrupe zakoni v nq: 1024
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3, g4, g5 ]
+
+Struktura nilpotentne grupe G: << C2 x QD16 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 3
+nq = F_2 / (F_2^exp gama_4(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1, g2 ] )
+Struktura kvocienta nq/zakoni: <<< (C2 x ((C4 x C2) : C8)) : C8 >>>
+Indeks podgrupe zakoni v nq: 1024
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3, g4, g5 ]
+
+Struktura nilpotentne grupe G: << C2 x Q16 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 3
+nq = F_2 / (F_2^exp gama_4(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1, g2 ] )
+Struktura kvocienta nq/zakoni: <<< (C2 x ((C4 x C2) : C8)) : C8 >>>
+Indeks podgrupe zakoni v nq: 1024
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3, g4, g5 ]
+
+Struktura nilpotentne grupe G: << (C8 x C2) : C2 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 3
+nq = F_2 / (F_2^exp gama_4(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1, g2 ] )
+Struktura kvocienta nq/zakoni: <<< (C2 x ((C4 x C2) : C8)) : C8 >>>
+Indeks podgrupe zakoni v nq: 1024
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3, g4, g5 ]
+
+Struktura nilpotentne grupe G: << C8 : (C2 x C2) >> 
+Grupa G je moči 32 in razreda nilpotentnosti 3
+nq = F_2 / (F_2^exp gama_4(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1, g2 ] )
+Struktura kvocienta nq/zakoni: <<< (C2 x ((C4 x C2) : C8)) : C8 >>>
+Indeks podgrupe zakoni v nq: 1024
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3, g4, g5 ]
+
+Struktura nilpotentne grupe G: << (C2 x Q8) : C2 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 3
+nq = F_2 / (F_2^exp gama_4(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1, g2 ] )
+Struktura kvocienta nq/zakoni: <<< (C2 x ((C4 x C2) : C8)) : C8 >>>
+Indeks podgrupe zakoni v nq: 1024
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3, g4, g5 ]
+
+Struktura nilpotentne grupe G: << C4 x C2 x C2 x C2 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C4 x C4 >>>
+Indeks podgrupe zakoni v nq: 16
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C2 x C2 x D8 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< (C4 x C2) : C4 >>>
+Indeks podgrupe zakoni v nq: 32
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << C2 x C2 x Q8 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< (C4 x C2) : C4 >>>
+Indeks podgrupe zakoni v nq: 32
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << C2 x ((C4 x C2) : C2) >> 
+Grupa G je moči 32 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< (C4 x C2) : C4 >>>
+Indeks podgrupe zakoni v nq: 32
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << (C2 x C2 x C2) : (C2 x C2) >> 
+Grupa G je moči 32 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< (C4 x C2) : C4 >>>
+Indeks podgrupe zakoni v nq: 32
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << (C2 x Q8) : C2 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< (C4 x C2) : C4 >>>
+Indeks podgrupe zakoni v nq: 32
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << C2 x C2 x C2 x C2 x C2 >> 
+Grupa G je moči 32 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C2 x C2 >>>
+Indeks podgrupe zakoni v nq: 4
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C33 >> 
+Grupa G je moči 33 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C33 x C33 >>>
+Indeks podgrupe zakoni v nq: 1089
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C34 >> 
+Grupa G je moči 34 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C34 x C34 >>>
+Indeks podgrupe zakoni v nq: 1156
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C35 >> 
+Grupa G je moči 35 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C35 x C35 >>>
+Indeks podgrupe zakoni v nq: 1225
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C36 >> 
+Grupa G je moči 36 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C36 x C36 >>>
+Indeks podgrupe zakoni v nq: 1296
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C18 x C2 >> 
+Grupa G je moči 36 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C18 x C18 >>>
+Indeks podgrupe zakoni v nq: 324
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C12 x C3 >> 
+Grupa G je moči 36 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C12 x C12 >>>
+Indeks podgrupe zakoni v nq: 144
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C6 x C6 >> 
+Grupa G je moči 36 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C6 x C6 >>>
+Indeks podgrupe zakoni v nq: 36
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C37 >> 
+Grupa G je moči 37 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C37 x C37 >>>
+Indeks podgrupe zakoni v nq: 1369
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C38 >> 
+Grupa G je moči 38 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C38 x C38 >>>
+Indeks podgrupe zakoni v nq: 1444
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C39 >> 
+Grupa G je moči 39 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C39 x C39 >>>
+Indeks podgrupe zakoni v nq: 1521
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C40 >> 
+Grupa G je moči 40 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C40 x C40 >>>
+Indeks podgrupe zakoni v nq: 1600
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C20 x C2 >> 
+Grupa G je moči 40 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C20 x C20 >>>
+Indeks podgrupe zakoni v nq: 400
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C5 x D8 >> 
+Grupa G je moči 40 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1 ] )
+Struktura kvocienta nq/zakoni: <<< C5 x C5 x ((C4 x C2) : C4) >>>
+Indeks podgrupe zakoni v nq: 800
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << C5 x Q8 >> 
+Grupa G je moči 40 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1 ] )
+Struktura kvocienta nq/zakoni: <<< C5 x C5 x ((C4 x C2) : C4) >>>
+Indeks podgrupe zakoni v nq: 800
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << C10 x C2 x C2 >> 
+Grupa G je moči 40 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C10 x C10 >>>
+Indeks podgrupe zakoni v nq: 100
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C41 >> 
+Grupa G je moči 41 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C41 x C41 >>>
+Indeks podgrupe zakoni v nq: 1681
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C42 >> 
+Grupa G je moči 42 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C42 x C42 >>>
+Indeks podgrupe zakoni v nq: 1764
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C43 >> 
+Grupa G je moči 43 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C43 x C43 >>>
+Indeks podgrupe zakoni v nq: 1849
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C44 >> 
+Grupa G je moči 44 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C44 x C44 >>>
+Indeks podgrupe zakoni v nq: 1936
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C22 x C2 >> 
+Grupa G je moči 44 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C22 x C22 >>>
+Indeks podgrupe zakoni v nq: 484
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C45 >> 
+Grupa G je moči 45 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C45 x C45 >>>
+Indeks podgrupe zakoni v nq: 2025
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C15 x C3 >> 
+Grupa G je moči 45 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C15 x C15 >>>
+Indeks podgrupe zakoni v nq: 225
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C46 >> 
+Grupa G je moči 46 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C46 x C46 >>>
+Indeks podgrupe zakoni v nq: 2116
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C47 >> 
+Grupa G je moči 47 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C47 x C47 >>>
+Indeks podgrupe zakoni v nq: 2209
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C48 >> 
+Grupa G je moči 48 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C48 x C48 >>>
+Indeks podgrupe zakoni v nq: 2304
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C12 x C4 >> 
+Grupa G je moči 48 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C12 x C12 >>>
+Indeks podgrupe zakoni v nq: 144
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C3 x ((C4 x C2) : C2) >> 
+Grupa G je moči 48 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1 ] )
+Struktura kvocienta nq/zakoni: <<< C3 x C3 x ((C4 x C2) : C4) >>>
+Indeks podgrupe zakoni v nq: 288
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << C3 x (C4 : C4) >> 
+Grupa G je moči 48 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1 ] )
+Struktura kvocienta nq/zakoni: <<< C3 x C3 x ((C4 x C2) : C4) >>>
+Indeks podgrupe zakoni v nq: 288
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << C24 x C2 >> 
+Grupa G je moči 48 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C24 x C24 >>>
+Indeks podgrupe zakoni v nq: 576
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C3 x (C8 : C2) >> 
+Grupa G je moči 48 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1, g2 ] )
+Struktura kvocienta nq/zakoni: <<< C3 x C3 x ((C8 x C2) : C8) >>>
+Indeks podgrupe zakoni v nq: 1152
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << C3 x D16 >> 
+Grupa G je moči 48 in razreda nilpotentnosti 3
+nq = F_2 / (F_2^exp gama_4(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1, g2, g3 ] )
+Struktura kvocienta nq/zakoni: <<< C3 x C3 x ((C2 x ((C4 x C2) : C8)) : C8) >>>
+Indeks podgrupe zakoni v nq: 9216
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3, g4, g5 ]
+
+Struktura nilpotentne grupe G: << C3 x QD16 >> 
+Grupa G je moči 48 in razreda nilpotentnosti 3
+nq = F_2 / (F_2^exp gama_4(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1, g2, g3 ] )
+Struktura kvocienta nq/zakoni: <<< C3 x C3 x ((C2 x ((C4 x C2) : C8)) : C8) >>>
+Indeks podgrupe zakoni v nq: 9216
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3, g4, g5 ]
+
+Struktura nilpotentne grupe G: << C3 x Q16 >> 
+Grupa G je moči 48 in razreda nilpotentnosti 3
+nq = F_2 / (F_2^exp gama_4(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1, g2, g3 ] )
+Struktura kvocienta nq/zakoni: <<< C3 x C3 x ((C2 x ((C4 x C2) : C8)) : C8) >>>
+Indeks podgrupe zakoni v nq: 9216
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3, g4, g5 ]
+
+Struktura nilpotentne grupe G: << C12 x C2 x C2 >> 
+Grupa G je moči 48 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C12 x C12 >>>
+Indeks podgrupe zakoni v nq: 144
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C6 x D8 >> 
+Grupa G je moči 48 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1 ] )
+Struktura kvocienta nq/zakoni: <<< C3 x C3 x ((C4 x C2) : C4) >>>
+Indeks podgrupe zakoni v nq: 288
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << C6 x Q8 >> 
+Grupa G je moči 48 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1 ] )
+Struktura kvocienta nq/zakoni: <<< C3 x C3 x ((C4 x C2) : C4) >>>
+Indeks podgrupe zakoni v nq: 288
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << C3 x ((C4 x C2) : C2) >> 
+Grupa G je moči 48 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1 ] )
+Struktura kvocienta nq/zakoni: <<< C3 x C3 x ((C4 x C2) : C4) >>>
+Indeks podgrupe zakoni v nq: 288
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << C6 x C2 x C2 x C2 >> 
+Grupa G je moči 48 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C6 x C6 >>>
+Indeks podgrupe zakoni v nq: 36
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C49 >> 
+Grupa G je moči 49 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C49 x C49 >>>
+Indeks podgrupe zakoni v nq: 2401
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C7 x C7 >> 
+Grupa G je moči 49 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C7 x C7 >>>
+Indeks podgrupe zakoni v nq: 49
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C50 >> 
+Grupa G je moči 50 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C50 x C50 >>>
+Indeks podgrupe zakoni v nq: 2500
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C10 x C5 >> 
+Grupa G je moči 50 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C10 x C10 >>>
+Indeks podgrupe zakoni v nq: 100
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C51 >> 
+Grupa G je moči 51 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C51 x C51 >>>
+Indeks podgrupe zakoni v nq: 2601
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C52 >> 
+Grupa G je moči 52 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C52 x C52 >>>
+Indeks podgrupe zakoni v nq: 2704
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C26 x C2 >> 
+Grupa G je moči 52 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C26 x C26 >>>
+Indeks podgrupe zakoni v nq: 676
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C53 >> 
+Grupa G je moči 53 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C53 x C53 >>>
+Indeks podgrupe zakoni v nq: 2809
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C54 >> 
+Grupa G je moči 54 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C54 x C54 >>>
+Indeks podgrupe zakoni v nq: 2916
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C18 x C3 >> 
+Grupa G je moči 54 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C18 x C18 >>>
+Indeks podgrupe zakoni v nq: 324
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C2 x ((C3 x C3) : C3) >> 
+Grupa G je moči 54 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C2 x C2 x ((C3 x C3) : C3) >>>
+Indeks podgrupe zakoni v nq: 108
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << C2 x (C9 : C3) >> 
+Grupa G je moči 54 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1 ] )
+Struktura kvocienta nq/zakoni: <<< C2 x C2 x ((C9 x C3) : C9) >>>
+Indeks podgrupe zakoni v nq: 972
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << C6 x C3 x C3 >> 
+Grupa G je moči 54 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C6 x C6 >>>
+Indeks podgrupe zakoni v nq: 36
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C55 >> 
+Grupa G je moči 55 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C55 x C55 >>>
+Indeks podgrupe zakoni v nq: 3025
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C56 >> 
+Grupa G je moči 56 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C56 x C56 >>>
+Indeks podgrupe zakoni v nq: 3136
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C28 x C2 >> 
+Grupa G je moči 56 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C28 x C28 >>>
+Indeks podgrupe zakoni v nq: 784
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C7 x D8 >> 
+Grupa G je moči 56 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1 ] )
+Struktura kvocienta nq/zakoni: <<< C7 x C7 x ((C4 x C2) : C4) >>>
+Indeks podgrupe zakoni v nq: 1568
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << C7 x Q8 >> 
+Grupa G je moči 56 in razreda nilpotentnosti 2
+nq = F_2 / (F_2^exp gama_3(F_2))
+Grupa zakonov v kvocientu nq: Group( [ g1 ] )
+Struktura kvocienta nq/zakoni: <<< C7 x C7 x ((C4 x C2) : C4) >>>
+Indeks podgrupe zakoni v nq: 1568
+Generatorji kvocienta nq/zakoni: [ g1, g2, g3 ]
+
+Struktura nilpotentne grupe G: << C14 x C2 x C2 >> 
+Grupa G je moči 56 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C14 x C14 >>>
+Indeks podgrupe zakoni v nq: 196
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C57 >> 
+Grupa G je moči 57 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C57 x C57 >>>
+Indeks podgrupe zakoni v nq: 3249
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C58 >> 
+Grupa G je moči 58 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C58 x C58 >>>
+Indeks podgrupe zakoni v nq: 3364
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C59 >> 
+Grupa G je moči 59 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C59 x C59 >>>
+Indeks podgrupe zakoni v nq: 3481
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C60 >> 
+Grupa G je moči 60 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C60 x C60 >>>
+Indeks podgrupe zakoni v nq: 3600
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C30 x C2 >> 
+Grupa G je moči 60 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C30 x C30 >>>
+Indeks podgrupe zakoni v nq: 900
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C61 >> 
+Grupa G je moči 61 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C61 x C61 >>>
+Indeks podgrupe zakoni v nq: 3721
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C62 >> 
+Grupa G je moči 62 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C62 x C62 >>>
+Indeks podgrupe zakoni v nq: 3844
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C63 >> 
+Grupa G je moči 63 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C63 x C63 >>>
+Indeks podgrupe zakoni v nq: 3969
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
+Struktura nilpotentne grupe G: << C21 x C3 >> 
+Grupa G je moči 63 in razreda nilpotentnosti 1
+nq = F_2 / (F_2^exp gama_2(F_2))
+Grupa zakonov v kvocientu nq: Group( id )
+Struktura kvocienta nq/zakoni: <<< C21 x C21 >>>
+Indeks podgrupe zakoni v nq: 441
+Generatorji kvocienta nq/zakoni: [ g1, g2 ]
+
