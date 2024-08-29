@@ -1,11 +1,11 @@
 \section{Nilpotentne in rešljive grupe}
 
-\subsection{Definicija in osnovne lasntosti}
+\subsection{Definicija in osnovne lastnosti}
 
-Intuitivno gledano so nilpotntne in rešljive grupe tiste, ki so po svoji strukturi še najbolj podobne Abelovim. Da jih lahko vpeljemo, moramo najprej uvesti nekaj pojmov.
+Intuitivno gledano so nilpotentne in rešljive grupe tiste, ki so po svoji strukturi še najbolj podobne Abelovim. Da jih lahko vpeljemo, moramo najprej uvesti nekaj pojmov.
 \begin{definicija}\label{def_komutator_grup}
     Naj bo $G$ grupa in $H, K \le G$ njeni podgrupi. Potem definiramo \emph{komutatorsko podgrupo $H$ in $K$} kot podgrupo \begin{equation*}
-        [H, K]  = \langle [h, k] | h \in H, k \in K \rangle.
+        [H, K]  := \langle [h, k] | h \in H, k \in K \rangle.
     \end{equation*}
 \end{definicija}
 
@@ -23,7 +23,8 @@ Grupa $G$ je \emph{nilpotentna}, če se \emph{spodnja centralna vrsta} $(\gamma_
 izteče s trivialno grupo. Najmanjšemu številu $d$, za katerega je $\gamma_{d + 1} = \{ 1_G \}$, rečemo \emph{razred nilpotentnosti grupe $G$}.    
 \end{definicija}
 
-Na kratko razmislimo, da je vsak člen spodnje centralne vrste $\gamma_k(G)$ edinka v grupi $G$. Osnovna ideja premisleka je dejstvo, da lahko konjugiranje prenesemo v notranjost komutatorja: za poljubne elemente $g, h, k \in G$ velja zveza \begin{equation*}
+Na kratko razmislimo, da je vsak člen spodnje centralne vrste $\gamma_k(G)$ edinka v grupi $G$. 
+Osnovna ideja premisleka je dejstvo, da lahko konjugiranje prenesemo v notranjost komutatorja. Za elementa $g, h \in G$ označimo konjugiranje z $g^h := hgh^{-1}$. Za poljubne elemente $g, h, k \in G$ velja zveza \begin{equation*}
     [g, h]^k = kghg^{-1}h^{-1}k^{-1} = kgk^{-1}khk^{-1}kg^{-1}k^{-1}kh^{-1}k^{-1} = [kgk^{-1}, khk^{-1}] = [g^k , h^k].
 \end{equation*}
 Elementi grupe $\gamma_2(G)  = [G , G]$ so po definiciji oblike $\prod_{i = 1}^n [g_i, h_i]$ za neke elemente $g_i, h_i \in G$, zato za vsak element $k \in G$ velja \begin{equation*}
@@ -43,14 +44,16 @@ Celo družino primerov nilpotentnih grup nam podaja naslednja ugotovitev.
 \end{dokaz}
 
 \begin{primer}
-    Trditev \ref{trd_p_grupe_so_nilpotentne} nam sporoča, da so vse diedrske grupe oblike $D_{2 \cdot 2^{k}}$ nilpotentne. Izkaže se, da so to tudi edine. V nadaljevanju bomo namreč dokazali trditev \ref{trd_nilpotentne_so_produkti_sylowih}, ki pravi, da so nilpotentne grupe
-    produkti svojih $p$-grup Sylowa. Ni težko premisliti, da je \begin{equation*}
+    Trditev \ref{trd_p_grupe_so_nilpotentne} nam sporoča, da so vse diedrske grupe oblike $D_{2 \cdot 2^{k}}$ nilpotentne. Izkaže se, da so to tudi edine. Ni težko premisliti, da je \begin{equation*}
         Z(D_{2m}) = \begin{cases}
-            \{ 1_{D_{2m}} \}  ; \text{ če je $m$ liho}, \\
-            \{ 1_{D_{2m}}, r^{m / 2} \} ;  \text{ če je $m$ sodo}.
+            \{ 1_{D_{2m}} \}  ; &\text{ če je $m$ liho}, \\
+            \{ 1_{D_{2m}}, r^{m / 2} \} ;  &\text{ če je $m$ sodo}.
         \end{cases}
     \end{equation*}
-    Od tod sledi, da morajo biti nilpotentne diedrske grupe nujno oblike $D_{2 \cdot 2^{k}}$, saj bi jih sicer lahko razpisali kot produkt $p$-podgrup Sylowa, ki ima več elementov v jedru.
+    V nadaljevanju bomo dokazali trditev \ref{trd_nilpotentne_so_produkti_sylowih}, ki pravi, da so nilpotentne grupe produkti svojih $p$-podgrup Sylowa. Zato za vsako nilpotentno diedrsko grupo lahko zapišemo $D_{2 m} =  \prod_{i = 1}^{n}{P_{p_i}}$. Od tod sledi \begin{equation*}
+        Z(D_{2m})  = \prod_{i = 1}^{n}{Z(P_{p_i})}.
+    \end{equation*}
+    Ker po razredni formuli za vsako število $i = 1, \ldots, n$ praštevilo $p_i$ deli število $\lvert P_{p_i} \rvert$, nam preostane le možnost, da je $D_{2 m}$ 2-grupa oziroma $m = 2^k$.
     \end{primer}
 
 Pred dokazom napovedane trditve \ref{trd_nilpotentne_so_produkti_sylowih} navedimo naslednjo definicijo.
@@ -66,13 +69,13 @@ Pred dokazom napovedane trditve \ref{trd_nilpotentne_so_produkti_sylowih} navedi
     Končne nilpotentne grupe so direktni produkt svojih $p$-podgrup Sylowa.
 \end{trditev}
 \begin{dokaz}
-    Dokaz je povzet po \cite{wikipedia2024nilpotent}.
+    Dokaz je povzet po \cite[izrek~1.26]{Isaacs_2008}.
     Naj bo $G$ nilpotentna grupa. Najprej pokažimo, da iz $H \lneq G$ sledi $H \propernormalsubgroup N_G(H)$. To storimo z indukcijo po moči grupe $G$.
     Če je $G$ Abelova, izjava očitno drži. Sicer je grupa $G$ nilpotentna razreda $2$ ali več, kar pomeni, da njen center ni trivialen; če je število $d \ge 1$ razred nilpotentnosti grupe $G$, velja \begin{equation*}
         \gamma_{d + 1} = [\gamma_d, G]  = 1 \Longrightarrow  \{ 1_G \} \neq \gamma_d \le Z(G) \Longrightarrow Z(G) \neq \{ 1_G \}.
     \end{equation*} 
      Zato obravnavamo dva primera. Če center $Z(G)$ ni vsebovan $H$, velja \\ $H \propernormalsubgroup H Z(G)$ zaradi računa \begin{equation*}
-        h^{h_Z g_Z} = h_Z g_Z h g_Z^{-1} h_Z^{-1} = h_Z h h_Z^{-1} \in H \, \, \, \text{ za vse } h, h_Z \in H, g_Z \in G.
+        h^{h' g_Z} = h' g_Z h g_Z^{-1} h'^{-1} = h' h h'^{-1} \in H \, \, \, \text{ za vse } h, h' \in H, g_Z \in Z(G).
     \end{equation*}
     Predpostavimo torej, da je $Z(G) \le H$. Potem po korespondenčnem izreku sledi, da je $H / Z(G)$ podgrupa nilpotentne grupe $G / Z(G)$.
     Ker center $Z(G)$ ni trivialen, uporabimo indukcijsko predpostavko na kvocientu $G / Z(G)$ in dobimo njeno podgrupo $K / Z(G)$, v kateri je $H/ Z(G)$ prava edinka.
@@ -87,12 +90,12 @@ Pred dokazom napovedane trditve \ref{trd_nilpotentne_so_produkti_sylowih} navedi
 \end{dokaz}
 
 \begin{posledica}\label{psl_ocena_razreda_nilpotentnosti}
-    Nilpotentna grupa $G$ moči $n$ ali manj je razreda nilpotentnosti največ $\lfloor \log_2(n) \rfloor$.
+    Nilpotentna grupa $G$ moči $n$ ali manj ima razred nilpotentnosti največ $\lfloor \log_2(n) \rfloor$.
 \end{posledica}
 \begin{dokaz}
-    Naj bo $G$ nilpotentna grupa moči $n$ ali manj in naj bo $d$ njen razred nilpotentnosti. Naj bodo števila $p_1, \ldots, p_n$ vsi različni praštevilski delitelji $\lvert G \rvert$. Po trditvi \ref{trd_nilpotentne_so_produkti_sylowih} je $G$ produkt svojih $p   $-podgrup Sylowa, torej $G = \prod_{i  = 1}^{n} P_{p_i}$.
+    Naj bo $G$ nilpotentna grupa moči $n$ ali manj in naj bo $d$ njen razred nilpotentnosti. Naj bodo števila $p_1, \ldots, p_n$ vsi različni praštevilski delitelji $\lvert G \rvert$. Po trditvi \ref{trd_nilpotentne_so_produkti_sylowih} je $G$ produkt svojih $p$-podgrup Sylowa, torej $G = \prod_{i  = 1}^{n} P_{p_i}$.
     Po dokazu trditve \ref{trd_p_grupe_so_nilpotentne} je podgrupa $P_{p_i}$ nilpotentna razreda največ $\log_{p_i} \lvert P_{p_i} \rvert$. Od tod sledi \begin{equation*}
-    d \le \max_{i = 1, \ldots, n} \log_{p_i} \lvert P_{p_i} \rvert \le \left\lfloor \max_{i = 1, \ldots, n} \log_{2} \lvert P_{p_i} \rvert \right\rfloor \le \left\lfloor \log_2 \lvert G \rvert  \right\rfloor \le \left\lfloor \log_2(n)  \right\rfloor. 
+    d \le \max_{i = 1, \ldots, n} \log_{p_i} \lvert P_{p_i} \rvert \le \left\lfloor \max_{i = 1, \ldots, n} \log_{2} \lvert P_{p_i} \rvert \right\rfloor \le \left\lfloor \log_2 \lvert G \rvert  \right\rfloor \le \left\lfloor \log_2(n)  \right\rfloor. \qedhere
     \end{equation*}
 \end{dokaz}
 
@@ -107,7 +110,7 @@ Pred dokazom napovedane trditve \ref{trd_nilpotentne_so_produkti_sylowih} navedi
     Analogno kot pri nilpotentnih grupah sklepamo, da izpeljana vrsta $(G^{(k)})_{k \ge 0}$ tvori verigo edink, ki so vse hkrati tudi edinke v $G$.
     
     \begin{primer}
-        Diedrske grupe $D_{2n} = \langle r , Z \rangle$ so rešljive razreda največ $2$. Z računom je enostavno pokazati, da je $(D_{2n})^{(1)}$ podmnožica Abelove podgrupe $\langle r \rangle$, zato bo grupa $(D_{2n})^{(2)} = ((D_{2n})^{(1)})^{(1)}$ trivialna.
+        Diedrske grupe $D_{2n}$ so rešljive razreda največ $2$. Z računom je enostavno pokazati, da je $(D_{2n})^{(1)}$ podmnožica Abelove podgrupe $\langle r \rangle$, zato bo grupa $(D_{2n})^{(2)} = ((D_{2n})^{(1)})^{(1)}$ trivialna.
         Ta sklep namiguje na nekatere lastnosti rešljivih grup, ki jih bomo obravnavali v trditvi \ref{trd_lastnosti_resljivih_grup}. 
     \end{primer}
 
@@ -120,7 +123,7 @@ Pred dokazom napovedane trditve \ref{trd_nilpotentne_so_produkti_sylowih} navedi
     
     \begin{trditev}
     \label{trd_lastnosti_resljivih_grup}
-    Za rešljive grupe veljajo naslednje osnovne lasnosti.
+    Za rešljive grupe veljajo naslednje osnovne lastnosti.
      \begin{enumerate}
         \item Vsaka podgrupa rešljive grupe je rešljiva.
         \item Vsak kvocient rešljive grupe je rešljiv.
@@ -129,18 +132,20 @@ Pred dokazom napovedane trditve \ref{trd_nilpotentne_so_produkti_sylowih} navedi
      \end{enumerate}
     \end{trditev}
     \begin{dokaz}
-        \begin{enumerate}
-            \item To je očitna posledica dejstva, da za $H \le G$ velja $H^{(k)} \subseteq G^{(k)}$ za vsak $k \in \mathbb{N} \cup \left\{ 0\right\}$.
-            \item Naj bo $G$ rešljiva in naj bo $N \triangleleft G$. Zaradi rešljivosti grupe $G$ obstaja naravno število $d$, da je $G^{(k)} \subseteq N$ za vse $k \ge d$, kar implicira $ (G / N)^{(k)} = \left\{ 1_{G / N}\right\}$ za vse $k \ge d$. 
-            \item Ker je $G / N$ rešljiva grupa razreda $d_{G / N}$, bo $G^{(k)} \subseteq N$ za vse $k \ge d_{G / N}$. Ker je $N$ rešljiva razreda $d_N$, bo nadalje veljalo $G^{(k)} = \left\{ 1_G\right\}$ za vse $k \ge d_N + d_{G / N}$.
-            \item Dokaz je prirejen po opombi 4 iz \cite[str.4]{Schneider_2016}. Po drugem izreku o izomorfizmu lahko zapišemo kratko eksaktno zaporedje \begin{equation*}
+        
+            1.~To je očitna posledica dejstva, da za $H \le G$ velja $H^{(k)} \subseteq G^{(k)}$ za vsako celo število $k \ge 0$.
+
+            2.~Naj bo $G$ rešljiva in naj bo $N \triangleleft G$. Zaradi rešljivosti grupe $G$ obstaja naravno število $d$, da je $G^{(k)} \subseteq N$ za vse $k \ge d$, kar implicira $ (G / N)^{(k)} = \left\{ 1_{G / N}\right\}$ za vse $k \ge d$. 
+            
+            3.~Ker je $G / N$ rešljiva grupa razreda $d_{G / N}$, bo $G^{(k)} \subseteq N$ za vse $k \ge d_{G / N}$. Ker je $N$ rešljiva razreda $d_N$, bo nadalje veljalo $G^{(k)} = \left\{ 1_G\right\}$ za vse $k \ge d_N + d_{G / N}$.
+            
+            4.~Dokaz je prirejen po opombi 4 iz \cite[str.4]{Schneider_2016}. Po drugem izreku o izomorfizmu lahko zapišemo kratko eksaktno zaporedje \begin{equation*}
             \mathbf{1} \to M \to MN \to MN / M \cong N / (N \cap M) \to \mathbf{1}.
             \end{equation*}  
             Ker je $N$ rešljiva, je po drugi točki trditve  njen kvocient $ N / (N \cap M)$ rešljiv razreda največ $d_N$ in posledično enako velja za kvocient $ MN / M $. Ker je $M$ rešljiva razreda $d_M$, po tretji točki trditve sledi $(MN)^{(k)} = \left\{ 1_{G}\right\}$ za vse $k \ge d_N + d_M$.
-        \end{enumerate}
     \end{dokaz}
 
-    Razširitvena lema \ref{lem_razsiritvena_lema} nam ponuja naslednjo skromno oceno dolžine kratkih netrivialnih zakonov v rešljivih oziroma nilpotentnih grupah.
+    Razširitvena lema \ref{lem_razsiritvena_lema} nam ponuja naslednjo preprosto oceno dolžine kratkih netrivialnih zakonov v rešljivih oziroma nilpotentnih grupah.
 
     \begin{trditev}
     \label{trd_ocitna_meja_za_kratke_zakone_resljive_grupe}
@@ -151,7 +156,7 @@ Pred dokazom napovedane trditve \ref{trd_nilpotentne_so_produkti_sylowih} navedi
         Za $d > 1$ opazimo, da je kvocient $G / G^{(1)}$ Abelova grupa, $G^{(1)}$ pa rešljiva grupa razreda največ $d - 1$. Zato z uporabo razširitvene leme in indukcijske predpostavke najdemo besedo $w \in  F_2$ dolžine \begin{equation*}
             l(w) \le  4 \cdot 4^{d - 1} = 4^{d},
         \end{equation*}  
-        ki je zakon v grupi $G$. Za nilpotentne grupe upoštevamo dejstvo $G^{(1)} \subseteq \gamma_2(G)$, kar implicira komutativnost grupe $G / \gamma_2(G)$ ($G^{(1)}$ je po definiciji najmanjša edinka, za katero je kvocient $G / G^{(1)}$ Abelova grupa). 
+        ki je zakon v grupi $G$. Za nilpotentne grupe upoštevamo dejstvo $G^{(1)} \subseteq \gamma_2(G)$, kar implicira komutativnost grupe $G / \gamma_2(G)$. Po definiciji je namreč $G^{(1)}$ najmanjša edinka, za katero je kvocient $G / G^{(1)}$ Abelova grupa. 
     \end{dokaz}
     
     \begin{opomba}
@@ -160,160 +165,165 @@ Pred dokazom napovedane trditve \ref{trd_nilpotentne_so_produkti_sylowih} navedi
 
 \subsection{Konstrukcija zakonov v nilpotentnih in rešljivih grupah}
 
-Konstrukcija kratkih zakonov v nilpotentnih grupah je opisana v članku \cite{Elkasapy_Thom_2013} in z razlagami dopolnjena v magistrskem delu \cite{Schneider_2016}.
-Glavna ideja je poiskati kratke netrivialne elemente izpeljane vrste proste grupe $F_2 = \langle a, b \rangle $. Najprej definirajmo zaporedji $(a_n)_n$ in $(b_n)_n$ v $F_2$ s predpisoma
-\begin{equation*}
-a_0 := a, \, a_{n + 1} := [b_n^{-1}, a_{n}] \text{ in } b_0 := b, \, b_{n + 1} := [a_{n}, b_{n}]. 
-\end{equation*}  
-Besede, ki jih bomo konstruirali s tema zaporedjema, morajo biti netrivialne. Zato potrebujemo naslednjo lemo (lema 3.1 v viru \cite{Kozma_Thom_2016} oziroma lema 8 v \cite{Schneider_2016}).
-\begin{lema}
-\label{lem_ni_krajsanj_produkti_ab}
-Za vsako nenegativno celo število $n$ so besede $a_{n} a_{n}$, $a_{n}^{-1} a_{n}^{-1}$, $b_{n} b_{n}$, $b_{n}^{-1} b_{n}^{-1}$, $a_{n}^{-1} b_{n}$, $b_{n}^{-1} a_{n}$, $a_{n} b_{n}^{-1}$, $b_{n} a_{n}^{-1}$, $a_{n}^{-1} b_{n}^{-1}$ in $b_{n} a_{n}$ okrajšane.   
-\end{lema}
-\begin{dokaz}
-    Dokaz poteka z indukcijo po $n$. Za $n = 0$ je trditev očitna, ker sta $a$ in $b$ različna generatorja grupe $F_2$. Za $n > 0$ najprej razpišimo produkt $a_n a_n$.
-    \begin{equation*}
-    a_{n} a_{n} = [b_{n- 1}^{-1}, a_{n-1}]^2 = b_{n- 1}^{-1} a_{n-1} b_{n- 1} \underbrace{a_{n-1}^{-1} b_{n- 1}^{-1}}_{\text{ni krajšanja}}  a_{n-1} b_{n- 1} a_{n-1}^{-1} 
-    \end{equation*}  
-    Ker po indukcijski predpostavki vemo, da ne more priti do krajšanja v produktu $a_{n -1}^{-1} b_{n -1}^{-1}$, ne more priti do krajšanja v produktu $a_{n} a_{n}$ ali njegovem inverzu $a_{n}^{-1} a_{n}^{-1}$. Enako sklepamo za preostale produkte.
-    \begin{itemize}
-        \item Produkt $b_{n} b_{n}$ in njegov inverz sta okrajšana, ker je okrajšan $b_{n - 1}^{-1} a_{n-1}.$
-        \item Produkt $a_{n}^{-1} b_{n}$ in njegov inverz sta okrajšana, ker je okrajšan $b_{n - 1} a_{n-1}.$
-        \item Produkt $b_{n} b_{n}^{-1}$ in njegov inverz sta okrajšana, ker je okrajšan $a_{n - 1}^{-1} b_{n-1}.$
-        \item Produkt $a_{n}^{-1} b_{n}^{-1}$ in njegov inverz sta okrajšana, ker je okrajšan $b_{n - 1} b_{n-1}.$
-    \end{itemize}     
-\end{dokaz}
+% Konstrukcija kratkih zakonov v nilpotentnih grupah je opisana v članku \cite{Elkasapy_Thom_2013} in z razlagami dopolnjena v magistrskem delu \cite{Schneider_2016}.
+% Glavna ideja je poiskati kratke netrivialne elemente izpeljane vrste proste grupe $F_2 = \langle a, b \rangle $. Najprej definirajmo zaporedji $(a_n)_n$ in $(b_n)_n$ v $F_2$ s predpisoma
+% \begin{equation*}
+% a_0 := a, \, a_{n + 1} := [b_n^{-1}, a_{n}] \text{ in } b_0 := b, \, b_{n + 1} := [a_{n}, b_{n}]. 
+% \end{equation*}  
+% Besede, ki jih bomo konstruirali s tema zaporedjema, morajo biti netrivialne. Zato potrebujemo naslednjo lemo (lema 3.1 v viru \cite{Kozma_Thom_2016} oziroma lema 8 v \cite{Schneider_2016}).
+% \begin{lema}
+% \label{lem_ni_krajsanj_produkti_ab}
+% Za vsako nenegativno celo število $n$ so besede $a_{n} a_{n}$, $a_{n}^{-1} a_{n}^{-1}$, $b_{n} b_{n}$, $b_{n}^{-1} b_{n}^{-1}$, $a_{n}^{-1} b_{n}$, $b_{n}^{-1} a_{n}$, $a_{n} b_{n}^{-1}$, $b_{n} a_{n}^{-1}$, $a_{n}^{-1} b_{n}^{-1}$ in $b_{n} a_{n}$ okrajšane.   
+% \end{lema}
+% \begin{dokaz}
+%     Dokaz poteka z indukcijo po $n$. Za $n = 0$ je trditev očitna, ker sta $a$ in $b$ različna generatorja grupe $F_2$. Za $n > 0$ najprej razpišimo produkt $a_n a_n$.
+%     \begin{equation*}
+%     a_{n} a_{n} = [b_{n- 1}^{-1}, a_{n-1}]^2 = b_{n- 1}^{-1} a_{n-1} b_{n- 1} \underbrace{a_{n-1}^{-1} b_{n- 1}^{-1}}_{\text{ni krajšanja}}  a_{n-1} b_{n- 1} a_{n-1}^{-1} 
+%     \end{equation*}  
+%     Ker po indukcijski predpostavki vemo, da ne more priti do krajšanja v produktu $a_{n -1}^{-1} b_{n -1}^{-1}$, ne more priti do krajšanja v produktu $a_{n} a_{n}$ ali njegovem inverzu $a_{n}^{-1} a_{n}^{-1}$. Enako sklepamo za preostale produkte.
+%     \begin{itemize}
+%         \item Produkt $b_{n} b_{n}$ in njegov inverz sta okrajšana, ker je okrajšan $b_{n - 1}^{-1} a_{n-1}.$
+%         \item Produkt $a_{n}^{-1} b_{n}$ in njegov inverz sta okrajšana, ker je okrajšan $b_{n - 1} a_{n-1}.$
+%         \item Produkt $b_{n} b_{n}^{-1}$ in njegov inverz sta okrajšana, ker je okrajšan $a_{n - 1}^{-1} b_{n-1}.$
+%         \item Produkt $a_{n}^{-1} b_{n}^{-1}$ in njegov inverz sta okrajšana, ker je okrajšan $b_{n - 1} b_{n-1}.$
+%     \end{itemize}     
+% \end{dokaz}
 
-\begin{opomba}
-Produkti oblike $a_n b_n$ oziroma njihovi inverzi $b_n ^{-1} a_n ^{-1}$ niso nujno okrajšane besede, na primer že za $n = 1$ dobimo $a_1 b_1 = b^{-1} a b a a^{-1} b a^{-1} b^{-1}$. To dejstvo bomo izkoristili v nadaljevanju pri dokazu ocene iz trditve \ref{lem_vrednost_cn}. 
-\end{opomba}
+% \begin{opomba}
+% Produkti oblike $a_n b_n$ oziroma njihovi inverzi $b_n ^{-1} a_n ^{-1}$ niso nujno okrajšane besede, na primer že za $n = 1$ dobimo $a_1 b_1 = b^{-1} a b a a^{-1} b a^{-1} b^{-1}$. To dejstvo bomo izkoristili v nadaljevanju pri dokazu ocene iz trditve \ref{lem_vrednost_cn}. 
+% \end{opomba}
 
-Najprej se prepričajmo, da so besede $a_n$ oziroma $b_n$ elementi izpeljane grupe $F_2^{(n)}$. Naslednjo lemo najdemo kot razmislek na koncu dokaza leme 9 v \cite[str.~14]{Schneider_2016}.
+% Najprej se prepričajmo, da so besede $a_n$ oziroma $b_n$ elementi izpeljane grupe $F_2^{(n)}$. Naslednjo lemo najdemo kot razmislek na koncu dokaza leme 9 v \cite[str.~14]{Schneider_2016}.
 
-\begin{lema}
-\label{lem_besede_ab_so_elementi_izpeljane_grupe}
-Za vsako nenegativno celo število $n$ so besede $a_n$ oziroma $b_n$ elementi izpeljane grupe $F_2^{(n)} \subseteq F_2 = \langle a , b \rangle$.
-\end{lema}
-\begin{dokaz}
-    Dokaz poteka z indukcijo po $n$. Za $n = 0$ je $a_0 = a \in F_2 = F_2^{(0)}$ in $b_0 = b \in F_2 = F_2^{(0)}$. Za $n > 0$ velja $a_{n + 1} = [b_n^{-1}, a_n] \in \left[ F_2^{(n)}, F_2^{(n)} \right] = F_2^{(n + 1)}$ in $b_{n+1} = [a_{n}, b_{n}] \in  \left[ F_2^{(n)}, F_2^{(n)} \right] = F_2^{(n + 1)}$. 
-\end{dokaz}
+% \begin{lema}
+% \label{lem_besede_ab_so_elementi_izpeljane_grupe}
+% Za vsako nenegativno celo število $n$ so besede $a_n$ oziroma $b_n$ elementi izpeljane grupe $F_2^{(n)} \subseteq F_2 = \langle a , b \rangle$.
+% \end{lema}
+% \begin{dokaz}
+%     Dokaz poteka z indukcijo po $n$. Za $n = 0$ je $a_0 = a \in F_2 = F_2^{(0)}$ in $b_0 = b \in F_2 = F_2^{(0)}$. Za $n > 0$ velja $a_{n + 1} = [b_n^{-1}, a_n] \in \left[ F_2^{(n)}, F_2^{(n)} \right] = F_2^{(n + 1)}$ in $b_{n+1} = [a_{n}, b_{n}] \in  \left[ F_2^{(n)}, F_2^{(n)} \right] = F_2^{(n + 1)}$. 
+% \end{dokaz}
 
-Nato ocenimo dolžino členov zaporedij $(a_{n})_n$ in $(b_{n})_n$. Pri tem je za razliko od praktično vseh prejšnjih ocen pomembnejša spodnja meja, ki nam sporoča, da so členi zaporedij $a_n$ in $b_n$ netrivialni elementi
-izpeljane podgrupe $F_2^{(n)}$. Posledično so te besede zakoni za vse rešljive grupe razreda rešljivosti $n$ ali manj.
+% Nato ocenimo dolžino členov zaporedij $(a_{n})_n$ in $(b_{n})_n$. Pri tem je za razliko od praktično vseh prejšnjih ocen pomembnejša spodnja meja, ki nam sporoča, da so členi zaporedij $a_n$ in $b_n$ netrivialni elementi
+% izpeljane podgrupe $F_2^{(n)}$. Posledično so te besede zakoni za vse rešljive grupe razreda rešljivosti $n$ ali manj.
 
-\begin{lema}
-\label{lem_ocena_dolzine_clenov_zaporedij_ab}
-Za vsako celo število $n \ge 0$ velja $2^{n} \le l(a_{n}) = l(b_{n}) \le 4^{n}$.
-\end{lema}
-\begin{dokaz}
-    Dokaz najdemo v \cite[str.~14]{Schneider_2016}, poteka z indukcijo po $n$. Za $n = 0$ očitno velja $l(a_0) = l(a) = l(b) = l(b_0) = 1$. Za $n \ge 1$ z upoštevanjem definicij zaporedij razpišemo \begin{align*}
-    l(b_{n+1}) &= l(a_{n} b_{n} a_{n}^{-1} b_{n}^{-1}) \\
-     &= l(a_{n} b_{n}) + l(a_{n}) + l(b_{n}) \\
-     &= l(b_{n}^{-1} a_{n} b_{n} a_{n}^{-1}) \\
-     &= l(a_{n + 1})
-\end{align*}
-Za sklep v drugi in tretji vrstici je bila potrebna lema \ref{lem_ni_krajsanj_produkti_ab} ter preprost sklep, da za besedi $w_1, w_2 \in F_2$, katerih produkt $w_1 w_2$ je okrajšana beseda, velja $l(w_1 w_2) = l(w_1) + l(w_2)$.
+% \begin{lema}
+% \label{lem_ocena_dolzine_clenov_zaporedij_ab}
+% Za vsako celo število $n \ge 0$ velja $2^{n} \le l(a_{n}) = l(b_{n}) \le 4^{n}$.
+% \end{lema}
+% \begin{dokaz}
+%     Dokaz najdemo v \cite[str.~14]{Schneider_2016}, poteka z indukcijo po $n$. Za $n = 0$ očitno velja $l(a_0) = l(a) = l(b) = l(b_0) = 1$. Za $n \ge 1$ z upoštevanjem definicij zaporedij razpišemo \begin{align*}
+%     l(b_{n+1}) &= l(a_{n} b_{n} a_{n}^{-1} b_{n}^{-1}) \\
+%      &= l(a_{n} b_{n}) + l(a_{n}) + l(b_{n}) \\
+%      &= l(b_{n}^{-1} a_{n} b_{n} a_{n}^{-1}) \\
+%      &= l(a_{n + 1})
+% \end{align*}
+% Za sklep v drugi in tretji vrstici je bila potrebna lema \ref{lem_ni_krajsanj_produkti_ab} ter preprost sklep, da za besedi $w_1, w_2 \in F_2$, katerih produkt $w_1 w_2$ je okrajšana beseda, velja $l(w_1 w_2) = l(w_1) + l(w_2)$.
 
-Iz druge vrstice sledi \begin{equation*}
-    l(b_{n+1}) = l(a_n b_n) + l(a_n)  + l(b_n) \ge l(a_n)  + l(b_n) = 2l(b_n).
-\end{equation*}
-od koder z indukcijo dobimo $l(a_{n}) = l(b_{n}) \ge 2^{n}$. Iz tretje vrstice direktno sledi $l(b_{n+1}) \le 4 l(b_n)$
-od koder z indukcijo dobimo $l(b_n) \le 4^{n}$. Mimogrede -- s tem razmislekom smo na novi način dokazali oceno \ref{trd_ocitna_meja_za_kratke_zakone_resljive_grupe}.    
-\end{dokaz}
+% Iz druge vrstice sledi \begin{equation*}
+%     l(b_{n+1}) = l(a_n b_n) + l(a_n)  + l(b_n) \ge l(a_n)  + l(b_n) = 2l(b_n).
+% \end{equation*}
+% od koder z indukcijo dobimo $l(a_{n}) = l(b_{n}) \ge 2^{n}$. Iz tretje vrstice direktno sledi $l(b_{n+1}) \le 4 l(b_n)$
+% od koder z indukcijo dobimo $l(b_n) \le 4^{n}$. Mimogrede -- s tem razmislekom smo na novi način dokazali oceno \ref{trd_ocitna_meja_za_kratke_zakone_resljive_grupe}.    
+% \end{dokaz}
 
-Zaradi leme \ref{lem_ocena_dolzine_clenov_zaporedij_ab} lahko dobro definiramo zaporedje naravnih števil $c_n := l(a_n) = l(b_n)$, ki nam podaja dolžine netrivialnih besed v grupi $F_2^{(n)}$.
-Izračunajmo splošni člen tega zaporedja.
-\begin{lema}
-\label{lem_vrednost_cn}
-Zaporedje $c_n$ za vsako število $n \ge 0$ ustreza rekurzivni zvezi $c_{n+2} = 3 c_{n+1} + 2c_{n}$ z začetnima členoma $c_0 = 1$ in $c_1 = 4$. Od tod lahko natančno izračunamo splošni člen tega zaporedja in ocenimo zgornjo mejo z zvezama \begin{equation*}
-c_{n} = \left( \frac{1}{2} + \frac{5}{2 \sqrt{17}} \right) \left( \frac{3 + \sqrt{17} }{2} \right)^{n} +  \left( \frac{1}{2} - \frac{5}{2 \sqrt{17}} \right) \left( \frac{3 - \sqrt{17} }{2} \right)^{n} \le C_1 \iota^{n} + o(1),
-\end{equation*}
-kjer je $\iota := (3 + \sqrt{17} ) / 2 = 3{,}5615528 \ldots $ in $C_1 = 1/ 2 + 5 / (2 \sqrt{17} ) = 1{,}1063391 \ldots$. 
-\end{lema}  
-\begin{dokaz}
-    Dokaz je v podobni obliki podan v \cite[str.~15]{Schneider_2016} in se stalno sklicuje lemo \ref{lem_ni_krajsanj_produkti_ab}, ki preprečuje nezaželena krajšanja med stičišči besed. Po definiciji zaporedij $a_n$ in $b_n$ hitro vidimo, da je $c_0 = l(a) = 1$ ter $c_1 = l([b^{-1}, a]) = 4$. Nato izrazimo
-    \begin{align*}
-        c_{n+2} &= l(b_{n+2}) \\
-         &= l([a_{n + 1}, b_{n+1}])\\
-         &= l([[b_n ^{-1}, a_{n}], [a_{n}, b_{n}]]) \\
-         &= l(b_{n} ^{-1} a_{n} b_{n} \underbrace{a_{n} ^{-1} a_{n}}_{\text{se pokrajša}}  b_{n} a_{n} ^{-1} b_{n} ^{-1}) + l([a_{n}, b_{n} ^{-1}]) + l([b_{n}, a_{n}]) \\
-         &= \underbrace{l(b_{n} ^{-1} a_{n} b_{n})}_{l(a_{n + 1}) - l(a_{n}^{-1}) = c_{n+1} - c_{n}}  + \underbrace{l(b_{n}) + l(a_{n} ^{-1}) + l(b_{n} ^{-1})}_{3 c_{n}}  + \underbrace{l([a_{n} , b_{n}^{-1}])}_{l(a_{n + 1}) = c_{n+1}}  + \underbrace{l([b_{n}, a_{n}])}_{l(b_{n+1}) = c_{n+1}}. 
-    \end{align*}
-    To nam za $n \ge 0$ podaja želeno zvezo $c_{n+2} = 3 c_{n+1} + 2c_{n}$ skupaj z začetnima vrednostima $c_0 = 1$ in $c_1 = 4$. Temu rekurzivno podanemu zaporedju pripada matrična enačba, ki jo poenostavimo z diagonalizacijo kvadratne matrike, spodaj označene z $A$ \begin{equation*}
-    \begin{bmatrix}
-        c_{n+ 1}\\
-        c_{n} 
-    \end{bmatrix} = {\underbrace{\begin{bmatrix}
-        3 & 2\\
-        1 & 0
-    \end{bmatrix}}_{A}}^{n}  \begin{bmatrix}
-        4 \\
-        1 
-    \end{bmatrix} = \begin{bmatrix}
-        \frac{3 - \sqrt{17} }{2} & \frac{3 + \sqrt{17} }{2}\\
-        1 & 1
-    \end{bmatrix} \begin{bmatrix}
-        \frac{3 - \sqrt{17} }{2} & 0\\
-        0 & \frac{3 + \sqrt{17} }{2}
-    \end{bmatrix}^{n} 
-    \begin{bmatrix}
-        - \frac{1}{\sqrt{17} } & \frac{1}{2} + \frac{3}{2 \sqrt{17} }\\
-        \frac{1}{\sqrt{17} } & \frac{1}{2} - \frac{3}{2 \sqrt{17} }
-    \end{bmatrix}
-    \begin{bmatrix}
-        4 \\
-        1 
-    \end{bmatrix}.
-    \end{equation*}  
-     Druga vrstica te matrične enačbe nam podaja želeni izraz splošnega člena $c_n$. Neenakost $c_n \le C_1 \iota^n + o(1)$ je posledica dejstva, 
-     da je po absolutni vrednosti največja lastna vrednost matrike $A$ enaka $\iota = (3 + \sqrt{17})  / 2 = 3{,}5615528 \ldots$. Člen, ki pripada manjši lastni vrednosti konvergira proti $0$, zato je razreda $o(1)$.
-\end{dokaz} 
+% Zaradi leme \ref{lem_ocena_dolzine_clenov_zaporedij_ab} lahko dobro definiramo zaporedje naravnih števil $c_n := l(a_n) = l(b_n)$, ki nam podaja dolžine netrivialnih besed v grupi $F_2^{(n)}$.
+% Izračunajmo splošni člen tega zaporedja.
+% \begin{lema}
+% \label{lem_vrednost_cn}
+% Zaporedje $c_n$ za vsako število $n \ge 0$ ustreza rekurzivni zvezi $c_{n+2} = 3 c_{n+1} + 2c_{n}$ z začetnima členoma $c_0 = 1$ in $c_1 = 4$. Od tod lahko natančno izračunamo splošni člen tega zaporedja in ocenimo zgornjo mejo z zvezama \begin{equation*}
+% c_{n} = \left( \frac{1}{2} + \frac{5}{2 \sqrt{17}} \right) \left( \frac{3 + \sqrt{17} }{2} \right)^{n} +  \left( \frac{1}{2} - \frac{5}{2 \sqrt{17}} \right) \left( \frac{3 - \sqrt{17} }{2} \right)^{n} \le C_1 \iota^{n} + o(1),
+% \end{equation*}
+% kjer je $\iota := (3 + \sqrt{17} ) / 2 = 3{,}5615528 \ldots $ in $C_1 = 1/ 2 + 5 / (2 \sqrt{17} ) = 1{,}1063391 \ldots$. 
+% \end{lema}  
+% \begin{dokaz}
+%     Dokaz je v podobni obliki podan v \cite[str.~15]{Schneider_2016} in se stalno sklicuje lemo \ref{lem_ni_krajsanj_produkti_ab}, ki preprečuje nezaželena krajšanja med stičišči besed. Po definiciji zaporedij $a_n$ in $b_n$ hitro vidimo, da je $c_0 = l(a) = 1$ ter $c_1 = l([b^{-1}, a]) = 4$. Nato izrazimo
+%     \begin{align*}
+%         c_{n+2} &= l(b_{n+2}) \\
+%          &= l([a_{n + 1}, b_{n+1}])\\
+%          &= l([[b_n ^{-1}, a_{n}], [a_{n}, b_{n}]]) \\
+%          &= l(b_{n} ^{-1} a_{n} b_{n} \underbrace{a_{n} ^{-1} a_{n}}_{\text{se pokrajša}}  b_{n} a_{n} ^{-1} b_{n} ^{-1}) + l([a_{n}, b_{n} ^{-1}]) + l([b_{n}, a_{n}]) \\
+%          &= \underbrace{l(b_{n} ^{-1} a_{n} b_{n})}_{l(a_{n + 1}) - l(a_{n}^{-1}) = c_{n+1} - c_{n}}  + \underbrace{l(b_{n}) + l(a_{n} ^{-1}) + l(b_{n} ^{-1})}_{3 c_{n}}  + \underbrace{l([a_{n} , b_{n}^{-1}])}_{l(a_{n + 1}) = c_{n+1}}  + \underbrace{l([b_{n}, a_{n}])}_{l(b_{n+1}) = c_{n+1}}. 
+%     \end{align*}
+%     To nam za $n \ge 0$ podaja želeno zvezo $c_{n+2} = 3 c_{n+1} + 2c_{n}$ skupaj z začetnima vrednostima $c_0 = 1$ in $c_1 = 4$. Temu rekurzivno podanemu zaporedju pripada matrična enačba, ki jo poenostavimo z diagonalizacijo kvadratne matrike, spodaj označene z $A$ \begin{equation*}
+%     \begin{bmatrix}
+%         c_{n+ 1}\\
+%         c_{n} 
+%     \end{bmatrix} = {\underbrace{\begin{bmatrix}
+%         3 & 2\\
+%         1 & 0
+%     \end{bmatrix}}_{A}}^{n}  \begin{bmatrix}
+%         4 \\
+%         1 
+%     \end{bmatrix} = \begin{bmatrix}
+%         \frac{3 - \sqrt{17} }{2} & \frac{3 + \sqrt{17} }{2}\\
+%         1 & 1
+%     \end{bmatrix} \begin{bmatrix}
+%         \frac{3 - \sqrt{17} }{2} & 0\\
+%         0 & \frac{3 + \sqrt{17} }{2}
+%     \end{bmatrix}^{n} 
+%     \begin{bmatrix}
+%         - \frac{1}{\sqrt{17} } & \frac{1}{2} + \frac{3}{2 \sqrt{17} }\\
+%         \frac{1}{\sqrt{17} } & \frac{1}{2} - \frac{3}{2 \sqrt{17} }
+%     \end{bmatrix}
+%     \begin{bmatrix}
+%         4 \\
+%         1 
+%     \end{bmatrix}.
+%     \end{equation*}  
+%      Druga vrstica te matrične enačbe nam podaja želeni izraz splošnega člena $c_n$. Neenakost $c_n \le C_1 \iota^n + o(1)$ je posledica dejstva, 
+%      da je po absolutni vrednosti največja lastna vrednost matrike $A$ enaka $\iota = (3 + \sqrt{17})  / 2 = 3{,}5615528 \ldots$. Člen, ki pripada manjši lastni vrednosti konvergira proti $0$, zato je razreda $o(1)$.
+% \end{dokaz} 
 
-Direktna posledica te leme je naslednja ugotovitev za rešljive grupe.
+% Direktna posledica te leme je naslednja ugotovitev za rešljive grupe.
 
-\begin{trditev}
-\label{trd_osnovna_ocena_resljive_grupe} 
- Obstaja netrivialna beseda $w \in F_2$, ki je zakon v vseh grupah razreda rešljivosti $n$ ali manj, dolžine \begin{equation*}
- l(w) \le C_1 \iota^{n} + o(1),
- \end{equation*}  
- kjer sta konstanti $C_1$ in $\iota$ enaki kot v lemi \ref{lem_vrednost_cn}.  
-\end{trditev}
-\begin{dokaz}
-    Naj bo $G$ rešljiva grupa razreda $d$. Po prejšnji lemi obstaja netrivialna beseda $w \in F_2^{(n)}$ dolžine $C_1 \iota^{n} +o(1)$. 
-    Ker je grupa $G$ rešljiva razreda $d \le n$, je $G^{(n)} = G^{(d)} = \left\{  1_G \right\}$. To pomeni, da za vsak par elementov $g, h \in G$ velja
-    $w(g, h) = 1_G$, torej je $w$ zakon v grupi $G$. 
-\end{dokaz}
+% \begin{trditev}
+% \label{trd_osnovna_ocena_resljive_grupe} 
+%  Obstaja netrivialna beseda $w \in F_2$, ki je zakon v vseh grupah razreda rešljivosti $n$ ali manj, dolžine \begin{equation*}
+%  l(w) \le C_1 \iota^{n} + o(1),
+%  \end{equation*}  
+%  kjer sta konstanti $C_1$ in $\iota$ enaki kot v lemi \ref{lem_vrednost_cn}.  
+% \end{trditev}
+% \begin{dokaz}
+%     Naj bo $G$ rešljiva grupa razreda $d$. Po prejšnji lemi obstaja netrivialna beseda $w \in F_2^{(n)}$ dolžine $C_1 \iota^{n} +o(1)$. 
+%     Ker je grupa $G$ rešljiva razreda $d \le n$, je $G^{(n)} = G^{(d)} = \left\{  1_G \right\}$. To pomeni, da za vsak par elementov $g, h \in G$ velja
+%     $w(g, h) = 1_G$, torej je $w$ zakon v grupi $G$. 
+% \end{dokaz}
 
-Ta ugotovitev je asimptotsko gledano veliko boljši rezultat od trditve \ref{trd_ocitna_meja_za_kratke_zakone_resljive_grupe}.
-Zdaj moramo pridobljeno znanje le še prevesti na nilpotentne grupe. Pred tem moramo dokazati, da za vsako celo število $n \ge 0$ velja $G^{(n)} \subseteq \gamma_{2^{n}}(G)$. Ideji za dokaza se nahajata v \cite[str.~17--18]{Schneider_2016}.
+% Ta ugotovitev je asimptotsko gledano veliko boljši rezultat od trditve \ref{trd_ocitna_meja_za_kratke_zakone_resljive_grupe}.
+% Zdaj moramo pridobljeno znanje le še prevesti na nilpotentne grupe. 
+
+Vemo, da je vsaka nilpotentna grupa rešljiva. Če lahko učinkovito omejimo njen razred rešljivosti, bomo s pomočjo ocene \ref{trd_ocitna_meja_za_kratke_zakone_resljive_grupe} dobili oceno dolžine kratkih zakonov v nilpotentnih grupah.
+
+Bolj konkretno, dokazali bomo, da za vsako celo število $n \ge 0$ velja zveza med členi izpeljane in centralne vrste $G^{(n)} \subseteq \gamma_{2^{n}}(G)$. Ideji za dokaza lem \ref{lem_tri_podgrupe} in \ref{lem_povezava_med_spodnjo_in_izpeljano_vrsto} se nahajata v \cite[str.~17--18]{Schneider_2016}.
 
 \begin{lema}
 \label{lem_tri_podgrupe}
-Naj bo $G$ grupa, $A, B, C \trianglelefteq G$ njene edinke in $D \le G$ njena podgrupa. Če velja \begin{equation*}
-[[A, B], C] \subseteq  D \text{ in } [[B, C], A] \subseteq D,
+Naj bo $G$ grupa, $A, B, C \trianglelefteq G$ njene edinke in $D \le G$ njena podgrupa. Če veljata vsebovanosti \begin{equation*}
+[[B, C], A] \subseteq  D \,\,\, \text{ in } \,\,\, [[C, A], B]  \subseteq D,
 \end{equation*}  
 velja tudi \begin{equation*}
-[[C, A], B].
-\end{equation*}  
-Elementi komutatorske podgrupe $[[A, B], C]$ so oblike $\prod_{i = 1}^{n} [[a_i, b_i], c_i]$ za neke elemente $a_i \in A, b_{i} \in  B, c_{i} \in  C$. Z računom lahko preverimo, da poljubne elemente $g, h, k \in G$ velja Hall-Wittova enakost \begin{equation*}
+ [[A, B], C] \subseteq D.
+\end{equation*}
+\end{lema}
+\begin{dokaz}
+    Elementi komutatorske podgrupe $[[A, B], C]$ so oblike $\prod_{i = 1}^{n} [[a_i, b_i], c_i]$ za neke elemente $a_i \in A, b_{i} \in  B, c_{i} \in  C$. Z računom lahko preverimo, da poljubne elemente $g, h, k \in G$ velja Hall-Wittova enakost \begin{equation*}
 [[g^{-1}, h], k] = \left(  \left(  [[k^{-1}, g], h]^{k^{-1}} [[h^{-1} , k] , g]^{h^{-1}} \right)^{g} \right)^{-1}.
 \end{equation*}  
   To pomeni, da lahko zapišemo \begin{equation*}
     \prod_{i = 1}^{n} [[a_i, b_i], c_i]  = \prod_{i = 1}^{n} \left(  \left(  \underbrace{[[c_i^{-1}, a_i], b_i]^{c_i^{-1}}}_{\in [[C, A], B]}  \underbrace{[[b_i^{-1} , c_i] , a_i]^{b_i^{-1}}}_{\in [[B, C], A]}  \right)^{a_i} \right)^{-1}.
     \end{equation*}
     Od tod po predpostavkah sledi, da je $[[A, B] , C] \subseteq  [[C, A] , B] [[B, C] , A]  \subseteq D$. 
-\end{lema}
-
+\end{dokaz}
 
 \begin{lema}
 \label{lem_povezava_med_spodnjo_in_izpeljano_vrsto}
-Za vsako število $n \ge 0$ velja inkluzija
+Za vsako celo število $n \ge 0$ velja inkluzija
 \begin{equation*}
 G^{(n)} \subseteq \gamma_{2^{n}}(G).
 \end{equation*}    
 \end{lema}
 \begin{dokaz}
-Dokaz poteka z indukcijo po $n$. Za $n = 0$ po definiciji velja $G^{(0)} \subseteq \gamma_{1}(G)$. Za $n \ge 1$ velja
+Dokaz poteka z indukcijo. Za $n = 0$ po definiciji velja $G^{(0)} = \gamma_{1}(G) = G$. Za $n \ge 1$ velja
 \begin{equation*}
 G^{(n)} = [G^{(n - 1)}, G^{(n - 1)}] \subseteq [\gamma_{2^{n - 1}}(G), \gamma_{2^{n - 1}}(G)].
 \end{equation*}  
@@ -334,50 +344,80 @@ bi dokazali lemo. Zato bomo izvedli indukcijo po številu $j$. V primeru $j = 1$
         [\gamma_i(G), \gamma_j(G)] = [\gamma_j(G), \gamma_i(G)] = [[G, \gamma_{j- 1}(G)], \gamma_{i}(G)] \stackrel{\ref{lem_tri_podgrupe}}{\subseteq}  \gamma_{i + j}(G).  
     \end{equation*}  
     Od tod sledi želena vsebovanost \begin{equation*}
-        G^{(n)} = [G^{(n - 1)}, G^{(n - 1)}] \subseteq [\gamma_{2^{n - 1}}(G), \gamma_{2^{n - 1}}(G)] \subseteq \gamma_{2^n}(G).
+        G^{(n)} = [G^{(n - 1)}, G^{(n - 1)}] \subseteq [\gamma_{2^{n - 1}}(G), \gamma_{2^{n - 1}}(G)] \subseteq \gamma_{2^n}(G). \qedhere
         \end{equation*}
-    
 \end{dokaz}
 
-Naslednja trditev je kombinacija posledice 4 in leme 11 iz naloge \cite[str.~16--17]{Schneider_2016}.
-\begin{trditev}
-\label{trd_koncna_ugotovitev_nilpotentne_v_nalogi}
- Obstaja netrivialna beseda $w \in F_2$, ki je zakon v vseh nilpotentnih grupah $G$ moči največ $n$, dolžine \begin{equation*}
- l(w) \le  C_3 \log(n)^{\kappa} + o(1),
- \end{equation*}  
- kjer sta $C_3 = 7{,}712869694 \ldots$ in $\kappa = \log_2(\iota) = 1{,}832506 \ldots$ konstanti.    
-\end{trditev}
+% Naslednja trditev je kombinacija posledice 4 in leme 11 iz naloge \cite[str.~16--17]{Schneider_2016}.
+% \begin{trditev}
+% \label{trd_koncna_ugotovitev_nilpotentne_v_nalogi}
+%  Obstaja netrivialna beseda $w \in F_2$, ki je zakon v vseh nilpotentnih grupah $G$ moči največ $n$, dolžine \begin{equation*}
+%  l(w) \le  C_3 \log(n)^{\kappa} + o(1),
+%  \end{equation*}  
+%  kjer sta $C_3 = 7{,}712869694 \ldots$ in $\kappa = \log_2(\iota) = 1{,}832506 \ldots$ konstanti.    
+% \end{trditev}
 
+% \begin{dokaz}
+%     Za vsako število $k \ge 1$ je
+%     število $e = \left\lceil \log_2(k) \right\rceil$ najmanjše naravno število, da velja $k \le 2^{e} < 2k$.
+%     Od tod po lemi \ref{lem_povezava_med_spodnjo_in_izpeljano_vrsto} sledi \begin{equation*}
+%     F_2^{(e)} \subseteq \gamma_{2^{e}}(F_2) \subseteq \gamma_k(F_2).
+%     \end{equation*}  
+%      Po trditvi \ref{trd_osnovna_ocena_resljive_grupe} obstaja netrivialna beseda $w \in  F_2^{(e)}$ dolžine največ $C_1 \iota^{e} + o(1)$.
+%     Zaradi izbira števila $e$ lahko zapišemo \begin{equation*}
+%     l(w) \le  C_1 \iota^{e} = C_1 2^{\log_2(\iota) e} < C_1 (2k)^{\log_2(\iota)} = C_1 \iota k^{\log_2(\iota)} = C_2  k^\kappa.
+%     \end{equation*}
+%     Naj bo grupa $G$ nilpotentna razreda $d$, moči $n$ ali manj. Zaradi nilpotentnosti $G$ za vsako celo število $i \ge 0$ iz netrivialnosti grupe $\gamma_i(G)$ sledi netrivialnost kvocienta $\gamma_i(G) / \gamma_{i + 1}(G)$, saj je centralna vrsta nilpotentnih grup pred iztekom strogo padajoča.
+%     Za razred nilpotentnosti $d$ velja po posledici \ref{psl_ocena_razreda_nilpotentnosti} ocena $d \le \left\lfloor \log_2(G)  \right\rfloor \le \log_2(n)$. Zato po prvem sklepu dokaza obstaja netrivialna beseda $w \in \gamma_d(G)$ dolžine \begin{equation*}
+%     l(w) \le C_2 d^{\kappa} \le C_2 \log_2(n)^{\kappa} = \frac{C_2}{\log_2(n)^{\kappa}} \log(n)^{\kappa} = C_3 \log(n)^{\kappa}, 
+%     \end{equation*}  
+%      saj velja $w \in \gamma_{\left\lfloor \log_2(n) \right\rfloor}(F_2) \subseteq \gamma_{d}(F_2)$. Od tod z analognim razmislekom kot v trditvi \ref{trd_osnovna_ocena_resljive_grupe} sledi, da je $w$ netrivialni zakon v vseh nilpotentnih grupah razreda $d$ ali manj. 
+% \end{dokaz}
+
+Zdaj smo pripravljeni za dokaz izreka, ki predstavlja ključni razmislek, zakaj v nilpotentnih grupah obstajajo razmeroma kratki zakoni.
+
+\begin{izrek}\label{izr_glavni_nilpotentne}
+    Obstaja netrivialna beseda $w \in F_2$ dolžine \begin{equation*}
+    l(w) \le  4 \log_2(n)^2,
+ \end{equation*}
+ ki je zakon v vseh nilpotentnih grupah moči največ $n$. 
+\end{izrek}
 \begin{dokaz}
-    Za vsako število $k \ge 1$ je
-    število $e = \left\lceil \log_2(k) \right\rceil$ najmanjše naravno število, da velja $k \le 2^{e} < 2k$.
-    Od tod po lemi \ref{lem_povezava_med_spodnjo_in_izpeljano_vrsto} sledi \begin{equation*}
-    F_2^{(e)} \subseteq \gamma_{2^{e}}(F_2) \subseteq \gamma_k(F_2).
-    \end{equation*}  
-     Po trditvi \ref{trd_osnovna_ocena_resljive_grupe} obstaja netrivialna beseda $w \in  F_2^{(e)}$ dolžine največ $C_1 \iota^{e} + o(1)$.
-    Zaradi izbira števila $e$ lahko zapišemo \begin{equation*}
-    l(w) \le  C_1 \iota^{e} = C_1 2^{\log_2(\iota) e} < C_1 (2k)^{\log_2(\iota)} = C_1 \iota k^{\log_2(\iota)} = C_2  k^\kappa.
+    Naj bo $G$ nilpotentna grupa moči $n$ ali manj. Po posledici \ref{psl_ocena_razreda_nilpotentnosti} znaša njen razred nilpotentnosti $d_{\text{nil}}$ največ \begin{equation*}
+        d_{\text{nil}} \le \lfloor \log_2 \lvert G \rvert \rfloor - 1 \le \log_2(n).
     \end{equation*}
-    Naj bo grupa $G$ nilpotentna razreda $d$, moči $n$ ali manj. Zaradi nilpotentnosti $G$ za vsako celo število $i \ge 0$ iz netrivialnosti grupe $\gamma_i(G)$ sledi netrivialnost kvocienta $\gamma_i(G) / \gamma_{i + 1}(G)$, saj je centralna vrsta nilpotentnih grup pred iztekom strogo padajoča.
-    Za razred nilpotentnosti $d$ velja po posledici \ref{psl_ocena_razreda_nilpotentnosti} ocena $d \le \left\lfloor \log_2(G)  \right\rfloor \le \log_2(n)$. Zato po prvem sklepu dokaza obstaja netrivialna beseda $w \in \gamma_d(G)$ dolžine \begin{equation*}
-    l(w) \le C_2 d^{\kappa} \le C_2 \log_2(n)^{\kappa} = \frac{C_2}{\log_2(n)^{\kappa}} \log(n)^{\kappa} = C_3 \log(n)^{\kappa}, 
-    \end{equation*}  
-     saj velja $w \in \gamma_{\left\lfloor \log_2(n) \right\rfloor}(F_2) \subseteq \gamma_{d}(F_2)$. Od tod z analognim razmislekom kot v trditvi \ref{trd_osnovna_ocena_resljive_grupe} sledi, da je $w$ netrivialni zakon v vseh nilpotentnih grupah razreda $d$ ali manj. 
+    Po lemi \ref{lem_povezava_med_spodnjo_in_izpeljano_vrsto} vemo tudi, da grupa razreda nilpotentnosti $d_{\text{nil}}$ gotovo pripada razredu rešljivosti $\lceil \log_2(d_{\text{nil}}) \rceil$, oziroma $d_{\text{reš}}  \le \log_2(d_{\text{nil}}) + 1$.
+    Po oceni \ref{trd_ocitna_meja_za_kratke_zakone_resljive_grupe} torej obstaja beseda $w \in F_2$ dolžine \begin{equation*}
+        l(w) \le 4^{d_{\text{reš}}} \le  4^{\log_2(d_{\text{nil}}) + 1}  \le 4 \cdot 4^{\log_2(\log_2(n))} = 4 \log_2(n)^2. \qedhere 
+    \end{equation*} 
 \end{dokaz}
 
-V nadaljevanju članka \cite[str.~5--9]{Elkasapy_Thom_2013} avtorja eksponent $\kappa$ iz prejšnje trditve izboljšata na $\lambda := 1{,}44115577 \ldots$, pri čemer je treba namesto konstante $C_3$ vzeti faktor oblike $(8{,}395184144 \ldots + o(1))$. To storita s preučevanjem funkcije \begin{equation*}
-\gamma(w) := \max \left\{ n \in  \mathbb{N}  \middle|\, w \in \gamma_{n}(F_2) \right\} \cup \left\{ \infty\right\}. 
+ Ta rezultat bi lahko izboljšali z izboljšanjem ocene za rešljive grupe \ref{trd_ocitna_meja_za_kratke_zakone_resljive_grupe}. Eden izmed možnih pristopov, ki ga najdemo recimo v \cite[str.~4--5]{Elkasapy_Thom_2013} ali \cite[str.~14--16]{Schneider_2016}, je uvedba zaporedij $(a_n)_n$ in $(b_n)_n$ v $F_2 = \langle a, b \rangle$ s predpisoma
+\begin{equation*}
+a_0 := a, \, a_{n + 1} := [b_n^{-1}, a_{n}] \,\,\, \text{ in } \,\,\, b_0 := b, \, b_{n + 1} := [a_{n}, b_{n}]. 
 \end{equation*}  
-Če namreč definiramo $\gamma_n := \gamma(a_{n}) = \gamma(b_{n})$, lahko za vsako celo število $n \ge 0$ dokažemo zvezo $\gamma_{n + 2} - 2 \gamma_{n+1}  - \gamma_{n} \ge  0$, s čimer po enakem postopku kot v dokazu \ref{lem_vrednost_cn} ocenimo spodnjo mejo $\gamma_n \ge C_4 (1 + \sqrt{2})^{n} - o(1)$.
-Avtorja razmislek zaključita z ugotovitvijo, da je namesto eksponenta $\kappa = \log_2( \iota)$ ustrezen $\lambda := \log_{1 + \sqrt{2}}(\iota)$.
+Izkaže se, da so za vsako število $n \ge 1$ besede $a_n$ in $b_n$ netrivialne ter velja $a_n, b_n \in F_2^{(n)}$. To pomeni, da sta za $n \ge 1$ besedi $a_n$ in $b_n$ netrivialna zakona v rešljivih grupah razreda $n$ ali manj. Če grupa $G$ ustreza tem pogojem, namreč za vsak par $g, h \in G$ velja \begin{equation*}
+    a_n(g, h), b_n(g, h ) \in G^{(n)} = \{ 1_G  \}.
+\end{equation*}
+Z indukcijo se da pokazati, da za vsako število $n \ge 0$ velja $l(a_n) = l(b_n)$, zato lahko definiramo zaporedje
+$c_n := l(a_n)$, ki ustreza rekurzivni formuli $c_{n+2} = 3 c_{n+1} + 2c_{n}$ z začetnima členoma $c_0 = 1$ in $c_1 = 4$. Od tod lahko natančno izračunamo splošni člen tega zaporedja in ocenimo zgornjo mejo z zvezama \begin{equation*}
+c_{n} = \left( \frac{1}{2} + \frac{5}{2 \sqrt{17}} \right) \left( \frac{3 + \sqrt{17} }{2} \right)^{n} +  \left( \frac{1}{2} - \frac{5}{2 \sqrt{17}} \right) \left( \frac{3 - \sqrt{17} }{2} \right)^{n} \le 1{,}11 \cdot 3{,}57^{n} + o(1),
+\end{equation*}
+kar je za $n \ge 2$ boljša ocena zgornje meje od izraza $4^n$ iz trditve \ref{trd_ocitna_meja_za_kratke_zakone_resljive_grupe},
+zato nam zmanjša eksponent 2 iz izreka \ref{izr_glavni_nilpotentne}.
+ 
+% V nadaljevanju članka \cite[str.~5--9]{Elkasapy_Thom_2013} avtorja eksponent $\kappa$ iz prejšnje trditve izboljšata na $\lambda := 1{,}44115577 \ldots$, pri čemer je treba namesto konstante $C_3$ vzeti faktor oblike $(8{,}395184144 \ldots + o(1))$. To storita s preučevanjem funkcije \begin{equation*}
+% \gamma(w) := \max \left\{ n \in  \mathbb{N}  \middle|\, w \in \gamma_{n}(F_2) \right\} \cup \left\{ \infty\right\}. 
+% \end{equation*}  
+% Če namreč definiramo $\gamma_n := \gamma(a_{n}) = \gamma(b_{n})$, lahko za vsako celo število $n \ge 0$ dokažemo zvezo $\gamma_{n + 2} - 2 \gamma_{n+1}  - \gamma_{n} \ge  0$, s čimer po enakem postopku kot v dokazu \ref{lem_vrednost_cn} ocenimo spodnjo mejo $\gamma_n \ge C_4 (1 + \sqrt{2})^{n} - o(1)$.
+% Avtorja razmislek zaključita z ugotovitvijo, da je namesto eksponenta $\kappa = \log_2( \iota)$ ustrezen $\lambda := \log_{1 + \sqrt{2}}(\iota)$.
 
-Da dobimo primerljiv rezultat za rešljive grupe, se moramo precej bolj potruditi. Postopek je opisan v \cite[str.~3--4]{Thom_2015} oziroma podrobneje v \cite[str.~19--25]{Schneider_2016}. Sklicuje se na lastnosti grup avtomorfizmov nilpotentnih grup, ki jih vložimo
-v primerne splošne linearne grupe. Slednjim znamo natančno omejiti razrede rešljivosti, saj so predmet klasične obravnave v teoriji grup. Ker je jedro te vložitve nilpotentno, se lahko zaradi razširitvene leme \ref{lem_razsiritvena_lema} skličemo na rezultat o dolžinah zakonov v nilpotentnih grupah \ref{trd_koncna_ugotovitev_nilpotentne_v_nalogi}, kar nam zagotovi naslednji izrek, ki ga najdemo v obliki trditve 4 v \cite[str.~25]{Schneider_2016}.  
+Da dobimo primerljiv rezultat za rešljive grupe, se moramo precej bolj potruditi. Postopek je opisan v \cite[str.~3--4]{Thom_2015} oziroma podrobneje v \cite[str.~19--25]{Schneider_2016}. Sklicuje se na lastnosti grup avtomorfizmov nilpotentnih grup, ki jih z ustreznim zaporedjem homomorfizmov slikamo v primerne splošne linearne grupe. Slednjim znamo natančno omejiti razrede rešljivosti, saj so predmet klasične obravnave v teoriji grup. Ker je jedro vmesnega homomorfizma nilpotentno, se lahko zaradi razširitvene leme \ref{lem_razsiritvena_lema} skličemo na rezultat o dolžinah zakonov v nilpotentnih grupah, primerljiv izreku \ref{izr_glavni_nilpotentne}, kar nam zagotovi naslednji izrek, ki ga najdemo v obliki trditve 4 v \cite[str.~25]{Schneider_2016}.  
 
 \begin{izrek}
 \label{izr_glavni_izrek_resljive}
- Za vsako število $n \in  \mathbb{N} \cup  \left\{ 0\right\}$ obstaja netrivialna beseda $w \in F_2$ dolžine \begin{equation*}
- l(w) \le (C_{10} + o(1)) \log(n)^{\lambda},
+ Za vsako celo število $n \ge 0$ obstaja netrivialna beseda $w \in F_2$ dolžine \begin{equation*}
+ l(w) \le (86{,}33 + o(1)) \log(n)^{4{,}34},
  \end{equation*}  
-   ki je zakon v vseh rešljivih grupah moči $n$ ali manj, kjer sta konstanti enaki $C_{10} := 86.321{,}05422 \ldots$ in $\lambda := 4{,}331612776 \ldots$ 
+   ki je zakon v vseh rešljivih grupah moči $n$ ali manj. 
 \end{izrek}

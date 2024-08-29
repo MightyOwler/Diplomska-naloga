@@ -1,5 +1,5 @@
 \section{Uvod}
-Začnimo z inuitivno definicijo zakona v grupi, ki jo bomo v nadaljevanju natančneje formulirali s pomočjo prostih grup.
+Začnimo z intuitivno definicijo zakona v grupi, ki jo bomo v nadaljevanju natančneje formulirali s pomočjo prostih grup.
 Abstraktni produkt elementov $a_1, \ldots , a_k$ ter njihovih inverzov $a_1^{-1}, \ldots , a_k^{-1}$ je \emph{$k$-črkovni zakon v grupi $G$}, če ima lastnost, da za vsako zamenjavo $a_1, \ldots, a_k$ s konkretnimi
 elementi $g_1, \ldots, g_k \in G$ dobimo rezultat $1_G\in G$. Zakonu $1$ pravimo \emph{trivialni zakon}, ki v kontekstu raziskovanja zakonov ni posebej zanimiv.
 
@@ -7,7 +7,7 @@ Najosnovnejši primer netrivialnega dvočrkovnega zakona se pojavi pri Abelovih 
 zahtevi \begin{equation*}
 ghg^{-1}h^{-1} = [g,h] = 1_G.
 \end{equation*}
-Grupa $G$ je torej Abelova natanko tedaj, ko je štiričrkovna beseda $aba^{-1}b^{-1}$ v njej zakon. 
+Grupa $G$ je torej Abelova natanko tedaj, ko je beseda $aba^{-1}b^{-1}$ v njej zakon. 
 
 Nadvse pomembno je vprašanje, ali vsaka grupa premore netrivialni zakon. Odgovor nanj je v splošnem negativen, kar bomo videli v nadaljevanju kot posledico trditve \ref{trd_dolzina_zakonov_za_psl2p}. 
 Očitna posledica Lagrangeevega izreka pa je, da vsaka končna grupa $G$ premore
@@ -27,18 +27,12 @@ dobimo asimptotsko oceno \begin{equation*}
 Trenutno najboljša ocena za dolžine kratkih zakonov v simetričnih grupah izhaja iz članka \cite{Kozma_Thom_2016} in bo predstavljena v razdelku \ref{sec_simetricne_grupe}.
 
 Na tej točki se naravno pojavi nekaj vprašanj: kako dolgi so najkrajši netrivialni zakoni za določeno grupo oziroma družino grup? Ali lahko ocenimo
-asimtotsko rast dolžine najkrajših netrivialnih zakonov v družinah grup, recimo za družino $\text{Sym}(n)$? Kaj pa za vse grupe moči $n$ ali manj? 
+asimptotsko rast dolžine najkrajših netrivialnih zakonov v družinah grup, recimo za družino $\text{Sym}(n)$? Kaj pa za vse grupe moči $n$ ali manj? 
 Katere družine grup se še posebej naravno pojavljajo pri takšnem raziskovanju?
 Prav ta vprašanja bodo bistvo diplomske naloge, v kateri bom predstavil dosedanje
 rezultate ter različne pristope, ki so jih ubrali raziskovalci. Na koncu bom predstavil,
-kako lahko z uporabo računalnika dobimo vpogled v delež zakonov med vsemi besedami.
+kako se lahko z uporabo računalnika lotimo preučevanja zakonov.
 
 Zgodovinsko gledano so vprašanja v povezavi z asimptotskimi lastnostmi zakonov razmeroma sodobna. V splošnem pa obravnavanje lastnosti zakonov v nekem smislu sega že do Abela in Galoisa, 
 saj lahko tako Abelove kot rešljive grupe zelo naravno karakteriziramo s pomočjo zakonov. Zakoni so pomembni tudi za obravnavo klasičnih Bursidovih problemov,
-ki matematikom burijo domišljijo že od začetka 20.~stoletja. Ti problemi sprašujejo po končnosti specifičnih kvocientov prostih grup, kar bo nekoliko podrobneje razloženo v
-razdelku \ref{sec_racunalnisko_iskanje}. 
-
-% Zakone lahko recimo uporabljamo za prezentacijo grup, morda najbolj znani primer predstavljajo diedrske grupe \begin{equation*}
-%     D_{2n} = \langle r, Z  \vert  r^{n} = Z^{2} = 1, (rZ)^2 = 1 \rangle.  
-%     \end{equation*}  
-%     Diedrska grupa je enolično določena s tremi enočrkovnimi zakoni, ki jim morata ustrezati generatorja $r$ in $Z$ ($a^{n}$ in $a^{2}$) oziroma njun produkt $rZ$ ($a^{2}$).
+ki matematikom burijo domišljijo že od začetka 20.~stoletja. Ti problemi sprašujejo po končnosti specifičnih kvocientov prostih grup, kar bo podrobneje razloženo v razdelku \ref{sec_racunalnisko_iskanje}.

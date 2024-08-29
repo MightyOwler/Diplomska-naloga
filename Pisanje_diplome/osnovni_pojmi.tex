@@ -31,9 +31,9 @@ da velja $\tilde{\varphi} \circ \iota = \varphi$. Z drugimi besedami, spodnji di
   \end{tikzpicture} \]
 \end{definicija}
 
-\begin{opomba}\label{opm_standardna_inkluzija}
+\begin{trditev}\label{opm_standardna_inkluzija}
 Preslikava $\iota$ v definiciji proste grupe je injektivna. Rečemo ji \emph{standardna inkluzija}.
-\end{opomba}
+\end{trditev}
 \begin{dokaz}
   Dokaz je povzet po odgovoru \cite{math_stack_4689399_standardna_inkluzija}.
 Naj bo $F$ prosta grupa nad neprazno množico $S$. Če je $\lvert S \rvert = 1$, ni kaj dokazovati. Zato predpostavimo, da ima $S$ vsaj dva različna elementa.
@@ -61,8 +61,8 @@ To pomeni, da različni preslikavi $\varphi_1, \varphi_2 : S \to  G$ inducirata 
 Ker je različnih preslikav $\varphi : S \to G$ natanko $\lvert G \rvert^{k}$, smo dokazali $\lvert \operatorname{Hom}(F, G) \rvert \ge \lvert G \rvert^{k}$.
 
 Neenakost $\lvert \operatorname{Hom}(F, G) \rvert \le \lvert G \rvert^{k}$ dokažemo z razmislekom, da različna homomorfizma iz $\operatorname{Hom}(F, G)$ lahko induciramo z različnima preslikavama $S \to G$.
-Naj bo $\psi' \in \operatorname{Hom}(F, G)$. Ker je po opombi \ref{opm_standardna_inkluzija} standardna inkluzija injektivna, vsebuje prosta grupa $F$ vsaj $k$ različnih elementov, ki jih označimo s $s_1' = \iota(s_1), \ldots, s_k' = \iota(s_k)$.
-Če definiramo preslikavo $\psi : S \to G$ s predpisom $\psi(s_i) := \psi'(s_i') = \psi'(\iota(s_i))$, vidimo, da velja $\psi' = \tilde{\psi}$. S tem smo dokazali želeno neenakost, saj različna homomorfzima $\psi_1', \psi_2' \in  \operatorname{Hom}(F, S)$ zaradi enoličnosti po univerzalni lastnosti ne moreta biti
+Naj bo $\psi' \in \operatorname{Hom}(F, G)$. Ker je po trditvi \ref{opm_standardna_inkluzija} standardna inkluzija injektivna, vsebuje prosta grupa $F$ vsaj $k$ različnih elementov, ki jih označimo s $s_1' = \iota(s_1), \ldots, s_k' = \iota(s_k)$.
+Če definiramo preslikavo $\psi : S \to G$ s predpisom $\psi(s_i) := \psi'(s_i') = \psi'(\iota(s_i))$, vidimo, da velja $\psi' = \tilde{\psi}$. S tem smo dokazali želeno neenakost, saj različna homomorfizma $\psi_1', \psi_2' \in  \operatorname{Hom}(F, S)$ zaradi enoličnosti po univerzalni lastnosti ne moreta biti
 inducirana z isto preslikavo $\psi : S \to  G$.
 \end{dokaz}
 
@@ -142,15 +142,14 @@ Pri konstrukciji zakonov stalno uporabljamo naslednjo na videz očitno trditev, 
 \end{trditev}
 \begin{dokaz}
 Dokaz je povzet po odgovoru \cite{math_stack_2207776_torsion_free}.
-Naj bo $w$ netrivialna okrajšana beseda dolžine $l = l(w)$ iz proste grupe $F(S)$. Trdimo, da jo lahko neko celo število $0 \le r \le l$ zapišemo v obliki \begin{equation*}
+Naj bo $w \in F(S)$ netrivialna okrajšana beseda dolžine $l := l(w)$. Trdimo, da jo za neko nenegativno celo število $r \le l$ lahko zapišemo v obliki \begin{equation*}
 w = s_1 \cdots  s_r s_{r + 1} \cdots s_{l -r} s_{r}^{-1} \cdots s_1^{-1} = \beta \alpha \beta^{-1}, 
 \end{equation*}  
-kjer zahtevamo $s_{r + 1} \neq s_{l - r}^{-1}$. Naj bo okrajšana beseda oblike \begin{equation*}
+kjer zahtevamo $s_{r + 1} \neq s_{l - r}^{-1}$. Naj bo $w$ okrajšana beseda oblike \begin{equation*}
 w = a_1 \cdots  a_l.
 \end{equation*}  
-Če imamo $a_1 \neq a_l^{-1}$ vzamemo $r = 0$ in zaključimo. Sicer v primeru $a_2 \neq a_{l - 2}^{-1}$ vzamemo $r = 1$ in tako dalje. Ker je beseda $w$ nerivialna, velja $l > 0$,
-zato moramo po končnem številu korakov dobiti ustrezno šteivlo $r$, saj dosežemo sredino besede $w$ tako z leve kot z desne strani. Če je $l$ sodo število, do tega ne more priti, saj bi dobili besedo oblike
-$w = \beta \beta^{-1}$, ki ni okrajšana. Če je $l$ liho število pa bi dobili besedo oblike $w = \beta a_{(l + 1) / 2}  \beta^{-1}$, torej lahko vzamemo $r = (l + 1) / 2$.
+Če velja $a_1 \neq a_l^{-1}$, trditev velja za $r = 0$. Sicer v primeru $a_2 \neq a_{l - 1}^{-1}$ trditev velja za $r = 1$ in tako dalje. Ker je beseda $w$ netrivialna, moramo po končnem številu korakov dobiti ustrezno število $r$, saj dosežemo sredino besede $w$ tako z leve kot z desne strani. Če je $l$ sodo število, do sredine ne moremo priti, saj bi dobili besedo oblike
+$w = \beta \beta^{-1}$, ki ni okrajšana. Če je $l$ liho število, pa bi dobili besedo oblike $w = \beta a_{(l + 1) / 2}  \beta^{-1}$, torej bi ustrezalo število $r = (l + 1) / 2$.
 
 Za poljubno naravno število $n$ torej velja \begin{equation*}
 w^{n} = \beta \alpha^{n} \beta^{-1}.
@@ -159,17 +158,15 @@ w^{n} = \beta \alpha^{n} \beta^{-1}.
   S tem smo dokazali, da ima vsak netrivialni element v prosti grupi neskončni red.
 \end{dokaz}
 
-% TODO zakaj obstajajo končne grupe ... 
-
-Brez dokaza bomo privzeli Nielsen--Schreierjev izrek, ki je klasični rezultat v teoriji prostih grup. Potrebovali ga bomo za dokaz komutatorske leme,
+Brez dokaza bomo privzeli Nielsen-Schreierjev izrek, ki je klasični rezultat v teoriji prostih grup. Potrebovali ga bomo za dokaz komutatorske leme,
 še bolj izrazito pa pri obravnavi zakonov z računalnikom v razdelku \ref{sec_racunalnisko_iskanje}. 
 
-\begin{izrek}[Nielsen--Schreier]
+\begin{izrek}[Nielsen-Schreier]
 \label{izr_nielsen_schreier}
  Vsaka podgrupa proste grupe je prosta.
 \end{izrek}
 
-Bralec lahko dokaz najde v \cite[str.~5--8]{Lyndon_Schupp_2015}.
+Bralec lahko dokaz najde v knjigi \cite[str.~5--8]{Lyndon_Schupp_2015}, poteka z uporabo Nielsenovih transformacij.
 
 \subsection{Definicija in osnovne lastnosti zakonov}\label{sec_osnovne_lastnosti_zakonov}
 
@@ -178,7 +175,7 @@ Naj bo $G$ grupa in naj bodo $g_1, \ldots, g_k \in G$. Potem definiramo \begin{e
     w(g_1, \ldots, g_k) := \varphi(w),
 \end{equation*}
 kjer je $\varphi \in \operatorname{Hom}(F_k, G)$ po univerzalni lastnosti induciran s slikami $a_i \mapsto g_i$ za $i = 1, \ldots, k$.
-To je formalna definicja intuitivne ideje \glqq vstavljanja konkretnih elementov grupe v abstraktne elemente\grqq~iz uvodnega poglavja. Z njeno pomočjo definiramo zakone.
+To je formalna definicija intuitivne ideje \glqq vstavljanja konkretnih elementov grupe v abstraktne elemente\grqq~iz uvodnega poglavja. Z njeno pomočjo definiramo zakone.
 
 \begin{definicija}\label{def_zakon_formalna}
     Beseda $w \in F_k$ je \emph{$k$-črkovni zakon v grupi $G$}, če za vse $k$-terice elementov $g_1, \ldots, g_k \in G$ velja $w(g_1, \ldots, g_k) = 1_G$.
@@ -186,7 +183,7 @@ To je formalna definicja intuitivne ideje \glqq vstavljanja konkretnih elementov
 \end{definicija}
 
 % TODO tukaj malo bolje razloži
-Ta definicija nam omogoča vpogled v strukturo zakonov. Naj \emph{$K(G, k) \subseteq F_k$ označuje množico $k$-črkovnih zakonov v grupi $G$}. Potem v luči prejšnje definicije velja
+Ta definicija nam omogoča vpogled v strukturo zakonov, kot je opisano v viru \cite{Schneider_2016}. Naj $K(G, k) \subseteq F_k$ označuje \emph{množico $k$-črkovnih zakonov v grupi $G$}. Če je $G$ končna, v luči definicije \ref{def_zakon_formalna} in dokaza leme \ref{lem_moc_homomorfizmov_proste_grupe} velja
 \begin{equation*}
 K(G, k)  = \bigcap_{\varphi \in \operatorname{Hom}(F_k, G)} \ker(\varphi).   
 \end{equation*}  
@@ -219,7 +216,7 @@ Naj bo $G$ končna grupa in $k$ naravno število. Potem je grupa zakonov $K(G, k
   Za vsak homomorfizem $\varphi \in \operatorname{Hom}(F_k, G)$ po prvem izreku o izomorfizmu velja \begin{equation*}
     \lvert F_k / \ker \varphi \rvert = \lvert \operatorname{im} \varphi \rvert \le \lvert G \rvert, 
 \end{equation*}
-po drugi strani pa po lemi \ref{lem_moc_homomorfizmov_proste_grupe} velja $\lvert \operatorname{Hom}(F_k, G) \rvert = \lvert G \rvert^k$. Ti dejstvi z uporabo \ref{lem_koncni_indeks_koncnega_preseka} povežemo v želeno oceno.
+po drugi strani pa po lemi \ref{lem_moc_homomorfizmov_proste_grupe} velja $\lvert \operatorname{Hom}(F_k, G) \rvert = \lvert G \rvert^k$. Ti dejstvi z uporabo leme \ref{lem_koncni_indeks_koncnega_preseka} povežemo v želeno oceno.
 \end{dokaz}
 To dejstvo bo še posebej pomembno pri iskanju zakonov z računalnikom.
 
@@ -347,15 +344,15 @@ na njej je enota $1_{F_2}$ označena z $e$. Celotnega grafa seveda ne moremo smi
     
 
 \begin{opomba} % TODO tole malo popravi, ni čisto logično ubesedeno
-Ime ožina grupe -- ki je uporabljeno na primer v virih \cite{Schneider_2016}, \cite{Bradford_Thom_2017} in \cite{Schleimer_2001} -- je nekoliko zavajajoče. Izhaja iz Cayleyjevega grafa grupe, vsak njegov cikel $g_1 , g_2, \ldots, g_n, g_1$ namreč
+Ime ožina grupe -- ki je uporabljeno na primer v virih \cite{Schleimer_2001} in \cite{Schneider_2016}  -- je nekoliko zavajajoče. Izhaja iz Cayleyjevega grafa grupe, vsak njegov cikel $g_1 , g_2, \ldots, g_n, g_1$ namreč
 podaja zvezo $s_1 s_2 \cdots s_n = 1_G$ za elemente $s_i \in S$, kjer za $i = 2, \ldots, n$ velja $s_i = g_{i - 1}^{-1} g_i$ in $s_1 = g_n^{-1} g_1$.
-V kontekstu zakonov je to ime do neke mere neupravičeno, saj beseda $s_1 s_2 \cdots s_n$ ni nujno zakon v grupi. Če si pogledamo na primer grupo $C_3 \times C_5 = \langle (\xi, 1), (1, \eta) \rangle$,
+V kontekstu zakonov je to ime do neke mere neupravičeno, saj beseda $s_1 s_2 \cdots s_n \in F(S)$ ni nujno zakon v grupi $G$. Če si pogledamo na primer grupo $C_3 \times C_5 = \langle (\xi, 1), (1, \eta) \rangle$,
 bo Cayleyjev graf $\text{Cay}(C_3 \times C_5, \{ (\xi, 1)^{\pm 1} , (1, \eta)^{\pm 1} \})$ vseboval 3-cikel, ki ga porodi generator $(\xi , 1)$. Po drugi strani pa beseda $\xi^3$ očitno ni zakon v grupi $C_3 \times C_5$, ki premore element reda 5.
 Ker je grupa $C_3 \times C_5$ Abelova, ni težko razmisliti, da velja $\alpha_k(C_3 \times C_5) = 4$ za $k \ge 2$ in $\alpha_1(C_3 \times C_5) = 15$. 
 
 \end{opomba}
 
-Izkaže se, da so najbolj zanimivi in za obravnavo relevantni dvočrkovni zakoni. To nam sporočata naslednji dve trditvi.
+Izkaže se, da so najbolj zanimivi in za obravnavo relevantni dvočrkovni zakoni. To nam sporočata naslednji dve trditvi, ki ju najdemo v magistrski nalogi~\cite[str.~5]{Schneider_2016}.
 \begin{trditev}
 \label{trd_vlozitev_proste_grupe}
  Obstaja vložitev grupe $F_{2 \cdot 3^{k}} = \langle a_1, \ldots, a_{2 \cdot 3^{k}} \rangle$ v grupo $F_2 = \langle a,b \rangle $, tako da velja $l(a_i) = 2k + 1$. Tu smo z $l(w)$ označili dolžino besede $w \in F_2 = \langle a,b \rangle$. 
@@ -363,7 +360,7 @@ Izkaže se, da so najbolj zanimivi in za obravnavo relevantni dvočrkovni zakoni
 
 
 \begin{dokaz}
-Dokaz trditve ni posebno zahteven, vendar je nekoliko preveč tehničen za naše potrebe, saj bi zahteval uvedbo in razumevanje pojmov Schreierjevega grafa ter fundamentalne grupe grafa, ki ju tekom naloge sicer ne potrebujemo. Naveden je v~\cite[str.~5]{Schneider_2016}, glavna ideja je obravnavati Cayleyev graf proste grupe $F_2$ z dvema generatorjema.
+Dokaz trditve ni posebno zahteven, vendar je nekoliko preveč tehničen za naše potrebe, saj bi zahteval uvedbo in razumevanje pojmov Schreierjevega grafa ter fundamentalne grupe grafa, ki ju tekom naloge sicer ne potrebujemo. Naveden je v~\cite[str.~5]{Schneider_2016}, glavna ideja je obravnavati Cayleyjev graf proste grupe $F_2$ z dvema generatorjema.
 Drevo vseh besed dolžine $k$ na ustrezen način dopolnimo (do Schreierjevega grafa) tako, da dodamo povezave listom. Pri tem dobimo cikle dolžine $2k + 1$ in (s pomočjo fundamentalne grupe grafa) utemeljimo, da lahko jih lahko obravnavamo kot elemente $F_{2 \cdot 3^{k}}$, vložene v $F_2$. 
 \end{dokaz}
 
@@ -383,99 +380,98 @@ in \begin{equation*}
 
 \subsection{Praštevilski izrek}
 
-V razdelku bomo spoznali praštevilski izrek ter dokazali nekaj njegovih posledic, ki bodo igrale pomembno vlogo v razdelku \ref{sec_grupe_psl2q}. Pred formulacijo moramo uvesti nekaj definicij.
-
+V razdelku bomo spoznali praštevilski izrek ter dokazali nekaj njegovih posledic, ki bodo igrale pomembno vlogo pri obravnavi grup $\operatorname{PSL}_2(q)$ v razdelku \ref{sec_grupe_psl2q}. Pred formulacijo moramo uvesti nekaj definicij.
 \begin{definicija}
 \label{def_o1_O1}
-Naj bosta $f, g : \mathbb{N} \to  \mathbb{R}$ funkciji. Pravimo, da je funkcija $f$ \emph{razreda $o(g)$}, če velja $\lim_{n \to \infty} f(n) / g(n) = 0$.
+Naj bosta $f, g : \mathbb{N} \to  \mathbb{R}$ funkciji in naj $g$ nima ničel od nekega števila dalje. Pravimo, da je funkcija $f$ \emph{razreda $o(g)$}, če velja $\lim_{n \to \infty} f(n) / g(n) = 0$.
 Poleg tega rečemo, da je \emph{razreda $O(g)$}, če obstaja takšna konstanta $C > 0$, da za vsa dovolj velika števila $n$ velja $f(n) \le C g(n)$.
 V tem kontekstu bomo razumeli, da je $f \in o(1)$, če velja $\lim_{n \to \infty} f(n) = 0$ in $f \in O(1)$, če obstaja konstanta $C >0$, da je $f(n) < C$ za vsa dovolj velika števila $n$.
 \end{definicija}
 
 \begin{definicija}
 \label{def_asimptotska_ekvivalenca}
-Naj bosta $f, g : \mathbb{N} \to  \mathbb{R}$ funkciji, pri čemer naj $g$ nima ničel od nekega števila dalje. Pravimo, da sta $f$ in $g$ \emph{asimptotsko ekvivalenti}, če velja \begin{equation*}
+Naj bosta $f, g : \mathbb{N} \to  \mathbb{R}$ funkciji in naj $g$ nima ničel od nekega števila dalje. Pravimo, da sta $f$ in $g$ \emph{asimptotsko ekvivalentni}, če velja \begin{equation*}
 \lim_{n \to \infty} \frac{f(n)}{g(n)} = 1.
 \end{equation*}
-V tem primeru označimo $f \sim g$.
+V tem primeru pišemo $f \sim g$.
 \end{definicija}
-\begin{opomba}
+\begin{trditev}
 Če sta funkciji $f$ in $g$ asimptotsko ekvivalentni, velja zveza $f(n) = (1 + o(1)) g(n)$.
-\end{opomba}
+\end{trditev}
 \begin{dokaz}
-Obstaja neko naravno število $N_1$ z lastnostjo, da za vsak $n \ge N_1$ velja $g(n) \neq 0$. Zato lahko za $n \ge N_1$ zapišemo \begin{equation*}
+Obstaja neko naravno število $N$ z lastnostjo, da za vsako število $n \ge N$ velja $g(n) \neq 0$. Zato lahko za $n \ge N$ zapišemo \begin{equation*}
 \frac{f(n)}{g(n)} = 1 + h(n).
 \end{equation*}  
-Po definicji asimptotske ekvivalence sledi, da je $\lim_{n \to \infty} h(n) = 0$, torej je $h \in o(1)$.  
+Po definiciji asimptotske ekvivalence sledi, da je $\lim_{n \to \infty} h(n) = 0$, torej je $h \in o(1)$.  
 \end{dokaz}
 
 \begin{definicija}
 \label{def_pi_tau}
 Definirajmo funkciji $\pi, \tau : \mathbb{R} \to  \mathbb{N} \cup \left\{ 0\right\}$, ki preštejeta število praštevil oziroma praštevilskih potenc do vključno nekega števila: \begin{equation*}
-\pi(x) :=  \sum_{p \le x, \, p \in \mathbb{P}} 1 \text{ in } \tau(x) :=  \sum_{p^{k} \le x, \, k \ge 1 \,   p \in \mathbb{P}} 1.
+\pi(x) :=  \sum_{p \le x, \, p \in \mathbb{P}} 1 \,\,\, \text{ in } \,\,\, \tau(x) :=  \sum_{p^{k} \le x, \, k \ge 1, \,   p \in \mathbb{P}} 1.
 \end{equation*}  
 \end{definicija}
 
 \begin{izrek}[Praštevilski izrek]
 \label{izr_prastevilski_izrek}
- Za funkcijo $\pi$ iz definicije \ref{def_pi_tau} velja asimptotska ekvivalenca \begin{equation*}
- \pi(x) \sim \frac{x}{\log x}.
+ Za funkciji $\pi$ in $\tau$ iz definicije \ref{def_pi_tau} veljata asimptotski ekvivalenci \begin{equation*}
+ \pi(x) \sim \frac{x}{\log x} \,\,\, \text{ in } \,\,\, \tau(x) \sim \frac{x}{\log x}.
  \end{equation*}  
 \end{izrek}
 
-Zgodovina praštevilskega izreka sega v konec 18.~stoletja, ko je petnajstletni Gauss na podlagi empričnih vrednosti domneval, da mora veljati
-zveza $\pi(x) \sim x / \log x$ \cite[str.~1]{mit_lecture_notes_2021}. Tekom svojega življenja mu domneve ni uspelo dokazati, dočakal pa je preboj, ki ga je leta
-1851 izvedel Čebišov \cite[str.~4--5]{Granville_1993}.
+Zgodovina praštevilskega izreka sega v konec 18.~stoletja, ko je petnajstletni Gauss na podlagi empiričnih vrednosti domneval, da mora veljati zveza $\pi(x) \sim x / \log x$ (\cite[str.~1]{mit_lecture_notes_2021}). Tekom svojega življenja mu domneve ni uspelo dokazati, dočakal pa je preboj, ki ga je leta
+1851 izvedel Čebišev z uvedbo funkcij $\theta$ in $\psi$ (\cite[str.~4--5]{Granville_1993}). 
 
-\begin{definicija}[Funkciji Čebišova]
+\begin{definicija}[Funkciji Čebiševa]
 \label{def_cebisevi_funkciji}
 Funkcijama $\theta, \psi : \mathbb{R} \to \mathbb{R}$ s predpisoma \begin{equation*}
-\theta(x) := \sum_{p \le x, \,   p \in \mathbb{P}} \log(p) \text{ in } \psi(x) := \sum_{p^{k} \le x, \,  k \ge  1 , \,   p \in \mathbb{P}}
+\theta(x) := \sum_{p \le x, \,   p \in \mathbb{P}} \log(p) \,\,\, \text{ in } \,\,\, \psi(x) := \sum_{p^{k} \le x, \,  k \ge  1 , \,   p \in \mathbb{P}} \log(p^k)
 \end{equation*}  
-rečemo \emph{funkciji Čebišova}.
+rečemo \emph{funkciji Čebiševa}.
 \end{definicija}
 
-\begin{izrek}[Čebišov]
+\begin{izrek}[Čebišev]
 \label{izr_cebisov}
-  Velja \begin{equation*}
-  \pi(x) \sim \frac{x}{\log x} \iff \theta(x) \sim x.
+  Veljata zvezi \begin{equation*}
+  \pi(x) \sim \frac{x}{\log x} \iff \theta(x) \sim x  \,\,\, \text{ in } \,\,\, \tau(x) \sim \frac{x}{\log x} \iff \psi(x) \sim x.
   \end{equation*} 
 \end{izrek}
 \begin{dokaz}
-Dokaz najdemo v \cite[str.~4]{mit_lecture_notes_2021}. Očitno velja zveza \begin{equation*}
-  0 \le  \theta(x) = \sum_{p \le x, \,   p \in \mathbb{P}} \log(p) \le  \pi(x) \log x
+Dokaz najdemo v \cite[str.~4]{mit_lecture_notes_2021}. 
+Pokažimo le zvezo $\pi(x) \sim \frac{x}{\log x} \iff \theta(x) \sim x$, dokaz druge je praktično enak. Očitno veljata neenakosti \begin{equation*}
+  0 \le  \theta(x) = \sum_{p \le x, \,   p \in \mathbb{P}} \log(p) \le  \pi(x) \log x.
 \end{equation*}  
-oziroma \begin{equation*}
+Od tod za $x > 0$ sledi \begin{equation}\label{eq_theta}
   \frac{\theta(x)}{x} \le  \frac{\pi(x) \log x}{x}. 
-  \end{equation*} 
+  \end{equation} 
   Za vsako število $\varepsilon \in  (0,1)$ imamo \begin{align*}
-    \vartheta(x) \geq \sum_{x^{1-\varepsilon} < p \leq x, \, p \in \mathbb{P}} \log p &\geq (1-\varepsilon)(\log x)\left(\pi(x) - \pi(x^{1-\varepsilon})\right) \\
+    \theta(x) \geq \sum_{x^{1-\varepsilon} < p \leq x, \, p \in \mathbb{P}} \log p &\geq (\log x^{1-\varepsilon})\left(\pi(x) - \pi(x^{1-\varepsilon})\right) \\
+    &= (1-\varepsilon)(\log x)\left(\pi(x) - \pi(x^{1-\varepsilon})\right) \\
      &\geq (1-\varepsilon)(\log x)(\pi(x) - x^{1-\varepsilon}).
   \end{align*}
-  Od tod sledi \begin{equation*}
-    \pi(x) \leq \left(\frac{1}{1-\varepsilon}\right)\frac{\vartheta(x)}{\log x} + x^{1-\varepsilon}.
+  Od tod sledi \begin{equation}\label{eq_pi}
+    \pi(x) \leq \left(\frac{1}{1-\varepsilon}\right)\frac{\theta(x)}{\log x} + x^{1-\varepsilon}.
+  \end{equation}  
+  Z upoštevanjem neenakosti \ref{eq_theta} in \ref{eq_pi} za vsako število $\varepsilon \in  (0,1)$ dobimo oceno \begin{equation*}
+    \frac{\theta(x)}{x} \leq \frac{\pi(x)\log x}{x} \leq \left(\frac{1}{1-\varepsilon}\right)\frac{\theta(x)}{x} + \frac{\log x}{x^{\varepsilon}}.
   \end{equation*}  
-  Tako imamo za vsako število $\varepsilon \in  (0,1)$ oceno \begin{equation*}
-    \frac{\vartheta(x)}{x} \leq \frac{\pi(x)\log x}{x} \leq \left(\frac{1}{1-\varepsilon}\right)\frac{\vartheta(x)}{x} + \frac{\log x}{x^{\varepsilon}}.
-  \end{equation*}  
-  Ker člen $\log x / x^{\varepsilon}$ konvergira proti 0 ko pošljemo $x \to \infty$, sta po izreku o sendviču kvocienta $\theta(x) / x$ in $\pi(x) \log x / x$ poljubno blizu za dovolj velike $x$.
+  Ko pošljemo $x \to \infty$, člen $\log x / x^{\varepsilon}$ konvergira proti 0, zato je razlika med kvocientoma $\theta(x) / x$ in $\pi(x) \log x / x$ za dovolj velike $x$ poljubno majhna.
   Če eden izmed njiju konvergira proti $1$, mora tudi drugi.
 \end{dokaz}
-Poleg zgornjega izreka je Čebišev leta 1851 dokazal (\cite[str.~4--5]{Granville_1993}), da limita $\pi(x) \log x / x$ -- če le obstaja -- mora biti enaka 1. Naslednji preboj je uspel Riemannu v svojem znamenitem članku \cite{Riemann_1859} leta 1859, v katerem je povezal porazdeltev praštevil s funkcijo zeta in formuliral prvo obliko hipoteze, ki dandanes nosi njegovo ime.
-Leta 1896 sta praštevilski izrek naposled neodvisno dokazala Hadamard in De la Vallée Poussin z upoštevanjem Riemannovih ugotovitev. 
+Naslednji pomembni preboj je uspel Riemannu leta 1859 v svojem znamenitem članku \cite{Riemann_1859}, v katerem je povezal porazdelitev praštevil s funkcijo zeta in formuliral prvo obliko hipoteze, ki dandanes nosi njegovo ime.
+Praštevilski izrek sta leta 1896 naposled neodvisno dokazala Hadamard in De la Vallée Poussin z upoštevanjem Riemannovih ugotovitev. 
 
-Idejo dokaza praštevilskega izreka \ref{izr_prastevilski_izrek}, ki jo bomo predstavili v nalogi, je podal Newman leta 1980. Najdemo jo v viru \cite[str.~9]{mit_lecture_notes_2021}. 
+Skico dokaza praštevilskega izreka \ref{izr_prastevilski_izrek}, ki jo bomo predstavili v nalogi, je podal Newman leta 1980. Opisana je v viru \cite[str.~9]{mit_lecture_notes_2021}. 
 \begin{skica}
 Najprej moramo pokazati, da za nepadajočo funkcijo $f : \mathbb{R}_{\ge  1} \to \mathbb{R}$
 velja sklep \begin{equation*}
-\int_{1}^{\infty} \frac{f(t) - 1}{t^2} \, dt \text{ konvergira } \implies f(x) \sim x. 
+\int_{1}^{\infty} \frac{f(t) - t}{t^2} \, dt \text{ konvergira } \implies f(x) \sim x. 
 \end{equation*}  
-  Nato uvedemo funkcijo $H(t) = \theta(e^{t} )e^{-t} - 1$, ki je kosoma zvezna in omejena. Z uporabo lastnosti holomorfnih funkcij ugotovimo, da integral \begin{equation*}
+  Nato uvedemo funkcijo $H(t) := \theta(e^{t} )e^{-t} - 1$, ki je kosoma zvezna in omejena. Z uporabo lastnosti holomorfnih funkcij ugotovimo, da integral \begin{equation*}
   \int_{0}^{\infty} H(t)   \, dt = \int_{0}^{\infty} (\theta(e^{t} )e^{-t} - 1)  \, dt  \stackrel{t \mapsto \log x}{=} \int_{1}^{\infty}  \frac{\theta(x) -x }{x^2} \, dx 
   \end{equation*}  
-   konvergira. Od tod po začetnem sklepu sledi, da je $\theta(x) \sim x$, kar je po izreku Čebišova \ref{izr_cebisov} ekvivalentno praštevilskemu izreku $\pi(x) \sim x / \log x$.  
+   konvergira. Ker je $\theta$ nepadajoča funkcija, sledi $\theta(x) \sim x$, kar je po izreku Čebiševa \ref{izr_cebisov} ekvivalentno praštevilskemu izreku \ref{izr_prastevilski_izrek}.  
 \end{skica}
-
 
 % \begin{lema}
 %   \label{lem_gostota_prastevil}
@@ -493,17 +489,17 @@ Za konec dokažimo še oceno, ki smo jo napovedali v uvodu. Ponovno jo bomo upor
   \end{equation*}  
   \end{lema}
   \begin{dokaz}
-  Po definicji najmanjšega skupnega večkratnika velja \begin{equation*}
+  Po definiciji najmanjšega skupnega večkratnika velja \begin{equation*}
   \text{lcm}(1, \ldots, n) = \prod_{p^{k} \le n, \, p^{k + 1} > n,\,   p \in \mathbb{P}, \, k \ge 1 } p^{k}.
   \end{equation*}  
-  Z logaritmiranjem te enačbe in uporabo funkcij Čebišova \ref{def_cebisevi_funkciji} dobimo oceni \begin{equation*}
+  Z logaritmiranjem te enačbe in uporabo funkcij Čebiševa \ref{def_cebisevi_funkciji} dobimo oceni \begin{equation*}
   \theta(n) = \sum_{p \le n, \,   p \in \mathbb{P}} \log(p) \le \log(\operatorname{lcm}(1, \ldots ,n)) \le  \sum_{p^{k} \le n, \, p \in \mathbb{P}, \, k \ge 1 } \log(p^{k}) = \psi(n).
   \end{equation*}  
-  Po izreku Čebišova \ref{izr_cebisov} in izreku o sendviču sledi \begin{equation*}
+  Po Čebiševi formulaciji praštevilskega izreka \ref{izr_cebisov} in izreku o sendviču sledi \begin{equation*}
   \lim_{n \to \infty} \frac{\log(\operatorname{lcm}(1, \ldots, n))}{n} = 1.
   \end{equation*}  
-    Od tod sledi želena ocena \begin{equation*}
-      \operatorname{lcm}(1, \ldots, n) \sim \exp(n).
+    Od tod sledi želena zveza \begin{equation*}
+      \operatorname{lcm}(1, \ldots, n) \sim \exp(n). \qedhere
   \end{equation*} 
   \end{dokaz}
 

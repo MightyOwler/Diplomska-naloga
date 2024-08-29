@@ -5,16 +5,15 @@
 \subsection{Komutatorska lema}
 
 
-
 Recimo, da poznamo zakone v nekaterih podmnožicah grupe $G$, zanima pa nas, kako bi iz njih zgradili zakone v večjih podmnožicah te grupe. Na to vprašanje odgovarjata komutatorska in razširitvena lema,
-ki sta ključni orodji pri obravnavi zakonov. Začeli bomo z dokazom komutatorske leme, za katerega bomo potebovali nekaj definicij.
+ki sta ključni orodji pri obravnavi zakonov. Podrobno sta opisani v magistrskem delu \cite{Schneider_2016}. Začeli bomo z dokazom komutatorske leme, za katerega bomo potrebovali nekaj definicij.
 
 \begin{definicija}
     \label{def_izginjajoca_mnozica}
     Naj bo $G$ grupa in $w \in  F_k$. Potem množico \begin{equation*}
     Z(G, w) := \left\{ (g_1, .., g_{k}) \in  G^{k}  \middle|\, w(g_1, \ldots, g_{k}) = 1_G \right\} 
     \end{equation*}  
-    imenujemo \emph{izginajoča množica besede $w$ v grupi $G$}. Tu $w(g_1, \ldots, g_{k})$ označuje evalvacijo besede $w$ z elementi $g_1, \ldots, g_n$, v skladu z notacijo na začetku razdelka \ref{sec_osnovne_lastnosti_zakonov}.  
+    imenujemo \emph{izginjajoča množica besede $w$ v grupi $G$}. Tu $w(g_1, \ldots, g_{k})$ označuje evalvacijo besede $w$ z elementi $g_1, \ldots, g_n$ v skladu z notacijo na začetku razdelka \ref{sec_osnovne_lastnosti_zakonov}.  
     \end{definicija}
 
 
@@ -37,17 +36,16 @@ ki sta ključni orodji pri obravnavi zakonov. Začeli bomo z dokazom komutatorsk
 
 % Ta lema je posebni primer klasičnega Nielsen--Schreierjevega izreka, ki pravi, da je vsaka podgrupa proste grupe prosta. Dokazana je v \cite{Lyndon_Schupp_2015}[5--7] z uporabo Nielsenovih transformacij. 
 
-% TODO predstavi Schutzenbergovo lemo ... verjetno bom samo omenil brez dokaza
 
 \begin{lema}
 \label{lem_posledica_nielsen_schreier}
 Naj bosta $w_1, w_2 \in F_2 = \langle a, b \rangle$ besedi. Potem velja natanko ena izmed naslednjih trditev. \begin{enumerate}
-    \item Besedi $w_1$ in $w_2$ komutirata in imata isto osnovo: Obstaja element $c \in F_2$ ter števili $k_1, k_2 \in \mathbb{Z}$, da velja $w_1= c^{k_1}$ in $w_2 = c^{k_2}$. 
+    \item Besedi $w_1$ in $w_2$ komutirata in imata isto osnovo: obstaja element $c \in F_2$ ter števili $k_1, k_2 \in \mathbb{Z}$, da velja $w_1= c^{k_1}$ in $w_2 = c^{k_2}$. 
     \item Podgrupa $\langle w_1, w_2 \rangle \subseteq F_2$ je izomorfna prosti grupi $F_2$.
 \end{enumerate}
 \end{lema}
 \begin{dokaz}
-    Po Nielsen--Schreierjevem izreku \ref{izr_nielsen_schreier} vemo, da je $F:= \langle w_1 , w_2 \rangle \le F_2$ prosta grupa. Preslikava $\varphi : F_2 = \langle a, b \rangle \to F$,
+    Po Nielsen-Schreierjevem izreku \ref{izr_nielsen_schreier} vemo, da je $F:= \langle w_1 , w_2 \rangle \le F_2$ prosta grupa. Preslikava $\varphi : F_2 = \langle a, b \rangle \to F$,
     inducirana s slikama $a \mapsto w_1$, $b \mapsto w_2$, je očitno epimorfizem. Od tod po trditvi \ref{trd_enolicnost_prostih_grup} sledi, da je $F$ generirana z enim ali dvema elementoma.
     V prvem primeru je $F = \langle c \rangle$ za neko besedo $c \in F_2$, od koder sledi $w_1= c^{k_1}$ in $w_2 = c^{k_2}$ za neki celi števili $k_1$ in $k_2$. V tem primeru besedi $w_1$ in $w_2$ očitno komutirata.
     V drugem primeru je $F$ po trditvi \ref{trd_enolicnost_prostih_grup} izomorfna prosti grupi $F_2$.
@@ -58,14 +56,14 @@ Preden se lotimo komutatorske leme, uvedimo še naslednjo definicijo.
     \end{definicija}
 Osnovna ideja komutatorske leme je pravzaprav preprosta. Recimo, da imamo besedi $w_1, w_2 \in F_2 \setminus \left\{ 1_{F_2}\right\}  = \langle a,b \rangle$, ki jima pripadata izginjajoči množici $Z(G, w_1)$ ter $Z(G, w_2)$.
 Oglejmo si komutator $w = [w_1, w_2]$. Če vzamemo par $(g, h) \in Z(G, w_1)$, bo veljalo \begin{equation*}
-w(g,h) = [w_1(g,h), w_2(g,h)] = [1_{F_2}, w_2(g,h)] = 1_{F_2}.
+w(g,h) = [w_1(g,h), w_2(g,h)] = [1_{G}, w_2(g,h)] = 1_{G}.
 \end{equation*}  
   Seveda velja simetrično tudi za pare druge izginjajoče množice. Od tod sledi sklep \begin{equation*}
   Z(G, [w_1, w_2]) \supseteq Z(G, w_1) \cup Z(G, w_2).
   \end{equation*}  
 Glavni problem, na katerega lahko naletimo pri takšnem združevanju besed, je potencialna trivialnost komutatorja $[w_1, w_2]$, ki bi ustrezala trivialnemu zakonu.
 Po lemi \ref{lem_posledica_nielsen_schreier} je komutator $[w_1, w_2]$ trivialen natanko tedaj, ko sta besedi $w_1$ in $w_2$ periodični z isto osnovo. 
-Komutatorska lema podaja konstrukcijo, ki preprečuje pojav takšnih zapletov. V sledeči obliki se pojavi v članku \cite{Kozma_Thom_2016} in magistrskem delu \cite{Schneider_2016}, po katerem so prirejeni dokazi.
+Komutatorska lema podaja konstrukcijo, ki preprečuje pojav takšnih zapletov. V sledeči obliki se pojavi v magistrskem delu \cite{Schneider_2016}, po katerem so prirejeni dokazi.
 
 \begin{lema}
     \label{lem_komutatorska_lema}
@@ -79,28 +77,27 @@ Komutatorska lema podaja konstrukcijo, ki preprečuje pojav takšnih zapletov. V
 \end{lema}
     \begin{dokaz}
         Dokaz poteka z indukcijo po $e \in  \mathbb{N}$. Naj bo $F_k = \langle a_1, \ldots , a_{k} \rangle = \langle S \rangle$.  Za $e = 0$ (oziroma $m = 1$) vzamemo $w = [s, w_1]$, kjer je $s \in S$ takšna črka, da beseda $w_1$ ni periodična z osnovo $s$. 
-        To lahko zaradi pogoja $k \ge 2$ vedno storimo. Zaradi ustrezne izbire je komutator $[s, w_1]$ po lemi \ref{lem_posledica_nielsen_schreier} aperiodičen z dolžino največ $2(l(w_1)  + 1)$.
+        To lahko zaradi pogoja $k \ge 2$ vedno storimo. Netrivialni komutator je v splošnem aperiodična beseda, kot je prvi opazil Schützenberger v članku \cite{Schutzenberger_1959} med obravnavo enačb v prostih grupah.  Zato je beseda $[s, w_1]$ aperiodična dolžine največ $2(l(w_1)  + 1)$.
         Kot smo videli v predhodnem razmisleku, za poljubno grupo $G$ velja $\operatorname{Z}(G, w) \supseteq \operatorname{Z}(G, s) \cup \operatorname{Z}(G, w_1)$.
         
         Zdaj se lotimo indukcijskega koraka v primeru $e \ge 1$ oziroma $m \ge 2$. Naj bodo podane besede $w_1, \ldots, w_{m / 2}, w_{m / 2 + 1}, \ldots, w_{2m}$. Po indukcijski predpostavki obstajata aperiodični besedi $v_1, v_2 \in  F_{k}$,  da velja
         \begin{equation*}
         l(v_1) \le m \left(\frac{m}{2} + \sum_{i=1}^{m / 2} l(w_{i}) \right), \,\,\, l(v_2) \le m \left(\frac{m}{2} + \sum_{i= m / 2 + 1}^{m} l(w_{i}) \right)
         \end{equation*}  
-        in \begin{equation*}
+        in za vsako grupo $G$ veljata vsebovanosti\begin{equation*}
         \operatorname{Z}(G, v_1) \supseteq \operatorname{Z}(G, w_1) \cup \ldots \cup \operatorname{Z}(G, w_{m / 2}),
         \end{equation*}  
         \begin{equation*}
-            \operatorname{Z}(G, v_2) \supseteq \operatorname{Z}(G, w_{m / 2 + 1}) \cup \ldots \cup \operatorname{Z}(G, w_{m})
+            \operatorname{Z}(G, v_2) \supseteq \operatorname{Z}(G, w_{m / 2 + 1}) \cup \ldots \cup \operatorname{Z}(G, w_{m}).
         \end{equation*}  
-        za vsako grupo $G$.
+        
 
-        Zdaj moramo le še ugotoviti, kako lahko besedi $v_1$ ter $v_2$ ustrezno združimo. Po lemi \ref{lem_posledica_nielsen_schreier} vemo, da bo komutator $[v_1, v_2]$ trivialen natanko v primeru $v_1 = v_2^{\pm 1}$, ker sta $v_1$ in $v_2$ po predpostavki aperiodični. V tem primeru imamo \begin{equation*}
+        Zdaj moramo le še ugotoviti, kako lahko besedi $v_1$ ter $v_2$ ustrezno združimo. Po lemi \ref{lem_posledica_nielsen_schreier} vemo, da je komutator $[v_1, v_2]$ trivialen natanko v primeru $v_1 = v_2^{\pm 1}$, ker sta $v_1$ in $v_2$ po predpostavki aperiodični. V tem primeru imamo \begin{equation*}
         \operatorname{Z}(G, w_1) = \operatorname{Z}(G, w_2)
         \end{equation*}  
-         in lahko nastavimo $w := v_1$ ali $w := v_2$, pri čemer je pogoj na dolžino besede $w$ očitno izpolnjen. Če imamo $v_1 \neq v_2^{\pm 1}$, nastavimo $w := [v_1, v_2]$. V tem primeru je beseda $w$ aperiodična, kot je razloženo v viru \cite{Schutzenberger_1959}. Tega rezultata ne bomo podrobneje predstavili, saj bi lahko aperiodičnost
-         zagotovili na enak način kot v indukcijskem koraku z minimalno slabšim rezultatom. Indukcijska predpostavka nam zagotavlja 
+         in lahko nastavimo $w := v_1$ ali $w := v_2$. Pri tem je zahtevani pogoj na dolžino besede $w$ očitno izpolnjen. Če imamo $v_1 \neq v_2^{\pm 1}$, nastavimo $w := [v_1, v_2] \neq 1_{F_k}$. Netrivialni komutatorji so aperiodične besede po \cite{Schutzenberger_1959}. Indukcijska predpostavka nam zagotavlja 
          \begin{equation*}
-         l(w) \le 2m  \left(\frac{m}{2} + \sum_{i=1}^{m / 2} l(w_{i}) \right) + 2m \left(\frac{m}{2} + \sum_{i= m / 2 + 1}^{m} l(w_{i}) \right) = 2m \left( m + \sum_{i = 1}^{m} l(w_{i}) \right).
+         l(w) \le 2m  \left(\frac{m}{2} + \sum_{i=1}^{m / 2} l(w_{i}) \right) + 2m \left(\frac{m}{2} + \sum_{i= m / 2 + 1}^{m} l(w_{i}) \right) = 2m \left( m + \sum_{i = 1}^{m} l(w_{i}) \right). \qedhere
          \end{equation*}
     \end{dokaz}
 
@@ -187,7 +184,6 @@ da za vsako grupo $G$ velja \begin{equation*}
     Ker velja $m < 2m$ in $\sum_{i = 1}^{2^{e}} w_i' \le 2 \sum_{i = 1}^{m} l(w_i)$, želena ocena sledi z uporabo leme \ref{lem_komutatorska_lema}.  
 \end{dokaz}
 
-
 Ta rezultat lahko nekoliko omilimo, da dobimo bolj praktično oceno.
 \begin{posledica}
 \label{psl_komutatorska_lema_prakticna}
@@ -200,10 +196,9 @@ da za vsako grupo $G$ velja \begin{equation*}
 \end{posledica}
 \begin{dokaz}
     To je direktna posledica leme \ref{lem_komutatorska_lema_splosna} skupaj z dejstvom, da je \begin{equation*}
-    \sum_{i = 1}^{m} l(w_{i}) \le m \max_{i = 1, \ldots, m} l(w_i).
+    \sum_{i = 1}^{m} l(w_{i}) \le m \max_{i = 1, \ldots, m} l(w_i). \qedhere
     \end{equation*}  
 \end{dokaz}
-
 
 % \begin{primer}\label{prm_komutatorska_produkt_elementov}
 % Najelegantnejša uporaba komutatorske leme se pojavi pri obravnavi grupe kot direktnega produkta. Naj bo recimo $G := C_5 \times D_{10}$. 
@@ -218,35 +213,31 @@ očitno velja, da je $\bigcup_{i = 1}^m H_{n_i} = G$. Ker za vsak $i$ velja $Z(G
     l(w) \le 8 m^2 \left( 1 + \max_{i = 1, \ldots, m} n_i \right),
 \end{equation*}
 ki je zakon v grupi $G$, saj velja \begin{equation*}
-    Z(G, w) \supseteq \bigcup_{i = 1}^m Z(G, a^{n_i}) =  \bigcup_{i = 1}^m H_{n_i} \times G = G \times G.
+    Z(G, w) \supseteq \bigcup_{i = 1}^m Z(G, a^{n_i}) =  \bigcup_{i = 1}^m H_{n_i} \times G = G \times G. \qedhere
 \end{equation*}\end{primer}
-Čeprav je ta primer razmeroma enostave, je ključen pri praktično vseh konstrukcijah zakonov, kar bomo videli recimo na koncu razdelka \ref{sec_grupe_psl2q} pri obravnavi družine grup $\operatorname{PSL}_2(q)$. 
-
-% Definirajmo namreč grupo \begin{equation*}
-% \Gamma_n = \prod_{G \text{ grupa},\, \lvert G \rvert \le n }  G 
-% \end{equation*}  
+Čeprav je ta primer razmeroma preprost, je ključen pri praktično vseh konstrukcijah zakonov, kar bomo videli recimo na koncu razdelka \ref{sec_grupe_psl2q} pri obravnavi družine grup $\operatorname{PSL}_2(q)$. 
   
-
 
 \subsection{Razširitvena lema}
 
 Nekoliko bolj povezana s strukturo grup je razširitvena lema. Za njeno formulacijo najprej definirajmo kratka eksaktna zaporedja.
 \begin{definicija}
 \label{def_kratko_eksaktno_zaporedje}
-Naj bodo $A, B, C$ grupe in naj $\mathbf{1}$ označuje trivialno grupo. Kratko eksaktno zaporedje je zaporedje homomorfizmov
+Naj bodo $A, B, C$ grupe in naj $\mathbf{1}$ označuje trivialno grupo. \emph{Kratko eksaktno zaporedje} je zaporedje homomorfizmov
 \begin{equation*}
 \mathbf{1} \to A \xrightarrow{\varphi} B \xrightarrow{\psi} C \to \mathbf{1},
 \end{equation*}  
-kjer je $\ker \psi = \operatorname{im} \varphi$, $\varphi$ je injektivni in $\psi$ surjektivni homomorfizem.
+kjer je $\varphi$ je injektivni in $\psi$ surjektivni homomorfizem ter velja $\ker \psi = \operatorname{im} \varphi$.
 \end{definicija}
 
+Razširitvena lema je v podobni obliki podana v \cite[str.~9--10]{Schneider_2016}.
 
 \begin{lema}\label{lem_razsiritvena_lema}
     Naj bo $N$ edinka v grupi $G$ in naj bosta $i : N \to G$ inkluzija ter $\pi : G \to G / N$ kanonična projekcija. To lahko zapišemo z naslednjim kratkim eksaktnim zaporedjem. \begin{equation*}
         \mathbf{1} \to N \xrightarrow{i} G \xrightarrow{\pi} G / N \to  \mathbf{1}  
     \end{equation*}  
     Naj bo $F_k = \langle a_1, \ldots, a_k \rangle  = \langle S \rangle$. Naj bo $w_N \in F_k$ netrivialni zakon v grupi $N$ in $w_{ G / N} \in  F_k$ netrivialni zakon v kvocientu $G / N$. 
-    Potem obstaja netrivialni $k$-črkovni zakon v grupi $G$ dolžine kvečjem $l(w_N) l( w_{ G / N } )$.
+    Potem obstaja netrivialni $k$-črkovni zakon v grupi $G$ dolžine največ $l(w_N) l( w_{ G / N } )$.
 \end{lema}
 \begin{dokaz}
     Dokaz je prirejen po \cite[str.~10]{Schneider_2016} in obravnava dva možna primera oblike zakona $w_{ G / N }$. 
@@ -254,13 +245,13 @@ kjer je $\ker \psi = \operatorname{im} \varphi$, $\varphi$ je injektivni in $\ps
         w := w_N(a_1^{n}, \ldots, a_{k}^{n}).
         \end{equation*}  
         Ker je za vsak $i = 1, \ldots, k$ beseda $a_i^n$ zakon v kvocientu, preslikava $g \mapsto g^n$ vse elemente iz $G$ slika v elemente edinke $N$. Ker je $w_N$ netrivialni zakon v grupi $N$ in med paroma različnimi besedami $a_i^n$ ne more priti do krajšanja,
-        je beseda $w$ netrivialni zakon v grupi $G$. Enak razmislek izvedemo v primeru, ko je $w_{ G / N }$ oblike $(s^{n})^u$ za neko besedo $u \in F_k$, saj ga s konjugianjem prevedemo v enočrkovno obliko.
+        je beseda $w$ netrivialni zakon v grupi $G$. Enak razmislek izvedemo v primeru, ko je $w_{ G / N }$ oblike $(s^{n})^u$ za neko besedo $u \in F_k$, saj ga s konjugiranjem prevedemo v enočrkovno obliko.
         
         Če $w_{G / N}$ ni enočrkovni zakon ali konjugiranka enočrkovnega zakona, lahko brez škode za splošnost predpostavimo, da se začne s črko $a_1$. Potem ga pretvorimo v obliko $w_{ G / N} = a_1 w_{ G / N}' a_2$, kjer se $w_{ G / N}'$ niti ne začne z $a_1^{-1}$ niti ne konča z $a_2^{-1}$.
-        z zaporednim izvajanjem enega izmed treh korakov: \begin{itemize}
-            \item Če je zakon $w_{ G / N}$ oblike $a_1 w_{ G / N}' a_1$, ga konjugiramo s črko $a_1$ tolikokrat, da se zadnja črka razlikuje od $a_1$.
-            \item Če je zakon oblike $w_{ G / N}$ oblike $a_1 w_{ G / N}' a_1^{-1}$, ga konjugiramo s črko $a_1^{-1}$, s čimer zmanjšamo problem.
-            \item Če se zakon ne začne s črko $a_1$ zaradi prejšnjega koraka, izvedemo takšno bijektivno transformacijo črk, da se beseda začne z $a_1$ in, če je le mogoče, konča z $a_2$. To transformacijo nam inducira univerzalna lastnost prostih grup. 
+        To storimo z zaporednim izvajanjem enega izmed treh korakov: \begin{itemize}
+            \item če je zakon $w_{ G / N}$ oblike $a_1 w_{ G / N}' a_1$, ga konjugiramo s črko $a_1$ tolikokrat, da se zadnja črka razlikuje od $a_1$.
+            \item če je zakon oblike $w_{ G / N}$ oblike $a_1 w_{ G / N}' a_1^{-1}$, ga konjugiramo s črko $a_1^{-1}$, s čimer zmanjšamo problem.
+            \item če se zakon ne začne s črko $a_1$ zaradi prejšnjega koraka, izvedemo takšno bijektivno transformacijo črk, da se beseda začne z $a_1$ in, če je le mogoče, konča z $a_2$. To transformacijo nam inducira univerzalna lastnost prostih grup. 
         \end{itemize}
         Pri tem se zavedajmo, da zakoni v grupi tvorijo karakteristično edinko proste grupe $F_k$ (razmislek pod definicijo \ref{def_zakon_formalna}), zato je uporaba zgoraj naštetih transformacij legitimna. 
         Nato definiramo besede \begin{equation*}
@@ -275,13 +266,13 @@ kjer je $\ker \psi = \operatorname{im} \varphi$, $\varphi$ je injektivni in $\ps
 \end{dokaz}
 
 \begin{primer}\label{prm_razsiritvena}
-    S pomočjo razširitvene leme lakho dokažemo, da za vsak $n \in \mathbb{N}$ obstaja zakon $w \in F_2$ dolžine $8$ v diedrski grupi $D_{2n}$. Ker ima podgrupa $\langle r \rangle \subseteq D_{2n}$ indeks 2, je edinka,
+    S pomočjo razširitvene leme \ref{lem_razsiritvena_lema} lahko dokažemo, da za vsako naravno število $n$ obstaja zakon $w \in F_2$ dolžine $8$ v diedrski grupi $D_{2n} = \langle r, Z \rangle$. Ker ima podgrupa $\langle r \rangle \subseteq D_{2n}$ indeks 2, je edinka,
     zato lahko tvorimo kratko eksaktno zaporedje \begin{equation*}
         \mathbf{1} \to \langle r \rangle  \xrightarrow{i} D_{2n} \xrightarrow{\pi} D_{2n} / \langle r \rangle  \to \mathbf{1}.
         \end{equation*}
-        Ker je podgrupa $\langle r \rangle$ Abelova, je v njej zakon beseda $[a, b] = aba^{-1} b^{-1}$, grupa $D_{2n} / \langle r \rangle$ pa je moči $2$ in je zato v njej zakon beseda $a^2$. Po lemi \ref{lem_razsiritvena_lema} torej obstaja beseda $w \in F_2$ dolžine $l(w) \le  8$, ki je zakon v $D_{2n}$.
+        Ker je podgrupa $\langle r \rangle$ Abelova, je v njej zakon beseda $[a, b] = aba^{-1} b^{-1}$, grupa $D_{2n} / \langle r \rangle$ pa je moči $2$ in je zato v njej zakon beseda $a^2$. Po razširitveni lemi \ref{lem_razsiritvena_lema} torej obstaja beseda $w \in F_2$ dolžine $l(w) \le  8$, ki je zakon v $D_{2n}$.
         Če sledimo konstrukciji izreka, vidimo, da je to natanko beseda $w = [a^2, b^2] = a^2 b^2 a^{-2} b^{-2}$.   
 \end{primer}
 
-Iz primera je razvidno, da je moč razširitvene leme je še posebej izrazita, kadar ima grupa kakšno edinko z lepimi lastnosti, kot so na primer rešljivost, nilpotentnost ali celo Abelovost. Od tod sledi tudi, da so s stališča preučevanja zakonov \emph{virtualno nilpotentne} oziroma \emph{rešljive grupe} -- torej grupe, ki imajo nilpotentno oziroma rešljivo edinko končnega indeksa --
-praktično enake nilpotentnim oziroma rešljivim. Naravna posledica razširitvene leme je tudi dejstvo, da bistveno vlogo pri iskanju kratkih zakonov igrajo enostavne grupe, saj lahko problem iskanja zakonov v neenostavnih grupah vedno prevedemo na dva manjša; na problema edinke in njenega kvocienta.  
+Iz primera je razvidno, da je moč razširitvene leme še posebej izrazita, kadar ima grupa kakšno edinko z lepimi lastnosti, kot so na primer rešljivost, nilpotentnost ali celo Abelovost. Od tod sledi tudi, da so s stališča preučevanja zakonov \emph{virtualno nilpotentne} oziroma \emph{rešljive grupe} -- torej grupe, ki imajo nilpotentno oziroma rešljivo edinko končnega indeksa --
+praktično enake nilpotentnim oziroma rešljivim grupam. Naravna posledica razširitvene leme je tudi dejstvo, da bistveno vlogo pri iskanju kratkih zakonov igrajo enostavne grupe, saj lahko problem iskanja zakonov v neenostavnih grupah vedno prevedemo na dva manjša; na problema edinke in njenega kvocienta.  

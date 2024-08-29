@@ -1,58 +1,54 @@
 \section{Iskanje zakonov z računalnikom}
 \label{sec_racunalnisko_iskanje}
 
-Na roke dokazati, da je beseda zakon, je -- z izjemo posebnih primerov -- zoprno. 
-Zato je zelo naravno pomisliti na uporabo računalnika. 
-V tem poglavju sta opisana dva različna pristopa za iskanje  oziroma razumevanje zakonov v končnih grupah. 
-Programa se nahajata v repozitoriju diplomske naloge \url{https://github.com/MightyOwler/Diplomska-naloga/} v mapi \texttt{Program\_za\_racunsko\_iskanje\_zakonov}.
+Na roke dokazati, da je beseda zakon, je v splošnem zoprno opravilo, zato je zelo naravno pomisliti na uporabo računalnika. 
+V tem poglavju sta opisana dva različna pristopa za iskanje oziroma razumevanje zakonov v končnih grupah. 
+Programa se nahajata v repozitoriju diplomske naloge \cite{repo_2024}.
 
 \subsection{Iskanje zakonov v grupah $\operatorname{PSL}_2(p)$}\label{sec_iskanje_psl2p}
 
-Najprimitivnejši način iskanja zakonov v dani grupi $G$ je kar po definiciji: Poiščemo vse besede grupe $F_2 = \langle a,b \rangle$ določene dolžine, nato pa jih izvrednotimo na vseh možnih parih.
-Za začetek me je zanimalo, koliko zakonov dolžine 17 ali manj premorejo grupe $\operatorname{PSL}_2(p)$. Za višje dolžine je bilo potrebno generirati nepraktično veliko besed. Pri tem se zavedamo, da grupe $\operatorname{PSL}_2(p)$ ne morejo imeti zakonov dolžine $p$ ali manj po trditvi \ref{trd_dolzina_zakonov_za_psl2p}.
-Program sem spisal v jeziku C++, ki je v splošnem veliko hitrejši od GAP-a, opisuje ga spodnja psevdokoda.
+Najprimitivnejši način iskanja zakonov v dani grupi $G$ je kar po definiciji: poiščemo vse besede grupe $F_2 = \langle a,b \rangle$ dolžine $l$, nato pa jih izvrednotimo na vseh možnih parih $g, h \in G$.
+Za začetek me je zanimalo, koliko zakonov dolžine $l = 17$ ali manj premorejo grupe $\operatorname{PSL}_2(p)$. Za višje dolžine je bilo potrebno generirati nepraktično veliko besed. Pri tem se zavedamo, da grupe $\operatorname{PSL}_2(p)$ ne morejo imeti zakonov dolžine manj kot $p$ po trditvi \ref{trd_dolzina_zakonov_za_psl2p}.
+Program sem spisal v jeziku C++, ki je v splošnem veliko hitrejši od GAP-a, opisuje ga spodnji algoritem.
 
-% \begin{algorithm}[ht]
-%     \caption{Generiranje besed in parov elementov ter preverjanje zakonov v \( \operatorname{PSL}_2(p) \)}
-%     \label{alg_preverjanje_zakonov}
-%     \raggedright
-%     \textbf{Vhod:} Brez vhodnih parametrov. \\
-%     \textbf{Izhod:} Seznam besed, ki so zakoni v \( \operatorname{PSL}_2(p) \) za določena praštevila \( p \).
+\begin{algorithm}[ht]
+    \caption{Generiranje besed in parov elementov ter iskanje zakonov v grupah \( \operatorname{PSL}_2(p) \)}
+    \label{alg_preverjanje_zakonov}
+    \raggedright
+    \textbf{Vhod:} Brez vhodnih parametrov. \\
+    \textbf{Izhod:} Seznam besed, ki so zakoni v \( \operatorname{PSL}_2(p) \) za določena praštevila \( p \).
   
-%     \begin{algorithmic}[1]
-%       \comment{Generiranje besed in parov elementov}
-%       \For{$k$}{1}{17}
-%         \State Generiraj vse okrajšane besede dolžine $k$
-%         \State Shranite jih v datoteko
-%       \EndFor
+    \begin{algorithmic}[1]
+      \State \textbf{Generiranje besed in parov elementov}
+      \For{$k$}{1}{17}
+        \State generiraj vse okrajšane besede dolžine $k$
+        \State shrani jih v datoteko
+      \EndFor
       
-%       \ForEach{$p$}{$2, 3, 5, 7, 11, 13, 17$}
-%         \State Predstavi elemente grupe \( \operatorname{PSL}_2(p) \) kot $2 \times 2$ matrike
-%         \State Generiraj vse pare elementov
-%         \State Pare shrani v datoteko
-%       \EndFor
+      \ForEach{$p$}{$\{2, 3, 5, 7, 11, 13, 17\}$}
+        \State predstavi elemente grupe \( \operatorname{PSL}_2(p) \) kot $2 \times 2$ matrike
+        \State generiraj vse pare elementov grupe \( \operatorname{PSL}_2(p) \)
+        \State pare shrani v datoteko
+      \EndFor
   
-%       \comment{Preverjanje zakonov}
-%       \ForEach{$p$}{$\{2, 3, 5, 7, 11, 13, 17\}$}
-%         \For{$k$}{$p$}{$17$}
-%           \State Preberi pare grupe \( \operatorname{PSL}_2(p) \) in besede dolžine $k$ iz generiranih datotek
-%           \State Na vsaki besedi evalviraj vse pare
-%           \If{je rezultat vseh evalvacij besede identična matrika}
-%             \State Ta beseda je zakon
-%           \EndIf
-%         \EndFor
-%       \EndFor
-  
-%     \end{algorithmic}
-%   \end{algorithm}
-
-
-Hitro se je izkazalo, da je tak pristop zelo neučinkovit. Problem je namreč v tem, da število besed dolžine $k$ narašča eksponentno. Če brez škode za splošnost fiksiramo prvo črko, je to število enako $3^{k - 1}$,
-saj lahko v vsakem koraku dodamo natanko 3 črke, da ne pride do krajšanja. Tudi če bi obravnavali zgolj tako imenovane \emph{komutatorske besede}, ki vsebujejo enako število črk kot njihovih inverzov (število črk $a$ je enako številu črk $a^{-1}$, podobno za $b$),
-njihovo število mnogo prehitro narašča, da bi lahko pokazali karkoli smiselnega.
+      \State \textbf{Iskanje zakonov med besedami}
+      \ForEach{$p$}{$\{2, 3, 5, 7, 11, 13, 17\}$}
+        \For{$k$}{$p$}{17}
+          \State preberi pare grupe \( \operatorname{PSL}_2(p) \) in besede dolžine $k$ iz ustvarjenih datotek
+          \State na vsaki besedi evalviraj vse pare
+          \If{rezultat vseh evalvacij besede je identična matrika}
+            \State ta beseda je zakon
+          \EndIf
+        \EndFor
+      \EndFor
+    \end{algorithmic}
+  \end{algorithm}
+Hitro se je izkazalo, da je tak pristop zelo neučinkovit. Problem je namreč v tem, da število dvočrkovnih besed dolžine $l$ narašča eksponentno. Če brez škode za splošnost fiksiramo prvo črko, je to število enako $3^{l - 1}$,
+saj lahko v vsakem koraku dodamo natanko 3 črke, da ne pride do krajšanja (črki $a$ lahko dodamo črke $a$, $b$ ali $b^{-1}$, ne pa njenega inverza $a^{-1}$). Tudi če bi obravnavali zgolj tako imenovane \emph{komutatorske besede}, ki vsebujejo enako število črk kot njihovih inverzov (število črk $a$ je enako številu črk $a^{-1}$, podobno za $b$),
+bi njihovo število mnogo prehitro naraščalo, da bi lahko pokazali karkoli smiselnega.
 
 V splošnem se sicer da oceniti, z najmanj kolikšno verjetnostjo je naključna beseda $w \in F_2$ zakon v grupi $G$.
-Oceniti moramo indeks grupe zakonov $K(G, 2)$ v grupi $F_2$. S pomočjo posledice \ref{psl_koncni_indeks_preseka} v primeru $k  = 2$ dobimo oceno
+Oceniti moramo indeks grupe zakonov $K(G, 2)$ v grupi $F_2$. S pomočjo posledice \ref{psl_koncni_indeks_preseka} dobimo oceno
 \begin{equation*}
     \left[ F_2 : K(G, 2) \right] \le {\lvert G \rvert}^{{\lvert G \rvert}^2},
     \end{equation*}  
@@ -61,37 +57,53 @@ kar vsekakor ni ravno spodbudno. Pa vendar se v praksi izkaže, da ti indeksi de
     \left[ F_2 : K(D_{10}, 2) \right] &= 2^2 \cdot 5^{5} = 12500, \\
     \left[ F_2 : K(\text{Sym}(3), 2) \right] &= 2^2 \cdot 3^{5} = 972, \\
     \left[ F_2 : K(\text{Alt}(4), 2) \right] &= 2^{10} \cdot  3^{2} = 9216, \\
-    \left[ F_2 : K(\text{Alt}(5), 2) \right] &= 2^{48} \cdot  3^{24} \cdot 5^{24} \approx 4.73 \cdot 10^{42}.   % 4738381338321616896000000000000000000000000.
+    \left[ F_2 : K(\text{Alt}(5), 2) \right] &= 2^{48} \cdot  3^{24} \cdot 5^{24} \approx 4.73 \cdot 10^{42},   % 4738381338321616896000000000000000000000000.
 \end{align*}
-
-V splošnem ni veliko grup, za katere bi poznali točne vrednosti teh kvocientov \cite[str.~1]{Cocke_2020}. Podobnih rezultatov za grupe $\operatorname{PSL}_2(q)$ nisem našel. Ker so te grupe za $q > 3$ enostavne (\cite{Jezernik_2023}), si za njihovo obravnavo
+članek \cite{Kovacs_1989} pa za $d \ge 3$ še \begin{equation*}
+    \left[ F_2 : K(D_{2^d}, 2) \right] = 2^{5(d-2)}.
+\end{equation*}
+V splošnem ni veliko grup, za katere bi poznali točne vrednosti teh kvocientov \cite[str.~1]{Cocke_2020}. Podobnih rezultatov za grupe $\operatorname{PSL}_2(p)$ denimo nisem našel. Ker so te grupe za $p > 3$ enostavne (\cite{Jezernik_2023}), si za njihovo obravnavo
 z ugotovitvami naslednjega razdelka ne moremo pomagati.
 
-\subsection{Iskanje zakonov v nilpotentnih grupah}
+\subsection{Iskanje zakonov v nilpotentnih grupah}\label{sec_iskanje_zakonov_v_nilpotentnih_rac}
 
 Kot smo videli v prejšnjem razdelku, moramo do problema pristopiti bolj zvito. Delež zakonov med vsemi dvočrkovnimi besedami nam določa kvocient \begin{equation*}
 \bigslant{F_2}{\bigcap_{\varphi \in \operatorname{Hom}(F_2, G)}} \operatorname{ker} \varphi.  
 \end{equation*}  
-Ni težko videti, da je grupa $F_2^{\exp(G)} =  \langle w^{\exp(G)}  \vert \, w \in F_2 \rangle$ edinka v $F_2$. Za poljubne besede $w_i \in F_2, u \in  F_2$ in celo število $n$ namreč velja $(\prod_{i} w_i^n)^u = \prod_{i} (w_i^u)^n$,
-tudi v primeru $n = \exp(G)$.
-Ni težko razmisliti, da je vsaka beseda $w \in  F_2^{\exp(G)}$ zakon v grupi $G$, torej $F_2^{\exp(G)} \subseteq K(G, 2)$. Za vsak par $g, h \in G$ namreč velja \begin{equation*}
+Za vsako celo število $n$ je grupa $F_2^{n} :=  \langle w^{n}  \vert \, w \in F_2 \rangle$ edinka v $F_2$, saj za poljubne besede $w_i \in F_2, u \in  F_2$ velja $(\prod_{i} w_i^n)^u = \prod_{i} (w_i^u)^n \in F_2^n$.
+Vsaka beseda $w \in  F_2^{\exp(G)}$ je zakon v grupi $G$, saj za vsak par $g, h \in G$ velja \begin{equation*}
 w(g, h) =  \prod_{i = 1}^{n} w_i(g,h)^{\exp(G)} = \prod_{i = 1}^{n} g_i^{\exp(G)} = 1_G.
 \end{equation*}  
-Po tretjem izreku o izomorfizmu zapišemo
+To pomeni, da velja $F_2^{\exp(G)} \subseteq K(G, 2)$. Po tretjem izreku o izomorfizmu zapišemo
 \begin{equation*}
-    \bigslant{F_2}{\bigcap_{\varphi \in \operatorname{Hom}(F_2, G)}} \operatorname{ker} \varphi \cong \dfrac{\bigslant{F_2}{F_2^{\exp(G)}}}{\bigslant{ \left( \bigcap\limits_{\varphi \in \operatorname{Hom}({F_2} / {F_2^{\exp(G)}}, G)} \ker \varphi \right) }{F_2^{\exp(G)}}}.
+    F_2 / K(G, 2) = \bigslant{F_2}{\bigcap_{\varphi \in \operatorname{Hom}(F_2, G)}} \operatorname{ker} \varphi \cong \dfrac{{F_2} / {F_2^{\exp(G)}}}{\bigcap\limits_{\varphi \in \operatorname{Hom}({F_2} / {F_2^{\exp(G)}}, G)} \ker \varphi}.
 \end{equation*}  
 Tu se pojavi nezanemarljiv problem: v splošnem nam nič ne zagotavlja končnosti kvocienta $B(2, \exp(G)) := F_2 / {F_2}^{\exp(G)}$. 
 Pravzaprav smo prišli do klasičnega Burnsidovega problema, ki sprašuje po končnosti kvocientov oblike $B(m, n) := F_m / F_m^n$.
-Po rezultatu Lysenoka leta 1996 recimo velja, da je grupa $B(2, n)$ neskončna za $n \ge 8000$ (\cite[str.~2]{Vaughan-Lee_1999}). 
+Po rezultatu Lysenoka leta 1996 recimo velja, da je grupa $B(2, n)$ neskončna za $n \ge 8000$ (\cite[str.~262]{Vaughan-Lee_1999}). 
 Da lahko vseeno nadaljujemo s podobnim razmislekom, se osredotočimo na nilpotentne grupe. 
-Potrebovali bomo naslednjo lemo, idejo za dokaz najdemo v \cite[str.~13--14]{Segal_1983}.
+Potrebovali bomo naslednji lemi. 
+
+\begin{lema}\label{lem_podgrupa_koncno_generirane_koncnega_indeksa}
+    Naj bo $G$ končno generirana grupa in $H \le G$ njena podgrupa končnega indeksa. Potem je $H$ končno generirana. 
+\end{lema}
+\begin{dokaz}
+    Dokaz je povzet po odgovoru \cite{stackoverflow_13066}. Recimo, da je $G$ generirana z elementi $g_1, \ldots , g_n$. Brez škode za splošnost lahko privzamemo, da je množica $\{ g_1 , \ldots, g_n \}$ simetrična. Naj bo $[G : H] = m$. Potem obstajajo elementi $t_1 = 1_G, t_2, \ldots, t_m \in G$, za katere so odseki $H, t_2 H, \ldots, t_m H$ paroma različni. Zato za vsaki števili $1 \le i \le n$ in $1 \le j \le m$ obstaja enolično določeni element $t_{i,j} \in \{t_1, \ldots, t_m \}$, da je $g_i  t_j \in t_{i, j} H$ oziroma $g_i t_j = t_{i, j} h_{i, j}$ za neki element $h_{i, j} \in H$. Trdimo, da elementi $h_{i, j}$ generirajo podgrupo $H$. Vsak element $h \in H$ lahko zapišemo kot produkt elementov $g_i$, torej \begin{equation*}
+        h = g_{i_1} \cdots  g_{i_s} = g_{i_1} \cdots g_{i_{s - 1}} g_{i_s} t_1 = g_{i_1} \cdots g_{i_{s - 1}} t_{i_s, 1} h_{i_s, 1}.
+    \end{equation*}
+    Zadnja enakost je posledica obstoja elementov $t_{i_s, 1}$ in $h_{i_s, 1}$, za katera velja $g_{i_s} t_1 = t_{i_s, 1} h_{i_s, 1}$.
+    S ponovno uporabo te ideje po $(s -1)$-korakih dobimo \begin{equation*}
+        h = t^{(s)} h^{(s)} h^{(s -1)} \cdots h^{(2)} h_{i_s, 1},
+    \end{equation*} 
+    kjer $t^{(k)} \in \{t_1, \ldots, t_m \}$ oziroma $h^{(k)} \in \{ h_{i, j} \vert 1 \le i \le n,\, 1 \le j \le m \}$ označujeta enolično definirana elementa, dobljena v $k$-tem koraku. Ker vemo, da se element $h$ nahaja zgolj v odseku $H$, mora veljati $t^{(k)} = t_1 =  1_G$. Zato $h$ res lahko zapišemo produkt elementov $h_{i , j}$.  
+\end{dokaz}
 
 \begin{lema}
 \label{lem_koncnogenerirana_nilpotentna}
 Naj bo $H$ končno generirana nilpotentna grupa razreda $d$ in naj ima končni eksponent. Potem je $H$ končna.
 \end{lema}
 \begin{dokaz}
+Idejo za dokaz najdemo v knjigi \cite[str.~13--14]{Segal_1983}.
 Za začetek pokažimo, da so grupe $\gamma_{i}(H) / \gamma_{i + 1}(H)$ Abelove za vsa števila $i \ge 1$. To sledi iz preprostega sklepa \begin{equation*}
 \gamma_{i + 1}(H) = [\gamma_i(H), H] \supseteq [\gamma_i(H), \gamma_i(H)].
 \end{equation*}
@@ -99,50 +111,52 @@ Nato dokažimo, da je vsaka končno generirana Abelova grupa končnega eksponent
 Ker lahko zaradi komutativnosti vsak element $k \in  K$ zapišemo v obliki \begin{equation*}
 k = k_1^{n_1} \cdots k_m^{n_m}
 \end{equation*}  
-za neka števila $0 \le n_i < \exp(K)$, je $K$ res končna.
-Tako smo razmislili, da so končne vse grupe $\gamma_{i}(H) / \gamma_{i + 1}(H)$ za $i \ge 1$. Ker je $H$ nilpotentnta razreda $H$ in velja \begin{equation*}
+za neka števila $0 \le n_i < \exp(K)$, je $K$ res končna. Z indukcijo dokažimo, da so končne vse grupe $\gamma_{i}(H) / \gamma_{i + 1}(H)$ za $i \ge 1$. Za $i = 1$ je kvocient $H / [H, H]$ končno generirana Abelova grupa, zato je po zgornjem razmisleku končen. Predpostavimo, da je grupa $\gamma_{i}(H)$ končno generirana in kvocient $\gamma_{i}(H) / \gamma_{i + 1}(H)$ končen. Po lemi \ref{lem_podgrupa_koncno_generirane_koncnega_indeksa} je 
+$\gamma_{i + 1}(H)$ končno generirana. Posledično je tudi Abelova grupa $\gamma_{i + 1}(H) / \gamma_{i + 2}(H)$ končna, saj je končno generirana. 
+
+
+ Ker je $H$ nilpotentna grupa razreda $d$ in velja \begin{equation*}
     [H : \gamma_2(H)] [\gamma_2(H) : \gamma_3(H)] \cdots [\gamma_{d}(H) : \gamma_{d + 1}(H)]  < \infty,
     \end{equation*}  
     sklepamo, da je $H$ končna.
 \end{dokaz}
 
-Predpostavimo, da je grupa $G$ nilpotentna razreda $d$. Podobno kot v dokazu \ref{trd_osnovna_ocena_resljive_grupe} sklepamo, da so vse besede iz $\gamma_{d+1}(F_2)$
-zakoni v grupi $G$. Ker velja $\gamma_{d+1}(G) = \left\{ 1_G \right\}$, bo za vsako besedo $w \in \gamma_{d+1}(F_2)$ in vsak par elementov $g ,h \in G$ veljalo $w(g,h) = 1_{G}$.
+Predpostavimo, da je grupa $G$ nilpotentna razreda $d$. Podobno kot na začetku razdelka \ref{sec_iskanje_zakonov_v_nilpotentnih_rac} sklepamo, da so vse besede iz $\gamma_{d+1}(F_2)$ zakoni v grupi $G$. Ker velja $\gamma_{d+1}(G) = \left\{ 1_G \right\}$, bo za vsako besedo $w \in \gamma_{d+1}(F_2)$ in vsak par elementov $g ,h \in G$ veljalo $w(g,h) = 1_{G}$.
 Tako imamo $\gamma_{d+1}(F_2) \subseteq K(G, 2)$.
 Ker je poljubni člen spodnje centralne vrste edinka v $F_2$, je edinka tudi grupa $\gamma_{d+ 1}(F_2)$.
-Produkt edink je edinka, zato je tudi $F_2^{\exp(G)} \gamma_{d+ 1}(F_2)$ edinka v $F_2$, in lahko tvorimo kvocient 
+Produkt edink je edinka, zato je tudi $F_2^{\exp(G)} \gamma_{d+ 1}(F_2)$ edinka v $F_2$, in lahko tvorimo kvociente 
 \begin{equation*}
-    \bigslant{F_2}{\bigcap_{\varphi \in \operatorname{Hom}(F_2, G)}}  \ker \varphi \cong \dfrac{\bigslant{F_2}{F_2^{\exp(G)}\gamma_{d+1}(F_2)}}{ \bigslant{ \left( \bigcap\limits_{\varphi \in \operatorname{Hom}({F_2} / {F_2^{\exp(G)}\gamma_{d+1}(F_2)}, G)} \ker \varphi \right) }{F_2^{\exp(G)}\gamma_{d+1}(F_2)}}.
+   F_2 / K(G, 2) = \bigslant{F_2}{\bigcap_{\varphi \in \operatorname{Hom}(F_2, G)}}  \ker \varphi \cong \dfrac{{F_2} / {F_2^{\exp(G)}\gamma_{d+1}(F_2)}}{ \bigcap\limits_{\varphi \in \operatorname{Hom}({F_2} / {F_2^{\exp(G)}\gamma_{d+1}(F_2)}, G)} \ker \varphi  }.
 \end{equation*}
 
 S tem smo problem v primeru nilpotentnih grup poenostavili, saj nam za izračun zakonov ni več treba računati jeder vseh homomorfizmov $F_2 \to G$, temveč le še $F_2 / F_2^{\exp(G)}\gamma_{d+1}(F_2) \to G$.
 To je precej bolj ugodno, saj je grupa $F_2 / F_2^{\exp(G)}\gamma_{d+1}(F_2)$ nilpotentna razreda največ $d$ zaradi sklepa $\gamma_{d+1}(F_2) \subseteq  F_2^{\exp(G)}\gamma_{d+1}(F_2)$.
 Posledično je po lemi \ref{lem_koncnogenerirana_nilpotentna} končna.
 Računalniška konstrukcija tega kvocienta ni posebej zahtevna, saj GAP vsebuje paket za delo z nilpotentnimi grupami \texttt{nq} (\cite{nq2.5.11}), s pomočjo katerega ga lahko izračunamo in preučujemo njegovo grupno strukturo.
-Na tak način sem izračunal indekse za vse nilpotentne grupe do vključno moči 64, za višje vrednosti je bila časovna zahtevnost prevelika. Program in rezultati so objavljeni na repozitoriju \url{https://github.com/MightyOwler/Diplomska-naloga}.
-Program opisuje naslednja psevdokoda. 
+Na tak način sem izračunal indekse za vse nilpotentne grupe moči 100 ali manj, z izjemo moči 64 in 96, za kateri je bila časovna zahtevnost prevelika. Program in rezultati so objavljeni v repozitoriju \cite{repo_2024}. 
 
-% \begin{algorithm}[ht]
-%     \caption{Izračun vrednosti in struktur za nilpotentne grupe}
-%     \label{alg_nilpotentne_grupe}
-%     \raggedright
-%     \textbf{Vhod:} Seznam nilpotentnih grup želenih moči. \\
-%     \textbf{Izhod:} Rezultati izračunanih struktur in velikosti kvocientov.
+\begin{algorithm}[ht]
+    \caption{Izračun velikosti in struktur kvocientov za nilpotentne grupe}
+    \label{alg_nilpotentne_grupe}
+    \raggedright
+    \textbf{Vhod:} Spodnja in zgornja meja moči nilpotentnih grup, ki jih bomo preučevali. \\
+    \textbf{Izhod:} Rezultati izračunanih grupnih struktur in velikosti kvocientov.
   
-%     \begin{algorithmic}[1]
-%       \State Vse nilpotentne grupe želenih moči shranimo v seznam.
-%       \ForEach{$G$}{seznam}
-%         \State Izračunamo vrednosti $\exp(G)$ in $d$
-%         \State kvocient $\gets$ (zgornji izraz z ustreznimi vrednostmi)
-%         \State zakoni $\gets$ presek jeder homomorfizmov: kvocient $\to G$
-%         \State Poračunamo strukturo in velikost kvocienta $\text{kvocient}/\text{zakoni}$
-%       \EndFor
-%       \State Izračunane rezultate shranimo v datoteko.
-%     \end{algorithmic}
-%   \end{algorithm}
+    \begin{algorithmic}[1]
+      \State seznam\_nilpotentnih $\gets$ seznam nilpotentnih grup želenih moči
+      \ForEach{$G$}{seznam\_nilpotentnih}
+        \State $e$ $\gets$ $\exp(G)$
+        \State $d$ $\gets$ razred nilpotentnosti grupe $G$
+        \State kvocient $\gets$ $F_2 / F_2^{e}\gamma_{d+1}(F_2)$
+        \State zakoni $\gets$ $\bigcap\limits_{\varphi \in \operatorname{Hom}({F_2} / {F_2^{e}\gamma_{d+1}(F_2)}, G)} \ker \varphi$
+        \State poračunamo velikost in grupno strukturo kvocienta $\text{kvocient}/\text{zakoni}$
+      \EndFor
+      \State izračunane rezultate shranimo v datoteko
+    \end{algorithmic}
+  \end{algorithm}
 
 Ta pristop do problema je mnogo boljši od pristopa v razdelku \ref{sec_grupe_psl2q}, saj je ne le bolj povezan s strukturo grup, temveč tudi omogoča boljši vpogled v splošno razumevanje zakonov.
-Z njegovo pomočjo je namreč lažje opaziti in posledično dokazati naslednje lastnosti zakonov. Začnimo s preprostimi.
+Z njegovo pomočjo je namreč lažje opaziti in posledično dokazati lastnosti zakonov. Začnimo s preprostimi.
 \begin{trditev}
 \label{trd_lastnosti_zakonov_ciklicne}
  Za vsako ciklično grupo $C_n$ je \begin{equation*}
@@ -151,7 +165,7 @@ Z njegovo pomočjo je namreč lažje opaziti in posledično dokazati naslednje l
  in posledično sledi \begin{equation*}
 \left[ F_2 : K(C_n, 2) \right] = n^2.
  \end{equation*}  
-Z drugimi besedami, delež zakonov med vsemi besedami v cikličnih grupah je $1 / n^2$.
+Z drugimi besedami, delež zakonov v cikličnih grupah med vsemi besedami je $1 / n^2$.
 \end{trditev}
 \begin{dokaz}
 Naj bo $F_2 = \langle a, b \rangle$.
@@ -181,8 +195,8 @@ saj za vsak $i = 1 , \ldots , n$ velja $C_{p^{k_{i}}} \le C_{p^{k}}$, zakoni pa 
 
 \begin{posledica}
 \label{psl_lastnosti_zakonov_splosni_produkti_ciklicnih}
-Naj bo končna grupa $G$ Abelova. Natančneje, naj bo v skladu s klasifikacijo končnih Abelovih grup oblike $G = \prod_{i = 1}^{n} \prod_{j = 1}^{n_i} C_{p_{i}^{k_{i,j}}}^{m_j}$, kjer so za vsak $i = 1, \ldots, n$ $p_i$ paroma različna praštevila, števila $n_i, m_{i} \ge 1$, in vsak $j = 1, \ldots , n_i$ števila $k_{i, j} \ge 1$ paroma različna. % TODO to se ne sliši prav
-Naj bodo $k_i = \max_{j = 1, \ldots, n_i} k_{i,j}$. Potem velja $F_2 / K(G, 2) \cong C_{e} \times C_{e}$, kjer je $e = p_1^{k_1} \cdots  p_n^{k_n}  = \exp(G)$.
+Naj bo končna grupa $G$ Abelova. Natančneje, naj bo v skladu s klasifikacijo končnih Abelovih grup oblike $G = \prod_{i = 1}^{n} \prod_{j = 1}^{n_i} C_{p_{i}^{k_{i,j}}}^{m_j}$, kjer so za vsak $i = 1, \ldots, n$ praštevila $p_i$ paroma različna, števila $n_i, m_{i} \ge 1$ in za vsak $j = 1, \ldots , n_i$ števila $k_{i, j} \ge 1$ paroma različna.
+Naj bodo $k_i := \max_{j = 1, \ldots, n_i} k_{i,j}$. Potem velja $$F_2 / K(G, 2) \cong C_{e} \times C_{e},$$ kjer je $e := \exp(G) = p_1^{k_1} \cdots  p_n^{k_n}$.
 Od tod sledi, da delež zakonov v Abelovih grupah znaša natanko $1 / \exp(G)^2$.
 \end{posledica}
 \begin{dokaz}
@@ -194,9 +208,56 @@ Naj bo podana beseda $w \in F_2 = \langle a, b \rangle$. Če hočemo preveriti, 
 kjer $r$ in $s$ predstavljata vsoto eksponentov črk $a$ oziroma $b$ v besedi $w$. Beseda $a^r$ je zakon v grupi $G$ natanko tedaj, ko je $\exp(G)$ delitelj števila $r$. Zato je verjetnost, da bo $w$ zakon po črki $a$ enaka $1 / \exp(G)$. %(projekcija $Z(G, w')$ na prvo komponento mora biti enaka $G$)
 Ker enako velja za $b$ in sta evalvaciji $a$ in $b$ medsebojno neodvisni, je skupna verjetnost enaka $1 / \exp(G)^2$.
 
-% Zanimiva je tudi povezava s tako imenovano Amit–Ashurstino domnevo \cite{Camina_Cocke_Thillaisundaram_2023}. Ta trdi, da je verjetnost, da poljubna   
+\subsection{Problemi za nadaljnje raziskovanje}
 
-% TODO skušaj sklepati še kaj več
+Med preučevanjem zakonov z računalnikov sem naletel na nekaj problemov, ki jih nisem znal rešiti, predvsem v zvezi s semidirektnim produktom grup.
+\begin{definicija}\label{def_semidirektni_produkt}
+    Naj bosta $N$ in $H$ grupi in naj bo $\varphi \in \operatorname{Hom}(H, \operatorname{Aut}(N))$. Potem definiramo \emph{semidirektni produkt}
+    kot grupo nad množico $N \times H$ z operacijo \begin{equation*}
+        (n_1, h_1) (n_2, h_2) := (n_1 \varphi(h_1)(n_2), h_1 h_2 ).
+    \end{equation*}
+    Označimo jo z $N \rtimes_{\varphi} H$.
+\end{definicija}
+\begin{opomba}\label{opm_protiprimer_semidirektni}
+    Za različne izbire homomorfizma $\varphi \in \operatorname{Hom}(H, \operatorname{Aut}(N))$ dobimo grupe, ki med seboj niso nujno izomorfne. Poglejmo si denimo primera $C_n \rtimes_{\text{id}} C_2$ in $C_n \rtimes_{\tau} C_2$, kjer sta $\text{id}(h)(g) = g$ in $\tau(h)(g) = h g h^{-1}$ za vsaka elementa $h \in C_2$ in $g \in C_n$. Očitno velja $C_n \rtimes_{\text{id}} C_2 = C_n \times C_2$. Manj očitno pa je \begin{equation*}
+        C_n \rtimes_{\tau} C_2 = D_{2n}.
+    \end{equation*}
+    To lahko preverimo prek veljavnosti enačb $(g, 1_H)^n = 1_{C_n \rtimes_{\tau} C_2}$, $(1_N, h)^2 = 1_{C_n \rtimes_{\tau} C_2}$ in $((g, 1_H) (1_N, h))^2 = (g, h)^2 = 1_{C_n \rtimes_{\tau} C_2}$
+    za vse elemente $g \in N$ in $h \in H$. 
+\end{opomba}
+
+Ta opomba nam sporoča, da je tudi grupa zakonov semidirektnega produkta odvisna od izbire homomorfizma $\varphi$.
+Imamo namreč \begin{equation*}
+    C_3 \rtimes_{\text{id}} C_2 = C_3 \times C_2 = C_6  \,\,\, \text{ in } \,\,\,  C_3 \rtimes_{\tau} C_2 = D_{6} = \text{Sym}(3). 
+\end{equation*}
+Iz razdelka \ref{sec_iskanje_zakonov_v_nilpotentnih_rac} vemo, da velja $[F_2 : K(C_6, 2)] = 36$ in $[F_2 : K(\text{Sym}(3), 2)] = 972$, zato grupi $K(C_6, 2)$ in $K(\text{Sym}(3), 2)$ nista izomorfni.
+
+\begin{domneva}
+    Za vsako praštevilo $p$ in naravno število $k > 1$ obstajata taka homomorfizma $\varphi, \psi \in \operatorname{Hom}(C_{p}, \operatorname{Aut}(C_{p^k}))$, da velja \begin{equation*}
+        F_2 / K(C_{p^k} \rtimes_{\varphi} C_p, 2) = (C_{p^k} \times C_p) \rtimes_{\psi} C_{p^k}. 
+    \end{equation*} 
+\end{domneva}
+
+To domnevo sem empirično potrdil za $k = 2, 3, 4, 5$ pri praštevilu $p = 2$ in $k = 2$ pri $p = 3$. Poraja se tudi vprašanje, kakšne oblike morata biti homomorfizma $\varphi$ in $\psi$.
+
+\begin{domneva}
+    Definirajmo \emph{posplošeno kvaternionsko grupo reda $4n$}  kot \begin{equation*}
+        Q_{4n} := \langle r, Z \vert r^{2n} = Z^4 = 1, \, Z^{-1} r Z = r^{-1} \rangle
+    \end{equation*}
+    in \emph{kvazidiedrsko grupo reda $2^n$} kot \begin{equation*}
+        QD_{2^n} := \langle r, Z \vert r^{2^{n -1}} = Z^2 = 1, \, Z r Z = r^{2^{n -2} -1} \rangle.
+    \end{equation*}
+    Za vsako število $k \ge 2$ so grupe zakonov $K(D_{2 \cdot 2^{k-1}}, 2)$, $K(Q_{4 \cdot 2^{k-2}}, 2)$ in $K(QD_{2^{k}}, 2)$ izomorfne. 
+\end{domneva}
+
+Ta domneva izhaja iz empirično izračunanega dejstva, da za vsako grupo $G \in \{ D_{16}, Q_{16}, QD_{16} \}$ lahko zapišemo \begin{equation*}
+    F_2 / K(G, 2) \cong (C_2 \times ((C_4 \times C_2) \rtimes_{\varphi_{G, 1}} C_8)) \rtimes_{\varphi_{G, 2}} C_8
+\end{equation*} 
+za ustrezna homomorfizma $\varphi_{G, 1}$ in $\varphi_{G, 2}$. Enako velja za $2 \le k \le 5$.
+Seveda nam ta zapis ne zagotavlja, da so kvocienti med seboj izomorfni, kot smo videli v opombi \ref{opm_protiprimer_semidirektni}.
+Morda se bistvo skriva ravno v tem, da so homomorfizmi $\varphi_{G, i}$ za različne grupe $G$ različni, kar privede do neizomorfnosti kvocientov. 
+
+% Zanimiva je tudi povezava s tako imenovano Amit–Ashurstino domnevo \cite{Camina_Cocke_Thillaisundaram_2023}. Ta trdi, da je verjetnost, da poljubna   
 
 % TODO % file:///C:/Users/jasak/Downloads/IJGT_2024%20Autumn_Vol%2013_Issue%203_Pages%20307-318%20(1).pdf
 % NAPIŠI POVEZAVO Z AMIT'S CONJECTURE
