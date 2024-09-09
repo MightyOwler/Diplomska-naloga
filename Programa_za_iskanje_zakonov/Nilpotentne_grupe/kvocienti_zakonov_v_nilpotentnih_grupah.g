@@ -5,12 +5,12 @@ F2 := FreeGroup(2);
 F2 := FreeGroup("a", "b", "x");
 AssignGeneratorVariables(F2); # tole predpiše vrednosti generatorjem
 
-filePath := "C:/Users/jasak/Documents/Jasa/Sola/FMF/3_letnik/Diploma/Programa_za_iskanje_zakonov/Nilpotentne_grupe/kvocienti_zakonov_v_nilpotentnih_grupah.g";
+filePath := "Rezultati/";
 
 # spodnja_meja mora biti več kot 1, sicer ne dela
 # v resnici nas trivialna grupa itak ne zanima
-spodnja_meja := 2;
-zgornja_meja := 63; 
+spodnja_meja := 97;
+zgornja_meja := 100;  
     
 all_gps := Concatenation(List([spodnja_meja..zgornja_meja], n -> AllSmallGroups(Size, n)));
 velikost_vseh := Length(all_gps);
